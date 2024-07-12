@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
+
 :root {
   --lightgray:#D9D9D9;
   --gray: #9c9c9c;
@@ -8,6 +10,17 @@
   --appColor: #3c3f45;
 }
 
+html, body {
+  position: relative;
+  height: 100%;
+  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2003575562495150723/C60BF4203B087936E6F4A23B2CBAF3771C0D9579/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+  /* height: 100%; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -17,5 +30,19 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+.App {
+  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2003575562495150723/C60BF4203B087936E6F4A23B2CBAF3771C0D9579/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+  /* height: 100vh; */
+  mix-blend-mode: overlay;
+  background-color: var(--appColor);
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  overflow: hidden;
+}
+/* ::webkit-scrollbar {
+  display: none;
 } */
 
