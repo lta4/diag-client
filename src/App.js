@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import Hero from "./components/Hero/Hero";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -12,11 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
-        <div>
-          <p>Hello Diagnostic</p>
-        </div>
-      {/* </header> */}
+      <Hero />
     </div>
   );
 }
