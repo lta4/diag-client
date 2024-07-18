@@ -8,12 +8,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router />
+    <Router>
       <App />
-      {/* <Routes>
-        <Route path="/login">
+      <Routes>
+        <Route path="/">
         </Route>
-      </Routes> */}
+      </Routes>
+    </Router>
   </React.StrictMode>,
   document.body
 );
