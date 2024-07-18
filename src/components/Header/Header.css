@@ -7,3 +7,14 @@
     width: 10rem;
     height: 3rem;
 }
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    color: white;
+}
+
+.header-menu > li {
+    cursor: pointer;
+}

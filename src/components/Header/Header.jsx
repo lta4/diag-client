@@ -7,7 +7,7 @@ const Header = () => {
         <div className="header">
             header
             <img src={Logo} alt="" className="logo"/>
-            <ul>
+            <ul className="header-menu">
                 <li>Home</li>
                 <li>About</li>
                 <li>Why Us</li>
