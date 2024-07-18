@@ -10,17 +10,6 @@
   --appColor: #3c3f45;
 }
 
-html, body {
-  position: relative;
-  height: 100%;
-  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2003575562495150723/C60BF4203B087936E6F4A23B2CBAF3771C0D9579/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
-  /* height: 100%; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -33,8 +22,12 @@ html, body {
 } */
 
 .App {
+  position: relative;
+  height: 100vh;
   background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2003575562495150723/C60BF4203B087936E6F4A23B2CBAF3771C0D9579/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
-  /* height: 100vh; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   mix-blend-mode: overlay;
   background-color: var(--appColor);
   display: flex;
@@ -42,7 +35,7 @@ html, body {
   gap: 6rem;
   overflow: hidden;
 }
-/* ::webkit-scrollbar {
-  display: none;
-} */
 
+::webkit-scrollbar {
+  display: none;
+}
