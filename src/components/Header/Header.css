@@ -3,6 +3,10 @@
     justify-content: space-between;
 }
 
+.header a:link {
+    text-decoration: none;
+}
+
 .logo {
     width: 10rem;
     height: 3rem;
@@ -13,9 +17,14 @@
     display: flex;
     gap: 2rem;
     color: white;
+    text-decoration: none;
 }
 
 .header-menu > li:hover {
     cursor: pointer;
     color: var(--orange);
+}
+
+.header-menu > a:visited {
+    color: white;
 }
