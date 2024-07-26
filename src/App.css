@@ -12,7 +12,7 @@
   --darkGrey: #464D53;
   --caloryCard: #656565;
   --planCard: linear-gradient(210.41deg. #fa5042 1.14%, #ffa739 100.75%);
-  --appColor: green;
+  --appColor: black;
 }
 
 /* .App-header {
@@ -28,8 +28,8 @@
 
 .App {
   /* position: relative; */
-  background-color: var(--appColor);
   background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2003575562495150723/C60BF4203B087936E6F4A23B2CBAF3771C0D9579/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+  background-color: black;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
