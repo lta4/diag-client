@@ -14,8 +14,8 @@ const Footer = () => {
                     <img src={Instagram} alt="" />
                     <img src={LinkedIn} alt="" />
                 </div>
-                <div className="logo-f">
-                    <img />
+                <div className="logo-d">
+                    {/* <img src={Logo} alt="" /> */}
                 </div>
             </div>
             © {new Date().getFullYear()}, Built 
