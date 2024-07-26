@@ -15,8 +15,8 @@
   --appColor: #3c3f45;
 }
 
-/* .App-header {
-  background-color: #282c34;
+.App-header {
+  background-color: #2e65d3;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-} */
+}
 
 .App {
   position: relative;
@@ -37,7 +37,6 @@
   background-color: var(--appColor);
   display: flex;
   flex-direction: column;
-  font-family: "Metal Lord";
   /* gap: 6rem; */
   /* overflow: hidden; */
 }

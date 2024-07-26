@@ -3,7 +3,7 @@ import "./About.css";
 
 const About = () => {
     return (
-        <div className="about">About</div>
+        <div className="about-container">About</div>
     );
 };
 export default About;
