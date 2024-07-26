@@ -8,8 +8,8 @@
 }
 
 .logo {
-    width: 10rem;
-    height: 3rem;
+    width: 5rem;
+    height: 4rem;
 }
 
 .header-menu {
@@ -17,7 +17,6 @@
     display: flex;
     gap: 2rem;
     color: white;
-    text-decoration: none;
 }
 
 .header-menu > li:hover {
@@ -25,6 +24,6 @@
     color: var(--orange);
 }
 
-.header-menu > a:visited {
+/* .header a:link > a:visited {
     color: white;
-}
+} */

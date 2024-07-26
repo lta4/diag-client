@@ -11,26 +11,31 @@ const Header = () => {
                 <li>
                     <NavLink to="/">
                         Home
-                    </NavLink></li>
+                    </NavLink>
+                </li>
                 <li>
                     <NavLink to="About">
                         About
-                    </NavLink></li>
+                    </NavLink>
+                </li>
                 <li>
                     <NavLink to="Why">
                         Why
-                    </NavLink></li>
+                    </NavLink>
+                </li>
                 <li>
                     <NavLink to="Plans">
                         Plans
-                    </NavLink></li>
+                    </NavLink>
+                </li>
                 <li>
                     <NavLink to="Testimonials">
                         Testimonials
-                    </NavLink></li>
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );
 };
 
-export default Header
+export default Header;
