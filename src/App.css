@@ -1,8 +1,8 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap"); */
 
 @font-face {
-  font-family: Thunder Lord;
-  src: url();
+  font-family: "Metal Lord", "Thunder Lord";
+  src: url(https://www.1001fonts.com/metal-lord-font.html?text=thunder%20lord&commercial=true&page=1);
 }
 
 :root {
@@ -37,6 +37,7 @@
   background-color: var(--appColor);
   display: flex;
   flex-direction: column;
+  font-family: "Metal Lord";
   /* gap: 6rem; */
   /* overflow: hidden; */
 }
