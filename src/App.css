@@ -28,13 +28,14 @@
 
 .App {
   /* position: relative; */
+  background-color: var(--appColor);
   background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2003575562495150723/C60BF4203B087936E6F4A23B2CBAF3771C0D9579/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   /* background-size: cover; */
   mix-blend-mode: overlay;
-  background-color: var(--appColor);
+  /* background-color: var(--appColor); */
   display: flex;
   flex-direction: column;
   gap: 6rem;
