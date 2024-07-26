@@ -1,5 +1,8 @@
 import React from "react";
 import "./Footer.css";
+import Github from "../../assets/github.png";
+import Instagram from "../../assets/instagram.png";
+import LinkedIn from "../../assets/linkedin.png";
 
 const Footer = () => {
     return (
@@ -7,9 +10,9 @@ const Footer = () => {
             <hr />
             <div className="footer">
                 <div className="social-links">
-                    <img />
-                    <img />
-                    <img />
+                    <img src={Github} alt="" />
+                    <img src={Instagram} alt="" />
+                    <img src={LinkedIn} alt="" />
                 </div>
                 <div className="logo-f">
                     <img />
