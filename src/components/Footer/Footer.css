@@ -20,6 +20,7 @@
 
 .footer-container {
     position: relative;
+    /* height: 100vh; */
 }
 
 .footer-container > hr {
@@ -27,6 +28,7 @@
 }
 
 .footer {
+    /* height: 100h; */
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
@@ -45,6 +47,12 @@
     width: 2rem;
     height: 2rem;
     cursor: pointer;
+}
+
+.footer-date {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
 }
 
 /* .logo-d > img {

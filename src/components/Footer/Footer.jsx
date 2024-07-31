@@ -18,9 +18,11 @@ const Footer = () => {
                     {/* <img src={Logo} alt="" /> */}
                 </div>
             </div>
-            © {new Date().getFullYear()}, Built 
-             with love by {` `}
-            <a href="mailto=andrew4ld@gmail.com" className="footLink">Andrew Arias</a>
+            <div className="footer-date">
+                © {new Date().getFullYear()}, Built 
+                with love by {` `}
+                <a href="mailto=andrew4ld@gmail.com" className="footLink">Andrew Arias</a>
+            </div>
         </div>
     );
 };
