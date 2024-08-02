@@ -21,8 +21,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Hero />
+      {/* <Hero /> */}
       <Routes>
+        <Route path="/" element={<Hero />} />
         <Route path="About" element={<About />} />
         <Route path="Why" element={<Why />} />
         <Route path="Plans" element={<Plans />} />
