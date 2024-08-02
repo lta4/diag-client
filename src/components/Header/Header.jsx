@@ -6,36 +6,55 @@ import { IoClose, IoMenu } from "react-icons/io5";
 
 const Header = () => {
     return (
-        <div className="header">
-            <img src={Logo} alt="" className="logo"/>
-            <ul className="header-menu">
-                <li>
-                    <NavLink to="/">
+        <header className="header">
+            <nav className="nav-container">
+            {/* <img src={Logo} alt="" className="logo"/> */}
+            <NavLink to="/" className="nav__logo">
+                Navigation Bar
+            </NavLink>
+            <div className={"nav__menu"} id="nav-menu"
+            >
+                <ul className="nav__list">
+                    <li className="nav__item">
+                        <NavLink to="/" className="nav__link">
                         Home
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="About">
+                        </NavLink>
+                    </li>
+                    <li className="nav__item">
+                        <NavLink to="/About" className="nav__link">
                         About
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="Why">
-                        Why
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="Plans">
+                        </NavLink>
+                    </li>
+                    <li className="nav__item">
+                        <NavLink to="/Plans" className="nav__link">
                         Plans
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="Testimonials">
+                        </NavLink>
+                    </li>
+                    <li className="nav__item">
+                        <NavLink to="/Testimonials" className="nav__link">
                         Testimonials
-                    </NavLink>
-                </li>
-            </ul>
-        </div>
+                        </NavLink>
+                    </li>
+                    <li className="nav__item">
+                        <NavLink to="/Why" className="nav__link">
+                        Why
+                        </NavLink>
+                    </li>
+                    <li className="nav__item">
+                        <NavLink to="/get-started" className="nav__link nav__cta">
+                        Get Started
+                        </NavLink>
+                    </li>
+                </ul>
+                <div className="nav__close" id="nav-close">
+                    <IoClose />
+                </div>
+            </div>
+            <div className="nav__toggle" id="nav-toggle">
+                    <IoMenu />
+            </div>
+            </nav>
+        </header>
     );
 };
 
