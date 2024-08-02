@@ -56,13 +56,13 @@
 }
 
 .footer-date {
-    /* height: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: var(--z-fixed); */
+    /* height: 100%; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* z-index: var(--z-fixed); */
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* .logo-d > img {
