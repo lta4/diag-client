@@ -4,7 +4,7 @@
 }
 
 .header a:link {
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 .logo {
@@ -13,7 +13,6 @@
 }
 
 .header-menu {
-    list-style: none;
     display: flex;
     gap: 2rem;
     color: white;
