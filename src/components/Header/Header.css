@@ -72,3 +72,23 @@
     font-weight: var(--font-semi-bold);
     transition: color 0.4s;
 }
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.show-menu {
+    right: 0;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.5rem;
+}
