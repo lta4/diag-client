@@ -7,7 +7,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 const Header = () => {
     return (
         <header className="header">
-            <nav className="nav-container">
+            <nav className="nav container">
             {/* <img src={Logo} alt="" className="logo"/> */}
             <NavLink to="/" className="nav__logo">
                 Navigation Bar
