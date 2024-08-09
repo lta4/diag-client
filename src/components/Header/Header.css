@@ -55,19 +55,19 @@
     background-color: var(--first-color);
     color: var(--title-color);
     border: none;
-    border-radius: none;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     padding: 0.75rem 1.5rem;
 }
 
-.nav__link {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-    transition: color 0.4s;
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
 }
 
-.nav__list {
+.nav__link {
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
     transition: color 0.4s;
