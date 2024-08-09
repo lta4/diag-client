@@ -32,6 +32,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     height: var(--header-height);
     margin: 1rem;
+}
+
+.nav__logo {
+    color: var(--first-color);
+    transition: color 0.4s;
+    font-size: var(--h2-font-size);
+    font-family: var(--second-font);
 }
