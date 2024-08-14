@@ -65,20 +65,22 @@ const HeaderHook = () => {
                 <NavLink to="/" className="nav__logo">
                     Navigation Bar
                 </NavLink>
+                
                 {isMobile && (
                     <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
                         <IoMenu />
                     </div>
                 )}
+
                 {isMobile ? (
                     <div 
                         className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}
+                        id="nav-menu"
                     >
                         {renderNavLinks()}
                         <div className="nav__close" id="nav-close" onClick={toggleMenu}>
                             <IoClose />
                         </div>
-
                     </div>
                 ) : (
                     renderNavLinks()
