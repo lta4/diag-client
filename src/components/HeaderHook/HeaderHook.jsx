@@ -5,8 +5,9 @@ import { useMediaQuery } from "react-responsive";
 import "./HeaderHook.css";
 
 const HeaderHook = () => {
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const isMobile = useMediaQuery({ maxWidth: "1150px"});
+    const isMobile = useMediaQuery({ maxWidth: "1150px" });
     
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
