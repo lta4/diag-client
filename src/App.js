@@ -3,6 +3,7 @@ import './App.css';
 import Hero from "./components/Hero/Hero";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header"
+import HeaderHook from "./components/HeaderHook/HeaderHook";
 import About from "./pages/About/About";
 import Why from "./pages/Why/Why";
 import Plans from "./pages/Plans/Plans";
@@ -20,7 +21,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
+      <HeaderHook />
       {/* <Hero /> */}
       <Routes>
         <Route path="/" element={<Hero />} />

@@ -23,7 +23,7 @@ const Header = () => {
             <nav className="nav container">
             {/* <img src={Logo} alt="" className="logo"/> */}
             <NavLink to="/" className="nav__logo">
-                Navigation Bar
+                Diagnostic Music
             </NavLink>
             <div className={`nav__menu ${showMenu ? "show-menu" : ""}`} id="nav-menu"
             >
@@ -55,7 +55,7 @@ const Header = () => {
                     </li>
                     <li className="nav__item">
                         <NavLink to="/get-started" className="nav__link nav__cta">
-                        Get Started
+                            Get Started
                         </NavLink>
                     </li>
                 </ul>
