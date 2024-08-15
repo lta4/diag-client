@@ -7,7 +7,7 @@ const Hero = () => {
     return (
         <div className="hero">
             <div className="left-h">
-                Home
+                <HeaderHook />
             </div>
             <div className="right-h">right side</div>
         </div>
