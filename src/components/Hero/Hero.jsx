@@ -4,8 +4,9 @@ import Header from "../Header/Header";
 import HeaderHook from "../HeaderHook/HeaderHook";
 
 const Hero = () => {
+
     return (
-        <div className="hero">
+        <div className="hero" id="home">
             <div className="left-h">
                 <HeaderHook />
             </div>
