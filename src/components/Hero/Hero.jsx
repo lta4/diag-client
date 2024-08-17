@@ -11,7 +11,6 @@ const Hero = () => {
                 <HeaderHook />
             </div>
             <div className="right-h">
-                
             </div>
         </div>
     );
