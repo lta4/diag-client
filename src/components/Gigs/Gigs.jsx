@@ -4,14 +4,14 @@ import "./Gigs.css"
 const Gigs = () => {
     return (
         <div className="gigs" id="gig">
-            <div className="left-g">
+            {/* <div className="left-g">
                 <p>left ggg</p>
             </div>
             <div className="right-g">
                 <p>right ggg</p>
-            </div>
+            </div> */}
             <div className="fushion-container" id="shows">
-                <div className="fushion-title">
+                <div className="fushion-title">Gig Dates
                     <div className="bit-container">
                         <div className="bit-navbar-container">
                             <div className="bit-events-lists">
@@ -20,16 +20,16 @@ const Gigs = () => {
                                         <div className="bit-event">
                                             <a className="bit-details">
                                                 <div>
-                                                    <span className="bit-date"></span>
+                                                    <span className="bit-date">Fri Aug 23</span>
                                                 </div>
                                                 <div className="bit-titleWrapper">
-                                                    <div className="bit-venue"></div>
+                                                    <div className="bit-venue">Music Box</div>
                                                 </div>
-                                                <div className="bit-location"></div>
+                                                <div className="bit-location">San Diego, CA</div>
                                             </a>
                                             <div className="bit-details bit-event-buttons">
-                                                <div></div>
-                                                <div></div>
+                                                <div className="bit-rsvp-container"></div>
+                                                <a className="bit-rsvp bit-button" href="">RSVP</a>
                                             </div>
                                         </div>
                                     </div>

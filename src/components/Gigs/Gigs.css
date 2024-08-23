@@ -4,7 +4,17 @@
     gap: 10rem;
 }
 
-.left-g {
+.fushion-container {
+    display: block;
+    text-align: center;
+}
+
+.bit-event {
+    display: flex;
+    flex-direction: row;
+}
+
+/* .left-g {
     color: white;
     font-size: 3rem;
     font-weight: bold;
@@ -16,4 +26,4 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-}
+} */
