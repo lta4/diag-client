@@ -1,0 +1,19 @@
+.gigs {
+    display: flex;
+    padding: 0 2rem;
+    gap: 10rem;
+}
+
+.left-g {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.right-g {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}

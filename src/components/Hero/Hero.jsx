@@ -2,7 +2,6 @@ import React from "react";
 import "./Hero.css";
 // import Header from "../Header/Header";
 import HeaderHook from "../HeaderHook/HeaderHook";
-import Gigs from "../Gigs/Gigs";
 
 const Hero = () => {
 
