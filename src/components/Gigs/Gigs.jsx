@@ -21,7 +21,7 @@ const Gigs = () => {
                                 <div className="bit-events-container">
                                     <div className="bit-upcoming-events">
                                         <div className="bit-event">
-                                            <a className="bit-details">
+                                            <div className="bit-details">
                                                 <div>
                                                     <span className="bit-date">Fri Aug 23</span>
                                                 </div>
@@ -29,7 +29,7 @@ const Gigs = () => {
                                                     <div className="bit-venue">Music Box</div>
                                                     </div>
                                                 <div className="bit-location">San Diego, CA</div>
-                                            </a>
+                                            </div>
                                             <div className="bit-details bit-event-buttons">
                                                 <div className="bit-rsvp-container">
                                                     <a className="bit-rsvp bit-button" href="">RSVP</a>
@@ -37,7 +37,7 @@ const Gigs = () => {
                                             </div>
                                         </div>
                                         <div className="bit-event">
-                                            <a className="bit-details">
+                                            <div className="bit-details">
                                                 <div>
                                                     <span className="bit-date">Sun Oct 1</span>
                                                 </div>
@@ -45,7 +45,7 @@ const Gigs = () => {
                                                     <div className="bit-venue">Radys Stadium</div>
                                                     </div>
                                                 <div className="bit-location">San Diego, CA</div>
-                                            </a>
+                                            </div>
                                             <div className="bit-details bit-event-buttons">
                                                 <div className="bit-rsvp-container">
                                                     <a className="bit-rsvp bit-button" href="">RSVP</a>
@@ -53,7 +53,7 @@ const Gigs = () => {
                                             </div>
                                         </div>
                                         <div className="bit-event">
-                                            <a className="bit-details">
+                                            <div className="bit-details">
                                                 <div>
                                                     <span className="bit-date">Mon Dec 4</span>
                                                 </div>
@@ -61,7 +61,7 @@ const Gigs = () => {
                                                     <div className="bit-venue">Sycamore Den</div>
                                                     </div>
                                                 <div className="bit-location">San Diego, CA</div>
-                                            </a>
+                                            </div>
                                             <div className="bit-details bit-event-buttons">
                                                 <div className="bit-rsvp-container">
                                                     <a className="bit-rsvp bit-button" href="">RSVP</a>
