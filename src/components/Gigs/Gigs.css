@@ -56,40 +56,51 @@
     border-bottom: 1px solid
 }
 
-.bit-event {
+/***********************EVENT**********************/
+
+.g-event {
     /* background: transparent; */
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; */
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid white;
 }
 
-.bit-details {
+.g-details {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* align-items: center; */
+    border-bottom: 1px solid white;
     font-size: 25px;
 }
 
-.bit-date {
+.g-date {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    color: blue;
     /* min-width: 95px; */
     /* margin: ; */
 }
 
-.bit-titleWrapper {
-    /* margin: auto; */
+.g-venue {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    color: red;
 }
 
-.bit-venue {
-    /* margin: 0 auto 0 0; */
+.g-location {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    color: green;
 }
 
-.bit-location {
-    /* margin: 0 14px 0 5px; */
-    /* text-align: right;
-    font-weight: normal;
-    hyphens: auto; */
-}
+/**********************EVENT BUTTON***************/
 
 .bit-details bit-event-buttons {
     /* margin-top: 0; */
@@ -121,3 +132,25 @@
     justify-content: center;
     align-items: flex-end;
 } */
+
+.tour {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid white;
+  }
+  
+  .row {
+    display: flex;
+    border-bottom: 1px solid white;
+  }
+  
+  .heading {
+    font-weight: bold;
+  }
+  
+  .cell {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
