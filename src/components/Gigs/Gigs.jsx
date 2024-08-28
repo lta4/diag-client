@@ -49,10 +49,8 @@ const Gigs = () => {
                                                 <div className="g-date">Mon Dec 4</div>
                                                 <div className="g-venue">Sycamore Den</div>
                                                 <div className="g-location">San Diego, CA</div>
-                                            </div>
-                                            <div className="bit-details bit-event-buttons">
-                                                <div className="bit-rsvp-container">
-                                                    <a className="bit-rsvp bit-button" href="">RSVP</a>
+                                                <div className="g-button-container">
+                                                    <a className="g-button" href="">RSVP</a>
                                                 </div>
                                             </div>
                                         </div>

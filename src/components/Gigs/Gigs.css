@@ -60,12 +60,10 @@
 
 .g-event {
     /* background: transparent; */
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center; */
     display: flex;
     flex-flow: column nowrap;
     border: 1px solid white;
+    min-width: 40rem;
 }
 
 .g-details {
@@ -78,10 +76,9 @@
     display: flex;
     flex: 2;
     justify-content: center;
-    align-items: center;
+    align-items: right;
     color: blue;
-    /* min-width: 95px; */
-    /* margin: ; */
+    padding: 20px 20px 20px 20px;
 }
 
 .g-venue {
@@ -98,40 +95,24 @@
     justify-content: center;
     align-items: center;
     color: green;
+    padding: 20px 20px 20px 20px;
 }
 
 /**********************EVENT BUTTON***************/
 
-.bit-details bit-event-buttons {
-    /* margin-top: 0; */
-    /* display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center; */
-}
-
-.bit-rsvp-container {
-    /* flex-basis: auto; */
-    /* margin: 4px 0 0 0; */
-}
-
-.bit-rsvp bit-button {
-    width: 150px;
-}
-
-/* .left-g {
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-}
-
-.right-g {
+.g-button-container {
     display: flex;
+    border-bottom: 1px solid red;
+}
+
+.g-button {
+    display: flex;
+    flex: 2;
     justify-content: center;
-    align-items: flex-end;
-} */
+    align-items: center;
+    border: 1px solid red;
+}
+
 
 .tour {
     display: flex;
