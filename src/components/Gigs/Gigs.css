@@ -1,16 +1,22 @@
 .gigs {
     display: flex;
-    padding: 0 2rem;
-    gap: 10rem;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 4rem;
+    /* gap: 4rem; */
 }
 
 .fushion-container {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* text-align: right; */
 }
 
 .fushion-title {
-    display: block;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
     border-bottom: 1px solid;
 }
 
@@ -18,22 +24,26 @@
     font-family: Thunder Lord;
     font-style: normal;
     font-weight: 600;
-    margin: 0;
+    /* margin: 0; */
     font-size: 2rem;
     letter-spacing: 0.2em;
     line-height: 1.3;
 }
 
 .bit-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .bit-event-list {
-    display: block;
+    display: flex;
 }
 
 .bit-events-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .bit-upcoming-events {
@@ -60,27 +70,35 @@
 }
 
 .bit-titleWrapper {
-    margin: auto;
+    /* margin: auto; */
 }
 
 .bit-venue {
-    margin: 0 auto 0 0;
+    /* margin: 0 auto 0 0; */
 }
 
 .bit-location {
-    margin: 0 14px 0 5px;
+    /* margin: 0 14px 0 5px; */
     text-align: right;
     font-weight: normal;
     hyphens: auto;
 }
 
 .bit-details bit-event-buttons {
-    margin-top: 0;
+    /* margin-top: 0; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+}
 
+.bit-rsvp-container {
+    flex-basis: auto;
+    /* margin: 4px 0 0 0; */
+}
+
+.bit-rsvp bit-button {
+    width: 150px;
 }
 
 /* .left-g {
