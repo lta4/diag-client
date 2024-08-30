@@ -8,13 +8,13 @@ const Hero = () => {
 
     return (
         <div className="hero" id="home">
-            <div className="left-h">
+            <div>
                 {/* <Header /> */}
                 <HeaderHook />
             </div>
-            <div className="right-h">
+            <div>
+                <Gigs />
             </div>
-            <Gigs />
         </div>
     );
 };

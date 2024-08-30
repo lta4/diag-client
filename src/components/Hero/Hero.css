@@ -1,19 +1,19 @@
 .hero {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.left-h {
+/* .left-h {
     padding: 2rem;
     padding-top: 1.5rem;
     flex: 3;
     display: flex;
     gap: 2rem;
     flex-direction: column;
-}
+} */
 
-.right-h {
+/* .right-h {
     flex: 1;
     position: relative;
     background-color: var(--orange);
-}
+} */
