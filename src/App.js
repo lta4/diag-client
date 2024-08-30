@@ -25,6 +25,7 @@ function App() {
       <Router>
         {/* <Header /> */}
         <HeaderHook />
+        {/* <Gigs /> */}
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="About" element={<About />} />
