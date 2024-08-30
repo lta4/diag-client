@@ -8,7 +8,7 @@ import About from "./pages/About/About";
 import Why from "./pages/Why/Why";
 import Plans from "./pages/Plans/Plans";
 import Testimonials from "./pages/Testimonials/Testimonials";
-import Gigs from "./components/Gigs/Gigs"
+// import Gigs from "./components/Gigs/Gigs"
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         <Route path="Testimonials" element={<Testimonials />} />
       </Routes>
       </Router>
-      <Gigs />
+      {/* <Gigs /> */}
       <Footer />
     </div>
   );
