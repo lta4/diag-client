@@ -50,26 +50,6 @@ const Gigs = () => {
                                                 </div>
                                             </div>
                                         </div>
-    <div class="tour">
-    <div class="row heading">
-      <div class="cell">Category 1</div>
-      <div class="cell">Category 2</div>
-      <div class="cell">Category 3</div>
-      <div class="cell">Category 4</div>
-    </div>
-    <div class="row">
-      <div class="cell">Item 1</div>
-      <div class="cell">Item 2</div>
-      <div class="cell">Item 3</div>
-      <div class="cell">Item 4</div>
-    </div>
-    <div class="row">
-     <div class="cell">Item 1</div>
-      <div class="cell">Item 2</div>
-      <div class="cell">Item 3</div>
-      <div class="cell">Item 4</div>
-    </div>
-  </div>
                                     </div>
                                 </div>
                             </div>
