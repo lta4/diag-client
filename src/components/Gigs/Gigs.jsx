@@ -9,8 +9,9 @@ const Gigs = () => {
                     <h3 className="fushion-gig">
                         Gig Dates
                     </h3>
-                                <div className="bit-events-container">
-                                    <div className="bit-upcoming-events">
+                </div>
+                                <div className="show-container">
+                                    <div className="show-events">
                                         <div className="g-event">
                                             <div className="g-details">
                                                 <div className="g-date">Fri Aug 23</div>
@@ -45,7 +46,7 @@ const Gigs = () => {
                                 
                             
                         
-                    </div>
+                    
                 </div>
             </div>
         </div>

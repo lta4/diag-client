@@ -7,19 +7,14 @@
 }
 
 .fushion-container {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center; */
-    /* text-align: right; */
     border: 1px solid;
 }
 
 .fushion-title {
-    /* display: block; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: right; */
-    /* border-bottom: 1px solid; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 8px solid;
 }
 
 .fushion-gig {
@@ -34,15 +29,14 @@
 
 /*********** Container **************/
 
-.bit-events-container {
+.show-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     font-size: 1.2rem;
-    
 }
 
-.bit-upcoming-events {
+.show-events {
     /* padding: 0 20px 30px 60px; */
     border-bottom: 1px solid
 }
