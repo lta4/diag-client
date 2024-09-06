@@ -4,20 +4,11 @@ import "./Gigs.css"
 const Gigs = () => {
     return (
         <div className="gigs" id="gig">
-            {/* <div className="left-g">
-                <p>left ggg</p>
-            </div>
-            <div className="right-g">
-                <p>right ggg</p>
-            </div> */}
             <div className="fushion-container" id="shows">
                 <div className="fushion-title">
                     <h3 className="fushion-gig">
                         Gig Dates
                     </h3>
-                        <div className="bit-container">
-                            <div className="bit-navbar-container">
-                            <div className="bit-event-lists">
                                 <div className="bit-events-container">
                                     <div className="bit-upcoming-events">
                                         <div className="g-event">
@@ -51,9 +42,9 @@ const Gigs = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                
+                            
+                        
                     </div>
                 </div>
             </div>
