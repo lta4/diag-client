@@ -3,6 +3,7 @@ import "./Hero.css";
 // import Header from "../Header/Header";
 import HeaderHook from "../HeaderHook/HeaderHook";
 import Gigs from "../Gigs/Gigs";
+import Footer from "../Footer/Footer"
 
 const Hero = () => {
 
@@ -11,9 +12,8 @@ const Hero = () => {
             <div>
                 {/* <Header /> */}
                 <HeaderHook />
-            </div>
-            <div>
                 <Gigs />
+                <Footer />
             </div>
         </div>
     );

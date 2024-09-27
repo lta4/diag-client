@@ -9,7 +9,7 @@ import Why from "./pages/Why/Why";
 import Plans from "./pages/Plans/Plans";
 import Testimonials from "./pages/Testimonials/Testimonials";
 // import Gigs from "./components/Gigs/Gigs"
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -35,7 +35,7 @@ function App() {
       </Routes>
       </Router>
       {/* <Gigs /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
