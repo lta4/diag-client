@@ -1,6 +1,16 @@
-.about-title {
-    font-family: "Metal Lord";
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
+
+.about__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;;
+}
+
+/***************************ABOUT***********************/
 
 .profile-title {
     display: flex;
@@ -8,6 +18,7 @@
     justify-content: center;
     padding: 2rem 1rem;
     border: 5px solid white;
+    font-family: "Metal Lord";
 }
 
 .profile {

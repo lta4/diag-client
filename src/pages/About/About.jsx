@@ -4,12 +4,11 @@ import "./About.css";
 const About = () => {
     return (
         <>
-            <div>
-                <h1 className="about-title" id="a">About</h1>
-            </div>
-            <div className="profile-title" id="b">
-                <h1>About</h1>
-            </div>
+            <section className="about">
+                <div className="about__title">
+                    <h1>About</h1>
+                </div>
+            </section>
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__set--image">
@@ -23,11 +22,11 @@ const About = () => {
                     </div>
                 </div>
                 <div className="profile__set">
-                    <div className="profile__set__description">
+                    <div className="profile__set--description">
                     <h1>Hello column 2</h1>
                         <h2>I am the h2</h2>
                         <p>Did you know I am using git hub lens</p>
-                        <div class="profile__set__slide">
+                        <div class="profile__set--slide">
                         <img id="slide" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" />
                         </div>
                         <span>70</span>
