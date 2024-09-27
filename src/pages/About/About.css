@@ -1,3 +1,40 @@
 .about-container {
     font-family: "Metal Lord";
 }
+
+.profileTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 1rem;
+    background: steelblue;
+}
+
+.profile__set {
+    width: 50%;
+    background: white;
+    margin: 0 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile__set__description {
+    text-align: center;
+}
+
+.profile__set__image {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__set__image img {
+    object-fit: contain;
+}
