@@ -1,12 +1,13 @@
-.about-container {
+.about-title {
     font-family: "Metal Lord";
 }
 
-.profileTitle {
+.profile-title {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 2rem 1rem;
+    border: 5px solid white;
 }
 
 .profile {
@@ -14,6 +15,7 @@
     justify-content: space-evenly;
     padding: 2rem 1rem;
     background: steelblue;
+    border: 5px solid white;
 }
 
 .profile__set {
@@ -24,17 +26,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 5px solid green;
 }
 
-.profile__set__description {
-    text-align: center;
-}
-
-.profile__set__image {
+.profile__set--image {
     display: flex;
     flex-direction: column;
 }
 
-.profile__set__image img {
+.profile__set--image img {
     object-fit: contain;
+}
+
+.profile__set--description {
+    text-align: center;
 }
