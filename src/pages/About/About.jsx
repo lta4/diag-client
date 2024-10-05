@@ -1,9 +1,13 @@
 import React from "react";
 import "./About.css";
+import JTwo from "../../assets/jTwo.jpg"
 
 const About = () => {
     return (
         <>
+            <div>
+                <img src={JTwo} alt="" />
+            </div>
             <section className="about">
                 <div className="about__title">
                     <h1>About</h1>

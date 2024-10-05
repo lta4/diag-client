@@ -3,7 +3,7 @@ import "./Hero.css";
 // import Header from "../Header/Header";
 import HeaderHook from "../HeaderHook/HeaderHook";
 import Gigs from "../Gigs/Gigs";
-import JoseOne from "../../assets/joseOne.jpeg";
+import JOne from "../../assets/jOne.jpeg";
 
 const Hero = () => {
 
@@ -13,7 +13,7 @@ const Hero = () => {
                 {/* <Header /> */}
                 <HeaderHook />
                 <div>
-                <img src={JoseOne} alt=""/>
+                    <img src={JOne} alt=""/>
                 </div>
                 <Gigs />
             </div>
