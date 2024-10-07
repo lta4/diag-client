@@ -31,16 +31,16 @@ const HeaderHook = () => {
                     Shows
                 </NavLink>
             </li>
-            {/* <li>
-                <NavLink to="/Mixes" className={linkClassName} onClick={closeMobileMenu}>
+            <li>
+                <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
                     Mixes
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/Inquire" className={linkClassName} onClick={closeMobileMenu}>
+                <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
                     Inquire
                 </NavLink>
-            </li> */}
+            </li>
             <li>
                 <NavLink to="/About" className={linkClassName} onClick={closeMobileMenu}>
                     About
@@ -49,16 +49,6 @@ const HeaderHook = () => {
             <li>
                 <NavLink to="/Video" className={linkClassName} onClick={closeMobileMenu}>
                     Video
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/Testimonials" className={linkClassName} onClick={closeMobileMenu}>
-                    Testimonials
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/Why" className={linkClassName} onClick={closeMobileMenu}>
-                    Why
                 </NavLink>
             </li>
             <li>

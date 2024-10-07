@@ -5,9 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header"
 import HeaderHook from "./components/HeaderHook/HeaderHook";
 import About from "./pages/About/About";
-import Why from "./pages/Why/Why";
 import Video from "./pages/Video/Video";
-import Testimonials from "./pages/Testimonials/Testimonials";
 // import Gigs from "./components/Gigs/Gigs"
 import Footer from "./components/Footer/Footer";
 
@@ -29,9 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="About" element={<About />} />
-        <Route path="Why" element={<Why />} />
         <Route path="Video" element={<Video />} />
-        <Route path="Testimonials" element={<Testimonials />} />
       </Routes>
       </Router>
       {/* <Gigs /> */}

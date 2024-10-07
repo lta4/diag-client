@@ -30,7 +30,17 @@ const Header = () => {
                 <ul className="nav__list">
                     <li className="nav__item">
                         <NavLink to="/" className="nav__link" onClick={closeMenuOnMobile}>
-                        Home
+                        Shows
+                        </NavLink>
+                    </li>
+                    <li className="nav__item">
+                        <NavLink to="/" className="nav__link" onClick={closeMenuOnMobile}>
+                        Mixes
+                        </NavLink>
+                    </li>
+                    <li className="nav__item">
+                        <NavLink to="/" className="nav__link" onClick={closeMenuOnMobile}>
+                        Inquire
                         </NavLink>
                     </li>
                     <li className="nav__item">
@@ -41,16 +51,6 @@ const Header = () => {
                     <li className="nav__item">
                         <NavLink to="/Video" className="nav__link" onClick={closeMenuOnMobile}>
                         Video
-                        </NavLink>
-                    </li>
-                    <li className="nav__item">
-                        <NavLink to="/Testimonials" className="nav__link" onClick={closeMenuOnMobile}>
-                        Testimonials
-                        </NavLink>
-                    </li>
-                    <li className="nav__item">
-                        <NavLink to="/Why" className="nav__link" onClick={closeMenuOnMobile}>
-                        Why
                         </NavLink>
                     </li>
                     <li className="nav__item">
