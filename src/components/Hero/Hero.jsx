@@ -12,8 +12,8 @@ const Hero = () => {
             <div>
                 {/* <Header /> */}
                 <HeaderHook />
-                <div>
-                    <img src={JOne} alt=""/>
+                <div className="jOne_container">
+                    <img src={JOne} alt="" className="jOne-image" />
                 </div>
                 <Gigs />
             </div>
