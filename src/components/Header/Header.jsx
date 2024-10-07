@@ -39,8 +39,8 @@ const Header = () => {
                         </NavLink>
                     </li>
                     <li className="nav__item">
-                        <NavLink to="/Plans" className="nav__link" onClick={closeMenuOnMobile}>
-                        Plans
+                        <NavLink to="/Video" className="nav__link" onClick={closeMenuOnMobile}>
+                        Video
                         </NavLink>
                     </li>
                     <li className="nav__item">

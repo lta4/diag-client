@@ -1,5 +1,5 @@
 import React from "react";
-import "./Plans.css";
+import "./Video.css";
 
 const Plans = () => {
     return (
