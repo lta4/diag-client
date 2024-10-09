@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
 import "./HeaderHook.css";
+import { HashLink as Link } from "react-router-hash-link";
 
 const HeaderHook = () => {
     
@@ -27,9 +28,9 @@ const HeaderHook = () => {
     return (
         <ul className={listClassName}>
             <li>
-                <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
+                <Link smooth to="#section1" className={linkClassName} onClick={closeMobileMenu}>
                     Shows
-                </NavLink>
+                </Link>
             </li>
             <li>
                 <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>

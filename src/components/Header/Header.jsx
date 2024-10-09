@@ -3,7 +3,8 @@ import "./Header.css";
 import Logo from "../../assets/logo192.png";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
-import { Link, animateScroll as scroll } from "react-scroll";
+// import { Link, animateScroll as scroll } from "react-scroll";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Header = () => {
 
@@ -30,9 +31,9 @@ const Header = () => {
             >
                 <ul className="nav__list">
                     <li className="nav__item">
-                        <NavLink to="/" className="nav__link" onClick={closeMenuOnMobile}>
+                        <Link smooth to="#section1" className="nav__link" onClick={closeMenuOnMobile}>
                         Shows
-                        </NavLink>
+                        </Link>
                     </li>
                     <li className="nav__item">
                         <NavLink to="/" className="nav__link" onClick={closeMenuOnMobile}>
