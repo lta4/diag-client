@@ -28,19 +28,19 @@ const HeaderHook = () => {
     return (
         <ul className={listClassName}>
             <li>
-                <Link smooth to="#section1" className={linkClassName} onClick={closeMobileMenu}>
+                <Link smooth to="#shows" className={linkClassName} onClick={closeMobileMenu}>
                     Shows
                 </Link>
             </li>
             <li>
-                <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
+                <Link to="/" className={linkClassName} onClick={closeMobileMenu}>
                     Mixes
-                </NavLink>
+                </Link>
             </li>
             <li>
-                <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
+                <Link to="#inquire" className={linkClassName} onClick={closeMobileMenu}>
                     Inquire
-                </NavLink>
+                </Link>
             </li>
             <li>
                 <NavLink to="/About" className={linkClassName} onClick={closeMobileMenu}>

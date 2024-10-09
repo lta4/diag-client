@@ -6,7 +6,7 @@ import LinkedIn from "../../assets/linkedin.png";
 
 const Footer = () => {
     return (
-        <div className="footer-container">
+        <div className="footer-container" id="inquire">
             <hr />
             <div className="footer">
                 <div className="social-links">
