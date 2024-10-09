@@ -11,6 +11,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* --lightgray:#D9D9D9; */
   /* --gray: #9c9c9c; */
