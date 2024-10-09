@@ -3,6 +3,7 @@ import "./Header.css";
 import Logo from "../../assets/logo192.png";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
 

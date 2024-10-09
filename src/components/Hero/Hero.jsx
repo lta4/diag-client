@@ -4,6 +4,7 @@ import "./Hero.css";
 import HeaderHook from "../HeaderHook/HeaderHook";
 import Gigs from "../Gigs/Gigs";
 import JOne from "../../assets/jOne.jpeg";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Hero = () => {
 
@@ -15,7 +16,7 @@ const Hero = () => {
                 <div className="jOne_container">
                     <img src={JOne} alt="" className="jOne-image" />
                 </div>
-                <Gigs />
+                <Link to="section1">{<Gigs />} </Link>
             </div>
         </div>
     );

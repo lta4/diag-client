@@ -3,7 +3,7 @@ import "./Gigs.css"
 
 const Gigs = () => {
     return (
-        <div className="gigs" id="gig">
+        <div className="gigs" id="section1">
             <div className="fushion-container" id="shows">
                 <div className="fushion-title">
                     <h3 className="fushion-gig">
