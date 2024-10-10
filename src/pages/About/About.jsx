@@ -5,8 +5,8 @@ import JTwo from "../../assets/jTwo.jpg"
 const About = () => {
     return (
         <>
-            <div className="">
-                <img src={JTwo} alt="" />
+            <div className="jTwo_container">
+                <img src={JTwo} alt="" className="jTwo-image"/>
             </div>
             <section className="about">
                 <div className="about__title">

@@ -40,7 +40,7 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className="nav__item">
-                        <Link to="#inquire" className="nav__link" onClick={closeMenuOnMobile}>
+                        <Link smooth to="#inquire" className="nav__link" onClick={closeMenuOnMobile}>
                         Inquire
                         </Link>
                     </li>
