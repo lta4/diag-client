@@ -29,22 +29,22 @@
     align-content: flex-end; */
 }
 
-.footer-container > hr {
-    border: 1px solid var(--lightgray);
-}
+/* .footer-container > hr {
+    border: 2px solid blue;
+} */
 
 .footer {
     /* height: 100vh; */
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
     height: 20rem;
 }
 
-.social-links {
+.footer__social {
     display: flex;
     gap: 4rem;
 }
