@@ -9,13 +9,15 @@ const Footer = () => {
         <>
             <div className="footer" id="inquire">
                 <div className="footer__social">
-                    <img src={Github} alt="" />
-                    <a href="https://www.instagram.com/diagnosticmusic?igsh=MWQ1ZGUxMzBkMA==">
-                        <img src={Instagram} alt=""/>
+                    <a href="" alt="">
+                        <img src={Github} alt="" />
                     </a>
-                    {/* <img src={Instagram}
-                    alt="" attributionsrc="https://www.instagram.com/diagnosticmusic?igsh=MWQ1ZGUxMzBkMA==" /> */}
-                    <img src={LinkedIn} alt="" />
+                    <a href="https://www.instagram.com/diagnosticmusic?igsh=MWQ1ZGUxMzBkMA==" alt="">
+                        <img src={Instagram} alt="" />
+                    </a>
+                    <a href="" alt="">
+                        <img src={LinkedIn} alt="" />
+                    </a>
                 </div>
                 <div className="logo-d">
                     {/* <img src={Logo} alt="" /> */}
