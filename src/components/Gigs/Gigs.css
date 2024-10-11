@@ -90,9 +90,11 @@
 
 /**********************EVENT BUTTON***************/
 
-.shows__button {
+/* .shows__button {
     display: flex;
-    border-bottom: 1px solid red;
+    justify-content: center;
+    border: 1px solid red;
+    margin: 20px 20px;
 }
 
 .shows__button--detail {
@@ -101,5 +103,5 @@
     justify-content: center;
     align-items: center;
     border: 1px solid red;
-    /* padding: 20px 20px 20px 20px; */
-}
+    padding: 20px 20px 20px 20px;
+} */
