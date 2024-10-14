@@ -3,6 +3,7 @@ import "./Footer.css";
 import Github from "../../assets/github.png";
 import Instagram from "../../assets/instagram.png";
 import LinkedIn from "../../assets/linkedin.png";
+// import Logo from "../../assets/logo192.png"
 
 const Footer = () => {
     return (
@@ -19,14 +20,17 @@ const Footer = () => {
                         <img src={LinkedIn} alt="" />
                     </a>
                 </div>
-                <div className="logo-d">
-                    {/* <img src={Logo} alt="" /> */}
-                </div>
+                {/*********************** DIAG LOGO INPUT ***************************/}
+                {/* <div className="logo-d">
+                    <img src={Logo} alt="" />
+                </div> */}
             </div>
-            <div className="footer-date">
-                © {new Date().getFullYear()}, Built 
-                with love by {` `}
-                <a href="mailto=andrew4ld@gmail.com" className="footLink">Andrew Arias</a>
+            <div className="footer__date">
+                <div className="footer__date--description">
+                    © {new Date().getFullYear()}, Built 
+                    with love by {` `}
+                    <a href="mailto=andrew4ld@gmail.com" className="footLink">Andrew Arias</a>
+                </div>
             </div>
         </>
     );
