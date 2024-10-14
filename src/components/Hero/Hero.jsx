@@ -17,7 +17,11 @@ const Hero = () => {
                 <div className="jOne_container">
                     <img src={JOne} alt="" className="jOne-image" />
                 </div>
-                <Link to="/">{<Gigs />} </Link>
+                <div className="hr__bar">
+                    <hr />
+                    <Link to="/">{<Gigs />} </Link>
+                    <hr />
+                </div>
                 <div className="jThree_container">
                     <img src={JThree} alt="" className="jThree-image" />
                 </div>
