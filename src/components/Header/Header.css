@@ -32,9 +32,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: transparent;
     position: relative;
     height: var(--header-height);
     margin: 1rem;
+}
+
+.nav, .container .active {
+    background: linear-gradient(90deg, rgb(68, 2, 94) 0%, rgb(0, 78, 194) 100%);
 }
 
 .nav__logo {
