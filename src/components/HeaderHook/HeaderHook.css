@@ -17,7 +17,7 @@
     margin: 1rem;
   }
 
-  .nav, .container .active {
+  .nav, .active {
     background: linear-gradient(90deg, rgb(68, 2, 94) 0%, rgb(0, 78, 194) 100%);
 }
   

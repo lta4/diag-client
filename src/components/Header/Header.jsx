@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <nav className="nav container active">
+            <nav className="nav active">
             {/* <img src={Logo} alt="" className="logo"/> */}
             <NavLink to="/" className="nav__logo">
                 Diagnostic Music

@@ -63,7 +63,7 @@ const HeaderHook = () => {
 
     return (
         <header className="header">
-            <nav className="nav container">
+            <nav className="nav active">
                 <NavLink to="/" className="nav__logo">
                     Diagnostic Music
                 </NavLink>
