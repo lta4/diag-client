@@ -8,6 +8,7 @@ import { HashLink as Link } from "react-router-hash-link";
 const Header = () => {
 
     const [showMenu, setShowMenu] = useState(false);
+    // const [nav, setNav] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -19,9 +20,24 @@ const Header = () => {
         }
     };
 
+const Nav = () => {
+
+    const [nav, setNav] = useState(false);
+
+    const changeBackground = () => {
+        // console.log(window.scrollY)
+        if(window.scrollY >= 100) {
+            setNav(true)
+        } else {
+            setNav(false)
+        }
+    };
+
+    window.addEventListener('scroll', changeBackground);
+
     return (
         <header className="header">
-            <nav className="nav active">
+            <nav className= {nav ? 'nav active' : 'nav'}>
             {/* <img src={Logo} alt="" className="logo"/> */}
             <NavLink to="/" className="nav__logo">
                 Diagnostic Music
@@ -70,6 +86,7 @@ const Header = () => {
             </nav>
         </header>
     );
+}
 };
 
 export default Header;
