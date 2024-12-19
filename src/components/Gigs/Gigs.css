@@ -19,7 +19,7 @@
 }
 
 .gigs__title--fushion {
-    font-family: Thunder Lord;
+    font-family: "Helvetica Neue";
     font-style: normal;
     font-weight: 600;
     /* margin: 0; */
@@ -65,7 +65,7 @@
     justify-content: left;
     align-items: center;
     /* color: blue; */
-    font-family: Thunder Lord;
+    font-family: "Helvetica Neue";
     padding: 20px 20px 20px 20px;
 }
 
@@ -75,7 +75,7 @@
     justify-content: left;
     align-items: center;
     /* color: red; */
-    font-family: Thunder Lord;
+    font-family: "Helvetica Neue";
     /* padding: 20px 20px 20px 20px; */
 }
 
@@ -85,7 +85,7 @@
     justify-content: right;
     align-items: center;
     /* color: green; */
-    font-family: Thunder Lord;
+    font-family: "Helvetica Neue";
     padding: 20px 20px 20px 20px;
 }
 

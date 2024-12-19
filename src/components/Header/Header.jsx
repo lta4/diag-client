@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
-import Logo from "../../assets/logo192.png";
+import Logo from "../../assets/logo192.png"; 
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { HashLink as Link } from "react-router-hash-link";

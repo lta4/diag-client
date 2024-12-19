@@ -24,7 +24,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: transparent;
+    /* background-color: transparent; */
     z-index: var(--z-fixed);
 }
 
@@ -32,16 +32,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: transparent; */
-    position: relative;
-    height: var(--header-height);
+    background-color: transparent;
+    position: sticky;
+    height: 80px;
     margin: 0;
 }
 
 .nav, .active {
     margin: 0;
+    height: 80px;
     padding: 1rem, 1rem;
     background-color: black;
+    background-color: transparent;
 }
 
 .nav__logo {
