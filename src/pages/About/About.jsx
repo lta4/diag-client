@@ -16,7 +16,7 @@ const About = () => {
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__set--image">
-                    <img src="https://res.cloudinary.com/dfltkqotn/image/upload/v1636925630/Profile-Image.jpg" alt="profile of one's self" height="350px" />
+                    <img src={JTwo} alt="" className="jTwo-image" />
                     <div className="profile__set--description">
                         <h2>I'm Jose Flores</h2>
                         <p>I'm a DJ residing in San Diego, CA.
