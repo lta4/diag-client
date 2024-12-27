@@ -9,14 +9,15 @@ const About = () => {
             <div className="jTwo_container">
                 <img src={JTwo} alt="" className="jTwo-image"/>
             </div>
+            <div className="hr__bar">
+                <hr />
             <section className="about">
-                <div className="hr__bar">
-                    <hr />
-                    <div className="about__title">
-                        <h1>About</h1>  
-                    </div>
+                <div className="about__title">
+                    <h1>About</h1>
                 </div>
             </section>
+            <hr />
+            </div>
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__set--image">
