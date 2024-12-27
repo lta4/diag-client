@@ -25,6 +25,11 @@ const Hero = () => {
                 <div className="jThree_container">
                     <img src={JThree} alt="" className="jThree-image" />
                 </div>
+                <div className="hr__bar">
+                    <hr />
+                    <div></div>
+                    <hr />
+                </div>
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 import JTwo from "../../assets/jTwo.jpg"
+import JSix from "../../assets/jSix.jpeg";
 
 const About = () => {
     return (
@@ -9,16 +10,19 @@ const About = () => {
                 <img src={JTwo} alt="" className="jTwo-image"/>
             </div>
             <section className="about">
-                <div className="about__title">
-                    <h1>About</h1>
+                <div className="hr__bar">
+                    <hr />
+                    <div className="about__title">
+                        <h1>About</h1>  
+                    </div>
                 </div>
             </section>
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__set--image">
-                    <img src={JTwo} alt="" className="jTwo-image" />
+                    <img src={JSix} alt="" className="jTwo-image" />
                     <div className="profile__set--description">
-                        <h2>I'm Jose Flores</h2>
+                        <h2>Jose Flores</h2>
                         <p>I'm a DJ residing in San Diego, CA.
                         I have a serious passion for creating amazing styles and intuitive musical experiences.</p>
                         <p>Let's create something special!</p>
