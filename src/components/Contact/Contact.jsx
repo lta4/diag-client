@@ -10,7 +10,7 @@ function Contact() {
 
     return (
         <form onSubmit={handleSubmit} className="contact">
-            <h2>Feel free to reach out!</h2>
+            <h2 className="contact__des">Feel free to reach out!</h2>
             <input
                 id="firstname"
                 type="firstname"

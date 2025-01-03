@@ -2,7 +2,13 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 6fr;
-    row-gap: 5px;
+    row-gap: 1rem;
+}
+
+.contact__des {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
 }
 
 input#firstname, #lastname, #email {
@@ -11,7 +17,7 @@ input#firstname, #lastname, #email {
 }
 
 textarea#message {
-    padding: 5px 0 40px 0;
+    padding: 5px 0 6rem 0;
     margin: 0 5px 0 5px;
 }
 
