@@ -20,7 +20,7 @@ const Hero = () => {
                 </div>
                 <div className="hr__bar">
                     <hr />
-                    <Link to="/">{<Gigs />} </Link>
+                    <Link to="/Gigs">{<Gigs />} </Link>
                     <hr />
                 </div>
                 <div className="jThree_container">
