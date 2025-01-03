@@ -3,6 +3,7 @@ import "./Hero.css";
 // import Header from "../Header/Header";
 import HeaderHook from "../HeaderHook/HeaderHook";
 import Gigs from "../Gigs/Gigs";
+import Contact from "../Contact/Contact";
 import JOne from "../../assets/jOne.jpeg";
 import JThree from "../../assets/jThree.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -27,7 +28,7 @@ const Hero = () => {
                 </div>
                 <div className="hr__bar">
                     <hr />
-                    <div></div>
+                    <Link to="/">{<Contact />}</Link>
                     <hr />
                 </div>
             </div>
