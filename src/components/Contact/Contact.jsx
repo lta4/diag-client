@@ -9,7 +9,7 @@ function Contact() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="contact">
+        <form onSubmit={handleSubmit} className="contact" id="inquire">
             <h2 className="contact__des">Feel free to reach out!</h2>
             <input
                 id="firstname"
