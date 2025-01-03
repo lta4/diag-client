@@ -1,5 +1,6 @@
 import { useForm, ValidationError } from "@formspree/react";
 import React from "react";
+import "./Contact.css";
 
 function Contact() {
     const [state, handleSubmit] = useForm("xyzzbedg");
@@ -14,7 +15,7 @@ function Contact() {
                 id="firstname"
                 type="firstname"
                 name="firstname"
-                placeholder="First Name"
+                placeholder=" First Name"
             />
             <ValidationError
                 prefix="First Name"
@@ -25,7 +26,7 @@ function Contact() {
                 id="lastname"
                 type="lastname"
                 name="lastname"
-                placeholder="Last Name"
+                placeholder=" Last Name"
             />
             <ValidationError
                 prefix="Last Name"
@@ -36,7 +37,7 @@ function Contact() {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="Email Address"
+                placeholder=" Email Address"
             />
             <ValidationError
                 prefix="Email"
@@ -46,7 +47,7 @@ function Contact() {
             <textarea
                 id="message"
                 name="message"
-                placeholder="Drop a note!"
+                placeholder=" Drop a note!"
             />
             <ValidationError
                 prefix="Message"

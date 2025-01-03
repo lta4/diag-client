@@ -1,11 +1,21 @@
-.hr__bar__contact {
+.contact {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 6fr;
-    row-gap: 4px;
+    row-gap: 5px;
 }
 
-input #firstname, #lastname, #email {
+input#firstname, #lastname, #email {
+    padding: 5px 0 5px 0;
+    margin: 0 5px 0 5px;
+}
+
+textarea#message {
+    padding: 5px 0 40px 0;
+    margin: 0 5px 0 5px;
+}
+
+button {
     padding: 5px 0 5px 0;
     margin: 0 5px 0 5px;
 }
