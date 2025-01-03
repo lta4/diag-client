@@ -50,14 +50,14 @@
 
 .footer__date--description {
     font-size: 1.5rem;
-    font-family: "Thunder Lord";
+    /* font-family: "Thunder Lord"; */
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: row;    
 }
 
 .footer__date--link {
-    font-family: "Thunder Lord";
+    /* font-family: "Thunder Lord"; */
 }
 
 
