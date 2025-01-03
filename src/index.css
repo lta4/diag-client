@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Helvetica Neue", "Metal Lord", "Thunder Lord";
+  font-family: "Helvetica Neue", "Metal Lord", "Thunder Lord", "Neue Haas Unica";
   src: url(https://www.1001fonts.com/metal-lord-font.html?text=thunder%20lord&commercial=true&page=1);
 }
 
@@ -27,7 +27,7 @@ html {
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 75%);
   --body-color: hsl(0, 0%, 6%);
-  --body-font: "Helvetica Neue", "Montserrat", sans-serif;
+  --body-font: "Neue Haas Unica", "Montserrat", sans-serif;
   --second-font: "Dancing Script", cursive;
   --h2-font-size: 1.25rem;
   --small-font-size: 0.813rem;
