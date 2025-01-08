@@ -4,9 +4,22 @@ import "./Contact.css";
 
 function Contact() {
     const [state, handleSubmit] = useForm("xyzzbedg");
+    const [data, handleData] = React.useState({
+        searchTerm: "data",
+    });
+    
+    // const handleChange = (event) => {
+    //     console.log("event:" , event)
+    //     setFormData({ ...formData, [event.target.name]: event.target.value });
+    // };
     if (state.succeeded) {
         return <p>Thanks for reaching for the best!</p>
     }
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault()
+    //     props.movieSearch(formData.searchTerm)
+    // }
 
     return (
         <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="inquire">
@@ -60,5 +73,11 @@ function Contact() {
         </form>
     );
 };
+
+function App() {
+    return (
+        <Contact />
+    )
+}
 
 export default Contact;
