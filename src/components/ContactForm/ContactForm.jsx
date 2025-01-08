@@ -1,8 +1,8 @@
 import { useForm, ValidationError } from "@formspree/react";
 import React from "react";
-import "./Contact.css";
+import "./ContactForm.css";
 
-function Contact() {
+function ContactForm() {
     const [state, handleSubmit] = useForm("xyzzbedg");
     const [data, handleData] = React.useState({
         searchTerm: "data",
@@ -74,10 +74,4 @@ function Contact() {
     );
 };
 
-function App() {
-    return (
-        <Contact />
-    )
-}
-
-export default Contact;
+export default ContactForm;
