@@ -1,26 +1,16 @@
 import { useForm, ValidationError } from "@formspree/react";
-import React from "react";
+import React, { useState } from "react";
 import "./ContactForm.css";
 
 function ContactForm() {
     const [state, handleSubmit] = useForm("xyzzbedg");
-    const [data, handleData] = React.useState({
-        searchTerm: "data",
-    });
-    
-    // const handleChange = (event) => {
-    //     console.log("event:" , event)
-    //     setFormData({ ...formData, [event.target.name]: event.target.value });
-    // };
+    const [formData,setFormData] = useState([
+        name:"",
+    ])
+
     if (state.succeeded) {
         return <p>Thanks for reaching for the best!</p>
-    }
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault()
-    //     props.movieSearch(formData.searchTerm)
-    // }
-
+}
     return (
         <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="inquire">
             <h2 className="contact__des">Feel free to reach out!</h2>
