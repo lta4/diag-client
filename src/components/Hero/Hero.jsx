@@ -8,7 +8,7 @@ import JOne from "../../assets/jOne.jpeg";
 import JThree from "../../assets/jThree.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const Hero = () => {
+const Hero = (props) => {
 
     return (
         <div className="hero" id="home">
