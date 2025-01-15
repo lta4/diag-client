@@ -28,13 +28,13 @@ const Hero = (props) => {
                     <img src={JThree} alt="" className="jThree-image" />
                 </div>
                 <div className="hr__bar">
-                    {/* <hr />
-                    <Link to="/">{<ContactForm />}</Link>
-                    <hr /> */}
                     <hr />
+                    <Link to="/">{<ContactForm />}</Link>
+                    <hr />
+                    {/* <hr />
                     <Link to="/ContactForm">{<Form />}
                     </Link>
-                    <hr />
+                    <hr /> */}
                 </div>
             </div>
         </div>

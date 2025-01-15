@@ -1,32 +1,36 @@
+import { useState } from "react";
 import React from "react";
 import "./Form.css";
 
-const Form = (props) => {
+const Form = () => {
 
     const [formData, setFormData] = React.useState({
-        searchTerm: "",
+        name: "",
+        email: "",
+        message: "",
     });
 
-    const handleChange = (event) => {
-        console.log("event:" , event)
-        setFormData({ ...formData, [event.target.name]: event.target.value });
+    const handleChange = (e) => {
+        console.log("event:" , e)
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        props.movieSearch(formData.searchTerm)
-    }
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("Form Submitted");
+    };
 
     return (
         <div>
             <form onSubmit={handleSubmit} autoComplete="on">
                 <div>
                     <input
+                        id="name"
+                        name="firstname"
+                        type="text"
                         className=""
                         placeholder=""
-                        type="text"
-                        name="searchTerm"
-                        value={formData.searchTerm}
+                        value={formData.name}
                         oncChange={handleChange}
                     />
                     <input 
