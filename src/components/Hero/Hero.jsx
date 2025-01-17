@@ -29,8 +29,11 @@ const Hero = (props) => {
                 </div>
                 <div className="hr__bar">
                     <hr />
-                    <Link to="/">{<ContactForm />}</Link>
+                    <ContactForm />
                     <hr />
+                    {/* <hr />
+                    <Link to="/">{<ContactForm />}</Link>
+                    <hr /> */}
                     {/* <hr />
                     <Link to="/ContactForm">{<Form />}
                     </Link>
