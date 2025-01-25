@@ -8,7 +8,7 @@ function ContactForm() {
         return <p>Thanks for reaching for the best!</p>
 }
     return (
-        <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="inquire">
+        <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="">
             <h2 className="contact__des">Feel free to reach out!</h2>
             <input
                 id="firstname"

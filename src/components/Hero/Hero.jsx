@@ -19,7 +19,7 @@ const Hero = (props) => {
                 <div className="jOne_container">
                     <img src={JOne} alt="" className="jOne-image" />
                 </div>
-                <div className="hr__bar">
+                <div className="hr__bar" id="shows">
                     <hr />
                     <Link to="/Gigs">{<Gigs />} </Link>
                     <hr />
@@ -27,7 +27,7 @@ const Hero = (props) => {
                 <div className="jThree_container">
                     <img src={JThree} alt="" className="jThree-image" />
                 </div>
-                <div className="hr__bar">
+                <div className="hr__bar" id="inquire">
                     <hr />
                     <ContactForm />
                     <hr />
