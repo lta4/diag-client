@@ -28,17 +28,31 @@
 .footer__social {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 4rem;
 }
 
-.footer__social > a > img {
+.footer__social--links {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* .footer__social--instagram {
+    width: 2rem;
+    height: 2rem;
+} */
+
+/* .footer__social > a > img {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-}
+    text-decoration: none;
+} */
 
 .footer__social--spotify {
-    color: red;
+    /* width: 2rem;
+    height: 2rem;
+    text-decoration: none; */
 }
 
 .footer__date {

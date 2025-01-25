@@ -1,10 +1,11 @@
 import React from "react";
 import "./Footer.css";
-import Github from "../../assets/github.png";
-import Instagram from "../../assets/instagram.png";
-import LinkedIn from "../../assets/linkedin.png";
-import SpotifyW4 from "../../assets/spotifyW4.png";
-import FaceBookB from "../../assets/facebookB.png";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutubeSquare } from "react-icons/fa";
+import { FaSpotify } from "react-icons/fa";
+import { SiApplemusic } from "react-icons/si";
+import { AiOutlineDiscord } from "react-icons/ai";
+import { FaSoundcloud } from "react-icons/fa6";
 // import Logo from "../../assets/logo192.png"
 
 const Footer = () => {
@@ -12,22 +13,18 @@ const Footer = () => {
         <>
             <div className="footer" id="inquire">
                 <div className="footer__social">
-                    <a href="" alt="">
-                        <img src={Github} alt="" />
+                    <a href="" className=""><FaInstagram className="footer__social--links"/>
                     </a>
-                    <a href="https://www.instagram.com/diagnosticmusic?igsh=MWQ1ZGUxMzBkMA==" alt="">
-                        <img src={Instagram} alt="" />
+                    <a href="" className=""><FaYoutubeSquare className="footer__social--links" />
                     </a>
-                    <a href="https://icons8.com/icon/118467/facebook">
-                        <img src={FaceBookB} alt="" className="footer__social--facebook"/>
+                    <a href="" className=""><FaSpotify className="footer__social--links"/>
                     </a>
-                    <a href="" alt="">
-                        <img src={LinkedIn} alt="" />
+                    <a href="" className=""><SiApplemusic className="footer__social--links"/>
                     </a>
-                    <a href="https://icons8.com/icon/6707/spotify" alt="" className="">
-                        <img src={SpotifyW4} alt="" className="footer__social--spotify" />
+                    <a href="" className=""><AiOutlineDiscord className="footer__social--links"/>
                     </a>
-                    {/* <a target="_blank" href="https://icons8.com/icon/118467/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
+                    <a href="" className=""><FaSoundcloud className="footer__social--links"/>
+                    </a>
                 </div>
                 {/*********************** DIAG LOGO INPUT ***************************/}
                 {/* <div className="logo-d">
