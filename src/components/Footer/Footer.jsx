@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutubeSquare } from "react-icons/fa";
+import { SiYoutubemusic } from "react-icons/si";
 import { FaSpotify } from "react-icons/fa";
 import { SiApplemusic } from "react-icons/si";
 import { AiOutlineDiscord } from "react-icons/ai";
@@ -16,6 +17,8 @@ const Footer = () => {
                     <a href="" className=""><FaInstagram className="footer__social--links"/>
                     </a>
                     <a href="" className=""><FaYoutubeSquare className="footer__social--links" />
+                    </a>
+                    <a href="" className=""><SiYoutubemusic className="footer__social--links"/>
                     </a>
                     <a href="" className=""><FaSpotify className="footer__social--links"/>
                     </a>
