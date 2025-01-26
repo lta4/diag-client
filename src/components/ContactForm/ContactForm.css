@@ -3,6 +3,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 6fr;
     row-gap: 1rem;
+    margin: 4rem 2rem;
 }
 
 .contact__des {

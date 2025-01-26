@@ -6,13 +6,13 @@ import JSix from "../../assets/jSix.jpeg";
 const About = () => {
     return (
         <>
-            <div className="jTwo_container">
-                <img src={JTwo} alt="" className="jTwo-image"/>
+            <div className="jTwo__container">
+                <img src={JTwo} alt="" className="jTwo__container--image"/>
             </div>
             <div className="hr__bar">
                 <hr />
-            <section className="about">
-                <div className="about__title">
+            <section className="hr__bar--about">
+                <div className="hr__bar--title">
                     <h1>About</h1>
                 </div>
             </section>
@@ -21,7 +21,7 @@ const About = () => {
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__set--image">
-                    <img src={JSix} alt="" className="jTwo-image" />
+                    <img src={JSix} alt="" className="" />
                     <div className="profile__set--description">
                         <h2>Jose Flores</h2>
                         <p>I'm a DJ residing in San Diego, CA.
@@ -34,7 +34,8 @@ const About = () => {
                     <div className="profile__set--description">
                     <h1>Hello column 2</h1>
                         <h2>I am the h2</h2>
-                        <p>Did you know I am using git hub lens</p>
+                        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Erat velit odio facilisi ut posuere nullam bibendum urna. Scelerisque class montes condimentum dolor elementum natoque cras. Vel vestibulum quisque consectetur odio fringilla taciti tempus orci elementum. Ullamcorper amet tempor donec ornare taciti adipiscing curae. Magna molestie velit arcu pharetra velit ullamcorper dignissim. Nascetur per leo malesuada felis tempus class curae. Tempus diam at habitant ac habitant quisque sit.</p>
+                        <p>Felis vivamus aenean bibendum volutpat urna tincidunt dolor per. Maximus est tristique hendrerit, ut leo pharetra. Finibus viverra posuere et tortor lacinia ornare. Nec nisi ultricies cursus ante faucibus. Mauris aenean ipsum convallis elit sociosqu sagittis vivamus. Ornare eget quis primis id mauris hac urna bibendum. Odio nisl ut justo hendrerit hendrerit vestibulum. Leo est ipsum varius lacinia tempor. Sit tellus lorem suspendisse; molestie consectetur lacus enim.</p>
                         <div class="profile__set--slide">
                         <img id="slide" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" />
                         </div>

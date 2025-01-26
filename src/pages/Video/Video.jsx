@@ -3,7 +3,7 @@ import "./Video.css";
 
 const Plans = () => {
     return (
-        <div>Plans</div>
+        <div>Video</div>
     );
 };
 
