@@ -30,7 +30,9 @@
 
 /*********************J Six jpeg****************************/
 
-.JSix_container
+.JSix__container {
+    height: 50rem;
+}
 
 /***************************PROFILE***********************/
 
@@ -39,7 +41,7 @@
     flex-direction: row;
     justify-content: center;
     padding: 2rem 1rem;
-    border: 5px solid white;
+    /* border: 5px solid white; */
     font-family: "Metal Lord";
 }
 
@@ -47,19 +49,19 @@
     display: flex;
     justify-content: space-evenly;
     padding: 2rem 1rem;
-    background: steelblue;
-    border: 5px solid white;
+    /* background: steelblue; */
+    /* border: 5px solid white; */
 }
 
 .profile__set {
     width: 50%;
-    background: white;
+    /* background: white; */
     margin: 0 1rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 5px solid green;
+    /* border: 5px solid green; */
 }
 
 .profile__set--image {
