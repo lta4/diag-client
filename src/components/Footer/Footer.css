@@ -69,7 +69,7 @@
 }
 
 .footer__date--description {
-    font-size: 1rem;
+    font-size: 1em;
     /* font-family: "Thunder Lord"; */
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
@@ -77,7 +77,8 @@
 }
 
 .footer__date--link {
-    /* font-family: "Thunder Lord"; */
+    font-family: "Thunder Lord";
+    font-size: 1em;
 }
 
 /*************************DIAG LOGO INPUT******************/
