@@ -38,7 +38,9 @@ const Footer = () => {
                 <div className="footer__date--description">
                     © {new Date().getFullYear()}, Built 
                     with love by {` `}
-                    <a href="mailto=andrew4ld@gmail.com" alt="" className="footer__date--link">Andrew Arias</a>
+                    <a href="mailto=andrew4ld@gmail.com" alt="" className="footer__date--link">
+                        Andrew Arias
+                    </a>
                 </div>
             </div>
         </>
