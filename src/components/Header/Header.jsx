@@ -51,7 +51,7 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className="nav__item">
-                        <Link to="/" className="nav__link" onClick={closeMenuOnMobile}>
+                        <Link smooth to="#mixes" className="nav__link" onClick={closeMenuOnMobile}>
                         Mixes
                         </Link>
                     </li>
