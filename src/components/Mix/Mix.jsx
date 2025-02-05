@@ -15,23 +15,23 @@ const Mix = () => {
                 <div className="songs__event">
                     <div className="songs__list">
                         <div className="songs__list--name"><a href="">
-                            hybrid
+                            bad omens
                         </a>
                         </div>
                         <div className="songs__list--name"><a href="">
-                            hybrid
+                            of mice and men
                         </a>
                         </div>
                         <div className="songs__list--name"><a href="">
-                            hybrid
+                            evermore
                         </a>
                         </div>
                         <div className="songs__list--name"><a href="">
-                            hybrid
+                            sullivan king
                         </a>
                         </div>
                         <div className="songs__list--name"><a href="">
-                            hybrid
+                            kaskade
                         </a>
                         </div>
                     </div>
