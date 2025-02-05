@@ -3,7 +3,7 @@ import "./Hero.css";
 // import Header from "../Header/Header";
 import HeaderHook from "../HeaderHook/HeaderHook";
 import Gigs from "../Gigs/Gigs";
-import Mixes from "../Mixes/Mixes";
+import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 import JOne from "../../assets/jOne.jpeg";
 import JThree from "../../assets/jThree.jpg";
@@ -24,9 +24,9 @@ const Hero = (props) => {
                     <Link to="/Gigs">{<Gigs />}</Link>
                     <hr />
                 </div>
-                <div className="hr__bar" id="mixes">
+                <div className="hr__bar" id="mix">
                     <hr />
-                    <Link to="/Mixes">{<Mixes />}</Link>
+                    <Link to="/Mix">{<Mix />}</Link>
                     <hr />
                 </div>
                 <div className="jThree_container">

@@ -33,7 +33,7 @@ const HeaderHook = () => {
                 </Link>
             </li>
             <li>
-                <Link to="#mixes" className={linkClassName} onClick={closeMobileMenu}>
+                <Link to="#mix" className={linkClassName} onClick={closeMobileMenu}>
                     Mixes
                 </Link>
             </li>
