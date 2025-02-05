@@ -26,8 +26,8 @@ function App() {
         {/* <Gigs /> */}
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route path="About" element={<About />} />
-        <Route path="Video" element={<Video />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Video" element={<Video />} />
       </Routes>
       </Router>
       {/* <Gigs /> */}

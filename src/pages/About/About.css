@@ -31,7 +31,7 @@
 /*********************J Six jpeg****************************/
 
 .JSix__container {
-    height: 50rem;
+    height: 45rem;
 }
 
 /***************************PROFILE***********************/
@@ -75,4 +75,5 @@
 
 .profile__set--description {
     text-align: center;
+    font-size: 1.5rem;
 }
