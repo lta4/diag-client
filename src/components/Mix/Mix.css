@@ -28,3 +28,25 @@
     letter-spacing: 0.3em;
     line-height: 1.3;
 }
+
+/***************** songs *****************/
+
+.songs {
+    border: 5px solid green;
+}
+
+.songs__event {
+    border: 5px solid red;
+}
+
+.songs__list {
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: row;
+}
+
+.songs__list--name {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-evenly; */
+}

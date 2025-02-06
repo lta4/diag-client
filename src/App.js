@@ -23,7 +23,7 @@ function App() {
     <>
     <div className="App">
       <Router>
-        <ScrollToBottom />
+        {/* <ScrollToBottom /> */}
         {/* <Header /> */}
         <HeaderHook />
         {/* <Gigs /> */}
