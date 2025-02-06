@@ -2,6 +2,7 @@ import React from "react";
 import './App.css';
 import Hero from "./components/Hero/Hero";
 import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from "react-router-dom";
+import ScrollToBottom from "./components/ScrollToBottom/ScrollToBottom";
 import Header from "./components/Header/Header"
 import HeaderHook from "./components/HeaderHook/HeaderHook";
 import About from "./pages/About/About";
@@ -22,6 +23,7 @@ function App() {
     <>
     <div className="App">
       <Router>
+        <ScrollToBottom />
         {/* <Header /> */}
         <HeaderHook />
         {/* <Gigs /> */}
@@ -38,14 +40,24 @@ function App() {
           return location.pathname;
         }}
       /> */}
+      {/* <ScrollRestoration
+      getKey={(location, matches) => {
+        return location.key;
+      }}
+      /> */}
     </div>
-    <ScrollRestoration
+    {/* <ScrollRestoration
         getKey={(location, matches) => {
           return location.pathname;
         }}
-      />
+      /> */}
+    {/* <ScrollRestoration
+      getKey={(location, matches) => {
+        return location.key;
+      }}
+      /> */}
     </>
   );
-}
+};
 
 export default App;
