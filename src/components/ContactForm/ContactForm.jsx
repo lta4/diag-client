@@ -9,12 +9,15 @@ function ContactForm() {
 }
     return (
         <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="">
-            <h2 className="contact__des">Feel free to reach out!</h2>
+            <h2 className="contact__des">
+                Feel free to reach out!
+            </h2>
             <input
                 id="firstname"
                 type="firstname"
                 name="firstname"
                 placeholder=" First Name"
+                // className="input__first"
             />
             <ValidationError
                 prefix="First Name"
@@ -26,6 +29,7 @@ function ContactForm() {
                 type="lastname"
                 name="lastname"
                 placeholder=" Last Name"
+                // className="input__last"
             />
             <ValidationError
                 prefix="Last Name"
@@ -37,6 +41,7 @@ function ContactForm() {
                 type="email"
                 name="email"
                 placeholder=" Email Address"
+                className="input__email"
             />
             <ValidationError
                 prefix="Email"
@@ -47,6 +52,7 @@ function ContactForm() {
                 id="message"
                 name="message"
                 placeholder=" Drop a note!"
+                className="input__text"
             />
             <ValidationError
                 prefix="Message"

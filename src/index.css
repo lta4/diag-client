@@ -17,20 +17,14 @@ html {
 }
 
 :root {
-  /* --lightgray:#D9D9D9; */ 
-  /* --gray: #9c9c9c; */
-  /* --orange: #f48915; */
-  /* --darkGrey: #464D53; */
-  /* --caloryCard: #656565; */
-  /* --planCard: linear-gradient(210.41deg. #fa5042 1.14%, #ffa739 100.75%); */
   --header-height: 3.5rem;
-  --first-color: hsl(28, 88%, 62%);
+  --first-color: rgba(235, 24, 17, .2);
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 75%);
   --body-color: hsl(0, 0%, 6%);
   --body-font: "Neue Haas Unica", "Montserrat", sans-serif;
   --second-font: "Dancing Script", cursive;
-  --h2-font-size: 1.25rem;
+  --h2-font-size: 2rem;
   --small-font-size: 0.813rem;
   --font-semi-bold: 600;
   --z-tooltip: 10;
