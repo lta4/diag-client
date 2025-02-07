@@ -32,21 +32,25 @@
 /***************** songs *****************/
 
 .songs {
-    border: 5px solid green;
+    /* border: 5px solid green; */
 }
 
 .songs__event {
-    border: 5px solid red;
+    /* border: 5px solid red; */
 }
 
 .songs__list {
-    border: 5px solid blue;
+    /* border: 5px solid blue; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: space-evenly;
+    /* padding: 2rem 2rem; */
 }
 
 .songs__list--name {
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* justify-content: space-evenly; */
+    display: flex;
+    justify-content: center;
+    padding: 2rem 2rem;
+    text-transform: uppercase;
+
 }
