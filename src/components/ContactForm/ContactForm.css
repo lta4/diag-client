@@ -16,18 +16,19 @@ input, #firstname, #lastname, #email {
     padding: 5px 0 5px 0;
     margin: 0 5px 0 5px;
     background-color: black;
-    /* border-bottom: white; */
-    border: 1px solid #d2d2d2;
+    border: inset 0;
+    border-bottom: 1px solid #d2d2d2;
 }
 
 textarea, #message {
     padding: 5px 0 6rem 0;
     margin: 0 5px 0 5px;
     background-color: black;
+    border: inset 0;
+    border-bottom: 1px solid #d2d2d2;
 }
 
 button {
     padding: 5px 0 5px 0;
     margin: 0 5px 0 5px;
-    /* background-color: black; */
 }
