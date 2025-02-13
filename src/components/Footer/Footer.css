@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20rem;
+    height: 10rem;
 }
 
 .footer__social {
@@ -32,11 +32,15 @@
     gap: 4rem;
 }
 
-.footer__social--links {
+.footer__link {
     width: 2rem;
     height: 2rem;
     text-decoration: none;
-    /* color: white; */
+    color: white;
+}
+
+.footer__link:nth-child(1):hover {
+    color: rgba(128, 0, 0, 1);
 }
 
 /* .footer__social--instagram {
@@ -64,7 +68,7 @@
     /* z-index: var(--z-fixed); */
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     /* border: 2px solid white; */
 }
 
@@ -79,6 +83,10 @@
 .footer__date--link {
     font-family: "Thunder Lord";
     font-size: 1em;
+}
+
+.footer__date--link:nth-child(1):hover {
+    color: rgba(128, 0, 0, 1);
 }
 
 /*************************DIAG LOGO INPUT******************/

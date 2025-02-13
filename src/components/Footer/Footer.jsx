@@ -14,19 +14,19 @@ const Footer = () => {
         <>
             <div className="footer" id="inquire">
                 <div className="footer__social">
-                    <a href="" className=""><FaInstagram className="footer__social--links"/>
+                    <a href="" className=""><FaInstagram className="footer__link"/>
                     </a>
-                    <a href="" className=""><FaYoutubeSquare className="footer__social--links" />
+                    <a href="" className=""><FaYoutubeSquare className="footer__link" />
                     </a>
-                    <a href="" className=""><SiYoutubemusic className="footer__social--links"/>
+                    <a href="" className=""><SiYoutubemusic className="footer__link"/>
                     </a>
-                    <a href="" className=""><FaSpotify className="footer__social--links"/>
+                    <a href="" className=""><FaSpotify className="footer__link"/>
                     </a>
-                    <a href="" className=""><SiApplemusic className="footer__social--links"/>
+                    <a href="" className=""><SiApplemusic className="footer__link"/>
                     </a>
-                    <a href="" className=""><AiOutlineDiscord className="footer__social--links"/>
+                    <a href="" className=""><AiOutlineDiscord className="footer__link"/>
                     </a>
-                    <a href="" className=""><FaSoundcloud className="footer__social--links"/>
+                    <a href="" className=""><FaSoundcloud className="footer__link"/>
                     </a>
                 </div>
                 {/*********************** DIAG LOGO INPUT ***************************/}

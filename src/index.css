@@ -18,7 +18,7 @@ html {
 
 :root {
   --header-height: 3.5rem;
-  --first-color: rgba(235, 24, 17, .2);
+  --first-color: rgba(128, 0, 0, 1);
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 75%);
   --body-color: hsl(0, 0%, 6%);
