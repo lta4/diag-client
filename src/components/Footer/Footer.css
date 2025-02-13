@@ -40,7 +40,8 @@
 }
 
 .footer__link:nth-child(1):hover {
-    color: rgba(128, 0, 0, 1);
+    color: var(--first-color);
+    transition: color 0.3s ease;
 }
 
 /* .footer__social--instagram {
@@ -86,7 +87,8 @@
 }
 
 .footer__date--link:nth-child(1):hover {
-    color: rgba(128, 0, 0, 1);
+    color: var(--first-color);
+    transition: color 0.3s ease;
 }
 
 /*************************DIAG LOGO INPUT******************/
