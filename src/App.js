@@ -3,6 +3,9 @@ import './App.css';
 import Hero from "./components/Hero/Hero";
 import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from "react-router-dom";
 import ScrollToBottom from "./components/ScrollToBottom/ScrollToBottom";
+// import { MediaPlayer, MediaProvider } from "@vidstack/react";
+// import { defaultLayoutIcons, DefaultVideoLayout } from
+// "@vidstack/react/player/layouts/default";
 import Header from "./components/Header/Header"
 import HeaderHook from "./components/HeaderHook/HeaderHook";
 import About from "./pages/About/About";
