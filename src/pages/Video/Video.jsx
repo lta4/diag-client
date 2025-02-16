@@ -6,6 +6,7 @@ import { MediaPlayer, MediaProvider } from "@vidstack/react";
 import { defaultLayoutIcons, DefaultVideoLayout } from
 "@vidstack/react/player/layouts/default";
 import { Poster, type PosterProps } from "@vidstack/react";
+import JSix from "../../assets/jSix.jpeg";
 
 const Plans = () => {
     return (
@@ -16,7 +17,7 @@ const Plans = () => {
                     <MediaProvider />
                     <DefaultVideoLayout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt" icons={defaultLayoutIcons} 
                     />
-                    <Poster src="..." alt="..." />
+                    <Poster src="{Jsix}" alt="..." />
                 </MediaPlayer>
             </div>
         </>
