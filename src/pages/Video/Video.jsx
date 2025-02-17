@@ -12,7 +12,7 @@ const Plans = () => {
         <>
             <div>
                 Video
-                <MediaPlayer title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4">
+                <MediaPlayer playsInLine title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4">
                     <MediaProvider />
                         <Poster 
                             className="vds-poster"
