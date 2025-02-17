@@ -71,7 +71,7 @@ const Nav = () => {
                         </NavLink>
                     </li>
                     <li className="nav__item">
-                        <NavLink to="/get-started" className="nav__link nav__cta">
+                        <NavLink to="/" className="nav__link nav__cta">
                             Get Started
                         </NavLink>
                     </li>

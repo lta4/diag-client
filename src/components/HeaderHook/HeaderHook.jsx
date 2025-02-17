@@ -33,7 +33,7 @@ const HeaderHook = () => {
                 </Link>
             </li>
             <li>
-                <Link to="#mix" className={linkClassName} onClick={closeMobileMenu}>
+                <Link smooth to="#mix" className={linkClassName} onClick={closeMobileMenu}>
                     Mixes
                 </Link>
             </li>
@@ -53,7 +53,7 @@ const HeaderHook = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/get-started" className={`${linkClassName} ${buttonClassName}`} onClick={closeMobileMenu}>
+                <NavLink to="/" className={`${linkClassName} ${buttonClassName}`} onClick={closeMobileMenu}>
                     Get Started
                 </NavLink>
             </li>
