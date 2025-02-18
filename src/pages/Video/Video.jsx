@@ -6,6 +6,8 @@ import { MediaPlayer, MediaProvider } from "@vidstack/react";
 import { defaultLayoutIcons, DefaultVideoLayout } from
 "@vidstack/react/player/layouts/default";
 import { Poster } from "@vidstack/react";
+// import { Time, type TimeProps } from "@vidstack/react";
+// import { Title, type TitleProps } from "@vidstack/react";
 
 const Plans = () => {
     return (
@@ -21,6 +23,12 @@ const Plans = () => {
                         <DefaultVideoLayout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt" icons={defaultLayoutIcons} 
                         />
                 </MediaPlayer>
+                {/* <Title /> */}
+                {/* <div className="vds-time-group">
+                    <Time type="current" className="vds-time" />
+                        <div className="vds-time-divider"></div>
+                    <Time type="current" className="vds-time"/>
+                </div> */}
             </div>
         </>
     );

@@ -86,7 +86,7 @@ const Nav = () => {
             </nav>
         </header>
     );
-}
+};
 };
 
 export default Header;
