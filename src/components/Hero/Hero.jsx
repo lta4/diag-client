@@ -8,6 +8,7 @@ import ContactForm from "../ContactForm/ContactForm";
 import JOne from "../../assets/jOne.jpeg";
 import JThree from "../../assets/jThree.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
+import ScrollToTop from "react-scroll-to-top";
 
 const Hero = (props) => {
 
@@ -44,6 +45,7 @@ const Hero = (props) => {
                     </Link>
                     <hr /> */}
                 </div>
+                <ScrollToTop />
             </div>
         </div>
     );
