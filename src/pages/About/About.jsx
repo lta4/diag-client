@@ -2,6 +2,7 @@ import React from "react";
 import "./About.css";
 import JTwo from "../../assets/jTwo.jpg"
 import JSix from "../../assets/jSix.jpeg";
+import ScrollToTop from "react-scroll-to-top";
 
 const About = () => {
     return (
@@ -42,6 +43,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            <ScrollToTop />
         </>
     );
 };

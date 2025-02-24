@@ -9,6 +9,7 @@ import { Poster } from "@vidstack/react";
 // import { Thumbnail } from "@vidstack/react";
 // import { Time, type TimeProps } from "@vidstack/react";
 // import { Title, type TitleProps } from "@vidstack/react";
+import ScrollToTop from "react-scroll-to-top";
 
 const Plans = () => {
 
@@ -39,6 +40,7 @@ const Plans = () => {
                     <Time type="current" className="vds-time"/>
                 </div> */}
             </div>
+            <ScrollToTop />
         </>
     );
 };
