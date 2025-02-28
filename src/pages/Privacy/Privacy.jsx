@@ -4,7 +4,7 @@ import "./Privacy.css"
 const Privacy = () => {
     return (
         <div className="">
-            <h2>Privacy</h2>
+            <h2>Privacy Page</h2>
         </div>
     );
 };

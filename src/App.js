@@ -12,6 +12,7 @@ import About from "./pages/About/About";
 import Video from "./pages/Video/Video";
 // import Gigs from "./components/Gigs/Gigs"
 import Footer from "./components/Footer/Footer";
+import Privacy from "./pages/Privacy/Privacy";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -34,10 +35,12 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/About" element={<About />} />
         <Route path="/Video" element={<Video />} />
+        <Route path="/Privacy" element={<Privacy />} />
       </Routes>
+      <Footer />
       </Router>
       {/* <Gigs /> */}
-      <Footer />
+      {/* <Footer /> */}
       {/* <ScrollRestoration
         getKey={(location, matches) => {
           return location.pathname;
