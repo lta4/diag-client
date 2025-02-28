@@ -62,6 +62,16 @@
     text-decoration: none; */
 }
 
+/*********************Terms of Service********************/
+
+.footer__policy {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+/********************Footer Dates*****************/
+
 .footer__date {
     /* height: 100%; */
     /* bottom: 0; */

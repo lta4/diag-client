@@ -35,10 +35,10 @@ const Footer = () => {
                     <img src={Logo} alt="" />
                 </div> */}
             </div>
-            <nav>
-                <NavLink to="/Privacy">Privacy</NavLink>
-                <NavLink to="/Term">Term</NavLink>
-            </nav>
+            <div className="footer__policy">
+                <NavLink to="/Privacy" className="footer__service">Privacy</NavLink>
+                <NavLink to="/Term" className="footer__service">Term</NavLink>
+            </div>
             <div className="footer__date">
                 <div className="footer__date--description">
                     © {new Date().getFullYear()}, Built 
