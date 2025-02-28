@@ -7,6 +7,7 @@ import { FaSpotify } from "react-icons/fa";
 import { SiApplemusic } from "react-icons/si";
 import { AiOutlineDiscord } from "react-icons/ai";
 import { FaSoundcloud } from "react-icons/fa6";
+// import Privacy from "../../pages/Privacy/Privacy"
 // import Logo from "../../assets/logo192.png"
 
 const Footer = () => {
@@ -33,6 +34,10 @@ const Footer = () => {
                 {/* <div className="logo-d">
                     <img src={Logo} alt="" />
                 </div> */}
+            </div>
+            <div>
+                <a href="" className="privacy"></a>
+                <a href="" className="term"></a>
             </div>
             <div className="footer__date">
                 <div className="footer__date--description">
