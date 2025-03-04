@@ -39,7 +39,7 @@
     color: white;
 }
 
-.footer__link:nth-child(1):hover {
+.footer__link:nth-child(n):hover {
     color: var(--first-color);
     transition: color 0.3s ease;
 }
@@ -69,6 +69,11 @@
     flex-direction: row;
     justify-content: center;
     gap: 4rem;
+}
+
+.footer__service:nth-child(n):hover {
+    color: var(--first-color);
+    transition: color 0.3s ease;
 }
 
 /********************Footer Dates*****************/
