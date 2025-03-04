@@ -16,7 +16,6 @@ const Plans = () => {
     return (
         <>
             <div>
-                Video
                 <MediaPlayer playsInLine title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4">
                     <MediaProvider />
                         <Poster 

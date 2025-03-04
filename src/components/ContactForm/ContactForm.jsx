@@ -17,7 +17,7 @@ function ContactForm() {
                 type="firstname"
                 name="firstname"
                 placeholder=" First Name"
-                // className="input__first"
+                className="contact__input"
             />
             <ValidationError
                 prefix="First Name"
@@ -29,7 +29,7 @@ function ContactForm() {
                 type="lastname"
                 name="lastname"
                 placeholder=" Last Name"
-                // className="input__last"
+                className="contact__input"
             />
             <ValidationError
                 prefix="Last Name"
@@ -41,7 +41,7 @@ function ContactForm() {
                 type="email"
                 name="email"
                 placeholder=" Email Address"
-                className="input__email"
+                className="contact__input"
             />
             <ValidationError
                 prefix="Email"
@@ -52,7 +52,7 @@ function ContactForm() {
                 id="message"
                 name="message"
                 placeholder=" Drop a note!"
-                className="input__text"
+                className="contact__input"
             />
             <ValidationError
                 prefix="Message"

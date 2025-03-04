@@ -45,7 +45,7 @@ const Hero = (props) => {
                     </Link>
                     <hr /> */}
                 </div>
-                <ScrollToTop />
+                <ScrollToTop className=""/>
             </div>
         </div>
     );
