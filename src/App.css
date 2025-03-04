@@ -40,7 +40,6 @@
   mix-blend-mode: overlay;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   gap: 6rem;
   overflow: hidden;
 }

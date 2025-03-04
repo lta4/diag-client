@@ -36,8 +36,12 @@ const Footer = () => {
                 </div> */}
             </div>
             <div className="footer__policy">
-                <NavLink to="/Privacy" className="footer__service">Privacy</NavLink>
-                <NavLink to="/Term" className="footer__service">Term</NavLink>
+                <NavLink to="/Privacy" className="footer__service">
+                    Privacy
+                </NavLink>
+                <NavLink to="/Term" className="footer__service">
+                    Term
+                </NavLink>
             </div>
             <div className="footer__date">
                 <div className="footer__date--description">
