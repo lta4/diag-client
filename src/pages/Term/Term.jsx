@@ -1,10 +1,12 @@
 import React from "react";
 import "./Term.css";
+import Blog from "../Term/Term";
 
 const Term = () => {
     return (
         <div className="legal">
-            <header>
+            {/* <Blog /> */}
+            {/* <header>
                 <h2 className="legal__title">Terms Of Service</h2>
                 <h3 className="legal__para">WE AGREE TO BE CONTRACTED FOR THE DEVELOPMENT OF A THIRD PARTY WEBSITE (THE "WEBSITE") UNDER  THE FOLLOWING TERMS AND CONDITIONS IN ACCORDANCE WITH THE PROPOSAL AGREED IN WRITING BETWEEN THE PARTIES (THE “PROPOSAL”). ONCE THE PROPOSAL DOCUMENT (THE “AGREEMENT”) IS SIGNED AND DEPOSIT PAID, THE WEBSITE SHALL BE DEVELOPED BY US (THE “DEVELOPER”) FOR YOU (THE “CLIENT”).
                 </h3>
@@ -69,7 +71,7 @@ const Term = () => {
                     4.8 The Developer will return the Deposit to the Client, if the project does not go ahead on account of the Developer. If works have already commenced, and the contract is cancelled by the Client, the deposit will be returned minus costs for works completed.
                     </h3>
                 </section>
-            </body>
+            </body> */}
         </div>
     );
 };
