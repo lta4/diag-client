@@ -1,4 +1,5 @@
 import React from "react";
+import "./PersonList.css";
 import axios from "axios";
 
 export default class PersonList extends React.Component {
