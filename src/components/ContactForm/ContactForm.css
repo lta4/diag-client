@@ -32,7 +32,15 @@ textarea, #message {
     border-bottom: 1px solid #d2d2d2;
 }
 
-button {
+/* .contact__btn {
+    width: 10px;
     padding: 5px 0 5px 0;
     margin: 0 5px 0 5px;
+} */
+
+.contact__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30rem 30rem;
 }
