@@ -1,11 +1,13 @@
 import React from "react";
 import "./Term.css";
-import Blog from "../Term/Term";
+// import Blog from "../Term/Term";
+import PersonList from "../../components/PersonList/PersonList";
 
 const Term = () => {
     return (
         <div className="legal">
             {/* <Blog /> */}
+            <PersonList />
             {/* <header>
                 <h2 className="legal__title">Terms Of Service</h2>
                 <h3 className="legal__para">WE AGREE TO BE CONTRACTED FOR THE DEVELOPMENT OF A THIRD PARTY WEBSITE (THE "WEBSITE") UNDER  THE FOLLOWING TERMS AND CONDITIONS IN ACCORDANCE WITH THE PROPOSAL AGREED IN WRITING BETWEEN THE PARTIES (THE “PROPOSAL”). ONCE THE PROPOSAL DOCUMENT (THE “AGREEMENT”) IS SIGNED AND DEPOSIT PAID, THE WEBSITE SHALL BE DEVELOPED BY US (THE “DEVELOPER”) FOR YOU (THE “CLIENT”).
