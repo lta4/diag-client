@@ -34,8 +34,9 @@ const About = () => {
                 <div className="profile__set">
                     <div className="profile__set--description">
                     <h1>Jose Flores</h1>
-                        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Erat velit odio facilisi ut posuere nullam bibendum urna. Scelerisque class montes condimentum dolor elementum natoque cras. Vel vestibulum quisque consectetur odio fringilla taciti tempus orci elementum. Ullamcorper amet tempor donec ornare taciti adipiscing curae. Magna molestie velit arcu pharetra velit ullamcorper dignissim. Nascetur per leo malesuada felis tempus class curae. Tempus diam at habitant ac habitant quisque sit.</p>
-                        <p>Felis vivamus aenean bibendum volutpat urna tincidunt dolor per. Maximus est tristique hendrerit, ut leo pharetra. Finibus viverra posuere et tortor lacinia ornare. Nec nisi ultricies cursus ante faucibus. Mauris aenean ipsum convallis elit sociosqu sagittis vivamus. Ornare eget quis primis id mauris hac urna bibendum. Odio nisl ut justo hendrerit hendrerit vestibulum. Leo est ipsum varius lacinia tempor. Sit tellus lorem suspendisse; molestie consectetur lacus enim.</p>
+                        <p>
+                        Welcome to Diagnostic & Friends, your gateway to the world of house music! Join us on a sonic journey through the realms of underground beats and timeless classics. Our YouTube channel is your destination for electrifying house music mixes accompanied by captivating visuals. Explore the sounds of the past and the cutting-edge tunes of today as we curate the ultimate internet radio show experience. Subscribe now and dive into the groove.
+                        </p>
                         <div class="profile__set--slide">
                         <img id="slide" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" />
                         </div>
