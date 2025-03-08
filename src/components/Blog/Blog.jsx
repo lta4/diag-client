@@ -24,9 +24,10 @@ const Blog = () => {
             {posts.map((post) => (
                 <div key={post.guid}>
                     <h2>{post.title}</h2>
-                    <p dangerouslySetInnerHTML={{ __html: post.content }} />
+                    <p dangerouslySetInnerHTML={{ __html: post.content }} 
+                    />
                     <a href={post.link} target="_blank" rel="noopener noreferrer">
-                    Read more
+                        Read more
                     </a>
                 </div>
             ))}
