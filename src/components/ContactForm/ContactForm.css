@@ -42,5 +42,5 @@ textarea, #message {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 30rem 30rem;
+    /* width: 3rem 3rem; */
 }
