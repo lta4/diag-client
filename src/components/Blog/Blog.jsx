@@ -5,7 +5,7 @@ const Blog = () => {
     const [posts, setPosts] = useState([]);
     const getPostData = () => {
       axios
-        .get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@andrew4ld")
+        .get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@your_medium_username")
         .then((res) => {
           setPosts(res.data.items);
         })
