@@ -39,27 +39,28 @@
 } */
 
 .JEleven__container {
-    height: 45rem;
+    width: 100%;
+    height: 100%;
 }
 
 /***************************PROFILE***********************/
 
 .profile {
     display: flex;
-    justify-content: space-evenly;
+    /* flex-direction: row; */
+    flex-direction: column;
+    align-items: center;
     padding: 2rem 1rem;
-    /* background: steelblue; */
     /* border: 5px solid white; */
 }
 
 .profile__set {
-    width: 50%;
-    /* background: white; */
-    margin: 0 1rem;
+    width: 60%;
+    /* margin: 0 1rem; */
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* align-items: center; */
     /* border: 5px solid green; */
 }
 
