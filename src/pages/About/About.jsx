@@ -2,15 +2,16 @@ import React from "react";
 import "./About.css";
 import JTwo from "../../assets/jTwo.jpg"
 import JSix from "../../assets/jSix.jpeg";
+import JEleven from "../../assets/jEleven.jpeg";
 import ScrollToTop from "react-scroll-to-top";
 
 const About = () => {
     return (
         <>
-            <div className="jTwo__container">
+            {/* <div className="jTwo__container">
                 <img src={JTwo} alt="" className="jTwo__container--image"/>
-            </div>
-            <div className="hr__bar">
+            </div> */}
+            {/* <div className="hr__bar">
                 <hr />
             <section className="hr__bar--about">
                 <div className="hr__bar--title">
@@ -18,11 +19,11 @@ const About = () => {
                 </div>
             </section>
             <hr />
-            </div>
+            </div> */}
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__set--image">
-                    <img src={JSix} alt="" className="JSix__container" />
+                    <img src={JEleven} alt="" className="JEleven__container" />
                     {/* <div className="profile__set--description">
                         <h2>Jose Flores</h2>
                         <p>I'm a DJ residing in San Diego, CA.
