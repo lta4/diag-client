@@ -34,13 +34,10 @@ const About = () => {
                 </div>
                 <div className="profile__set">
                     <div className="profile__set--description">
-                    <h1>Jose Flores</h1>
+                    <h1 className="profile__set--title">Jose Flores</h1>
                         <p>
                         Welcome to Diagnostic & Friends, your gateway to the world of house music! Join us on a sonic journey through the realms of underground beats and timeless classics. Our YouTube channel is your destination for electrifying house music mixes accompanied by captivating visuals. Explore the sounds of the past and the cutting-edge tunes of today as we curate the ultimate internet radio show experience. Subscribe now and dive into the groove.
                         </p>
-                        <div class="profile__set--slide">
-                        <img id="slide" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" />
-                        </div>
                     </div>
                 </div>
             </section>

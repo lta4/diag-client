@@ -1,12 +1,34 @@
-.vds-thumbnail {
+/* .vds-thumbnail {
     /* CSS variables available for customization (defaults shown). */
-    --media-thumbnail-bg: black;
-    --media-thumbnail-border: 1px solid white;
-    --media-thumbnail-aspect-ratio: 16 / 9;
+    /* --media-thumbnail-bg: black; */
+    /* --media-thumbnail-border: 1px solid white; */
+    /* --media-thumbnail-aspect-ratio: 16 / 9; */
     /* Applies when scaling thumbnails up. */
-    --media-thumbnail-min-width: 120px;
-    --media-thumbnail-min-height: calc(var(--media-thumbnail-min-width) / var(--aspect-ratio));
+    /* --media-thumbnail-min-width: 120px; */
+    /* --media-thumbnail-min-height: calc(var(--media-thumbnail-min-width) / var(--aspect-ratio)); */
     /* Applies when scaling thumbnails down. */
-    --media-thumbnail-max-width: 180px;
-    --media-thumbnail-max-height: calc(var(--media-thumbnail-max-width) / var(--aspect-ratio));
-  }
+    /* --media-thumbnail-max-width: 180px; */
+    /* --media-thumbnail-max-height: calc(var(--media-thumbnail-max-width) / var(--aspect-ratio)); 
+} */
+
+.video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video__container {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  padding: 6rem 0.5rem;
+  width: 90%;
+  height: 80%;
+}
+

@@ -50,7 +50,7 @@
     /* flex-direction: row; */
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     /* border: 5px solid white; */
 }
 
@@ -76,4 +76,8 @@
 .profile__set--description {
     text-align: center;
     font-size: 1.5rem;
+}
+
+.profile__set--title {
+    margin: 3rem;
 }
