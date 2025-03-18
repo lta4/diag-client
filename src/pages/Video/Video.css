@@ -21,6 +21,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 8rem;
+  font-size: 2rem;
 }
 
 .video__container {
