@@ -55,8 +55,8 @@
 }
 
 .profile__set {
-    width: 60%;
-    margin: 4rem 4rem;
+    width: 50%;
+    margin: 2rem;
     /* padding: 2rem; */
     display: flex;
     flex-direction: column;
@@ -66,7 +66,7 @@
 
 .profile__set--image {
     width: 40rem;
-    height: 40rem;
+    height: 60rem;
 }
 
 .profile__set--image img {

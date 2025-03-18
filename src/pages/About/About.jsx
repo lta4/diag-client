@@ -41,7 +41,6 @@ const About = () => {
                         <div class="profile__set--slide">
                         <img id="slide" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" />
                         </div>
-                        <span>70</span>
                     </div>
                 </div>
             </section>
