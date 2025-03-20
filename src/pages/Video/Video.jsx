@@ -35,7 +35,7 @@ const Plans = () => {
                                 src="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz/poster.webp" 
                                 alt="..." />
                             <DefaultVideoLayout 
-                                thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
+                                thumbnails="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz.thumnbnails.vtt"
                                 icons= {defaultLayoutIcons}
                             />
                 </MediaPlayer>
