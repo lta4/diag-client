@@ -18,6 +18,7 @@ const Mix = () => {
                             <a href="">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/t4neSm8RiME?si=-wLwyG8Wzfw71I_F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                             </iframe>
+                            EP.002
                             </a>
                         </div>
                         <div className="songs__list--name">

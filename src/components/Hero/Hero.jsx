@@ -23,7 +23,8 @@ const Hero = (props) => {
                 <div className="hr__bar" id="shows">
                     <hr />
                     <Link to="/Gigs">{<Gigs />}</Link>
-                    <hr />
+                    {/* <hr /> */}
+                    {/* ^ this break is set in order to create one smooth break for site */}
                 </div>
                 <div className="hr__bar" id="mix">
                     <hr />
