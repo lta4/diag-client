@@ -5,7 +5,7 @@ import "@vidstack/react/player/styles/default/layouts/video.css";
 import { MediaPlayer, MediaProvider } from "@vidstack/react";
 import { defaultLayoutIcons, DefaultVideoLayout } from
 "@vidstack/react/player/layouts/default";
-import { Poster, PosterProps } from "@vidstack/react";
+import { Poster } from "@vidstack/react";
 // import { Thumbnail } from "@vidstack/react";
 // import { Time, type TimeProps } from "@vidstack/react";
 // import { Title, type TitleProps } from "@vidstack/react";
@@ -14,25 +14,30 @@ import ScrollToTop from "react-scroll-to-top";
 const Plans = () => {
 
     return (
-        <>
             <div className="video">
                 <div className="video__title">
                     Video
                 </div>
                 <div className="video__container">
-                {/* <MediaPlayer playsInLine title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4"> */}
-                    {/* <MediaProvider /> */}
-                        {/* <Poster 
+                {/* <MediaPlayer playsInline title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4">
+                    <MediaProvider />
+                        <Poster 
                             className="vds-poster"
                             src="https://files.vidstack.io/sprite-fight/poster.webp" 
                             alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!" />
                         <DefaultVideoLayout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt" icons={defaultLayoutIcons} 
-                        /> */}
-                {/* </MediaPlayer> */}
-                <MediaPlayer playsInLine title="diagnostic" src="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz" className="video__container--media">
-                    <MediaProvider>
-                            <Poster src="..." alt="..." />
-                    </MediaProvider>
+                        />
+                </MediaPlayer> */}
+                <MediaPlayer playsInline title="Diagnostic" src="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz" className="video__container--media">
+                    <MediaProvider />
+                            <Poster 
+                                className=""
+                                src="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz/poster.webp" 
+                                alt="..." />
+                            <DefaultVideoLayout 
+                                thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
+                                icons= {defaultLayoutIcons}
+                            />
                 </MediaPlayer>
                 </div>
                 {/* <Thumbnail.Root
@@ -48,10 +53,9 @@ const Plans = () => {
                         <div className="vds-time-divider"></div>
                     <Time type="current" className="vds-time"/>
                 </div> */}
+                <ScrollToTop />
             </div>
-            <ScrollToTop />
-        </>
-    );
-};
+        );
+    };
 
-export default Plans
+export default Plans;
