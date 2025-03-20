@@ -40,7 +40,7 @@ const Nav = () => {
             <nav className= {nav ? 'nav active' : 'nav'}>
             {/* <img src={Logo} alt="" className="logo"/> */}
             <NavLink to="/" className="nav__logo">
-                Diagnostic Music
+                DIAGNOSTIC
             </NavLink>
             <div className={`nav__menu ${showMenu ? "show-menu" : ""}`} id="nav-menu"
             >

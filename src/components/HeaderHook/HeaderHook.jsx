@@ -65,7 +65,7 @@ const HeaderHook = () => {
         <header className="header">
             <nav className="nav active">
                 <NavLink to="/" className="nav__logo">
-                    Diagnostic Music
+                    DIAGNOSTIC
                 </NavLink>
                 
                 {isMobile && (
