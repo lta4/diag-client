@@ -1,5 +1,6 @@
 import React from "react";
 import "./Gigs.css"
+import Show from "../../components/Show/Show";
 
 const Gigs = () => {
     return (
@@ -43,6 +44,9 @@ const Gigs = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <Show />
                 </div>
             </div>
         </div>
