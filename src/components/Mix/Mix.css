@@ -42,15 +42,16 @@
 .songs__list {
     /* border: 5px solid blue; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: space-evenly;
     /* padding: 2rem 2rem; */
 }
 
 .songs__list--name {
     display: flex;
-    justify-content: center;
-    padding: 2rem 2rem;
-    text-transform: uppercase;
+    /* flex-direction: row; */
+    /* padding: 2rem 2rem; */
+    /* text-transform: uppercase; */
 
 }
