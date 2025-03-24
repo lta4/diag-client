@@ -11,33 +11,33 @@ const Gigs = () => {
                         Gig Dates
                     </h3>
                 </div>
-                <div className="shows">
+                <div className="gigs__shows">
                     <div className="shows__event">
-                        <div className="shows__list">
-                            <div className="shows__list--details">
-                                <div className="shows__list--date">Fri Aug 23</div>
-                                <div className="shows__list--venue">Music Box</div>
-                                <div className="shows__list--location">San Diego, CA</div>
+                        <div className="gigs__list">
+                            <div className="gigs__list--details">
+                                <div className="gigs__list--date">Fri Aug 23</div>
+                                <div className="gigs__list--venue">Music Box</div>
+                                <div className="gigs__list--location">San Diego, CA</div>
                                 {/* <div className="shows__button">
                                     <a className="shows__button--detail" href="">RSVP</a>
                                 </div> */}
                             </div>
                         </div>
-                        <div className="shows__list">
-                            <div className="shows__list--details">
-                                <div className="shows__list--date">Sun Oct 1</div>
-                                <div className="shows__list--venue">Radys Stadium</div>
-                                <div className="shows__list--location">San Diego, CA</div>
+                        <div className="gigs__list">
+                            <div className="gigs__list--details">
+                                <div className="gigs__list--date">Sun Oct 1</div>
+                                <div className="gigs__list--venue">Radys Stadium</div>
+                                <div className="gigs__list--location">San Diego, CA</div>
                                 {/* <div className="shows__button">
                                     <a className="shows__button--detail" href="">RSVP</a>
                                 </div> */}
                             </div>
                         </div>
-                        <div className="shows__list">
-                            <div className="shows__list--details">
-                                <div className="shows__list--date">Mon Dec 4</div>
-                                <div className="shows__list--venue">Sycamore Den</div>
-                                <div className="shows__list--location">San Diego, CA</div>
+                        <div className="gigs__list">
+                            <div className="gigs__list--details">
+                                <div className="gigs__list--date">Mon Dec 4</div>
+                                <div className="gigs__list--venue">Sycamore Den</div>
+                                <div className="gigs__list--location">San Diego, CA</div>
                                 {/* <div className="shows__button">
                                     <a className="shows__button--detail" href="">RSVP</a>
                                 </div> */}
@@ -46,7 +46,7 @@ const Gigs = () => {
                     </div>
                 </div>
                 <div>
-                    <Show />
+                    {/* <Show /> */}
                 </div>
             </div>
         </div>

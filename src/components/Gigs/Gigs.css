@@ -39,7 +39,7 @@
 
 /*********** Shows **************/
 
-.shows {
+.gigs__shows {
     display: flex;
     flex-direction: row;
     align-items: space-evenly;
@@ -54,7 +54,7 @@
 
 /***********************EVENT**********************/
 
-.shows__list {
+.gigs__list {
     /* background: transparent; */
     display: flex;
     flex-flow: column nowrap;
@@ -62,7 +62,7 @@
     min-width: 45rem;
 }
 
-.shows__list--details {
+.gigs__list--details {
     display: flex;
     /* border: 4px solid white; */
     font-size: 14px;
@@ -70,7 +70,7 @@
     text-transform: uppercase;
 }
 
-.shows__list--date {
+.gigs__list--date {
     display: flex;
     flex: 2;
     justify-content: left;
@@ -80,7 +80,7 @@
     padding: 20px 20px 20px 20px;
 }
 
-.shows__list--venue {
+.gigs__list--venue {
     display: flex;
     flex: 2;
     justify-content: left;
@@ -90,7 +90,7 @@
     /* padding: 20px 20px 20px 20px; */
 }
 
-.shows__list--location {
+.gigs__list--location {
     display: flex;
     flex: 2;
     justify-content: right;
