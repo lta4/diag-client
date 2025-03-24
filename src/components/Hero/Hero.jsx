@@ -14,19 +14,19 @@ const Hero = (props) => {
 
     return (
         <div className="hero" id="home">
-            <div>
+            <div className="hero__container">
                 {/* <Header /> */}
                 <HeaderHook />
                 <div className="jOne_container">
                     <img src={JOne} alt="" className="jOne-image" />
                 </div>
-                <div className="hr__bar" id="shows">
+                <div className="hero__bar--shows" id="shows">
                     <hr />
                     <Link to="/Gigs">{<Gigs />}</Link>
                     {/* <hr /> */}
                     {/* ^ this break is set in order to create one smooth break for site */}
                 </div>
-                <div className="hr__bar" id="mix">
+                <div className="hero__bar--mix" id="mix">
                     <hr />
                     <Link to="/Mix">{<Mix />}</Link>
                     <hr />
@@ -34,7 +34,7 @@ const Hero = (props) => {
                 <div className="jThree_container">
                     <img src={JThree} alt="" className="jThree-image" />
                 </div>
-                <div className="hr__bar" id="inquire">
+                <div className="hero__bar--inquire" id="inquire">
                     <hr />
                     <ContactForm />
                     <hr />

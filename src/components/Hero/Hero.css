@@ -32,8 +32,16 @@
     background-repeat: no-repeat;
 }
 
-.hr__bar {
+/****************Hero Shows*****************/
+
+.hero__bar--shows {
     margin: 10rem 10rem;
+}
+
+/**************Hero Mix************************/
+
+.hero__bar--mix {
+    
 }
 
 /*******************jThree Image*****************/
