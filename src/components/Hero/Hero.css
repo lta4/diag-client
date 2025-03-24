@@ -18,6 +18,11 @@
     background-color: var(--orange);
 } */
 
+.hero__container {
+    margin: 0;
+    padding: 0;
+}
+
 /**********************jOne Image****************/
 
 .jOne_container {
@@ -35,7 +40,7 @@
 /****************Hero Shows*****************/
 
 .hero__bar--shows {
-    margin: 10rem 10rem;
+    margin: 5rem 0 0 0;
 }
 
 /**************Hero Mix************************/
