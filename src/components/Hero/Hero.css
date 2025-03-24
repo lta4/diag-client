@@ -41,7 +41,7 @@
 /**************Hero Mix************************/
 
 .hero__bar--mix {
-    
+    margin: 10rem 2rem;
 }
 
 /*******************jThree Image*****************/
@@ -58,6 +58,14 @@
     background-repeat: no-repeat;
 }
 
-.scroll-to-top {
-    color: red;
+/***************Hero Inquire*********************/
+
+.hero__bar--inquire {
+    margin: 10rem 10rem;
 }
+
+/****************Hero Scroll***********************/
+
+/* .scroll-to-top, .hero__scroll {
+    color: red;
+} */
