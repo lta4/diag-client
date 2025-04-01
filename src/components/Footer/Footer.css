@@ -87,20 +87,26 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* margin: 0; */
     /* border: 2px solid white; */
 }
 
 .footer__date--description {
     font-size: 1em;
     /* font-family: "Thunder Lord"; */
-    margin: 1rem 1rem 1rem 1rem;
+    /* margin: 1rem 1rem 1rem 1rem; */
     display: flex;
     flex-direction: row;
+    justify-content: content;
 }
 
 .footer__date--link {
-    font-family: "Thunder Lord";
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* font-family: "Thunder Lord"; */
     font-size: 1em;
+    padding: 0px 5px 0px 5px;
 }
 
 .footer__date--link:nth-child(1):hover {
