@@ -105,18 +105,17 @@
 
 /**********************EVENT BUTTON***************/
 
-/* .shows__button {
-    display: flex;
-    justify-content: center;
-    border: 1px solid red;
-    margin: 20px 20px;
-}
-
-.shows__button--detail {
+.gigs__button {
     display: flex;
     flex: 2;
     justify-content: center;
+    margin: 15px 15px;
+    border: 1px solid white;
+}
+
+.gigs__button--detail {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    border: 1px solid red;
-    padding: 20px 20px 20px 20px;
-} */
+    padding: 5px 20px 5px 20px;
+}

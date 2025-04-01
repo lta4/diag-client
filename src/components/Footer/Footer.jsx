@@ -15,20 +15,27 @@ const Footer = () => {
         <>
             <div className="footer" id="inquire">
                 <div className="footer__social">
-                    <a href="" className=""><FaInstagram className="footer__link"/>
-                    </a>
-                    <a href="" className=""><FaYoutubeSquare className="footer__link" />
-                    </a>
-                    <a href="" className=""><SiYoutubemusic className="footer__link"/>
-                    </a>
-                    <a href="" className=""><FaSpotify className="footer__link"/>
-                    </a>
-                    <a href="" className=""><SiApplemusic className="footer__link"/>
-                    </a>
-                    <a href="" className=""><AiOutlineDiscord className="footer__link"/>
-                    </a>
-                    <a href="" className=""><FaSoundcloud className="footer__link"/>
-                    </a>
+                    <NavLink to="https://www.instagram.com/diagnosticmusic/">
+                        <FaInstagram className="footer__link" />
+                    </NavLink>
+                    <NavLink to="https://www.youtube.com/@DiagnosticMusic0">
+                        <FaYoutubeSquare className="footer__link" />
+                    </NavLink>
+                    <NavLink to="https://music.youtube.com/channel/UCfJTzGJfOfLZUPlSNDoV7ow?si=q2U6E_YssNIgftNx">
+                        <SiYoutubemusic className="footer__link"/>
+                    </NavLink>
+                    <NavLink to="https://open.spotify.com/artist/0T62YioSTCaw1NRFNbE4lE?si=s36brJ5sT1GtdAxgegRz2A">
+                        <FaSpotify className="footer__link"/>
+                    </NavLink>
+                    <NavLink to="https://music.apple.com/us/artist/diagnostic/402385985">
+                        <SiApplemusic className="footer__link"/>
+                    </NavLink>
+                    {/* <NavLink>
+                        <AiOutlineDiscord className="footer__link"/>
+                    </NavLink> */}
+                    <NavLink to="https://soundcloud.com/kid-diagnostic?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                        <FaSoundcloud className="footer__link"/>
+                    </NavLink>
                 </div>
                 {/*********************** DIAG LOGO INPUT ***************************/}
                 {/* <div className="logo-d">
