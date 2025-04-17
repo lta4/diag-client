@@ -21,15 +21,15 @@ const Hero = (props) => {
                     <img src={JOne} alt="" className="jOne-image" />
                 </div>
                 <div className="hero__bar--shows" id="shows">
-                    <hr />
+                    {/* <hr /> */}
                     <Link to="/Gigs">{<Gigs />}</Link>
                     {/* <hr /> */}
                     {/* ^ this break is set in order to create one smooth break for site */}
                 </div>
                 <div className="hero__bar--mix" id="mix">
-                    <hr />
+                    {/* <hr /> */}
                     <Link to="/Mix">{<Mix />}</Link>
-                    <hr />
+                    {/* <hr /> */}
                 </div>
                 <div className="jThree_container">
                     <img src={JThree} alt="" className="jThree-image" />
