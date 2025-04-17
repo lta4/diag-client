@@ -35,7 +35,7 @@ const Hero = (props) => {
                     <img src={JThree} alt="" className="jThree-image" />
                 </div>
                 <div className="hero__bar--inquire" id="inquire">
-                    <hr />
+                    {/* <hr /> */}
                     <ContactForm />
                     <hr />
                     {/* <hr />
