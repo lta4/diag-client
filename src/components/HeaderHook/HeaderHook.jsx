@@ -65,9 +65,10 @@ const HeaderHook = () => {
     return (
         <header className="header">
             <nav className="nav active">
-                <img src={CDiagBanner} alt="" className="CDiagBanner"/>
+                {/* <img src={CDiagBanner} alt="" className="CDiagBanner"/> */}
                 <NavLink to="/" className="nav__logo">
-                    DIAGNOSTIC
+                    {/* DIAGNOSTIC */}
+                    <img src={CDiagBanner} alt="" className="CDiagBanner"/>
                 </NavLink>
                 
                 {isMobile && (

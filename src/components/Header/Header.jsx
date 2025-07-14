@@ -38,9 +38,10 @@ const Nav = () => {
     return (
         <header className="header">
             <nav className= {nav ? 'nav active' : 'nav'}>
-            <img src={CDiagBanner} alt="" className="CDiagBanner"/>
+            {/* <img src={CDiagBanner} alt="" className="CDiagBanner"/> */}
             <NavLink to="/" className="nav__logo">
-                DIAGNOSTIC
+                {/* DIAGNOSTIC */}
+                <img src={CDiagBanner} alt="" className="CDiagBanner"/>
             </NavLink>
             <div className={`nav__menu ${showMenu ? "show-menu" : ""}`} id="nav-menu"
             >
