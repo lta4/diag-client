@@ -29,6 +29,14 @@
     font-size: var(--h2-font-size);
     font-family: var(--second-font);
   }
+
+  .nav__cDiagBanner {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+}
   
   .nav__toggle,
   .nav__close {
