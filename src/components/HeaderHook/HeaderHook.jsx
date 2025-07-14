@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CDiagBanner from "../../assets/CDiagBanner.jpg";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
@@ -64,6 +65,7 @@ const HeaderHook = () => {
     return (
         <header className="header">
             <nav className="nav active">
+                <img src={CDiagBanner} alt="" className="CDiagBanner"/>
                 <NavLink to="/" className="nav__logo">
                     DIAGNOSTIC
                 </NavLink>
