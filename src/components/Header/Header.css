@@ -54,9 +54,9 @@
 }
 
 .cDiagBanner {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    position: sticky;
+    /* width: 100%;
+    height: 100%; */
 }
 
 .nav__toggle,
