@@ -53,12 +53,13 @@
     font-family: var(--second-font);
 }
 
-.nav__cDiagBanner {
-    position: sticky;
-    width: 100%;
-    top: 0;
+.nav__cDiagBanner img {
+    /* position: sticky; */
+    width: 75%;
+    height: auto;
+    /* top: 0;
     left: 0;
-    z-index: var(--z-fixed);
+    z-index: var(--z-fixed); */
 }
 
 .nav__toggle,
