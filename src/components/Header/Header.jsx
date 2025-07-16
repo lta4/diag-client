@@ -41,7 +41,9 @@ const Nav = () => {
             {/* <img src={CDiagBanner} alt="" className="CDiagBanner"/> */}
             <NavLink to="/" className="nav__logo">
                 {/* DIAGNOSTIC */}
+                <a href="" className="nav__cDiagBanner">
                 <img src={CDiagBanner} alt="" className="nav__cDiagBanner"/>
+                </a>
             </NavLink>
             <div className={`nav__menu ${showMenu ? "show-menu" : ""}`} id="nav-menu"
             >
