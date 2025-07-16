@@ -20,7 +20,8 @@
   .nav, .active {
     margin: 0;
     padding: 1rem 1rem;
-    background-color: black
+    /* background-color: black */
+    background-color: transparent;
   }
   
   .nav__logo {

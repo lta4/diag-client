@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CDiagBanner from "../../assets/CDiagBanner.jpg";
+import GWDiag from "../../assets/GWDiag.png";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
@@ -69,7 +70,7 @@ const HeaderHook = () => {
                 <NavLink to="/" className="nav__logo">
                     {/* DIAGNOSTIC */}
                     <a href="" className="nav__cDiagBanner">
-                    <img src={CDiagBanner} alt="" className="nav__cDiagBanner"/>
+                    <img src={GWDiag} alt="" className="nav__cDiagBanner"/>
                     </a>
                 </NavLink>
                 
