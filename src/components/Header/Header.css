@@ -62,6 +62,12 @@
     z-index: var(--z-fixed); */
 }
 
+.nav__cDiagBanner img:hover {
+    /* color: var(--first-color); */
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) hue-rotate(180deg);
+    transition: filter 0.3s ease;
+}
+
 .nav__toggle,
 .nav__close {
     font-size: 1.5rem;

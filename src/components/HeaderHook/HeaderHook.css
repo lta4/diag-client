@@ -31,7 +31,7 @@
     font-family: var(--second-font);
   }
 
-  .nav__cDiagBanner {
+  .nav__cDiagBanner img{
     /* position: sticky; */
     width: 75%;
     height: auto;
@@ -39,6 +39,10 @@
     left: 0;
     z-index: var(--z-fixed); */
 }
+
+.nav__cDiagBanner img:hover {
+    color: var(--first-color);
+  }
   
   .nav__toggle,
   .nav__close {
