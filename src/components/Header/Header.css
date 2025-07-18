@@ -65,6 +65,7 @@
 .nav__cDiagBanner img:hover {
     /* color: var(--first-color); */
     filter: invert(11%) sepia(83%) saturate(2942%) hue-rotate(344deg) brightness(92%) contrast(118%);
+    transition: filter 0.4s ease;
 }
 
 .nav__toggle,
@@ -81,7 +82,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    padding: 0.75rem 1.5rem;
+    /* padding: 0.75rem 1.5rem; */
 }
 
 @media screen and (max-width: 1150px) {
@@ -115,7 +116,7 @@
 
     .nav__cta {
         padding: 8px 16px;
-        font-size: 12px;
+        font-size:px;
         margin-top: 1rem;
         width: auto;
         white-space: no-wrap;
