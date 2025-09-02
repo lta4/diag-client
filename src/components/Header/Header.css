@@ -111,7 +111,7 @@
 
     .nav__link,
     .nav__cta {
-        font-size: var(--smaller-font-size);
+        font-size: var(--small-font-size);
     }
 
     .nav__cta {

@@ -52,6 +52,11 @@
     color: var(--title-color);
     cursor: pointer;
   }
+
+  .nav__link,
+    .nav__cta {
+        font-size: var(--small-font-size);
+    }
   
   .nav__cta {
     background-color: var(--first-color);
