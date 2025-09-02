@@ -45,3 +45,10 @@ textarea, #message {
     /* width: 3rem 3rem; */
     cursor: pointer;
 }
+
+.contact__btn:nth-child(n):hover {
+    background: var(--first-color);
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    transition: background 0.3s ease;
+}

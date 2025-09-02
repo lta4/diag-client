@@ -33,7 +33,7 @@ const Form = () => {
                         oncChange={handleChange}
                     />
                     <input 
-                        className="submitButton"
+                        className="contact__btn"
                         type="submit"
                         value="Submit"
                     />
