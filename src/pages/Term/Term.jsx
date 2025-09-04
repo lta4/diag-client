@@ -9,7 +9,7 @@ const Term = () => {
         <div className="legal">
             {/* <PersonAdd /> */}
             <PersonList />
-            {/* <Blog /> */}
+            <Blog />
         </div>
     );
 };
