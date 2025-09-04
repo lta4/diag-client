@@ -44,7 +44,7 @@ const Gigs = () => {
                 </div>
             </div>
             <div>
-                <Show />
+                {/* <Show /> */}
             </div>
         </div>
     </div>
