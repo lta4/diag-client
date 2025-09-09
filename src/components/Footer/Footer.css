@@ -40,6 +40,19 @@
     color: white;
 }
 
+img.footer__link.footer__link--bit {
+    width: 1.80rem;
+    height: 1.80rem;
+    filter: invert(1);
+}
+
+img.footer__link.footer__link--bit:hover {
+    /* filter: invert(0.5) sepia(1) saturate(5); */
+    /* fill: var(--first-color); */
+    filter: var(--first-color);
+    transition: filter 0.3s ease;
+}
+
 .footer__link:nth-child(n):hover {
     color: var(--first-color);
     transition: color 0.3s ease;
