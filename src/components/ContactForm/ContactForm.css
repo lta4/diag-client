@@ -14,8 +14,8 @@
 
 .contact__input {
     color: var(--text-color);
-    border-bottom-width: 5px;
-    border-bottom-right-radius: 80px 80px;
+    border-bottom-width: -50%;
+    /* border-bottom-right-radius: 80px 80px; */
 }
 
 .contact__input, textarea {
