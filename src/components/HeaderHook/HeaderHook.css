@@ -31,11 +31,11 @@
     font-family: var(--second-font);
   } */
 
-  .nav__cDiagBanner {
+  .nav__wDiag {
     color: var(--first-color);
   }
 
-  .nav__cDiagBanner img {
+  .nav__wDiag img {
     /* position: sticky; */
     width: 75%;
     height: auto;
@@ -45,7 +45,7 @@
     /* color: var(--first-color); */
 }
 
-.nav__cDiagBanner img:hover {
+.nav__wDiag img:hover {
     /* color: var(--first-color); */
     /* filter: invert(11%) sepia(83%) saturate(2942%) hue-rotate(344deg) brightness(92%) contrast(118%);
     transition: filter 0.4s ease; */

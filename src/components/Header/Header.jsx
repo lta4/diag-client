@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import CDiagBanner from "../../assets/CDiagBanner.jpg";
-import GWDiag from "../../assets/GWDiag.png"; 
+// import CDiagBanner from "../../assets/CDiagBanner.jpg";
+import WDiag from "../../assets/wDiag.png"; 
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { HashLink as Link } from "react-router-hash-link";
@@ -42,8 +42,8 @@ const Nav = () => {
             {/* <img src={CDiagBanner} alt="" className="CDiagBanner"/> */}
             <NavLink to="/" className="nav__logo">
                 {/* DIAGNOSTIC */}
-                <a href="" className="nav__cDiagBanner">
-                <img src={GWDiag} alt="" className="nav__cDiagBanner"/>
+                <a href="" className="nav__wDiag">
+                <img src={WDiag} alt="" className="nav__wDiag"/>
                 </a>
             </NavLink>
             <div className={`nav__menu ${showMenu ? "show-menu" : ""}`} id="nav-menu"
