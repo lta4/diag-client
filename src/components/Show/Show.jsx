@@ -41,7 +41,7 @@ const Show = () => {
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
     const fetchLocation = async () => {
-      await fetch("https://rest.bandsintown.com/artists/DIAGNOSTIC?app_id=043b077012de58b4db8fa0f530cd607e")
+      await fetch("https://rest.bandsintown.com/artists/id_15582051?app_id=043b077012de58b4db8fa0f530cd607e")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -55,13 +55,11 @@ const Show = () => {
 
   return (
     <div className="show">
-      Name: {data[0].name}
+      "id": {data.id}
       <br />
-      {/* Email: {data[0].email}
+      name: {data.name}
       <br />
-      Phone: {data[0].body}
-      <br />
-      Address: {data[0].address.street} */}
+      "url": {data.url}
     </div>
   );
 };
