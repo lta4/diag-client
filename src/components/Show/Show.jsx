@@ -41,7 +41,7 @@ const Show = () => {
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
     const fetchLocation = async () => {
-      await fetch("https://jsonplaceholder.typicode.com/users")
+      await fetch("https://rest.bandsintown.com/artists/DIAGNOSTIC?app_id=043b077012de58b4db8fa0f530cd607e")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -57,11 +57,11 @@ const Show = () => {
     <div className="show">
       Name: {data[0].name}
       <br />
-      Email: {data[0].email}
+      {/* Email: {data[0].email}
       <br />
       Phone: {data[0].body}
       <br />
-      Address: {data[0].address.street}
+      Address: {data[0].address.street} */}
     </div>
   );
 };
