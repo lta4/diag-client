@@ -1,56 +1,67 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// const baseURL = "https://andrew4ld.medium.com/mix-22459474be3a?source=friends_link&sk=9299dc4e69981caf0662596f217e3687/posts/1";
+// const Show = () => {
 
-// export default function App() {
-//   const [post, setPost] = React.useState(null);
+//   const [posts, setPosts] = useState([]);
+//   const getPostData = () => {
+//     axios
+//       .get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@andrew4ld")
+//       .then((res) => {
+//         setPosts(res.data.items);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching blog posts:", error);
+//       });
+//   };
 
-//   React.useEffect(() => {
-//     axios.get(baseURL).then((response) => {
-//       setPost(response.data);
-//     });
+//   useEffect(() => {
+//     getPostData();
 //   }, []);
-
-//   if (!post) return null;
 
 //   return (
 //     <div>
-//       <h1>{post.title}</h1>
-//       <p>{post.body}</p>
+//       {posts.map((post) => {
+//         <div key={post.guid}>
+//           <h2>{post.title}</h2>
+//           <p dangerouslySetInnerHTML={{ __html: post.content }} />
+//           <a href={post.link} target="_blank" rel="noopener noreferrer">
+//             Read More
+//           </a>
+//         </div>
+//       })}
 //     </div>
 //   );
-// }
+// };
+
+// export default Show;
 
 const Show = () => {
 
-  const [posts, setPosts] = useState([]);
-  const getPostData = () => {
-    axios
-      .get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@andrew4ld")
-      .then((res) => {
-        setPosts(res.data.items);
-      })
-      .catch((error) => {
-        console.error("Error fetching blog posts:", error);
+  const [data, setData] = React.useState([]);
+  React.useEffect(() => {
+    const fetchLocation = async () => {
+      await fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        console.log(data);
       });
-  };
-
-  useEffect(() => {
-    getPostData();
+    };
+    fetchLocation();
   }, []);
 
+  if(!data.length) return <div>Loading...</div>
+
   return (
-    <div>
-      {posts.map((post) => {
-        <div key={post.guid}>
-          <h2>{post.title}</h2>
-          <p dangerouslySetInnerHTML={{ __html: post.content }} />
-          <a href={post.link} target="_blank" rel="noopener noreferrer">
-            Read More
-          </a>
-        </div>
-      })}
+    <div className="show">
+      Name: {data[0].name}
+      <br />
+      Email: {data[0].email}
+      <br />
+      Phone: {data[0].body}
+      <br />
+      Address: {data[0].address.street}
     </div>
   );
 };
