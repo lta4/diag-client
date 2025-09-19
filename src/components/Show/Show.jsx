@@ -36,30 +36,29 @@ import axios from "axios";
 
 // export default Show;
 
-const Show = () => {
+// https://rest.bandsintown.com/artists/id_15582051?app_id=043b077012de58b4db8fa0f530cd607e
 
-  const [data, setData] = React.useState([]);
-  React.useEffect(() => {
-    const fetchLocation = async () => {
-      await fetch("https://rest.bandsintown.com/artists/id_15582051?app_id=043b077012de58b4db8fa0f530cd607e")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        console.log(data);
-      });
-    };
-    fetchLocation();
-  }, []);
+function Show() {
+  
+  // const URL = "https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all";
 
-  if(!data.length) return <div>Loading...</div>
+  const [records, setRecords] = useState([]);
+
+  useEffect(() => {
+    fetch("https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all")
+    .then(res => res.json())
+    .then(data => setRecords(data))
+
+    .catch(err => console.log(err))
+  }, [])
 
   return (
-    <div className="show">
-      "id": {data.id}
-      <br />
-      name: {data.name}
-      <br />
-      "url": {data.url}
+    <div>
+      <ul>
+        {records.map((list, index) => (
+          <li key={index}>{list.id} | {list.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
