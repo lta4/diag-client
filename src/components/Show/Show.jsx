@@ -41,21 +41,21 @@ import axios from "axios";
 function Show() {
   
   // const URL = "https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all";
-  
-  const [data, setData] = useState("");
+  const [items, setItems] = useState([]);
+  // const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     
-    const fetchData = async () => {
+    const fetchItems = async () => {
       try {
-        const response = await fetch("https://rest.bandsintown.com/artists/id_15582051?app_id=043b077012de58b4db8fa0f530cd607e");
+        const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all");
         if (!response.ok) {
           throw new Error(`This is an HTTP error: The status is ${response.status}`);
         }
-        const result = await response.json();
-        setData(result);
+        const data = await response.json();
+        setItems(data);
       } catch (error) {
         setError(error);
       } finally {
@@ -63,27 +63,44 @@ function Show() {
       }
     };
 
-    console.log("Fetching data...", data);
+    console.log("Fetching items...", items);
 
-    fetchData();
+    fetchItems();
   }, []);
 
-  if (loading) return <p>Loading data...</p>
-  if (error) return <p>Error: Fetched but not fetched {error.message}</p>
+  if (loading) {
+    return <p>Loading data...</p>
+  }
+
+  if (error) {
+    return <p>Error: Fetched but not fetched {error.message}</p>
+  }
 
   return (
+    // <div>
+    //   <h1>Record Details</h1>
+    //   {data && (
+    //     <>
+    //       <p>{data.artist_id}</p>
+    //       <p>{data.name}</p>
+    //       <p>{data.datetime}</p>
+    //       <p>{data.venue}</p>
+    //     </>
+    //   )}
+    // </div>
+
     <div>
       <h1>Record Details</h1>
-      {data && (
-        <>
-          <h2>{data.name}</h2>
-          <p>{data.url}</p>
-          {/* <p>{data.artist_id}</p> */}
-          {/* <p>{data.name}</p> */}
-          {/* <p>{data.datetime}</p> */}
-          {/* <p>{data.venue}</p> */}
-        </>
-      )}
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>
+            <h2>{item.artist_id}</h2>
+            <h2>{item.datetime}</h2>
+            <h2>{item.title}</h2>
+            <h2>{item.name}</h2>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
