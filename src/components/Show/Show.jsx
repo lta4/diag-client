@@ -50,7 +50,7 @@ function Show() {
     
     const fetchData = async () => {
       try {
-        const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all");
+        const response = await fetch("https://rest.bandsintown.com/artists/id_15582051?app_id=043b077012de58b4db8fa0f530cd607e");
         if (!response.ok) {
           throw new Error(`This is an HTTP error: The status is ${response.status}`);
         }
@@ -63,8 +63,7 @@ function Show() {
       }
     };
 
-    console.log("Fetching data...");
-    console.log(data);
+    console.log("Fetching data...", data);
 
     fetchData();
   }, []);
@@ -77,11 +76,12 @@ function Show() {
       <h1>Record Details</h1>
       {data && (
         <>
-          <h2>{data.id}</h2>
-          <p>{data.artist_id}</p>
-          <p>{data.name}</p>
-          <p>{data.datetime}</p>
-          <p>{data.venue}</p>
+          <h2>{data.name}</h2>
+          <p>{data.url}</p>
+          {/* <p>{data.artist_id}</p> */}
+          {/* <p>{data.name}</p> */}
+          {/* <p>{data.datetime}</p> */}
+          {/* <p>{data.venue}</p> */}
         </>
       )}
     </div>
