@@ -94,8 +94,8 @@ function Show() {
       <ul>
         {items.map(item => (
           <li key={item.id}>
-            <h2>{item.artist_id}</h2>
-            <h2>{item.datetime}</h2>
+            <h2>{item.artist_id}</h2> ({item.id})
+            <h2>{item.datetime}</h2> ({item.id})
             <h2>{item.title}</h2>
             <h2>{item.name}</h2>
           </li>
