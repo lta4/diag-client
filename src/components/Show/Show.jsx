@@ -41,24 +41,49 @@ import axios from "axios";
 function Show() {
   
   // const URL = "https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all";
-
-  const [records, setRecords] = useState([]);
+  
+  const [data, setData] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all")
-    .then(res => res.json())
-    .then(data => setRecords(data))
+    
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all");
+        if (!response.ok) {
+          throw new Error(`This is an HTTP error: The status is ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    .catch(err => console.log(err))
-  }, [])
+    console.log("Fetching data...");
+    console.log(data);
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading data...</p>
+  if (error) return <p>Error: Fetched but not fetched {error.message}</p>
 
   return (
     <div>
-      <ul>
-        {records.map((list, index) => (
-          <li key={index}>{list.id} | {list.name}</li>
-        ))}
-      </ul>
+      <h1>Record Details</h1>
+      {data && (
+        <>
+          <h2>{data.id}</h2>
+          <p>{data.artist_id}</p>
+          <p>{data.name}</p>
+          <p>{data.datetime}</p>
+          <p>{data.venue}</p>
+        </>
+      )}
     </div>
   );
 };
