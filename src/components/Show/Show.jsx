@@ -41,7 +41,7 @@ import axios from "axios";
 function Show() {
   
   // const URL = "https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all";
-  const [items, setItems] = useState(["offers", "venue"]);
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
