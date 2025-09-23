@@ -41,8 +41,7 @@ import axios from "axios";
 function Show() {
   
   // const URL = "https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all";
-  const [items, setItems] = useState([]);
-  // const [data, setData] = useState(null);
+  const [items, setItems] = useState(["offers", "venue"]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -50,7 +49,7 @@ function Show() {
     
     const fetchItems = async () => {
       try {
-        const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all");
+        const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events/?app_id=043b077012de58b4db8fa0f530cd607e");
         if (!response.ok) {
           throw new Error(`This is an HTTP error: The status is ${response.status}`);
         }
@@ -63,7 +62,8 @@ function Show() {
       }
     };
 
-    console.log("Fetching items...", items);
+    console.log("Fetched items:", items);
+    // console.log(Array.from("venue"), items, null, 2);
 
     fetchItems();
   }, []);
@@ -73,7 +73,7 @@ function Show() {
   }
 
   if (error) {
-    return <p>Error: Fetched but not fetched {error.message}</p>
+    return <p>Error: {error.message}</p>
   }
 
   return (
@@ -92,12 +92,13 @@ function Show() {
     <div>
       <h1>Record Details</h1>
       <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            <h2>{item.artist_id}</h2> ({item.id})
-            <h2>{item.datetime}</h2> ({item.id})
-            <h2>{item.title}</h2>
-            <h2>{item.name}</h2>
+        {/* {items && items.length > 0 && (
+          items.map((data) => 
+          <Show key={data.id} data={data} />)
+        )} */}
+        {items.map(data => (
+          <li key={data.id}>
+            <p>{data.venue.city}</p>
           </li>
         ))}
       </ul>
