@@ -64,6 +64,7 @@ function Show() {
 
     console.log("Fetched items:", items);
     // console.log(Array.from("venue"), items, null, 2);
+    // console.log(Object.keys(items));
 
     fetchItems();
   }, []);
@@ -77,6 +78,7 @@ function Show() {
   }
 
   return (
+
     // <div>
     //   <h1>Record Details</h1>
     //   {data && (
@@ -92,13 +94,10 @@ function Show() {
     <div>
       <h1>Record Details</h1>
       <ul>
-        {/* {items && items.length > 0 && (
-          items.map((data) => 
-          <Show key={data.id} data={data} />)
-        )} */}
         {items.map(data => (
-          <li key={data.id}>
-            <p>{data.venue.city}</p>
+          <li key={data.id || data.datetime}>
+            <p>{data.venue && data.venue.name}</p>
+            <p>{data.datetime}</p>
           </li>
         ))}
       </ul>
@@ -107,3 +106,8 @@ function Show() {
 };
 
 export default Show;
+
+{/* {items && items.length > 0 && (
+          items.map((data) => 
+          <Show key={data.id} data={data} />)
+        )} */}
