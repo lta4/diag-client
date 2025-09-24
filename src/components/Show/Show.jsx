@@ -42,11 +42,10 @@ function Show() {
   
   // const URL = "https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all";
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    
     const fetchItems = async () => {
       try {
         const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events/?app_id=043b077012de58b4db8fa0f530cd607e");
@@ -54,18 +53,14 @@ function Show() {
           throw new Error(`This is an HTTP error: The status is ${response.status}`);
         }
         const data = await response.json();
-        setItems(data);
+        setItems(Array.isArray(data) ? data : []);
+        console.log('Fetched data:', data, 'Set items as array:', Array.isArray(data) ? data : []);
       } catch (error) {
         setError(error);
       } finally {
         setLoading(false);
       }
     };
-
-    console.log("Fetched items:", items);
-    // console.log(Array.from("venue"), items, null, 2);
-    // console.log(Object.keys(items));
-
     fetchItems();
   }, []);
 
@@ -78,36 +73,26 @@ function Show() {
   }
 
   return (
-
-    // <div>
-    //   <h1>Record Details</h1>
-    //   {data && (
-    //     <>
-    //       <p>{data.artist_id}</p>
-    //       <p>{data.name}</p>
-    //       <p>{data.datetime}</p>
-    //       <p>{data.venue}</p>
-    //     </>
-    //   )}
-    // </div>
-
     <div>
       <h1>Record Details</h1>
-      <ul>
-        {items.map(data => (
-          <li key={data.id || data.datetime}>
-            <p>{data.venue && data.venue.name}</p>
-            <p>{data.datetime}</p>
-          </li>
-        ))}
-      </ul>
+      {loading ? (
+        <p>Loading data...</p>
+      ) : error ? (
+        <p>Error: {error.message}</p>
+      ) : Array.isArray(items) && items.length > 0 ? (
+        <ul>
+          {items.map(data => (
+            <li key={data.id || data.datetime}>
+              <p>{data.venue && data.venue.name}</p>
+              <p>{data.datetime}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No events found.</p>
+      )}
     </div>
   );
 };
 
 export default Show;
-
-{/* {items && items.length > 0 && (
-          items.map((data) => 
-          <Show key={data.id} data={data} />)
-        )} */}
