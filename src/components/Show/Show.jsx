@@ -36,11 +36,8 @@ import axios from "axios";
 
 // export default Show;
 
-// https://rest.bandsintown.com/artists/id_15582051?app_id=043b077012de58b4db8fa0f530cd607e
-
 function Show() {
   
-  // const URL = "https://rest.bandsintown.com/artists/Diagnostic/events?app_id=043b077012de58b4db8fa0f530cd607e&date=all";
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -48,7 +45,7 @@ function Show() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events/?app_id=043b077012de58b4db8fa0f530cd607e");
+        const response = await fetch("https://rest.bandsintown.com/artists/Diagnostic/events/?app_id=1628751");
         if (!response.ok) {
           throw new Error(`This is an HTTP error: The status is ${response.status}`);
         }

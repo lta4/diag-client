@@ -1,6 +1,7 @@
 import React from "react";
 import "./Gigs.css"
-import Show from "../../components/Show/Show";
+// import Show from "../../components/Show/Show";
+import Widget from "../../components/Widget/Widget";
 
 const Gigs = () => {
     return (
@@ -42,7 +43,8 @@ const Gigs = () => {
                         </div>
                     </div>
                     <div>
-                        <Show />
+                        {/* <Show /> */}
+                        <Widget />
                     </div>
                 </div>
             </div>
