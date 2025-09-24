@@ -32,9 +32,9 @@ function Widget(){
             data-header-capitalization="uppercase"
             data-location-capitalization="uppercase"
             data-venue-capitalization="uppercase"
-            data-display-local-dates="true"
+            data-display-local-dates="false"
             data-local-dates-position="tab"
-            data-display-past-dates="true"
+            data-display-past-dates="false"
             data-display-details="true"
             data-display-lineup="false"
             data-display-start-time="true"
@@ -45,7 +45,7 @@ function Widget(){
             data-date-orientation="horizontal"
             data-date-border-color="#4A4A4A"
             data-date-border-width="1px"
-            data-date-capitalization="capitalize"
+            data-date-capitalization="uppercase"
             data-date-border-radius="10px"
             
             data-event-ticket-cta-size="medium"
@@ -61,9 +61,9 @@ function Widget(){
             data-sold-out-button-text-color="rgba(255,255,255,1)"
             data-sold-out-button-background-color="rgba(74,74,74,1)"
             data-sold-out-button-border-color="rgba(74,74,74,1)"
-            data-sold-out-button-clickable="true"
+            data-sold-out-button-clickable="false"
             
-            data-event-rsvp-position="left"
+            data-event-rsvp-position="hidden"
             data-event-rsvp-cta-size="medium"
             data-event-rsvp-only-show-icon="false"
             data-event-rsvp-text="RSVP"
@@ -112,7 +112,7 @@ function Widget(){
             data-app-id=""
             data-affil-code=""
             data-bit-logo-position="bottomRight"
-            data-bit-logo-color="rgba(191,191,191,1)">
+            data-bit-logo-color="rgba(191,191,191,1)">    
         </div>
     );
 };
