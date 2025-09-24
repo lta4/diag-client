@@ -25,7 +25,7 @@ function Widget(){
             data-background-color="rgba(0,0,0,1)"
             data-separator-color="rgba(128,0,0,1)"
             data-text-color="rgba(191,191,191,1)"
-            data-font="Helvetica"
+            data-font="Neue Haas Unica"
             data-auto-style="true"
             
             data-button-label-capitalization="uppercase"
