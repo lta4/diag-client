@@ -1,11 +1,11 @@
-/* .bit-widget {
+.bit-widget {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-} */
+    justify-content: flex-start;
+}
 
-/* a.bit-event {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
+a.bit-widget a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 4px;
+}
