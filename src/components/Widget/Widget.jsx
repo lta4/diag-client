@@ -20,14 +20,14 @@ function Widget(){
         <div class="bit-widget-initializer"
             
             data-artist-name="id_15582051"
-            
+            /* ********Main*************  */
             data-events-to-display=""
             data-background-color="rgba(0,0,0,1)"
             data-separator-color="rgba(128,0,0,1)"
             data-text-color="rgba(255,255,255,1)"
             data-font="Neue Haas Unica"
             data-auto-style="true"
-            
+            /* Button ************************ */
             data-button-label-capitalization="uppercase"
             data-header-capitalization="uppercase"
             data-location-capitalization="uppercase"
@@ -40,14 +40,14 @@ function Widget(){
             data-display-start-time="true"
             data-social-share-icon="false"
             data-display-limit="all"
-            
+            /* Date ************************ */
             data-date-format="MMM. D, YYYY"
             data-date-orientation="horizontal"
             data-date-border-color="#4A4A4A"
             data-date-border-width="1px"
             data-date-capitalization="uppercase"
             data-date-border-radius="10px"
-            
+            /* Notify Me Button ************************ */
             data-event-ticket-cta-size="medium"
             data-event-custom-ticket-text=""
             data-event-ticket-text="TICKETS"
@@ -73,7 +73,7 @@ function Widget(){
             // data-event-rsvp-cta-border-color="rgba(74,74,74,1)"
             // data-event-rsvp-cta-border-width="1px"
             // data-event-rsvp-cta-border-radius="2px"
-            
+            /* Follow Section ************************ */
             data-follow-section-position="hidden"
             data-follow-section-alignment="center"
             // data-follow-section-header-text="Get updates on new shows, new music, and more"
@@ -85,7 +85,7 @@ function Widget(){
             data-follow-section-cta-border-color="rgba(74,74,74,1)"
             // data-follow-section-cta-border-width="0px"
             // data-follow-section-cta-border-radius="2px"
-            
+            /* Request ************************ */
             data-play-my-city-position="hidden"
             data-play-my-city-alignment="center"
             data-play-my-city-header-text="Don’t see a show near you?"
