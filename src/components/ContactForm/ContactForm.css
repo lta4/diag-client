@@ -12,9 +12,35 @@
     margin: 5rem;
 }
 
+/* input {
+    border-bottom: 2px solid #ccc;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+} */
+
+input, #firstname, #lastname, #email {
+    padding: 5px 0 5px 0;
+    margin: 0 auto;
+    background-color: black;
+    border: inset 0;
+    border-bottom: 1px solid #d2d2d2;
+    width: 60%;
+    display: block;
+}
+
+textarea, #message {
+    padding: 5px 0 6rem 0;
+    margin: 0 auto;
+    background-color: black;
+    border: inset 0;
+    border-bottom: 1px solid #d2d2d2;
+    width: 60%;
+    display: block;
+}
+
 .contact__input {
     color: var(--text-color);
-    border-bottom-width: -50%;
     /* border-bottom-right-radius: 80px 80px; */
 }
 
@@ -22,39 +48,15 @@
     resize: none;
 }
 
-input, #firstname, #lastname, #email {
-    padding: 5px 0 5px 0;
-    margin: 0 5px 0 5px;
-    background-color: black;
-    border: inset 0;
-    border-bottom: 1px solid #d2d2d2;
-}
-
-textarea, #message {
-    padding: 5px 0 6rem 0;
-    margin: 0 5px 0 5px;
-    background-color: black;
-    border: inset 0;
-    border-bottom: 1px solid #d2d2d2;
-}
-
-/* .contact__btn {
-    width: 10px;
-    padding: 5px 0 5px 0;
-    margin: 0 5px 0 5px;
-} */
-
 .contact__btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* width: 3rem 3rem; */
-    cursor: pointer;
+    width: 10%;
+    margin: 0 auto;
+    display: block;
 }
 
-.contact__btn:nth-child(n):hover {
+/* .contact__btn:nth-child(n):hover {
     background: var(--first-color);
     color: var(--text-color);
     transition: color 0.3s ease;
     transition: background 0.3s ease;
-}
+} */
