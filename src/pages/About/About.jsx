@@ -8,10 +8,11 @@ import ScrollToTop from "react-scroll-to-top";
 const About = () => {
     return (
         <>
-            {/* <div className="jTwo__container">
+            <div className="jTwo__container">
                 <img src={JTwo} alt="" className="jTwo__container--image"/>
-            </div> */}
-            {/* <div className="hr__bar">
+                hello
+            </div>
+            <div className="hr__bar">
                 <hr />
             <section className="hr__bar--about">
                 <div className="hr__bar--title">
@@ -19,11 +20,14 @@ const About = () => {
                 </div>
             </section>
             <hr />
-            </div> */}
+            </div>
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__set--image">
-                    <img src={JEleven} alt="" className="JEleven__container" />
+                    <img src={JEleven} alt="" className="JEleven__image" />
+                    <div className="">
+                        Diagnostic
+                    </div>
                     {/* <div className="profile__set--description">
                         <h2>Jose Flores</h2>
                         <p>I'm a DJ residing in San Diego, CA.
