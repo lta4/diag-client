@@ -68,17 +68,23 @@
     /* border: 5px solid green; */
 }
 
-.profile__set--image {
+.profile__container {
+    /* width: 40rem;
+    height: 60rem; */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile__container--image {
     width: 40rem;
-    height: 60rem;
+    height: 50rem;
+    overflow: hidden;
 }
 
-.profile__set--image img {
-    object-fit: contain;
-}
-
-.profile__set--description {
-    text-align: center;
+.profile__container--text {
+    /* text-align: center; */
+    flex: 1;
     font-size: 1.5rem;
 }
 

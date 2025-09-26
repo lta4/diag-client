@@ -8,24 +8,11 @@ import ScrollToTop from "react-scroll-to-top";
 const About = () => {
     return (
         <>
-            <div className="jTwo__container">
-                <img src={JTwo} alt="" className="jTwo__container--image"/>
-                hello
-            </div>
-            <div className="hr__bar">
-                <hr />
-            <section className="hr__bar--about">
-                <div className="hr__bar--title">
-                    <h1>About</h1>
-                </div>
-            </section>
-            <hr />
-            </div>
             <section className="profile">
                 <div className="profile__set">
-                    <div className="profile__set--image">
-                    <img src={JEleven} alt="" className="JEleven__image" />
-                    <div className="">
+                    <div className="profile__container">
+                    <img src={JEleven} alt="" className="profile__container--image" />
+                    <div className="profile__container--text">
                         Diagnostic
                     </div>
                     {/* <div className="profile__set--description">
