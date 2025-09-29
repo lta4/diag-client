@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./Privacy.css"
 import PersonList from "../../components/PersonList/PersonList";
+import ScrollToTop from "react-scroll-to-top";
 
 function Privacy() {
 
@@ -11,6 +12,7 @@ function Privacy() {
     return (
         <div className="legal">
             <PersonList />
+            <ScrollToTop />
         </div>
     );
 };

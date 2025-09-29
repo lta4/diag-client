@@ -1,15 +1,22 @@
-import React from "react";
+import { useEffect } from "react";
 import "./Term.css";
 import PersonList from "../../components/PersonList/PersonList";
 // import PersonAdd from "../../components/PersonAdd/PersonAdd";
 import Blog from "../../components/Blog/Blog";
+import ScrollToTop from "react-scroll-to-top";
 
-const Term = () => {
+
+function Term() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className="legal">
             {/* <PersonAdd /> */}
             <PersonList />
             <Blog />
+            <ScrollToTop />
         </div>
     );
 };
