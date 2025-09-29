@@ -9,7 +9,7 @@ import { Poster } from "@vidstack/react";
 // import { Thumbnail } from "@vidstack/react";
 // import { Time, type TimeProps } from "@vidstack/react";
 // import { Title, type TitleProps } from "@vidstack/react";
-import ScrollUp from "react-scroll-to-top";
+import ScrollToTop from "react-scroll-to-top";
 
 function Plans() {
 
@@ -57,7 +57,7 @@ function Plans() {
                         <div className="vds-time-divider"></div>
                     <Time type="current" className="vds-time"/>
                 </div> */}
-                <ScrollUp />
+                <ScrollToTop />
             </div>
         );
     };

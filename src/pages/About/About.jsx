@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./About.css";
 import JThirteen from "../../assets/jThirteen.jpg";
-// import ScrollUp from "react-scroll-to-top";
+import ScrollToTop from "react-scroll-to-top";
 
 function About() {
 
@@ -24,7 +24,7 @@ function About() {
                     </div>
                 </div>
             </section>
-            {/* <ScrollUp /> */}
+            <ScrollToTop />
         </>
     );
 };
