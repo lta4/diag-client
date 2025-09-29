@@ -60,7 +60,7 @@
 
 .profile__set {
     width: 50%;
-    margin: 2rem;
+    margin: 5rem;
     /* padding: 2rem; */
     display: flex;
     flex-direction: column;
@@ -77,17 +77,23 @@
 }
 
 .profile__container--image {
-    width: 40rem;
-    height: 50rem;
+    width: 55rem;
+    height: 40rem;
     overflow: hidden;
 }
 
-.profile__container--text {
-    /* text-align: center; */
-    flex: 1;
-    font-size: 1.5rem;
+.profile__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
 }
 
-.profile__set--title {
-    margin: 3rem;
+.profile__description--title {
+    font-size: 2.5rem;
+}
+
+.profile__description--text {
+    font-size: 1.2rem;
+    margin: 2rem;
 }
