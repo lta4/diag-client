@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import "./Video.css";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
@@ -9,9 +9,13 @@ import { Poster } from "@vidstack/react";
 // import { Thumbnail } from "@vidstack/react";
 // import { Time, type TimeProps } from "@vidstack/react";
 // import { Title, type TitleProps } from "@vidstack/react";
-import ScrollToTop from "react-scroll-to-top";
+// import ScrollToTop from "react-scroll-to-top";
 
-const Plans = () => {
+function Plans() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
             <div className="video">
@@ -53,7 +57,7 @@ const Plans = () => {
                         <div className="vds-time-divider"></div>
                     <Time type="current" className="vds-time"/>
                 </div> */}
-                <ScrollToTop />
+                {/* <ScrollToTop /> */}
             </div>
         );
     };
