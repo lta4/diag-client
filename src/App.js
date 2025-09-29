@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import Hero from "./components/Hero/Hero";
 import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import ScrollUp from "./components/ScrollUp/ScrollUp";
 import ScrollToBottom from "./components/ScrollToBottom/ScrollToBottom";
 // import { MediaPlayer, MediaProvider } from "@vidstack/react";
 // import { defaultLayoutIcons, DefaultVideoLayout } from
@@ -29,6 +29,7 @@ function App() {
     <>
     <div className="App">
       <Router>
+        <ScrollUp />
         {/* <ScrollToBottom /> */}
         {/* <Header /> */}
         <HeaderHook />
