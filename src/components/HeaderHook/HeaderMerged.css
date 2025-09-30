@@ -1,0 +1,150 @@
+/* Merged Header CSS from Header.css and HeaderHook.css */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    z-index: var(--z-fixed);
+}
+
+.header--transparent {
+    background-color: transparent;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color: transparent;
+    height: var(--header-height);
+    margin: 0;
+}
+
+.nav, .active {
+    margin: 0;
+    padding: 1rem 1rem;
+    background-color: transparent;
+}
+
+.nav__wDiag {
+    color: var(--first-color);
+}
+
+.nav__wDiag img {
+    width: 75%;
+    height: auto;
+}
+
+.nav__wDiag img:hover {
+    /* Add hover effect if needed */
+}
+
+.nav__toggle,
+.nav__close {
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.nav__link,
+.nav__cta {
+    font-size: var(--small-font-size);
+}
+
+.nav__cta {
+    background-color: var(--first-color);
+    color: var(--title-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* padding: 0.75rem 1.5rem; */
+    padding: 8px 16px;
+    margin-top: 1rem;
+    width: auto;
+    white-space: nowrap;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.nav__list__web {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.5rem;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.show-menu {
+    right: 0;
+}
+
+@media screen and (max-width: 1150px) {
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: hsla(0, 0%, 6%, 0.2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        width: 80%;
+        height: 100%;
+        padding: 6rem 3rem 0;
+        transition: right 0.4s;
+    }
+    .nav__list {
+        flex-direction: column;
+        row-gap: 2.5rem;
+    }
+    .nav__cta {
+        margin-top: 1rem;
+        width: auto;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .nav_menu {
+        padding: 4rem 1rem 2rem;
+    }
+    .nav__list {
+        row-gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .nav {
+        height: calc(var(--header-height) + 1rem);
+    }
+    .nav__toggle,
+    .nav__close {
+        display: none;
+    }
+    .nav__list {
+        flex-direction: row;
+        column-gap: 2.5rem;
+    }
+}

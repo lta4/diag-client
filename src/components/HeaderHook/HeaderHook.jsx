@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+// import CDiagBanner from "../../assets/CDiagBanner.jpg";
 import WDiag from "../../assets/wDiag.png";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
-import "./Header.css";
-import "./HeaderHook.css";
+import "./HeaderMerged.css";
 import { HashLink as Link } from "react-router-hash-link";
 
 const HeaderHook = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isTransparent, setIsTransparent] = useState(true);
     const isMobile = useMediaQuery({ maxWidth: "1150px" });
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 40) {
+                setIsTransparent(false);
+            } else {
+                setIsTransparent(true);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -25,7 +38,7 @@ const HeaderHook = () => {
     const buttonClassName = "nav__cta";
 
     return (
-        <header className="header">
+        <header className={`header${isTransparent ? " header--transparent" : ""}`}>
             <nav className="nav active">
                 <NavLink to="/" className="nav__logo">
                     <span className="nav__wDiag">
