@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-// import CDiagBanner from "../../assets/CDiagBanner.jpg";
 import WDiag from "../../assets/wDiag.png";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
-import "./HeaderMerged.css";
+import "./Header.css";
 import { HashLink as Link } from "react-router-hash-link";
 
-const HeaderHook = () => {
+const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isTransparent, setIsTransparent] = useState(true);
     const isMobile = useMediaQuery({ maxWidth: "1150px" });
@@ -127,4 +126,4 @@ const HeaderHook = () => {
     );
 };
 
-export default HeaderHook; 
+export default Header;

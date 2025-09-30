@@ -1,7 +1,6 @@
 import React from "react";
 import "./Hero.css";
-// import Header from "../Header/Header";
-import HeaderHook from "../HeaderHook/HeaderHook";
+import Header from "../Header/Header";
 import Gigs from "../Gigs/Gigs";
 import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
@@ -15,8 +14,7 @@ const Hero = (props) => {
     return (
         <div className="hero" id="home">
             <div className="hero__container">
-                {/* <Header /> */}
-                <HeaderHook />
+                <Header />
                 <div className="jOne_container">
                     <img src={JOne} alt="" className="jOne-image" />
                 </div>

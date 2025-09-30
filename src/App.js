@@ -7,7 +7,7 @@ import ScrollToBottom from "./components/ScrollToBottom/ScrollToBottom";
 // import { MediaPlayer, MediaProvider } from "@vidstack/react";
 // import { defaultLayoutIcons, DefaultVideoLayout } from
 // "@vidstack/react/player/layouts/default";
-import HeaderHook from "./components/HeaderHook/HeaderHook";
+import Header from "./components/Header/Header";
 import About from "./pages/About/About";
 import Video from "./pages/Video/Video";
 // import Gigs from "./components/Gigs/Gigs"
@@ -30,7 +30,7 @@ function App() {
       <Router>
         <ScrollUp />
         {/* <ScrollToBottom /> */}
-        <HeaderHook />
+        <Header />
         {/* <Gigs /> */}
       <Routes>
         <Route path="/" element={<Hero />} />
