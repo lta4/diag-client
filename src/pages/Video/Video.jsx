@@ -57,7 +57,7 @@ function Plans() {
                         <div className="vds-time-divider"></div>
                     <Time type="current" className="vds-time"/>
                 </div> */}
-                <ScrollToTop />
+                <ScrollToTop className="hero__scroll"/>
             </div>
         );
     };

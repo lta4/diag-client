@@ -16,7 +16,7 @@ function Term() {
             {/* <PersonAdd /> */}
             <PersonList />
             <Blog />
-            <ScrollToTop />
+            <ScrollToTop className="hero__scroll" />
         </div>
     );
 };

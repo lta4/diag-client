@@ -23,6 +23,17 @@
     padding: 0;
 }
 
+.hero__scroll {
+    background: #222;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.hero__scroll:hover {
+    background: var(--first-color);
+    color: #fff;
+}
+
 /**********************jOne Image****************/
 
 .jOne_container {
@@ -74,3 +85,14 @@
 /* .scroll-to-top, .hero__scroll {
     color: red;
 } */
+
+.scroll-up-btn {
+    background: #222;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.scroll-up-btn:hover {
+    background: #ff6600;
+    color: #fff;
+}

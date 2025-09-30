@@ -12,7 +12,7 @@ function Privacy() {
     return (
         <div className="legal">
             <PersonList />
-            <ScrollToTop />
+            <ScrollToTop className="hero__scroll" />
         </div>
     );
 };

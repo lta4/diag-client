@@ -24,7 +24,7 @@ function About() {
                     </div>
                 </div>
             </section>
-            <ScrollToTop />
+            <ScrollToTop className="hero__scroll"/>
         </>
     );
 };
