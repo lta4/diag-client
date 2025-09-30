@@ -9,7 +9,6 @@ import { HashLink as Link } from "react-router-hash-link";
 const Header = () => {
 
     const [showMenu, setShowMenu] = useState(false);
-    // const [nav, setNav] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
