@@ -10,6 +10,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isTransparent, setIsTransparent] = useState(true);
     const isMobile = useMediaQuery({ maxWidth: "1150px" });
+    console.log('isMobile:', isMobile);
 
     useEffect(() => {
         const handleScroll = () => {

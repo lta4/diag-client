@@ -46,13 +46,14 @@
     font-size: 1.5rem;
     color: var(--title-color);
     cursor: pointer;
+    border: 2px solid green; /* DEBUG: Remove after testing */
 }
 
-.nav__link,
-.nav__cta {
+
+ .nav__link,
+ .nav__cta {
     font-size: var(--small-font-size);
 }
-
 .nav__cta {
     background-color: var(--first-color);
     color: var(--title-color);
@@ -98,9 +99,6 @@
     right: 1.5rem;
 }
 
-.show-menu {
-    right: 0;
-}
 
 @media screen and (max-width: 1150px) {
     .nav__menu {
@@ -114,6 +112,10 @@
         height: 100%;
         padding: 6rem 3rem 0;
         transition: right 0.4s;
+        border: 2px solid red; /* DEBUG: Remove after testing */
+    }
+    .nav__menu.show-menu {
+        right: 0;
     }
     .nav__list {
         flex-direction: column;
