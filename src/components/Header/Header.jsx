@@ -21,23 +21,43 @@ const Header = () => {
         }
     };
 
+    // const [isTransparent, setIsTransparent] = useState(false);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         setIsTransparent(window.scrollY > 50);
+    //     };
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, []);
+
 const Nav = () => {
 
     const [nav, setNav] = useState(false);
 
-    const changeBackground = () => {
-        // console.log(window.scrollY)
-        if(window.scrollY >= 100) {
-            setNav(true)
-        } else {
-            setNav(false)
-        }
-    };
+    // const changeBackground = () => {
+    //     // console.log(window.scrollY)
+    //     if(window.scrollY >= 100) {
+    //         setNav(true)
+    //     } else {
+    //         setNav(false)
+    //     }
+    // };
 
-    window.addEventListener('scroll', changeBackground);
+    // window.addEventListener('scroll', changeBackground);
+
+    const [isTransparent, setIsTransparent] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsTransparent(window.scrollY > 50);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <header className="header">
+        <header className={isTransparent ? "header header--transparent" : "header"}>
             <nav className= {nav ? 'nav active' : 'nav'}>
             {/* <img src={CDiagBanner} alt="" className="CDiagBanner"/> */}
             <NavLink to="/" className="nav__logo">

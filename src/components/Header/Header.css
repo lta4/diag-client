@@ -26,6 +26,12 @@
     left: 0;
     /* background-color: transparent; */
     z-index: var(--z-fixed);
+    background: #fff;
+    transition: background 0.3s;
+}
+
+.header--transparent {
+    background: transparent;
 }
 
 .nav {
