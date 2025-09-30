@@ -54,17 +54,17 @@ const Header = () => {
                     <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
                         <ul className={listClassName}>
                             <li>
-                                <Link smooth to="#shows" className={linkClassName} onClick={closeMobileMenu}>
+                                <Link smooth to="/#shows" className={linkClassName} onClick={closeMobileMenu}>
                                     Shows
                                 </Link>
                             </li>
                             <li>
-                                <Link smooth to="#mix" className={linkClassName} onClick={closeMobileMenu}>
+                                <Link smooth to="/#mix" className={linkClassName} onClick={closeMobileMenu}>
                                     Mixes
                                 </Link>
                             </li>
                             <li>
-                                <Link smooth to="#inquire" className={linkClassName} onClick={closeMobileMenu}>
+                                <Link smooth to="/#inquire" className={linkClassName} onClick={closeMobileMenu}>
                                     Inquire
                                 </Link>
                             </li>
@@ -91,17 +91,17 @@ const Header = () => {
                 ) : (
                     <ul className={listClassName}>
                         <li>
-                            <Link smooth to="#shows" className={linkClassName}>
+                            <Link smooth to="/#shows" className={linkClassName}>
                                 Shows
                             </Link>
                         </li>
                         <li>
-                            <Link smooth to="#mix" className={linkClassName}>
+                            <Link smooth to="/#mix" className={linkClassName}>
                                 Mixes
                             </Link>
                         </li>
                         <li>
-                            <Link smooth to="#inquire" className={linkClassName}>
+                            <Link smooth to="/#inquire" className={linkClassName}>
                                 Inquire
                             </Link>
                         </li>
