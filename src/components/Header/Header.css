@@ -5,11 +5,13 @@
     top: 0;
     left: 0;
     background-color: #000;
+    transition: background-color 1s ease;
     z-index: var(--z-fixed);
 }
 
 .header--transparent {
     background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
 .nav {
@@ -38,6 +40,7 @@
     display: block;
     margin: 0 auto;
     background: transparent;
+    /* filter: sepia(1) hue-rotate(200deg) saturate(5); */
     /* opacity: 0.8; */
     /* filter: brightness(0.8); */
 }
@@ -51,7 +54,6 @@
     font-size: 1.5rem;
     color: var(--title-color);
     cursor: pointer;
-    border: 2px solid green; /* DEBUG: Remove after testing */
 }
 
 

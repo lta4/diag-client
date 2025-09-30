@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import WDiag from "../../assets/wDiag.png";
+import SDiagBanner from "../../assets/SDiagBanner.jpg";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
@@ -42,7 +43,7 @@ const Header = () => {
             <nav className="nav active">
                 <NavLink to="/" className="nav__logo">
                     <span className="nav__wDiag">
-                        <img src={WDiag} alt="Logo" className="nav__wDiag" />
+                        <img src={SDiagBanner} alt="Logo" className="nav__wDiag" />
                     </span>
                 </NavLink>
                 {isMobile && (
