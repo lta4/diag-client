@@ -1,7 +1,31 @@
+.bit-upcoming-events {
+    display: flex !important;
+    flex-direction: column !important;
+}
+.bit-event {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+.bit-event-list-title.bit-show-upcoming {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+}
+.bit-widget {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+}
 .bit-widget {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+}
+
+.bit-widget .bit--events {
+    display: flex;
+    flex-direction: row;
 }
 
 a.bit-widget a {

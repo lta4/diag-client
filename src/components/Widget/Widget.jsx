@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Widget.css"
 
+
 function Widget(){
 
     useEffect(() => {
@@ -18,16 +19,16 @@ function Widget(){
     return (
 
         <div class="bit-widget-initializer"
-            
+    
             data-artist-name="id_15582051"
-            /* ********Main*************  */
+            
             data-events-to-display=""
             data-background-color="rgba(0,0,0,1)"
             data-separator-color="rgba(128,0,0,1)"
             data-text-color="rgba(255,255,255,1)"
             data-font="Neue Haas Unica"
             data-auto-style="true"
-            /* Button ************************ */
+            
             data-button-label-capitalization="uppercase"
             data-header-capitalization="uppercase"
             data-location-capitalization="uppercase"
@@ -35,19 +36,19 @@ function Widget(){
             data-display-local-dates="false"
             data-local-dates-position="tab"
             data-display-past-dates="false"
-            data-display-details="true"
+            data-display-details="false"
             data-display-lineup="false"
-            data-display-start-time="true"
+            data-display-start-time="false"
             data-social-share-icon="false"
             data-display-limit="all"
-            /* Date ************************ */
-            data-date-format="MMM. D, YYYY"
+            
+            data-date-format="M/D"
             data-date-orientation="horizontal"
             data-date-border-color="#4A4A4A"
             data-date-border-width="1px"
             data-date-capitalization="uppercase"
             data-date-border-radius="10px"
-            /* Notify Me Button ************************ */
+            
             data-event-ticket-cta-size="medium"
             data-event-custom-ticket-text=""
             data-event-ticket-text="TICKETS"
@@ -58,34 +59,34 @@ function Widget(){
             data-event-ticket-cta-border-width="0px"
             data-event-ticket-cta-border-radius="2px"
             
-            // data-sold-out-button-text-color="rgba(255,255,255,1)"
-            // data-sold-out-button-background-color="rgba(74,74,74,1)"
-            // data-sold-out-button-border-color="rgba(74,74,74,1)"
-            // data-sold-out-button-clickable="false"
+            data-sold-out-button-text-color="rgba(255,255,255,1)"
+            data-sold-out-button-background-color="rgba(74,74,74,1)"
+            data-sold-out-button-border-color="rgba(74,74,74,1)"
+            data-sold-out-button-clickable="false"
             
-            // data-event-rsvp-position="hidden"
-            // data-event-rsvp-cta-size="medium"
-            // data-event-rsvp-only-show-icon="false"
-            // data-event-rsvp-text="RSVP"
-            // data-event-rsvp-icon="false"
-            // data-event-rsvp-cta-text-color="rgba(74,74,74,1)"
-            // data-event-rsvp-cta-bg-color="rgba(255,255,255,1)"
-            // data-event-rsvp-cta-border-color="rgba(74,74,74,1)"
-            // data-event-rsvp-cta-border-width="1px"
-            // data-event-rsvp-cta-border-radius="2px"
-            /* Follow Section ************************ */
+            data-event-rsvp-position="hidden"
+            data-event-rsvp-cta-size="medium"
+            data-event-rsvp-only-show-icon="false"
+            data-event-rsvp-text="RSVP"
+            data-event-rsvp-icon="false"
+            data-event-rsvp-cta-text-color="rgba(74,74,74,1)"
+            data-event-rsvp-cta-bg-color="rgba(255,255,255,1)"
+            data-event-rsvp-cta-border-color="rgba(74,74,74,1)"
+            data-event-rsvp-cta-border-width="1px"
+            data-event-rsvp-cta-border-radius="2px"
+            
             data-follow-section-position="hidden"
             data-follow-section-alignment="center"
-            // data-follow-section-header-text="Get updates on new shows, new music, and more"
+            data-follow-section-header-text="Get updates on new shows, new music, and more"
             data-follow-section-cta-size="medium"
-            // data-follow-section-cta-text="FOLLOW"
+            data-follow-section-cta-text="FOLLOW"
             data-follow-section-cta-icon="false"
             data-follow-section-cta-text-color="rgba(255,255,255,1)"
             data-follow-section-cta-bg-color="rgba(74,74,74,1)"
             data-follow-section-cta-border-color="rgba(74,74,74,1)"
-            // data-follow-section-cta-border-width="0px"
-            // data-follow-section-cta-border-radius="2px"
-            /* Request ************************ */
+            data-follow-section-cta-border-width="0px"
+            data-follow-section-cta-border-radius="2px"
+            
             data-play-my-city-position="hidden"
             data-play-my-city-alignment="center"
             data-play-my-city-header-text="Don’t see a show near you?"
