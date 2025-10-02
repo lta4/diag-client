@@ -19,7 +19,7 @@ function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api")
+    fetch(`${process.env.REACT_APP_API_URL}/api`)
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
