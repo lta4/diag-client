@@ -17,7 +17,8 @@ export default class PersonAdd extends React.Component {
             name: this.state.name
         };
 
-        axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
+        axios.post(`${process.env.REACT_APP_API_URL}/users`, { user })
+        axios.get(`${process.env.REACT_APP_API_URL}/users`)
             .then(res => {
                 console.log(res)
                 console.log(res.data);
