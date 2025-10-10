@@ -5,7 +5,8 @@ import "./ContactForm.css";
 function ContactForm() {
     const [state, handleSubmit] = useForm("xyzzbedg");
     if (state.succeeded) {
-        return <p>Thanks for reaching for the best!</p>
+
+        return <p>Thanks for your message! We've received it and will respond shortly!</p>
 }
     return (
         <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="">
