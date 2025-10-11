@@ -23,7 +23,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
-    height: 5rem;
+    height: 10rem;
     cursor: pointer;
 }
 
@@ -83,6 +83,7 @@ img.footer__link.footer__link--bit:hover {
     flex-direction: row;
     justify-content: center;
     gap: 4rem;
+    margin-top: .05rem;
 }
 
 .footer__service:nth-child(n):hover {
@@ -101,6 +102,7 @@ img.footer__link.footer__link--bit:hover {
     flex-direction: row;
     justify-content: left;
     margin: 2.3rem 2.3rem;
+    margin-top: auto;
     /* border: 2px solid white; */
 }
 
