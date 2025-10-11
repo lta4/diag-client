@@ -4,26 +4,38 @@
     align-items: center !important;
     justify-content: center !important;
 }
-.bit-event{
+
+.bit-event {
     display: flex !important;
     flex-direction: row !important;
-    /* align-items: center !important; */
-    /* justify-content: space-evenly !important; */
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100%;
+    gap: 150px; /* Even more space between all children in the row */
+}
+
+/* Add even more space to the left of .bit-location if it follows .bit-venue in the same row */
+.bit-venue + .bit-location {
+    margin-left: 150px;
+    gap: 150px;
 }
 
 .bit-event > * {
-    /* flex: 1;  */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    flex: 1 1 0 !important;
+    text-align: center;
 }
 
 a .bit-event > * {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
+
+/* a .bit-event > * {
+    flex: 1 1 0 !important;
+    text-align: center !important;
+    margin: 0 8px !important;
+} */
 
 /* .bit-widget {
     display: flex;

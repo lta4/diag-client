@@ -49,11 +49,14 @@ function Show() {
         if (!response.ok) {
           throw new Error(`This is an HTTP error: The status is ${response.status}`);
         }
+
         const data = await response.json();
         setItems(Array.isArray(data) ? data : []);
         console.log('Fetched data:', data, 'Set items as array:', Array.isArray(data) ? data : []);
+
       } catch (error) {
         setError(error);
+        
       } finally {
         setLoading(false);
       }
