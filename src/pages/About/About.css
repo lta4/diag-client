@@ -31,6 +31,7 @@
     width: 55rem;
     height: 40rem;
     overflow: hidden;
+    border-radius: 50%;;
 }
 
 .profile__description {
@@ -38,6 +39,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
+    line-height: 1.7;
+    padding: 1.5rem 0;
 }
 
 .profile__description--title {
@@ -45,6 +48,6 @@
 }
 
 .profile__description--text {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 2rem;
 }
