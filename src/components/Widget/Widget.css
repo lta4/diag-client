@@ -11,13 +11,16 @@
     align-items: center !important;
     justify-content: space-between !important;
     width: 100%;
-    gap: 150px; /* Even more space between all children in the row */
+    gap: 10rem; /* Even more space between all children in the row */
 }
 
 /* Add even more space to the left of .bit-location if it follows .bit-venue in the same row */
-.bit-venue + .bit-location {
-    margin-left: 150px;
-    gap: 150px;
+/* .bit-details-inner-wrapper {
+    width: 100% !important;
+} */
+
+a.bit-location-under-mobile .bit-titleWrapper {
+    gap: 10rem;
 }
 
 .bit-event > * {

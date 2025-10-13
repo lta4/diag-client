@@ -24,7 +24,7 @@ function Widget(){
             
             data-events-to-display=""
             data-background-color="rgba(0,0,0,1)"
-            data-separator-color="rgba(128,0,0,1)"
+            data-separator-color="rgba(0,0,0,1)"
             data-text-color="rgba(255,255,255,1)"
             data-font="Neue Haas Unica"
             data-auto-style="true"
@@ -59,10 +59,10 @@ function Widget(){
             data-event-ticket-cta-border-width="0px"
             data-event-ticket-cta-border-radius="2px"
             
-            data-sold-out-button-text-color="rgba(255,255,255,1)"
-            data-sold-out-button-background-color="rgba(74,74,74,1)"
-            data-sold-out-button-border-color="rgba(74,74,74,1)"
-            data-sold-out-button-clickable="false"
+            // data-sold-out-button-text-color="rgba(255,255,255,1)"
+            // data-sold-out-button-background-color="rgba(74,74,74,1)"
+            // data-sold-out-button-border-color="rgba(74,74,74,1)"
+            // data-sold-out-button-clickable="false"
             
             data-event-rsvp-position="hidden"
             data-event-rsvp-cta-size="medium"
