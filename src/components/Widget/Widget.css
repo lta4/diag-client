@@ -11,17 +11,8 @@
     align-items: center !important;
     justify-content: space-between !important;
     width: 100%;
-    gap: 1px; /* Even more space between all children in the row */
+    gap: 2rem; /* Even more space between all children in the row */
 }
-
-/* Add even more space to the left of .bit-location if it follows .bit-venue in the same row */
-/* .bit-details-inner-wrapper {
-    width: 100% !important;
-} */
-
-/* a.bit-location-under-mobile, a.bit-venue {
-    gap: 10rem;
-} */
 
 .bit-event > * {
     flex: 1 1 0 !important;
@@ -37,7 +28,7 @@ a .bit-event > * {
 .bit-details-inner-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 80px !important;
+    gap: 15rem !important;
     align-items: center;
 }
 
@@ -59,11 +50,11 @@ a .bit-event > * {
 
 /********************Media*******************/
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .bit-details-inner-wrapper {
         display: flex;
         flex-direction: column !important;
-        gap: 16px;
+        gap: 3rem !important;
     }
 
     .bit-location-under-mobile,
@@ -72,4 +63,4 @@ a .bit-event > * {
         text-align: center;
         margin: 0;
     }
-} */
+}
