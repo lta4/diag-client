@@ -117,8 +117,8 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/" className={`${linkClassName} ${buttonClassName}`}>
-                                Get Started
+                            <NavLink to="https://www.youtube.com/@DiagnosticMusic0" target="_blank" className={`${linkClassName} ${buttonClassName}`}>
+                                Join the Vibe
                             </NavLink>
                         </li>
                     </ul>
