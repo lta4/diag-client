@@ -32,14 +32,15 @@
 
 .nav__wDiag {
     color: var(--first-color);
+    /* mix-blend-mode: multiply; */
 }
 
 .nav__wDiag img {
-    width: 20rem;
+    width: 21rem;
     height: auto;
     display: block;
     margin: 0 auto;
-    background: transparent;
+    /* background: transparent; */
     /* filter: sepia(1) hue-rotate(200deg) saturate(5); */
     /* opacity: 0.8; */
     /* filter: brightness(0.8); */
