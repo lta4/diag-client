@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 import "./Video.css";
-import "@vidstack/react/player/styles/default/theme.css";
-import "@vidstack/react/player/styles/default/layouts/video.css";
-import { MediaPlayer, MediaProvider } from "@vidstack/react";
-import { defaultLayoutIcons, DefaultVideoLayout } from
-"@vidstack/react/player/layouts/default";
-import { Poster } from "@vidstack/react";
+// Using embed iframe for YouTube content instead of vidstack player
 // import { Thumbnail } from "@vidstack/react";
 // import { Time, type TimeProps } from "@vidstack/react";
 // import { Title, type TitleProps } from "@vidstack/react";
@@ -32,17 +27,16 @@ function Plans() {
                         <DefaultVideoLayout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt" icons={defaultLayoutIcons} 
                         />
                 </MediaPlayer> */}
-                <MediaPlayer playsInline title="Diagnostic" src="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz" className="video__container--media">
-                    <MediaProvider />
-                            <Poster 
-                                className=""
-                                src="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz/poster.webp" 
-                                alt="..." />
-                            <DefaultVideoLayout 
-                                thumbnails="https://music.youtube.com/watch?v=wSxtLTEFV7w&si=oevK8_hPBlaJ1Tgz.thumnbnails.vtt"
-                                icons= {defaultLayoutIcons}
-                            />
-                </MediaPlayer>
+                <div className="video__container--media">
+                    <iframe
+                        title="Diagnostic - YouTube"
+                        className="video__iframe"
+                        src="https://www.youtube.com/embed/wSxtLTEFV7w?rel=0&modestbranding=1"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                    />
+                </div>
                 </div>
                 {/* <Thumbnail.Root
                     src="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
