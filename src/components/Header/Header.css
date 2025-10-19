@@ -125,7 +125,7 @@ img .nav__wDiag {
         height: 100%;
         padding: 6rem 3rem 0;
         transition: right 0.4s;
-        border: 2px solid red; /* DEBUG: Remove after testing */
+        /* border: 2px solid var(--first-color); */
     }
     .nav__menu.show-menu {
         right: 0;

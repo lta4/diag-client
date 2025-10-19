@@ -84,7 +84,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <NavLink to="/" className={`${linkClassName} ${buttonClassName}`} onClick={closeMobileMenu}>
-                                    Get Started
+                                    DIAGNOSTIC
                                 </NavLink>
                             </li>
                         </ul>
