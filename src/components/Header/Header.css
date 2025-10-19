@@ -31,7 +31,7 @@
 }
 
 .nav__wDiag {
-    color: var(--first-color);
+    /* color: var(--text-color); */
     /* mix-blend-mode: multiply; */
 }
 
@@ -44,6 +44,11 @@
     /* filter: sepia(1) hue-rotate(200deg) saturate(5); */
     /* opacity: 0.8; */
     /* filter: brightness(0.8); */
+}
+
+img .nav__wDiag {
+    background-color: var(--first-color);
+    color: var(--first-color);
 }
 
 .nav__wDiag img:hover {

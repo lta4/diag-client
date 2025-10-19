@@ -14,9 +14,9 @@ function Plans() {
 
     return (
             <div className="video">
-                <div className="video__title">
-                    Video
-                </div>
+                {/* <div className="video__title">
+                    Diagnostic
+                </div> */}
                 <div className="video__container">
                 {/* <MediaPlayer playsInline title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4">
                     <MediaProvider />
