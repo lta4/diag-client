@@ -4,8 +4,10 @@ import Header from "../Header/Header";
 import Gigs from "../Gigs/Gigs";
 import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
-import JOne from "../../assets/jOne.jpeg";
+// import JOne from "../../assets/jOne.jpeg";
+import FWDiag from "../../assets/FWDiag.jpg";
 import JThree from "../../assets/jThree.jpg";
+import JFourteen from "../../assets/jFourteen.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -15,9 +17,13 @@ const Hero = (props) => {
         <div className="hero" id="home">
             <div className="hero__container">
                 <Header />
-                <div className="jOne_container">
-                    <img src={JOne} alt="" className="jOne-image" />
+                <div className="FWDiag_container">
+                    <img src={FWDiag} alt="" className="FWDiag-image" />
                 </div>
+                {/* <div className="hero__text">
+                    <h1 className="hero__title">Diagnostic</h1>
+                    <p className="hero__subtitle">Underground house and Latin vibes</p>
+                </div> */}
                 <div className="hero__bar--shows" id="shows">
                     {/* <hr /> */}
                     <Link to="/Gigs">{<Gigs />}</Link>
@@ -30,7 +36,7 @@ const Hero = (props) => {
                     {/* <hr /> */}
                 </div>
                 <div className="jThree_container">
-                    <img src={JThree} alt="" className="jThree-image" />
+                    <img src={JFourteen} alt="" className="jThree-image" />
                 </div>
                 <div className="hero__bar--inquire" id="inquire">
                     {/* <hr /> */}

@@ -49,9 +49,11 @@ textarea, #message {
 }
 
 .contact__btn {
-    width: 10%;
+    width: 90px;
+    height: 40px;
     margin: 0 auto;
     display: block;
+    border-radius: 5px;
     cursor: pointer;
 }
 
