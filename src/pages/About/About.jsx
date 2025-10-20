@@ -15,8 +15,8 @@ function About() {
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__grid">
-                        <img src={JThirteen} alt="" className="profile__main-image" />
-                        <img src={JSixteen} alt="" className="profile__secondary-image"/>
+                        <img src={JThirteen} alt="" className="profile__grid--image1" />
+                        <img src={JSixteen} alt="" className="profile__grid--image2"/>
                         <div className="profile__description">
                             <h1 className="profile__description--title">Jose Flores</h1>
                             <p className="profile__description--text">Bartender by day and DJ by night, you’ll find me spinning beats at some of the best bars and venues across San Diego, CA. Join me on a sonic journey through underground rhythms and timeless house classics.</p>
