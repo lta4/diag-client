@@ -54,7 +54,8 @@ img.footer__link.footer__link--bit:hover {
 }
 
 .footer__link:nth-child(n):hover {
-    color: var(--first-color);
+    color: var(--theme-color);
+    /* color: var(--first-color); */
     transition: color 0.3s ease;
 }
 
@@ -87,7 +88,8 @@ img.footer__link.footer__link--bit:hover {
 }
 
 .footer__service:nth-child(n):hover {
-    color: var(--first-color);
+    color: var(--theme-color);
+    /* color: var(--first-color); */
     transition: color 0.3s ease;
 }
 
@@ -125,7 +127,8 @@ img.footer__link.footer__link--bit:hover {
 }
 
 .footer__date--link:nth-child(1):hover {
-    color: var(--first-color);
+    color: var(--theme-color);
+    /* color: var(--first-color); */
     transition: color 0.3s ease;
 }
 

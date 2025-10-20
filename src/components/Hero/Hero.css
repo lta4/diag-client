@@ -30,7 +30,7 @@
 }
 
 .hero__scroll:hover {
-    background: var(--first-color);
+    background: var(--theme-color);
     color: #fff;
 }
 
