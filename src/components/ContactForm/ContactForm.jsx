@@ -11,7 +11,7 @@ function ContactForm() {
     return (
         <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="">
             <h2 className="contact__des">
-                Feel free to reach out!
+                Discover the sound -- master of vibes
             </h2>
             <input
                 id="firstname"
