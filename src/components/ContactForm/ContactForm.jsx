@@ -17,7 +17,7 @@ function ContactForm() {
                 id="firstname"
                 type="firstname"
                 name="firstname"
-                placeholder=" First Name"
+                placeholder=" FIRST NAME"
                 className="contact__input"
             />
             <ValidationError
@@ -29,7 +29,7 @@ function ContactForm() {
                 id="lastname"
                 type="lastname"
                 name="lastname"
-                placeholder=" Last Name"
+                placeholder=" LAST NAME"
                 className="contact__input"
             />
             <ValidationError
@@ -41,7 +41,7 @@ function ContactForm() {
                 id="email"
                 type="email"
                 name="email"
-                placeholder=" Email Address"
+                placeholder=" EMAIL"
                 className="contact__input"
             />
             <ValidationError
@@ -52,7 +52,7 @@ function ContactForm() {
             <textarea
                 id="message"
                 name="message"
-                placeholder=" Drop a note!"
+                placeholder=" DROP A NOTE"
                 className="contact__input"
             />
             <ValidationError
