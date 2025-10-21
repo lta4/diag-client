@@ -40,44 +40,44 @@ function App() {
 
   return (
     <>
-    <div className="App">
-      <Router>
-        <ScrollUp />
-        {/* <ScrollToBottom /> */}
-        <Header />
+      <div className="App">
+        <Router>
+          <ScrollUp />
+          {/* <ScrollToBottom /> */}
+          <Header />
+          {/* <Gigs /> */}
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Video" element={<Video />} />
+          <Route path="/Privacy" element={<Privacy />} />
+          <Route path="/Term" element={<Term />} />
+        </Routes>
+        <Footer />
+        </Router>
         {/* <Gigs /> */}
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Video" element={<Video />} />
-        <Route path="/Privacy" element={<Privacy />} />
-        <Route path="/Term" element={<Term />} />
-      </Routes>
-      <Footer />
-      </Router>
-      {/* <Gigs /> */}
-      {/* <Footer /> */}
+        {/* <Footer /> */}
+        {/* <ScrollRestoration
+          getKey={(location, matches) => {
+            return location.pathname;
+          }}
+        /> */}
+        {/* <ScrollRestoration
+        getKey={(location, matches) => {
+          return location.key;
+        }}
+        /> */}
+      </div>
+      {/* <ScrollRestoration
+          getKey={(location, matches) => {
+            return location.pathname;
+          }}
+        /> */}
       {/* <ScrollRestoration
         getKey={(location, matches) => {
-          return location.pathname;
+          return location.key;
         }}
-      /> */}
-      {/* <ScrollRestoration
-      getKey={(location, matches) => {
-        return location.key;
-      }}
-      /> */}
-    </div>
-    {/* <ScrollRestoration
-        getKey={(location, matches) => {
-          return location.pathname;
-        }}
-      /> */}
-    {/* <ScrollRestoration
-      getKey={(location, matches) => {
-        return location.key;
-      }}
-      /> */}
+        /> */}
     </>
   );
 };
