@@ -9,7 +9,6 @@ import ScrollUp from "./components/ScrollUp/ScrollUp";
 import Header from "./components/Header/Header";
 import About from "./pages/About/About";
 import Video from "./pages/Video/Video";
-// import Gigs from "./components/Gigs/Gigs"
 import Privacy from "./pages/Privacy/Privacy";
 import Term from "./pages/Term/Term";
 import Footer from "./components/Footer/Footer";
@@ -45,7 +44,6 @@ function App() {
           <ScrollUp />
           {/* <ScrollToBottom /> */}
           <Header />
-          {/* <Gigs /> */}
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/About" element={<About />} />
@@ -55,8 +53,6 @@ function App() {
         </Routes>
         <Footer />
         </Router>
-        {/* <Gigs /> */}
-        {/* <Footer /> */}
         {/* <ScrollRestoration
           getKey={(location, matches) => {
             return location.pathname;
