@@ -1,66 +1,71 @@
-.bit-upcoming-events {
+.bit-widget .bit-upcoming-events {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    gap: 1.5rem !important;
+    align-items: stretch !important;
 }
 
-.bit-event {
+/* Each event: row layout matching the site's gigs details */
+.bit-widget .bit-event {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    width: 100%;
-    gap: 2rem; /* Even more space between all children in the row */
+    width: 100% !important;
+    gap: 1.25rem !important;
+    padding: 0.5rem 0 !important;
+    box-sizing: border-box !important;
 }
 
-.bit-event > * {
+/* Make the main children behave like columns with even distribution */
+.bit-widget .bit-event > * {
     flex: 1 1 0 !important;
-    text-align: center;
+    min-width: 0 !important; /* allow ellipsis */
 }
 
-a .bit-event > * {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+/* Specifically align the date / venue / location / actions similar to the site's gigs layout */
+.bit-widget .bit-date,
+.bit-widget .bit-venue,
+.bit-widget .bit-location,
+.bit-widget .bit-event-buttons {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-.bit-details-inner-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 15rem !important;
-    align-items: center;
+/* push the buttons to the right while allowing them to keep natural size */
+.bit-widget .bit-event-buttons {
+    flex: 0 0 auto !important;
+    justify-content: flex-end !important;
 }
 
-.bit-location-under-mobile,
-.bit-venue {
-    flex: 1 1 0;
-    margin: 0;
-    text-align: center;
+/* Defensive: remove any inline width rules the widget injects on these children */
+.bit-widget [style] {
+    width: auto !important;
+    max-width: 100% !important;
 }
 
-.bit-event-buttons {
-    margin-left: 80px !important;
-}
-
-.bit-venue + .bit-details.bit-event-buttons {
-    margin-left: 48px;
-}
-
-
-/********************Media*******************/
-
-@media (max-width: 600px) {
-    .bit-details-inner-wrapper {
-        display: flex;
+/* Stack on narrow screens to avoid overflow */
+@media (max-width: 720px) {
+    .bit-widget .bit-event {
         flex-direction: column !important;
-        gap: 3rem !important;
+        align-items: stretch !important;
+        gap: 1rem !important;
     }
 
-    .bit-location-under-mobile,
-    .bit-venue {
-        width: 100%;
-        text-align: center;
-        margin: 0;
+    .bit-widget .bit-event > * {
+        text-align: center !important;
     }
+}
+
+/* Allow the widget container to be targeted without clobbering other widgets */
+.bit-widget-initializer {
+    width: 100%;
+}
+
+/* Ensure long text truncates instead of wrapping the whole layout */
+.bit-widget .bit-venue, .bit-widget .bit-location {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
 }

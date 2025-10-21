@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Widget.css"
 
 
 function Widget(){
+
+    const observerRef = useRef(null);
 
     useEffect(() => {
         const script = document.createElement("script");
@@ -11,14 +13,38 @@ function Widget(){
 
         document.body.appendChild(script);
 
+        // Some widgets inject inline styles which are hard to override.
+        // Disable the widget's auto styles via attribute and defensively
+        // remove any inline style attributes the widget adds so our CSS wins.
+        const observer = new MutationObserver((mutations) => {
+            for (const m of mutations) {
+                for (const node of m.addedNodes) {
+                    if (!node || node.nodeType !== 1) continue;
+                    // remove inline style attributes from the widget nodes
+                    if (node.classList && node.closest && node.closest('.bit-widget')) {
+                        node.removeAttribute('style');
+                    }
+                    // also remove style attribute from children (fast path)
+                    if (node.querySelectorAll) {
+                        const styled = node.querySelectorAll('[style]');
+                        styled.forEach(el => el.removeAttribute('style'));
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+        observerRef.current = observer;
+
         return () => {
             document.body.removeChild(script);
+            if (observerRef.current) observerRef.current.disconnect();
         };
     }, []);
 
     return (
 
-        <div class="bit-widget-initializer"
+    <div className="bit-widget-initializer"
     
             data-artist-name="id_15582051"
             
@@ -27,7 +53,7 @@ function Widget(){
             data-separator-color="rgba(0,0,0,1)"
             data-text-color="rgba(255,255,255,1)"
             data-font="Neue Haas Unica"
-            data-auto-style="true"
+            data-auto-style="false"
             
             data-button-label-capitalization="uppercase"
             data-header-capitalization="uppercase"
@@ -114,7 +140,7 @@ function Widget(){
             data-affil-code=""
             data-bit-logo-position="hidden"
             data-bit-logo-color="rgba(255,255,255,1)">
-        </div>
+    </div>
     );
 };
 
