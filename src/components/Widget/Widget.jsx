@@ -5,6 +5,7 @@ import "./Widget.css"
 function Widget(){
 
     const observerRef = useRef(null);
+    const containerRef = useRef(null);
 
     useEffect(() => {
         const script = document.createElement("script");
@@ -13,21 +14,19 @@ function Widget(){
 
         document.body.appendChild(script);
 
-        // Some widgets inject inline styles which are hard to override.
-        // Disable the widget's auto styles via attribute and defensively
-        // remove any inline style attributes the widget adds so our CSS wins.
+        // Scope DOM surgery to the widget container to avoid interfering with React
         const observer = new MutationObserver((mutations) => {
+            const container = containerRef.current;
+            if (!container) return;
             for (const m of mutations) {
                 for (const node of m.addedNodes) {
                     if (!node || node.nodeType !== 1) continue;
-                    // remove inline style attributes from the widget nodes
-                    if (node.classList && node.closest && node.closest('.bit-widget')) {
-                        node.removeAttribute('style');
-                    }
-                    // also remove style attribute from children (fast path)
-                    if (node.querySelectorAll) {
-                        const styled = node.querySelectorAll('[style]');
-                        styled.forEach(el => el.removeAttribute('style'));
+                    if (container.contains(node)) {
+                        if (node.hasAttribute && node.hasAttribute('style')) node.removeAttribute('style');
+                        if (node.querySelectorAll) {
+                            const styled = node.querySelectorAll('[style]');
+                            styled.forEach(el => el.removeAttribute('style'));
+                        }
                     }
                 }
             }
@@ -37,14 +36,15 @@ function Widget(){
         observerRef.current = observer;
 
         return () => {
-            document.body.removeChild(script);
+            // defensive removal to avoid removeChild NotFoundError
+            try { if (script.parentNode) script.parentNode.removeChild(script); } catch (e) { /* ignore */ }
             if (observerRef.current) observerRef.current.disconnect();
         };
     }, []);
 
     return (
 
-    <div className="bit-widget-initializer"
+    <div ref={containerRef} className="bit-widget-initializer"
     
             data-artist-name="id_15582051"
             
@@ -85,10 +85,7 @@ function Widget(){
             data-event-ticket-cta-border-width="0px"
             data-event-ticket-cta-border-radius="2px"
             
-            // data-sold-out-button-text-color="rgba(255,255,255,1)"
-            // data-sold-out-button-background-color="rgba(74,74,74,1)"
-            // data-sold-out-button-border-color="rgba(74,74,74,1)"
-            // data-sold-out-button-clickable="false"
+            
             
             data-event-rsvp-position="hidden"
             data-event-rsvp-cta-size="medium"
@@ -125,14 +122,7 @@ function Widget(){
             data-play-my-city-cta-border-width="0px"
             data-play-my-city-cta-border-radius="2px"
             
-            // data-optin-font=""
-            // data-optin-text-color=""
-            // data-optin-bg-color=""
-            // data-optin-cta-text-color=""
-            // data-optin-cta-bg-color=""
-            // data-optin-cta-border-width=""
-            // data-optin-cta-border-radius=""
-            // data-optin-cta-border-color=""
+            
             
             data-language="en"
             data-layout-breakpoint="900"

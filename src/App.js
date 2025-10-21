@@ -1,9 +1,8 @@
 import React from "react";
 import './App.css';
 import Hero from "./components/Hero/Hero";
-import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollUp from "./components/ScrollUp/ScrollUp";
-import ScrollToBottom from "./components/ScrollToBottom/ScrollToBottom";
 // import { MediaPlayer, MediaProvider } from "@vidstack/react";
 // import { defaultLayoutIcons, DefaultVideoLayout } from
 // "@vidstack/react/player/layouts/default";
@@ -16,12 +15,27 @@ import Term from "./pages/Term/Term";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [data, setData] = React.useState(null);
+  // API response state not currently used in UI
+  const [, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api`)
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
+    const apiBase = process.env.REACT_APP_API_URL;
+    if (!apiBase) {
+      console.warn('REACT_APP_API_URL not set - skipping /api fetch');
+      return;
+    }
+
+    fetch(`${apiBase}/api`)
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`API returned status ${res.status}`);
+        const ct = res.headers.get('content-type') || '';
+        if (ct.includes('application/json')) return res.json();
+        const text = await res.text();
+        console.error('Expected JSON from API but got:', text.slice(0, 500));
+        throw new Error('Invalid JSON response from API');
+      })
+      .then((data) => setData(data.message))
+      .catch((err) => console.error('API fetch error:', err));
   }, []);
 
   return (
