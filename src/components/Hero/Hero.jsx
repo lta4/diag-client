@@ -17,37 +17,31 @@ const Hero = (props) => {
         <div className="hero" id="home">
             <div className="hero__container">
                 <Header />
-                <div className="FWDiag_container">
-                    <img src={FWDiag} alt="" className="FWDiag-image" />
+                <div className="FWDiag__container">
+                    <img
+                        src={FWDiag}
+                        alt=""
+                        className={`FWDiag--image ${/* add visible class when loaded */ ""}`}
+                        onLoad={(e) => e.currentTarget.classList.add('is-visible')}
+                    />
                 </div>
                 {/* <div className="hero__text">
                     <h1 className="hero__title">Diagnostic</h1>
                     <p className="hero__subtitle">Underground house and Latin vibes</p>
                 </div> */}
                 <div className="hero__bar--shows" id="shows">
-                    {/* <hr /> */}
                     <Link to="/Gigs">{<Gigs />}</Link>
-                    {/* <hr /> */}
-                    {/* ^ this break is set in order to create one smooth break for site */}
                 </div>
                 <div className="hero__bar--mix" id="mix">
-                    {/* <hr /> */}
                     <Link to="/Mix">{<Mix />}</Link>
-                    {/* <hr /> */}
                 </div>
                 <div className="jThree_container">
                     <img src={JFourteen} alt="" className="jThree-image" />
                 </div>
                 <div className="hero__bar--inquire" id="inquire">
-                    {/* <hr /> */}
                     <ContactForm />
-                    <hr />
                     {/* <hr />
                     <Link to="/">{<ContactForm />}</Link>
-                    <hr /> */}
-                    {/* <hr />
-                    <Link to="/ContactForm">{<Form />}
-                    </Link>
                     <hr /> */}
                 </div>
                 <ScrollToTop className="hero__scroll"/>
