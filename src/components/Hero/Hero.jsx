@@ -6,9 +6,8 @@ import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 // import JOne from "../../assets/jOne.jpeg";
 import FWDiag from "../../assets/FWDiag.jpg";
-import JThree from "../../assets/jThree.jpg";
 import JFourteen from "../../assets/jFourteen.jpg";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
 const Hero = (props) => {
@@ -30,10 +29,16 @@ const Hero = (props) => {
                     <p className="hero__subtitle">Underground house and Latin vibes</p>
                 </div> */}
                 <div className="hero__bar--shows" id="shows">
-                    <Link to="/Gigs">{<Gigs />}</Link>
+                    <div className="gigs-preview">
+                        <Gigs />
+                        <Link to="/Gigs" className="gigs-preview__cta">View gigs</Link>
+                    </div>
                 </div>
                 <div className="hero__bar--mix" id="mix">
-                    <Link to="/Mix">{<Mix />}</Link>
+                    <div className="mix-preview">
+                        <Mix />
+                        <Link to="/Mix" className="mix-preview__cta">View mixes</Link>
+                    </div>
                 </div>
                 <div className="jThree_container">
                     <img src={JFourteen} alt="" className="jThree-image" />
