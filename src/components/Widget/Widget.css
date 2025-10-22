@@ -12,8 +12,8 @@
     align-items: center !important;
     justify-content: space-between !important;
     width: 100% !important;
-    gap: 1.25rem !important;
-    padding: 0.5rem 0 !important;
+    gap: 20rem !important; /* increased gap between columns */
+    padding: 0.75rem 0 !important;
     box-sizing: border-box !important;
 }
 
@@ -31,6 +31,29 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+}
+
+/* Give date and buttons fixed-ish width so the venue can take the remaining space */
+.bit-widget .bit-date {
+    flex: 0 0 110px !important; /* dates stay compact */
+    justify-content: flex-start !important;
+}
+
+.bit-widget .bit-event-buttons {
+    flex: 0 0 140px !important; /* buttons remain a fixed column */
+    justify-content: flex-end !important;
+}
+
+.bit-widget .bit-venue {
+    flex: 1 1 auto !important; /* venue expands */
+    padding: 0 0.5rem !important;
+}
+
+/* Place venue and location side-by-side within the middle area */
+.bit-widget .bit-location {
+    flex: 1 1 auto !important; /* allow location to take the other half */
+    text-align: right !important;
+    padding: 0 0.5rem !important;
 }
 
 /* push the buttons to the right while allowing them to keep natural size */
@@ -55,6 +78,13 @@
 
     .bit-widget .bit-event > * {
         text-align: center !important;
+        flex: none !important; /* allow natural height */
+        width: 100% !important;
+    }
+
+    .bit-widget .bit-date,
+    .bit-widget .bit-event-buttons {
+        justify-content: center !important;
     }
 }
 

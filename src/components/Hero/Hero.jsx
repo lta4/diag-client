@@ -24,20 +24,16 @@ const Hero = (props) => {
                         onLoad={(e) => e.currentTarget.classList.add('is-visible')}
                     />
                 </div>
-                {/* <div className="hero__text">
-                    <h1 className="hero__title">Diagnostic</h1>
-                    <p className="hero__subtitle">Underground house and Latin vibes</p>
-                </div> */}
                 <div className="hero__bar--shows" id="shows">
-                    <div className="gigs-preview">
+                    <div className="gigs--preview">
                         <Gigs />
-                        <Link to="/Gigs" className="gigs-preview__cta">View gigs</Link>
+                        {/* <Link to="/Gigs" className="gigs--preview__cta">View gigs</Link> */}
                     </div>
                 </div>
                 <div className="hero__bar--mix" id="mix">
-                    <div className="mix-preview">
+                    <div className="mix--preview">
                         <Mix />
-                        <Link to="/Mix" className="mix-preview__cta">View mixes</Link>
+                        <Link to="/Mix" className="mix--preview__cta">View mixes</Link>
                     </div>
                 </div>
                 <div className="jThree_container">
