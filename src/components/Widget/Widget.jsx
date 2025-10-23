@@ -50,6 +50,27 @@ function Widget(){
             } catch (e) {
                 // ignore any container timing issues
             }
+
+            // Reorder DOM for accessibility: ensure the titleWrapper (venue) precedes details/location
+            try {
+                const events2 = container.querySelectorAll('.bit-event');
+                events2.forEach(evt => {
+                    try {
+                        const inner = evt.querySelector('.bit-details-inner-wrapper');
+                        if (!inner) return;
+                        const title = inner.querySelector('.bit-titleWrapper');
+                        const details = inner.querySelector('.bit-details');
+                        if (title && details && title.compareDocumentPosition(details) & Node.DOCUMENT_POSITION_FOLLOWING) {
+                            // title comes after details — move it before
+                            inner.insertBefore(title, details);
+                        }
+                    } catch (e) {
+                        // ignore per-event timing issues
+                    }
+                });
+            } catch (e) {
+                // ignore
+            }
         });
 
         observer.observe(document.body, { childList: true, subtree: true });
