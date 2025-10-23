@@ -34,6 +34,36 @@
 
 .bit-widget .bit-event-buttons { justify-self: end !important; display: flex !important; align-items: center !important; }
 
+/* Make the action / "Notify Me" buttons black with white text */
+.bit-widget .bit-event-buttons a,
+.bit-widget .bit-event-buttons button,
+.bit-widget .bit-event-buttons .bit-follow-button,
+.bit-widget .bit-event-buttons .bit-ticket-button {
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    padding: 0.4rem 0.9rem !important;
+    border-radius: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    font-weight: 600 !important;
+}
+.bit-widget .bit-event-buttons a *,
+.bit-widget .bit-event-buttons button * {
+    color: #fff !important;
+    fill: #fff !important;
+}
+.bit-widget .bit-event-buttons a:hover,
+.bit-widget .bit-event-buttons button:hover {
+    background: #111 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+
 /* Middle area: venue + location inline on desktop */
 .bit-widget .bit-details-inner-wrapper {
     display: contents !important; /* expose child anchors as grid items */
