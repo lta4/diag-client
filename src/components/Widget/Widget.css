@@ -56,6 +56,49 @@
     padding: 0 0.5rem !important;
 }
 
+/* Ensure the details inner-wrapper lays out venue and location on one row */
+.bit-widget .bit-details-inner-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.bit-widget .bit-titleWrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex: 1 1 auto !important;
+}
+
+/* Push location to the far right of the inner wrapper */
+.bit-widget .bit-location {
+    margin-left: auto !important;
+    text-align: right !important;
+    flex: 0 0 auto !important;
+}
+
+/* Ensure the desktop-specific location link is aligned right on the same row */
+.bit-widget .bit-location-under-desktop {
+    display: inline-flex !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0 !important;
+    order: 2 !important; /* after titleWrapper */
+    margin-left: auto !important; /* push to right */
+    text-align: right !important;
+}
+
+/* On desktop, prefer the location inside .bit-details and hide the mobile-specific duplicate */
+@media (min-width: 721px) {
+    .bit-widget .bit-location-under-mobile {
+        display: none !important;
+    }
+    .bit-widget .bit-location-under-desktop {
+        display: inline-flex !important; /* ensure desktop location is visible */
+    }
+}
+
 /* push the buttons to the right while allowing them to keep natural size */
 .bit-widget .bit-event-buttons {
     flex: 0 0 auto !important;
@@ -86,6 +129,26 @@
     .bit-widget .bit-event-buttons {
         justify-content: center !important;
     }
+
+    /* On small screens, stack venue and location vertically */
+    .bit-widget .bit-details-inner-wrapper {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.25rem !important;
+    }
+
+    .bit-widget .bit-titleWrapper,
+    .bit-widget .bit-venue,
+    .bit-widget .bit-location {
+        width: 100% !important;
+        text-align: center !important;
+        margin-left: 0 !important;
+        flex: none !important;
+    }
+
+    .bit-widget .bit-location-under-desktop {
+        display: none !important; /* hide desktop-only link on mobile */
+    }
 }
 
 /* Allow the widget container to be targeted without clobbering other widgets */
@@ -98,4 +161,97 @@
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
+}
+
+/* If the widget injects multiple .bit-venue elements, hide all but the first per event */
+.bit-widget .bit-event .bit-venue:nth-of-type(n+2) {
+    display: none !important;
+}
+
+/* ===== Grid layout override - date | middle (venue+location) | actions ===== */
+/* Use grid to make spacing consistent and predictable */
+.bit-widget .bit-event {
+    display: grid !important;
+    grid-template-columns: 110px 1fr 140px !important; /* date | flexible middle | buttons */
+    column-gap: 1rem !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.5rem 0 !important;
+}
+
+.bit-widget .bit-details-inner-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    width: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-self: start !important;
+}
+
+
+.bit-widget .bit-titleWrapper,
+.bit-widget .bit-venue {
+    justify-self: start !important; /* left-align within middle column */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* Explicit ordering so venue (titleWrapper) appears before the details/location */
+.bit-widget .bit-titleWrapper { order: 1 !important; }
+.bit-widget .bit-details { order: 2 !important; }
+.bit-widget .bit-location-under-mobile { order: 3 !important; }
+
+/* Force venue before location left-to-right */
+.bit-widget .bit-venue { order: 1 !important; }
+.bit-widget .bit-location { order: 2 !important; justify-self: start !important; text-align: left !important; }
+
+/* ensure the anchor containing details lays out inline */
+.bit-widget .bit-details {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.bit-widget .bit-location,
+.bit-widget .bit-location-under-desktop {
+    justify-self: end !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.bit-widget .bit-event-buttons {
+    justify-self: end !important; /* right column */
+    display: flex !important;
+    align-items: center !important;
+}
+
+@media (max-width: 720px) {
+        .bit-widget .bit-event {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            align-items: stretch !important;
+            padding: 0.5rem 0 !important;
+        }
+
+    .bit-widget .bit-details-inner-wrapper {
+        display: block !important;
+    }
+
+    .bit-widget .bit-titleWrapper,
+    .bit-widget .bit-venue,
+    .bit-widget .bit-location,
+    .bit-widget .bit-location-under-desktop {
+        width: 100% !important;
+        text-align: center !important;
+        white-space: normal !important;
+    }
+
+    .bit-widget .bit-location-under-desktop {
+        display: none !important; /* prefer mobile-specific location element */
+    }
 }

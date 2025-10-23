@@ -44,12 +44,6 @@ const Mix = () => {
                         className="songs__list--name" 
                         src="https://www.youtube.com/embed/0t_ZjqrGkVw?si=ir46CtaJp-umZsFw" frameBorder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
                         </iframe>
-                        <div>
-                            <button>button</button>
-                        </div>
-                    </div>
-                    <div>
-                        <button>Stream</button>
                     </div>
                 </div>
             </div>
