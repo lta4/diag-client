@@ -9,12 +9,13 @@
     flex-direction: column !important;
     gap: 1.5rem !important;
     align-items: stretch !important;
+    font-size: 14px !important;
 }
 
 .bit-widget .bit-event {
     display: grid !important;
     grid-template-columns: 110px 1fr 1fr 140px !important; /* date | venue | location | actions */
-    column-gap: 10rem !important; /* increase spacing between columns */
+    column-gap: 12rem !important; /* increase spacing between columns */
     align-items: center !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -27,7 +28,10 @@
     max-width: 100% !important;
 }
 
-.bit-widget .bit-date { justify-self: start !important; }
+.bit-widget .bit-date { 
+    justify-self: start !important; 
+}
+
 .bit-widget .bit-event-buttons { justify-self: end !important; display: flex !important; align-items: center !important; }
 
 /* Middle area: venue + location inline on desktop */
@@ -35,8 +39,30 @@
     display: contents !important; /* expose child anchors as grid items */
 }
 
-.bit-widget .bit-details { display: flex !important; align-items: center !important; gap: 0.5rem !important; }
-.bit-widget .bit-titleWrapper, .bit-widget .bit-venue { overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+.bit-widget .bit-details { display: flex !important; align-items: center !important; gap: 0.5rem !important; justify-content: flex-start !important; font-size: 14px !important; }
+.bit-widget .bit-titleWrapper, .bit-widget .bit-venue {
+    overflow: hidden !important; 
+    text-overflow: ellipsis !important; 
+    white-space: nowrap !important;
+    justify-self: start !important;
+    text-align: left !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.bit-widget .bit-titleWrapper a, .bit-widget .bit-venue a {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+.bit-widget .bit-titleWrapper, .bit-widget .bit-venue, .bit-widget .bit-titleWrapper * {
+    justify-content: flex-start !important;
+    justify-self: start !important;
+    text-align: left !important;
+}
 .bit-widget .bit-location, .bit-widget .bit-location-under-desktop { white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
 
 /* Place items into the 4-column grid */
@@ -75,4 +101,4 @@
 .bit-widget .bit-details { order: 2 !important; }
 .bit-widget .bit-location-under-mobile { order: 3 !important; }
 .bit-widget .bit-venue { order: 1 !important; }
-.bit-widget .bit-location { order: 2 !important; justify-self: start !important; text-align: left !important; }
+.bit-widget .bit-location { order: 2 !important; justify-self: end !important; text-align: right !important; }
