@@ -30,26 +30,8 @@ function Widget(){
                     }
                 }
             }
-            // For each event, remove duplicate .bit-venue elements so only one venue appears per row
-            try {
-                const events = container.querySelectorAll('.bit-event');
-                events.forEach(evt => {
-                    try {
-                        const venues = evt.querySelectorAll('.bit-venue');
-                        if (venues && venues.length > 1) {
-                            venues.forEach((el, idx) => {
-                                if (idx !== 0 && el && el.parentNode) {
-                                    el.parentNode.removeChild(el);
-                                }
-                            });
-                        }
-                    } catch (e) {
-                        // ignore per-event DOM timing issues
-                    }
-                });
-            } catch (e) {
-                // ignore any container timing issues
-            }
+            // NOTE: duplicate .bit-venue visual hiding is handled via CSS; avoid removing nodes here to
+            // reduce DOM churn and potential timing/removeChild errors.
 
             // Reorder DOM for accessibility: ensure the titleWrapper (venue) precedes details/location
             try {
