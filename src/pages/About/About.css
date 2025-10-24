@@ -77,3 +77,18 @@
         grid-column: 1 / -1;
     }
 }
+
+@media (max-width: 720px) {
+    .profile__set { width: 95%; }
+    .profile__grid { gap: 1rem; }
+    .profile__grid--image2, .profile__description { margin-top: 1.5rem; }
+    .profile__description--title { font-size: 2rem; }
+    .profile__description--text { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .profile__set { width: 100%; padding: 0 0.75rem; }
+    .profile__description--title { font-size: 1.5rem; margin-top: 0.5rem; }
+    .profile__description--text { font-size: 0.95rem; }
+    .profile__grid--image2 { margin-top: 1rem; }
+}
