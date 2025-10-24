@@ -50,3 +50,18 @@
   border: 0;
 }
 
+/* Responsive adjustments for video page */
+@media (max-width: 900px) {
+  .video__container { padding: 4rem 0.5rem; width: 95%; }
+}
+
+@media (max-width: 720px) {
+  .video__container { padding: 2.5rem 0.5rem; flex-direction: column; }
+  .video__container--media { padding-bottom: 56.25%; width: 100%; max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .video__container { padding: 1.25rem 0.5rem; }
+  .video__container--media { padding-bottom: 56.25%; }
+}
+
