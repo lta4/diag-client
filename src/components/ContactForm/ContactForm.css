@@ -64,3 +64,23 @@ textarea, #message {
     transition: color 0.3s ease;
     transition: background 0.3s ease;
 }
+
+/* Responsive: make form fields full width on smaller screens */
+@media (max-width: 720px) {
+    .contact {
+        margin: 2rem 1rem;
+    }
+    input, #firstname, #lastname, #email, textarea, #message {
+        width: 100% !important;
+        padding: 8px 10px !important;
+        margin: 0.5rem 0 !important;
+    }
+    .contact__des { margin: 2rem 0 !important; }
+    .contact__btn { width: 100% !important; max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+    .contact { margin: 1.25rem 0.75rem; }
+    .contact__des { margin: 1.5rem 0 !important; }
+    .contact__btn { height: 44px !important; }
+}
