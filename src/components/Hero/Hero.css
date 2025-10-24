@@ -64,6 +64,27 @@
     text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
+/* Responsive hero adjustments */
+@media (max-width: 900px) {
+    .FWDiag__container { height: 85vh; }
+    .FWDiag--image { height: 85vh; }
+    .hero__bar--shows, .hero__bar--mix { margin: 6rem 1.5rem; }
+}
+
+@media (max-width: 720px) {
+    .FWDiag__container { height: 70vh; }
+    .FWDiag--image { height: 70vh; background-position: center top; }
+    .hero__overlay-inner { padding: 0 1rem; }
+    .hero__bar--shows, .hero__bar--mix { margin: 4rem 1rem; }
+}
+
+@media (max-width: 480px) {
+    .FWDiag__container { height: 60vh; }
+    .FWDiag--image { height: 60vh; }
+    .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
+    .hero__bar--shows, .hero__bar--mix { margin: 2.5rem 0.75rem; }
+}
+
 /* .hero__title {
     font-size: clamp(2rem, 4vw, 4rem);
     margin: 0 0 0.5rem 0;
