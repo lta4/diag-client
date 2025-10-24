@@ -119,3 +119,44 @@
     align-items: center;
     padding: 5px 20px 5px 20px;
 }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .gigs__title { margin: 3rem 1rem; }
+}
+
+@media (max-width: 720px) {
+    .gigs__list {
+        min-width: auto !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    .gigs__list--details {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.25rem !important;
+        text-align: left !important;
+        font-size: 0.95rem !important;
+        padding: 0.5rem 0 !important;
+    }
+
+    .gigs__list--date,
+    .gigs__list--venue,
+    .gigs__list--location,
+    .gigs__button {
+        flex: none !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+        padding: 8px 0 !important;
+    }
+
+    .gigs__list--location { text-align: left !important; }
+    .gigs__button { margin: 8px 0 !important; }
+}
+
+@media (max-width: 480px) {
+    .gigs__title--fushion { font-size: 1.125rem !important; margin: 2rem 0.5rem !important; }
+    .gigs__list--details { font-size: 0.9rem !important; }
+    .gigs__button--detail { padding: 6px 14px !important; }
+}
