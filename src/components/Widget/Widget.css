@@ -65,9 +65,7 @@
 }
 
 /* Middle area: venue + location inline on desktop */
-.bit-widget .bit-details-inner-wrapper {
-    display: contents !important; /* expose child anchors as grid items */
-}
+/* .bit-details-inner-wrapper rules are applied inside media queries for mobile/desktop */
 
 .bit-widget .bit-details { display: flex !important; align-items: center !important; gap: 0.5rem !important; justify-content: flex-start !important; font-size: 14px !important; }
 .bit-widget .bit-titleWrapper, .bit-widget .bit-venue {
@@ -112,13 +110,16 @@
     .bit-widget .bit-location-under-desktop { margin-left: auto !important; }
     /* Make sure the details container occupies full middle column so margin-left works */
     .bit-widget .bit-details-inner-wrapper, .bit-widget .bit-details { width: 100% !important; }
+    /* On desktop, expose child anchors as grid items so venue+location sit inline */
+    .bit-widget .bit-details-inner-wrapper { display: contents !important; }
 }
 
 /* Stack on small screens */
 @media (max-width: 720px) {
     .bit-widget .bit-event { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; align-items: stretch !important; }
     .bit-widget .bit-event > * { text-align: center !important; flex: none !important; width: 100% !important; }
-    .bit-widget .bit-details-inner-wrapper { flex-direction: column !important; align-items: stretch !important; gap: 0.25rem !important; }
+    /* Ensure the inner wrapper becomes a flex container on mobile so flex-direction applies */
+    .bit-widget .bit-details-inner-wrapper { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 0.25rem !important; }
     .bit-widget .bit-titleWrapper, .bit-widget .bit-venue, .bit-widget .bit-location { width: 100% !important; text-align: center !important; white-space: normal !important; }
     .bit-widget .bit-location-under-desktop { display: none !important; }
 }
