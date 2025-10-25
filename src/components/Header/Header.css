@@ -10,7 +10,7 @@
 }
 
 .header--transparent {
-    background-color: transparent;
+    background-color: transparent !important;
     transition: background-color 0.3s ease;
 }
 
@@ -35,7 +35,7 @@
     /* mix-blend-mode: multiply; */
 }
 
-.nav__wDiag img {
+.nav__BWDiag--image {
     width: 21rem;
     height: auto;
     display: block;
@@ -46,14 +46,16 @@
     /* filter: brightness(0.8); */
 }
 
-img .nav__wDiag {
-    background-color: var(--first-color);
-    color: var(--first-color);
-}
+/* Hide BWDiag on load and reveal when .bw-visible is present */
+.nav__BWDiag--image { opacity: 0; transform: translateY(-6px) scale(0.98); transition: opacity 0.65s cubic-bezier(.2,.9,.2,1) 0s, transform 0.45s ease 0s; }
+.nav__BWDiag--image.bw-visible { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.12s; }
 
-.nav__wDiag img:hover {
-    /* Add hover effect if needed */
-}
+/* Visual trick: make darker/black parts of the JPG blend into the page instead
+    of appearing as a solid black box. This uses mix-blend-mode; it's a visual
+    effect only — if the image background is baked-in you should ideally use a
+    PNG/SVG with a real transparent background for perfect results. */
+.nav__BWDiag { background: transparent; }
+.nav__BWDiag--image { will-change: opacity, transform; background: transparent; }
 
 .nav__toggle,
 .nav__close {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import WDiag from "../../assets/wDiag.png";
 // import SDiagBanner from "../../assets/SDiagBanner.jpg";
 // import GBDiag from "../../assets/GBDiag.jpg";
@@ -41,13 +41,34 @@ const Header = () => {
     const listClassName = isMobile ? "nav__list" : "nav__list__web";
     const linkClassName = "nav__link";
     const buttonClassName = "nav__cta";
+    const bwRef = useRef(null);
+
+    useEffect(() => {
+        const img = bwRef.current;
+        if (!img) return;
+
+        const onScroll = () => {
+            // show BWDiag once the user scrolls down a little
+            if (window.scrollY > 8) {
+                img.classList.add('bw-visible');
+            } else {
+                img.classList.remove('bw-visible');
+            }
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        // run initial check
+        onScroll();
+
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     return (
         <header className={`header${isTransparent ? " header--transparent" : ""}`}>
             <nav className="nav active">
                 <NavLink to="/" className="nav__logo">
-                    <span className="nav__wDiag">
-                        <img src={BWDiag} alt="Logo" className="nav__wDiag" />
+                    <span className="nav__BWDiag">
+                        <img ref={bwRef} src={BWDiag} alt="Logo" className="nav__BWDiag--image" />
                     </span>
                 </NavLink>
                 {isMobile && (
