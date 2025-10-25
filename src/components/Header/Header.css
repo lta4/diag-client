@@ -36,14 +36,11 @@
 }
 
 .nav__BWDiag--image {
-    width: 21rem;
+    /* Fluid sizing: min 120px, preferred 14vw, max 336px (21rem) */
+    width: clamp(120px, 14vw, 21rem);
     height: auto;
     display: block;
     margin: 0 auto;
-    /* background: transparent; */
-    /* filter: sepia(1) hue-rotate(200deg) saturate(5); */
-    /* opacity: 0.8; */
-    /* filter: brightness(0.8); */
 }
 
 /* Hide BWDiag on load and reveal when .bw-visible is present */
@@ -123,6 +120,8 @@
 
 
 @media screen and (max-width: 1150px) {
+    /* Slightly reduce logo size on tablet */
+    .nav__BWDiag--image { width: clamp(110px, 18vw, 18rem); }
     .nav__menu {
         position: fixed;
         top: 0;
@@ -148,6 +147,11 @@
         width: auto;
         white-space: nowrap;
     }
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile: make the logo smaller and keep padding sane */
+    .nav__BWDiag--image { width: clamp(88px, 28vw, 140px); }
 }
 
 @media screen and (max-width: 300px) {

@@ -1,8 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-// import WDiag from "../../assets/wDiag.png";
-// import SDiagBanner from "../../assets/SDiagBanner.jpg";
-// import GBDiag from "../../assets/GBDiag.jpg";
-// import GBDiagBGR from "../../assets/GBDiagBGR.jpg";
 import BWDiag from "../../assets/BWDiag.jpg";
 // import wDiag from "../../assets/wDiag.jpg"
 import { NavLink } from "react-router-dom";
@@ -15,7 +11,6 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isTransparent, setIsTransparent] = useState(true);
     const isMobile = useMediaQuery({ maxWidth: "1150px" });
-    console.log('isMobile:', isMobile);
 
     useEffect(() => {
         const handleScroll = () => {
