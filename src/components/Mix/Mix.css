@@ -32,30 +32,77 @@
 
 /***************** songs *****************/
 
-.songs {
-    /* border: 5px solid green; */
-    /* background: green; */
-}
+/* songs container (no direct styles needed) */
 
-.songs__list {
+.songs__list, .embed iframe, .songs__list--name {
     /* border: 5px solid blue; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    /* allow the list to span full available width and center it */
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     /* padding: 2rem 2rem; */
 }
+
+/* Removed temporary strong override so responsive rules and breakpoints can take effect. */
 
 .songs__list--section {
     display: flex;
     flex-direction: row;
     align-content: space-between;
     padding: 1rem 1rem;
+    /* allow the section to grow and be centered so iframe can be large */
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 1280px;
     /* text-transform: uppercase; */
 }
 
 .songs__list--name {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* this class is used on the iframe — don't make the iframe a flex container */
+    max-width: 100%;
+}
+
+/* Responsive iframe: use CSS to make the iframe fluid and preserve aspect ratio */
+.embed iframe,
+.songs__list--name {
+    width: 100%;
+    /* allow larger max width but remain responsive */
+    max-width: min(1400px, 92vw);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(10,10,10,0.08);
+}
+
+/* On smaller screens stack the list and reduce margins */
+@media (max-width: 900px) {
+    .mix__title { margin: 3rem 1rem; }
+    .songs__list { flex-direction: column; align-items: center; gap: 1rem; }
+    .songs__list--section { padding: 0.5rem; }
+}
+
+/* Larger screens: center content and increase max sizes */
+@media (min-width: 900px) {
+    .songs__list { justify-content: center; gap: 2rem; }
+    .songs__list--section { padding: 1rem; max-width: 1100px; }
+    .embed iframe,
+    .songs__list--name { max-width: min(1100px, 82vw); }
+}
+
+@media (min-width: 1400px) {
+    .embed iframe,
+    .songs__list--name { max-width: 1200px; }
+}
+
+@media (max-width: 480px) {
+    .mix { margin: 2rem 0.5rem; }
+    .mix__title { margin: 2rem 0.5rem; }
+    .mix__title--fushion { font-size: 1.1rem; letter-spacing: 0.18em; }
+    .embed iframe,
+    .songs__list--name { max-width: 100%; aspect-ratio: 16 / 9; }
 }

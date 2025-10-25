@@ -30,14 +30,11 @@
     background-color: transparent;
 }
 
-.nav__wDiag {
-    /* color: var(--text-color); */
-    /* mix-blend-mode: multiply; */
-}
+/* nav__wDiag intentionally removed; styles are applied to .nav__BWDiag instead */
 
 .nav__BWDiag--image {
-    /* Fluid sizing: min 120px, preferred 14vw, max 336px (21rem) */
-    width: clamp(120px, 14vw, 21rem);
+    /* Fluid sizing: larger on desktop — min 160px, preferred 18vw, max 448px (28rem) */
+    width: clamp(160px, 18vw, 28rem);
     height: auto;
     display: block;
     margin: 0 auto;
@@ -121,7 +118,7 @@
 
 @media screen and (max-width: 1150px) {
     /* Slightly reduce logo size on tablet */
-    .nav__BWDiag--image { width: clamp(110px, 18vw, 18rem); }
+    .nav__BWDiag--image { width: clamp(120px, 20vw, 22rem); }
     .nav__menu {
         position: fixed;
         top: 0;
@@ -152,6 +149,11 @@
 @media screen and (max-width: 480px) {
     /* Mobile: make the logo smaller and keep padding sane */
     .nav__BWDiag--image { width: clamp(88px, 28vw, 140px); }
+}
+
+/* Extra-large screens: make the BWDiag bigger for large desktop displays */
+@media screen and (min-width: 1400px) {
+    .nav__BWDiag--image { width: clamp(200px, 14vw, 36rem); }
 }
 
 @media screen and (max-width: 300px) {
