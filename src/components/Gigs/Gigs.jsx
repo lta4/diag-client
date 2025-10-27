@@ -14,7 +14,7 @@ const Gigs = () => {
                         </h3>
                     </div>
                     <div className="gigs__event">
-                        <div className="gigs__list">
+                        {/* <div className="gigs__list">
                             <div className="gigs__list--details">
                                 <div className="gigs__list--date">Fri Aug 23</div>
                                 <div className="gigs__list--venue">Music Box</div>
@@ -43,7 +43,7 @@ const Gigs = () => {
                                     <a href="" className="gigs__button--detail">RSVP</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="gigs__widget">
                             {/* <Show /> */}
                             <Widget />
