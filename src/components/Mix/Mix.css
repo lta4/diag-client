@@ -3,13 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin: 4rem 1rem;
-    /* padding: 0 4rem; */
-    /* gap: 4rem; */
 }
-
-/* .mix__container {
-    border: 1px solid;
-} */
 
 .mix__title {
     display: flex;
@@ -32,77 +26,50 @@
 
 /***************** songs *****************/
 
-/* songs container (no direct styles needed) */
-
-.songs__list, .embed iframe, .songs__list--name {
-    /* border: 5px solid blue; */
+.songs {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /* allow the list to span full available width and center it */
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    /* padding: 2rem 2rem; */
+    height: 100%;
 }
 
-/* Removed temporary strong override so responsive rules and breakpoints can take effect. */
+.songs__list {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    padding: 6rem 0.5rem;
+    height: 90%;
+    width: 90%;
+}
 
 .songs__list--section {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    padding: 1rem 1rem;
-    /* allow the section to grow and be centered so iframe can be large */
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: 1280px;
-    /* text-transform: uppercase; */
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 100%;
+  width: 100%;
 }
 
-.songs__list--name {
-    /* this class is used on the iframe — don't make the iframe a flex container */
-    max-width: 100%;
+.video__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  border: 0;
 }
 
-/* Responsive iframe: use CSS to make the iframe fluid and preserve aspect ratio */
-.embed iframe,
-.songs__list--name {
-    width: 100%;
-    /* allow larger max width but remain responsive */
-    max-width: min(1400px, 92vw);
-    height: auto;
-    aspect-ratio: 16 / 9;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(10,10,10,0.08);
-}
-
-/* On smaller screens stack the list and reduce margins */
+/* Responsive adjustments for video page */
 @media (max-width: 900px) {
-    .mix__title { margin: 3rem 1rem; }
-    .songs__list { flex-direction: column; align-items: center; gap: 1rem; }
-    .songs__list--section { padding: 0.5rem; }
+  .songs__list { padding: 4rem 0.5rem; width: 95%; }
 }
 
-/* Larger screens: center content and increase max sizes */
-@media (min-width: 900px) {
-    .songs__list { justify-content: center; gap: 2rem; }
-    .songs__list--section { padding: 1rem; max-width: 1100px; }
-    .embed iframe,
-    .songs__list--name { max-width: min(1100px, 82vw); }
-}
-
-@media (min-width: 1400px) {
-    .embed iframe,
-    .songs__list--name { max-width: 1200px; }
+@media (max-width: 720px) {
+  .songs__list { padding: 2.5rem 0.5rem; flex-direction: column; }
+  .songs__list--section { padding-bottom: 56.25%; width: 100%; max-width: 100%; }
 }
 
 @media (max-width: 480px) {
-    .mix { margin: 2rem 0.5rem; }
-    .mix__title { margin: 2rem 0.5rem; }
-    .mix__title--fushion { font-size: 1.1rem; letter-spacing: 0.18em; }
-    .embed iframe,
-    .songs__list--name { max-width: 100%; aspect-ratio: 16 / 9; }
+  .songs__list { padding: 1.25rem 0.5rem; }
+  .songs__list--section { padding-bottom: 56.25%; }
 }

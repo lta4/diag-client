@@ -38,17 +38,15 @@ const Mix = () => {
                         </iframe>
                     </div> */}
                     <div className="songs__list--section">
-                        <div className="embed">
                             <iframe
                                 title="Diagnostic @ Parc & Rec - Youtube"
-                                className="songs__list--name"
+                                className="video__iframe"
                                 src="https://www.youtube.com/embed/0t_ZjqrGkVw?si=ir46CtaJp-umZsFw"
                                 frameBorder="1"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerPolicy="strict-origin-when-cross-origin"
                                 allowFullScreen>
                             </iframe>
-                        </div>
                     </div>
                 </div>
             </div>

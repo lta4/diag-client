@@ -33,7 +33,7 @@ const Hero = (props) => {
                 <div className="hero__bar--mix" id="mix">
                     <div className="mix--preview">
                         <Mix />
-                        <Link to="/Tree" className="tree--preview__cta">STREAM</Link>
+                        {/* <Link to="/Tree" className="tree--preview__cta">STREAM</Link> */}
                     </div>
                 </div>
                 <div className="jThree_container">
