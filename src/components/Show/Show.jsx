@@ -17,6 +17,8 @@ function Show() {
     }, []);
 
     return (
+      <div>
+        Show show
         <a
           href="https://www.songkick.com/artists/10389354"
           className="songkick-widget"
@@ -36,6 +38,7 @@ function Show() {
         >
           TOUR DATES
         </a>
+      </div>
       );
     }
 

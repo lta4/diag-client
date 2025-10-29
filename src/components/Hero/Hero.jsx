@@ -1,7 +1,6 @@
 import React from "react";
 import "./Hero.css";
 import Header from "../Header/Header";
-import Gigs from "../Gigs/Gigs";
 import Show from "../Show/Show";
 import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
@@ -26,10 +25,12 @@ const Hero = (props) => {
                     />
                 </div>
                 <div className="hero__bar--shows" id="shows">
-                    <div className="gigs--preview">
-                        {/* <Gigs /> */}
+                    <div className="show--preview">
                         <Show />
-                        {/* <Link to="/Gigs" className="gigs--preview__cta">View gigs</Link> */}
+                        <Link to="/Show"
+                            className="show--preview__cta">
+                                View Show
+                        </Link>
                     </div>
                 </div>
                 <div className="hero__bar--mix" id="mix">
