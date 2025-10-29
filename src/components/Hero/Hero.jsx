@@ -2,6 +2,7 @@ import React from "react";
 import "./Hero.css";
 import Header from "../Header/Header";
 import Gigs from "../Gigs/Gigs";
+import Show from "../Show/Show";
 import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 // import JOne from "../../assets/jOne.jpeg";
@@ -26,7 +27,8 @@ const Hero = (props) => {
                 </div>
                 <div className="hero__bar--shows" id="shows">
                     <div className="gigs--preview">
-                        <Gigs />
+                        {/* <Gigs /> */}
+                        <Show />
                         {/* <Link to="/Gigs" className="gigs--preview__cta">View gigs</Link> */}
                     </div>
                 </div>
