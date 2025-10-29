@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./Video.css";
+import CUDiag from "../../assets/CUDiag.jpg";
 // Using embed iframe for YouTube content instead of vidstack player
 // import { Thumbnail } from "@vidstack/react";
 // import { Time, type TimeProps } from "@vidstack/react";
@@ -17,6 +18,7 @@ function Plans() {
                 {/* <div className="video__title">
                     Diagnostic
                 </div> */}
+                {/* <img src={CUDiag} alt="CUDiag" /> */}
                 <div className="video__container">
                 {/* <MediaPlayer playsInline title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4">
                     <MediaProvider />
@@ -27,6 +29,7 @@ function Plans() {
                         <DefaultVideoLayout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt" icons={defaultLayoutIcons} 
                         />
                 </MediaPlayer> */}
+                {/* <img src={CUDiag} alt="CUDiag" /> */}
                 <div className="video__container--media">
                     <iframe
                         title="Diagnostic - YouTube"
