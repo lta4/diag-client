@@ -34,7 +34,7 @@ function Show() {
           data-share-button="off"
           data-country-filter="off"
           data-rsvp="on"
-          data-request-show="on"
+          data-request-show="off"
           data-past-events="off"
           data-past-events-offtour="off"
           data-remind-me="off"
