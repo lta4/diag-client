@@ -133,7 +133,7 @@ const Header = () => {
                         </li>
                         <li>
                             <NavLink to="/Video" className={linkClassName}>
-                                Video
+                                Diagnostic & Friends
                             </NavLink>
                         </li>
                         <li>

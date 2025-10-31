@@ -7,6 +7,8 @@
     background-color: #000;
     transition: background-color 1s ease;
     z-index: var(--z-fixed);
+    text-transform: uppercase;
+    font-size: var(--small-font-size);
 }
 
 .header--transparent {

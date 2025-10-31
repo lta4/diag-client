@@ -34,8 +34,8 @@ function Plans() {
                     <iframe
                         title="Diagnostic - YouTube"
                         className="video__iframe"
-                        src="https://www.youtube.com/embed/wSxtLTEFV7w?rel=0&modestbranding=1"
-                        frameBorder="0"
+                        src="https://www.youtube.com/embed/SK6WN-y5P-0?si=noteC9NPfmZs754J&amp;start=537"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
