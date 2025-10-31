@@ -4,13 +4,13 @@ import "./Mix.css";
 const Mix = () => {
     return (
         <div className="mix">
-            <div className="mix__container">
+            {/* <div className="mix__container">
                 <div className="mix__title">
                     <h3 className="mix__title--fushion">
                         Mixes
                     </h3>
                 </div>
-            </div>
+            </div> */}
             <div className="songs">
                 <div className="songs__list">
                     {/* <div className="songs__list--section">
@@ -38,7 +38,7 @@ const Mix = () => {
                         </iframe>
                     </div> */}
                     <div className="songs__list--section">
-                            <iframe
+                            {/* <iframe
                                 title="Diagnostic @ Parc & Rec - Youtube"
                                 className="video__iframe"
                                 src="https://www.youtube.com/embed/0t_ZjqrGkVw?si=ir46CtaJp-umZsFw"
@@ -46,7 +46,7 @@ const Mix = () => {
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerPolicy="strict-origin-when-cross-origin"
                                 allowFullScreen>
-                            </iframe>
+                            </iframe> */}
                     </div>
                 </div>
             </div>

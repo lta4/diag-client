@@ -5,6 +5,7 @@ import Show from "../Show/Show";
 import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 // import JOne from "../../assets/jOne.jpeg";
+import JFifteen from "../../assets/jFifteen.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
 import JFourteen from "../../assets/jFourteen.jpg";
 import { Link } from "react-router-dom";
@@ -23,6 +24,11 @@ const Hero = (props) => {
                         className={`FWDiag--image ${/* add visible class when loaded */ ""}`}
                         onLoad={(e) => e.currentTarget.classList.add('is-visible')}
                     />
+                </div>
+                <div className="show">
+                    <div className="show__wall">
+                        <img src={JFifteen} className="show__wall--image" />
+                    </div>
                 </div>
                 <div className="hero__bar--shows" id="shows">
                     <div className="show--preview">
