@@ -5,6 +5,7 @@ import Show from "../Show/Show";
 import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 // import JOne from "../../assets/jOne.jpeg";
+import jOne from "../../assets/jOne.jpg";
 import JFifteen from "../../assets/jFifteen.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
 import JFourteen from "../../assets/jFourteen.jpg";
@@ -41,6 +42,7 @@ const Hero = (props) => {
                 </div>
                 <div className="hero__bar--mix" id="mix">
                     <div className="mix--preview">
+                        <img src={jOne} alt="" className="mix--preview__image" />
                         <Mix />
                         {/* <Link to="/Tree" className="tree--preview__cta">STREAM</Link> */}
                     </div>
