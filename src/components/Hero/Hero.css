@@ -35,6 +35,7 @@
     opacity: 0;
     transition: opacity 4.3s ease-in-out;
 }
+
 .FWDiag--image.is-visible {
     opacity: 1;
 }
@@ -51,11 +52,21 @@
     justify-content: center;
     pointer-events: none; /* let clicks pass through */
 }
+
 .hero__overlay-inner {
     pointer-events: auto;
     text-align: center;
     color: #fff;
     text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.hero__shows {
+    text-align: center;
+    margin-top: 1.25rem;
+}
+
+.hero__inquire {
+    margin: 1rem;
 }
 
 /* Responsive hero adjustments */
@@ -74,25 +85,6 @@
     .FWDiag--image { height: 60vh; }
     .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
     .hero__shows { margin: 2.5rem 0.75rem; }
-}
-
-/****************Hero Shows*****************/
-
-.hero__shows {
-    /* width: 100%; */
-    /* min-height: 100vh; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    text-align: center;
-    margin-top: 1.25rem;
-    /* margin: 10rem 2rem; */
-}
-
-/***************Hero Inquire*********************/
-
-.hero__inquire {
-    margin: 1rem;
 }
 
 /****************Hero Scroll***********************/
