@@ -17,13 +17,14 @@ const Hero = (props) => {
         <div className="hero" id="home">
             <div className="hero__container">
                 <Header />
-                <div className="FWDiag__container">
-                    <img
-                        src={FWDiag}
+                <div className="show">
+                    <div className="show__wall">
+                        <img src={FWDiag}
                         alt=""
-                        className={`FWDiag--image ${/* add visible class when loaded */ ""}`}
-                        onLoad={(e) => e.currentTarget.classList.add('is-visible')}
-                    />
+                        className={`FWDiag--image ${/* add visible class when loaded */""}`}
+                        onLoad={(e) => e.currentTarget.classList.add("is-visible")}
+                        />
+                    </div>
                 </div>
                 <div className="show">
                     <div className="show__wall">
