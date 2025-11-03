@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import jFifteen from "../../assets/jFifteen.jpg";
 import "./Show.css";
 
 function Show() {
@@ -20,12 +19,6 @@ function Show() {
 
     return (
         <>
-          {/* <div className="show">
-            <div className="show__wall">
-            <img src={jFifteen} alt="" className="show__wall--image" />
-            Show show
-            </div>
-          </div> */}
           <a
             href="https://www.songkick.com/artists/10389354"
             className="songkick-widget"
