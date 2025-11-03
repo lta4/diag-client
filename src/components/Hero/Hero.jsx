@@ -4,7 +4,6 @@ import Header from "../Header/Header";
 import Show from "../Show/Show";
 // import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
-// import JOne from "../../assets/jOne.jpeg";
 import jOne from "../../assets/jOne.jpg";
 import JFifteen from "../../assets/jFifteen.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
@@ -47,8 +46,10 @@ const Hero = (props) => {
                         <img src={jOne} alt="" className="show__wall--image" />
                     </div>
                 </div>
-                <div className="jThree_container">
-                    <img src={JFourteen} alt="" className="jThree-image" />
+                <div className="show">
+                    <div className="show__wall">
+                        <img src={JFourteen} alt="" className="show__wall--image" />
+                    </div>
                 </div>
                 <div className="hero__bar--inquire" id="inquire">
                     <ContactForm />

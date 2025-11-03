@@ -110,20 +110,6 @@
     margin: 10rem 2rem;
 }
 
-/*******************jThree Image*****************/
-
-.jThree_container {
-    width: 100%;
-    height: 100%;
-}
-
-.jThree-image {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    background-repeat: no-repeat;
-}
-
 /***************Hero Inquire*********************/
 
 .hero__bar--inquire {
