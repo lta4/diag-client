@@ -59,7 +59,7 @@ const Hero = (props) => {
                         />
                     </div>
                 </div>
-                <div className="hero__bar--inquire" id="inquire">
+                <div className="hero__inquire" id="inquire">
                     <ContactForm />
                     {/* <hr />
                     <Link to="/">{<ContactForm />}</Link>
