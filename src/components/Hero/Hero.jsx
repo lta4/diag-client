@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.css";
 import Header from "../Header/Header";
 import Show from "../Show/Show";
-import Mix from "../Mix/Mix";
+// import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 // import JOne from "../../assets/jOne.jpeg";
 import jOne from "../../assets/jOne.jpg";
@@ -42,11 +42,9 @@ const Hero = (props) => {
                         </Link>
                     </div>
                 </div>
-                <div className="hero__bar--mix" id="mix">
-                    <div className="mix--preview">
-                        <img src={jOne} alt="" className="mix--preview__image" />
-                        <Mix />
-                        {/* <Link to="/Tree" className="tree--preview__cta">STREAM</Link> */}
+                <div className="show">
+                    <div className="show__wall">
+                        <img src={jOne} alt="" className="show__wall--image" />
                     </div>
                 </div>
                 <div className="jThree_container">

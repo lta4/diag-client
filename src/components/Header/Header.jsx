@@ -79,11 +79,11 @@ const Header = () => {
                                     Shows
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link smooth to="/#mix" className={linkClassName} onClick={closeMobileMenu}>
                                     Mixes
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link smooth to="/#inquire" className={linkClassName} onClick={closeMobileMenu}>
                                     Inquire
@@ -116,11 +116,11 @@ const Header = () => {
                                 Shows
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link smooth to="/#mix" className={linkClassName}>
                                 Mixes
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link smooth to="/#inquire" className={linkClassName}>
                                 Inquire
