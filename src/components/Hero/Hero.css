@@ -60,39 +60,33 @@
 
 /* Responsive hero adjustments */
 @media (max-width: 900px) {
-    .FWDiag__container { height: 85vh; }
     .FWDiag--image { height: 85vh; }
-    .hero__bar--shows, .hero__bar--mix { margin: 6rem 1.5rem; }
+    .hero__shows { margin: 6rem 1.5rem; }
 }
 
 @media (max-width: 720px) {
-    .FWDiag__container { height: 70vh; }
     .FWDiag--image { height: 70vh; background-position: center top; }
     .hero__overlay-inner { padding: 0 1rem; }
-    .hero__bar--shows, .hero__bar--mix { margin: 4rem 1rem; }
+    .hero__shows { margin: 4rem 1rem; }
 }
 
 @media (max-width: 480px) {
-    .FWDiag__container { height: 60vh; }
     .FWDiag--image { height: 60vh; }
     .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
-    .hero__bar--shows, .hero__bar--mix { margin: 2.5rem 0.75rem; }
+    .hero__shows { margin: 2.5rem 0.75rem; }
 }
 
 /****************Hero Shows*****************/
 
-.hero__bar--shows {
-    width: 100%;
+.hero__shows {
+    /* width: 100%; */
+    /* min-height: 100vh; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
     text-align: center;
     margin-top: 1.25rem;
-    color: var(--title-color, #fff);
-    margin: 10rem 2rem;
-}
-
-/**************Hero Mix************************/
-
-.hero__bar--mix {
-    margin: 10rem 2rem;
+    /* margin: 10rem 2rem; */
 }
 
 /***************Hero Inquire*********************/

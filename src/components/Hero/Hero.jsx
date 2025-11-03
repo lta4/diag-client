@@ -20,36 +20,43 @@ const Hero = (props) => {
                 <div className="show">
                     <div className="show__wall">
                         <img src={FWDiag}
-                        alt=""
-                        className={`FWDiag--image ${/* add visible class when loaded */""}`}
-                        onLoad={(e) => e.currentTarget.classList.add("is-visible")}
+                            alt=""
+                            className={`FWDiag--image ${/* add visible class when loaded */""}`}
+                            onLoad={(e) => e.currentTarget.classList.add("is-visible")}
                         />
                     </div>
                 </div>
                 <div className="show">
                     <div className="show__wall">
                         <img src={JFifteen}
-                        alt=""
-                        className="show__wall--image" />
+                            alt=""
+                            className="show__wall--image" 
+                        />
                     </div>
                 </div>
-                <div className="hero__bar--shows" id="shows">
-                    <div className="show--preview">
+                <div className="hero__shows" id="shows">
+                    <div className="hero__show--preview">
                         <Show />
                         <Link to="/Show"
-                            className="show--preview__cta">
+                            className="hero__show--preview__cta">
                                 View Show
                         </Link>
                     </div>
                 </div>
                 <div className="show">
                     <div className="show__wall">
-                        <img src={jOne} alt="" className="show__wall--image" />
+                        <img src={jOne} 
+                            alt="" 
+                            className="show__wall--image" 
+                        />
                     </div>
                 </div>
                 <div className="show">
                     <div className="show__wall">
-                        <img src={JFourteen} alt="" className="show__wall--image" />
+                        <img src={JFourteen} 
+                            alt="" 
+                            className="show__wall--image" 
+                        />
                     </div>
                 </div>
                 <div className="hero__bar--inquire" id="inquire">
