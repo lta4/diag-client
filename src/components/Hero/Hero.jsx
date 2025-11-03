@@ -28,7 +28,9 @@ const Hero = (props) => {
                 </div>
                 <div className="show">
                     <div className="show__wall">
-                        <img src={JFifteen} className="show__wall--image" />
+                        <img src={JFifteen}
+                        alt=""
+                        className="show__wall--image" />
                     </div>
                 </div>
                 <div className="hero__bar--shows" id="shows">
