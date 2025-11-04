@@ -5,9 +5,15 @@ import Show from "../Show/Show";
 // import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 import jOne from "../../assets/jOne.jpg";
+import jOneInk from "../../assets/jOneInk.jpg";
+import jOneSlate from "../../assets/jOneSlate.jpg";
 import JFifteen from "../../assets/jFifteen.jpg";
+import jFifteenInk from "../../assets/jFifteenInk.jpg";
+import jFifteenSlate from "../../assets/jFifteenSlate.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
 import JFourteen from "../../assets/jFourteen.jpg";
+import jFourteenInk60p from "../../assets/jFourteenInk60p.jpg";
+import jFourteenSlate72p from "../../assets/jFourteenSlate72p.jpg";
 import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -28,7 +34,7 @@ const Hero = (props) => {
                 </div>
                 <div className="show">
                     <div className="show__wall">
-                        <img src={JFifteen}
+                        <img src={jFifteenInk}
                             alt=""
                             className="show__wall--image" 
                         />
@@ -45,7 +51,7 @@ const Hero = (props) => {
                 </div>
                 <div className="show">
                     <div className="show__wall">
-                        <img src={jOne} 
+                        <img src={jOneInk} 
                             alt="" 
                             className="show__wall--image" 
                         />
@@ -53,7 +59,7 @@ const Hero = (props) => {
                 </div>
                 <div className="show">
                     <div className="show__wall">
-                        <img src={JFourteen} 
+                        <img src={jFourteenInk60p} 
                             alt="" 
                             className="show__wall--image" 
                         />
