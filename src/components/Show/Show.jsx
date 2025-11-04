@@ -3,11 +3,13 @@ import "./Show.css";
 
 function Show() {
 
+    const id = process.env.REACT_APP_SONGKICK_ID || '10389354';
+
     useEffect(() => {
 
       const script = document.createElement("script");
 
-      script.src = "//widget-app.songkick.com/injector/10389354";
+      script.src = `//widget-app.songkick.com/injector/${id}`;
       script.async = true;
       document.body.appendChild(script);
 
@@ -20,7 +22,7 @@ function Show() {
     return (
         <>
           <a
-            href="https://www.songkick.com/artists/10389354"
+            href={`https://www.songkick.com/artists/${id}`}
             className="songkick-widget"
             data-theme="dark"
             data-track-button="off"
