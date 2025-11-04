@@ -70,3 +70,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b1a105c3-96be-4ced-9b00-f23fe2db62c7/deploy-status)](https://app.netlify.com/projects/diagnosticmusic/deploys)
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Environment variables
+
+This project uses Create React App env vars. Any client-visible env var must be prefixed with `REACT_APP_`.
+
+Add your Songkick widget id to `.env.development` and `.env.production`:
+
+```
+REACT_APP_SONGKICK_ID=10389354
+```
+
+After changing env files, restart the dev server (or rebuild for production) for the changes to take effect.
