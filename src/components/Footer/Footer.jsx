@@ -6,6 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaSpotify } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaSoundcloud } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
 // import Logo from "../../assets/logo192.png"
 
 const Footer = () => {
@@ -27,6 +28,9 @@ const Footer = () => {
                     </NavLink>
                     <NavLink to="https://soundcloud.com/kid-diagnostic?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
                         <FaSoundcloud className="footer__link"/>
+                    </NavLink>
+                    <NavLink to="https://www.tiktok.com/@diagnosticmusic?_r=1&_t=ZP-916LhS5VoY3">
+                        <FaTwitter className="footer__link" />
                     </NavLink>
                 </div>
                 {/*********************** DIAG LOGO INPUT ***************************/}
