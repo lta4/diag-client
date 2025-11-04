@@ -20,6 +20,9 @@ const Footer = () => {
                     <NavLink to="https://www.instagram.com/diagnosticmusic/">
                         <FaInstagram className="footer__link" />
                     </NavLink>
+                    <NavLink to="https://www.tiktok.com/@diagnosticmusic?_r=1&_t=ZP-916LhS5VoY3">
+                        <FaTwitter className="footer__link" />
+                    </NavLink>
                     <NavLink to="https://open.spotify.com/artist/0T62YioSTCaw1NRFNbE4lE?si=s36brJ5sT1GtdAxgegRz2A">
                         <FaSpotify className="footer__link"/>
                     </NavLink>
@@ -28,9 +31,6 @@ const Footer = () => {
                     </NavLink>
                     <NavLink to="https://soundcloud.com/kid-diagnostic?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
                         <FaSoundcloud className="footer__link"/>
-                    </NavLink>
-                    <NavLink to="https://www.tiktok.com/@diagnosticmusic?_r=1&_t=ZP-916LhS5VoY3">
-                        <FaTwitter className="footer__link" />
                     </NavLink>
                 </div>
                 {/*********************** DIAG LOGO INPUT ***************************/}
