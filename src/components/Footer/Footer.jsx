@@ -7,7 +7,6 @@ import { FaSpotify } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaSoundcloud } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
-// import Logo from "../../assets/logo192.png"
 
 const Footer = () => {
     return (
@@ -33,10 +32,6 @@ const Footer = () => {
                         <FaSoundcloud className="footer__link"/>
                     </NavLink>
                 </div>
-                {/*********************** DIAG LOGO INPUT ***************************/}
-                {/* <div className="logo-d">
-                    <img src={Logo} alt="" />
-                </div> */}
             </div>
             <div className="footer__policy">
                 <NavLink to="/Privacy" className="footer__service">
