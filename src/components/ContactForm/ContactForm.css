@@ -12,13 +12,6 @@
     margin: 5rem;
 }
 
-/* input {
-    border-bottom: 2px solid #ccc;
-    width: 60%;
-    display: block;
-    margin: 0 auto;
-} */
-
 input, #firstname, #lastname, #email {
     padding: 5px 0 5px 0;
     margin: 0 auto;

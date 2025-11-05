@@ -1,23 +1,3 @@
-/* .footer-container {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    color: white;
-    font-size: 18px;
-    z-index: var(--z-fixed);
-}
-
-.copyRight {
-    color: white;
-    font-size: 10px;
-}
-
-.footLink {
-    text-decoration: none;
-    color: red;
-} */
-
 .footer {
     display: flex;
     flex-direction: row;
@@ -31,6 +11,50 @@
     display: flex;
     flex-direction: row;
     gap: 4rem;
+}
+
+/* Responsive: collapse gap and allow wrapping on smaller screens */
+@media (max-width: 768px) {
+    .footer__social {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .footer {
+        height: auto;
+        padding: 1rem 0.5rem;
+        align-items: center;
+    }
+
+    .footer__link {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .footer__policy {
+        gap: 1.2rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .footer__date {
+        margin: 1rem 0;
+        justify-content: center;
+    }
+}
+
+/* Very small screens: reduce icon size further */
+@media (max-width: 420px) {
+    .footer__link {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .footer__social {
+        gap: 0.75rem;
+    }
 }
 
 .footer__link {
@@ -47,8 +71,6 @@ img.footer__link.footer__link--bit {
 }
 
 img.footer__link.footer__link--bit:hover {
-    /* filter: invert(0.5) sepia(1) saturate(5); */
-    /* fill: var(--first-color); */
     filter: var(--first-color);
     transition: filter 0.3s ease;
 }
@@ -57,24 +79,6 @@ img.footer__link.footer__link--bit:hover {
     color: var(--theme-color);
     /* color: var(--first-color); */
     transition: color 0.3s ease;
-}
-
-/* .footer__social--instagram {
-    width: 2rem;
-    height: 2rem;
-} */
-
-/* .footer__social > a > img {
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-    text-decoration: none;
-} */
-
-.footer__social--spotify {
-    /* width: 2rem;
-    height: 2rem;
-    text-decoration: none; */
 }
 
 /*********************Terms of Service********************/
