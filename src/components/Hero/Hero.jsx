@@ -12,6 +12,8 @@ import jFifteenInk from "../../assets/jFifteenInk.jpg";
 import jFifteenSlate from "../../assets/jFifteenSlate.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
 import JFourteen from "../../assets/jFourteen.jpg";
+import jFourteenInk from "../../assets/jFourteenInk.jpg";
+import jFourteenSlate from "../../assets/jFourteenSlate.jpg";
 import jFourteenInk60p from "../../assets/jFourteenInk60p.jpg";
 import jFourteenSlate72p from "../../assets/jFourteenSlate72p.jpg";
 import { Link } from "react-router-dom";
@@ -59,7 +61,7 @@ const Hero = (props) => {
                 </div>
                 <div className="show">
                     <div className="show__wall">
-                        <img src={jFourteenInk60p} 
+                        <img src={jFourteenInk}
                             alt="" 
                             className="show__wall--image" 
                         />
