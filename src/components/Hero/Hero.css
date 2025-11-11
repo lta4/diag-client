@@ -22,7 +22,6 @@
 /**********************FWDiag Image****************/
 
 .FWDiag--image {
-    object-fit: cover;
     width: 100%;
     height: 100vh; /* ensure image covers full viewport height */
     object-fit: cover;
@@ -70,21 +69,21 @@
 }
 
 /* Responsive hero adjustments */
-@media (max-width: 900px) {
-    .FWDiag--image { height: 85vh; }
-    .hero__shows { margin: 6rem 1.5rem; }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .FWDiag--image { height: 60vh; }
+    .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
+    .hero__shows { margin: 2.5rem 0.75rem; }
 }
 
-@media (max-width: 720px) {
+@media screen and (min-width: 481px) and (max-width: 720px) {
     .FWDiag--image { height: 70vh; background-position: center top; }
     .hero__overlay-inner { padding: 0 1rem; }
     .hero__shows { margin: 4rem 1rem; }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-    .FWDiag--image { height: 60vh; }
-    .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
-    .hero__shows { margin: 2.5rem 0.75rem; }
+@media screen and (max-width: 900px) {
+    .FWDiag--image { height: 85vh; }
+    .hero__shows { margin: 6rem 1.5rem; }
 }
 
 /****************Hero Scroll***********************/
