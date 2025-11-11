@@ -18,6 +18,9 @@ html {
 
 :root {
   --header-height: 3.5rem;
+  --hero-min-height: 60vh;
+  --hero-desktop-height: 100vh;
+  --hero-overlay-color: rgba(0, 0 , 0, 0.45);
   --theme-color: rgba(10, 73, 97, 1);
   --first-color: rgba(128, 0, 0, 1);
   --title-color: hsl(0, 0%, 95%);

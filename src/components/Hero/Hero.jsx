@@ -25,23 +25,19 @@ const Hero = (props) => {
         <div className="hero" id="home">
             <div className="hero__container">
                 <Header />
-                <div className="dj">
-                    <div className="dj__wall">
+                    <div className="hero__wall">
                         <img src={FWDiag}
                             alt=""
-                            className={`FWDiag--image ${/* add visible class when loaded */""}`}
+                            className={`FWDiag--image ${/* add visible class when loaded */"FWDiag--seen"}`}
                             onLoad={(e) => e.currentTarget.classList.add("is-visible")}
                         />
                     </div>
-                </div>
-                <div className="dj">
-                    <div className="dj__wall">
+                    <div className="hero__wall">
                         <img src={jFifteenInk}
                             alt=""
-                            className="dj__wall--image" 
+                            className="hero__wall--image" 
                         />
                     </div>
-                </div>
                 <div className="hero__shows" id="shows">
                     <div className="hero__show--preview">
                         <Show />
@@ -51,22 +47,18 @@ const Hero = (props) => {
                         </Link>
                     </div>
                 </div>
-                <div className="dj">
-                    <div className="dj__wall">
+                    <div className="hero__wall">
                         <img src={jOneInk} 
                             alt="" 
-                            className="dj__wall--image" 
+                            className="hero__wall--image" 
                         />
                     </div>
-                </div>
-                <div className="dj">
-                    <div className="dj__wall">
+                    <div className="hero__wall">
                         <img src={jFourteenInk}
                             alt="" 
-                            className="dj__wall--image" 
+                            className="hero__wall--image" 
                         />
                     </div>
-                </div>
                 <div className="hero__inquire" id="inquire">
                     <ContactForm />
                     {/* <hr />

@@ -1,11 +1,19 @@
 .hero {
-    /* display: flex;
-    justify-content: center; */
+    position: relative;
+    width: 100%;
+    min-height: var(--hero-min-height);
+    overflow: hidden;
 }
 
 .hero__container {
-    margin: 0;
-    padding: 0;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .hero__scroll {
@@ -19,35 +27,38 @@
     color: #fff;
 }
 
-/**********************FWDiag Image****************/
+/**********************DJ Component****************/
 
-.dj {
+.hero__wall {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    justify-content: center;
     width: 100%;
-}
-
-.dj__wall {
-    width: 100%;
-    min-height: 60vh;
+    min-height: 40vh; /* smaller per-wall height so multiple walls don't blow out the page */
     position: relative;
+    overflow: hidden; /* ensure children (images) do not overflow their wall */
 }
 
-.dj__wall--image {
+/* target actual img elements inside hero walls */
+.hero__wall--image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* ensure cover fit for all hero images */
     display: block;
+    pointer-events: none;
+    max-height: 90vh;
 }
+
+/**********************FWDiag Component****************/
 
 .FWDiag--image {
     width: 100%;
-    height: 100vh; /* ensure image covers full viewport height */
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* same cover behavior as other hero images */
     display: block;
     background-repeat: no-repeat;
+    max-height: 100vh;
 }
 
 /* Fade-in for FWDiag image */
@@ -70,7 +81,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none; /* let clicks pass through */
+    pointer-events: none;
 }
 
 .hero__overlay-inner {
@@ -91,19 +102,19 @@
 
 /* Media Queries */
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .FWDiag--image { height: 60vh; }
+    .FWDiag--image { max-height: 60vh; }
     .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
     .hero__shows { margin: 2.5rem 0.75rem; }
 }
 
 @media screen and (min-width: 481px) and (max-width: 720px) {
-    .FWDiag--image { height: 70vh; background-position: center top; }
+    .FWDiag--image { max-height: 70vh; background-position: center top; }
     .hero__overlay-inner { padding: 0 1rem; }
     .hero__shows { margin: 4rem 1rem; }
 }
 
 @media screen and (max-width: 900px) {
-    .FWDiag--image { height: 85vh; }
+    .FWDiag--image { max-height: 85vh; }
     .hero__shows { margin: 6rem 1.5rem; }
 }
 
