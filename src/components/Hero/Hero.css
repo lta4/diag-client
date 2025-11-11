@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 40vh; /* smaller per-wall height so multiple walls don't blow out the page */
+    min-height: 100vh; /* smaller per-wall height so multiple walls don't blow out the page */
     position: relative;
     overflow: hidden; /* ensure children (images) do not overflow their wall */
 }
