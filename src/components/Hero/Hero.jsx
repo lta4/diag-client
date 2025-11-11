@@ -25,8 +25,8 @@ const Hero = (props) => {
         <div className="hero" id="home">
             <div className="hero__container">
                 <Header />
-                <div className="show">
-                    <div className="show__wall">
+                <div className="dj">
+                    <div className="dj__wall">
                         <img src={FWDiag}
                             alt=""
                             className={`FWDiag--image ${/* add visible class when loaded */""}`}
@@ -34,11 +34,11 @@ const Hero = (props) => {
                         />
                     </div>
                 </div>
-                <div className="show">
-                    <div className="show__wall">
+                <div className="dj">
+                    <div className="dj__wall">
                         <img src={jFifteenInk}
                             alt=""
-                            className="show__wall--image" 
+                            className="dj__wall--image" 
                         />
                     </div>
                 </div>
@@ -51,19 +51,19 @@ const Hero = (props) => {
                         </Link>
                     </div>
                 </div>
-                <div className="show">
-                    <div className="show__wall">
+                <div className="dj">
+                    <div className="dj__wall">
                         <img src={jOneInk} 
                             alt="" 
-                            className="show__wall--image" 
+                            className="dj__wall--image" 
                         />
                     </div>
                 </div>
-                <div className="show">
-                    <div className="show__wall">
+                <div className="dj">
+                    <div className="dj__wall">
                         <img src={jFourteenInk}
                             alt="" 
-                            className="show__wall--image" 
+                            className="dj__wall--image" 
                         />
                     </div>
                 </div>

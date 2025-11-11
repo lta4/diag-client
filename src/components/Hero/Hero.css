@@ -21,6 +21,27 @@
 
 /**********************FWDiag Image****************/
 
+.dj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.dj__wall {
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+}
+
+.dj__wall--image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .FWDiag--image {
     width: 100%;
     height: 100vh; /* ensure image covers full viewport height */
@@ -68,7 +89,7 @@
     margin: 1rem;
 }
 
-/* Responsive hero adjustments */
+/* Media Queries */
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .FWDiag--image { height: 60vh; }
     .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
