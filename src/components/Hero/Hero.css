@@ -81,7 +81,7 @@
     .hero__shows { margin: 4rem 1rem; }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .FWDiag--image { height: 60vh; }
     .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
     .hero__shows { margin: 2.5rem 0.75rem; }
