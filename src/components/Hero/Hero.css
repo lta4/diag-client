@@ -123,24 +123,23 @@
     .hero__container {
         padding: 0 0.5rem;
     }
-
     /* reduce the vertical footprint of each stacked wall on mobile */
     .hero__wall {
         min-height: 30vh;
         margin: 0;
         padding: 0;
     }
-
     /* ensure images fully cover the wall and don't introduce gaps */
     .hero__wall--image,
-    .FWDiag--image {
+    .FWDiag--image,
+    /* catch-all: any img inside a hero wall */
+    .hero__wall img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
         margin: 0;
     }
-
     /* tighten surrounding sections */
     .hero__shows { margin: 1.5rem 0; }
     .hero__inquire { margin: 0.75rem 0; }
