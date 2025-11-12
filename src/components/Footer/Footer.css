@@ -5,6 +5,8 @@
     align-items: flex-end;
     height: 10rem;
     cursor: pointer;
+    position: relative;
+    z-index: 2; /* sit above hero parallax (z: -1) but below header (var(--z-fixed)) */
 }
 
 .footer__social {
@@ -89,6 +91,8 @@ img.footer__link.footer__link--bit:hover {
     justify-content: center;
     gap: 4rem;
     margin-top: .05rem;
+    position: relative;
+    z-index: 2;
 }
 
 .footer__service:nth-child(n):hover {
@@ -110,6 +114,8 @@ img.footer__link.footer__link--bit:hover {
     margin: 2.3rem 2.3rem;
     margin-top: auto;
     /* border: 2px solid white; */
+    position: relative;
+    z-index: 2;
 }
 
 .footer__date--description {
