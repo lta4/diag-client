@@ -25,7 +25,13 @@ const Hero = (props) => {
         <div className="hero" id="home">
             <div className="hero__container">
                 <Header />
+                    {/* Desktop-only parallax wrapper: background image handled in CSS for desktop, img fallback remains for mobile */}
                     <div className="hero__wall">
+                        <div
+                            className="hero__parallax"
+                            style={{ backgroundImage: `url(${FWDiag})` }}
+                            aria-hidden="true"
+                        />
                         <img src={FWDiag}
                             alt=""
                             className={`FWDiag--image ${/* add visible class when loaded */"FWDiag--seen"}`}

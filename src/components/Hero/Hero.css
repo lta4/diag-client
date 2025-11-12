@@ -40,6 +40,20 @@
     overflow: hidden; /* ensure children (images) do not overflow their wall */
 }
 
+/* parallax layer (desktop-only styling applied below) */
+.hero__parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    will-change: transform;
+}
+
 /* target actual img elements inside hero walls */
 .hero__wall--image {
     width: 100%;
@@ -146,6 +160,31 @@
 
     /* disable any parallax transforms if present */
     .hero__layer { transform: none !important; }
+}
+
+/* Desktop-only parallax: use background-attachment fixed for a simple parallax on wider screens */
+@media (min-width: 1024px) {
+    /* Make the first hero wall occupy the full viewport so next images don't peek through */
+    .hero__wall:first-of-type {
+        min-height: 100vh;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero__parallax {
+        position: fixed; /* fixed to viewport for parallax effect */
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-attachment: fixed;
+        background-position: center center;
+        z-index: -1; /* sit behind content */
+    }
+    /* ensure container content stacks above the fixed parallax */
+    .hero__container { position: relative; z-index: 2; }
+    /* hide the img fallback on desktop since parallax uses background-image */
+    .FWDiag--image { display: none; }
 }
 
 /****************Hero Scroll***********************/
