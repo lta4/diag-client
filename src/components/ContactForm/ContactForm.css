@@ -18,7 +18,7 @@
     background: rgba(0,0,0,0.45);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    box-shadow: 0 6px 6px rgba(0,0,0,0.45);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.45);
     z-index: 3; /* appear above backgrounds */
 }
 
@@ -100,4 +100,15 @@ textarea, #message {
     .contact { margin: 1.25rem 0.75rem; }
     .contact__des { margin: 1.5rem 0 !important; }
     .contact__btn { height: 44px !important; }
+}
+
+/* Desktop: make the frosted panel narrower and centered */
+@media (min-width: 1024px) {
+    .contact__backdrop {
+        max-width: 900px;
+        width: 80%;
+        margin: 3rem auto;
+        padding: 3rem 2rem;
+    }
+    .contact__des { margin: 3rem 0; }
 }
