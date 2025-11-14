@@ -3,7 +3,30 @@
     grid-template-columns: 1fr;
     grid-template-rows: 6fr;
     row-gap: 1rem;
-    margin: 4rem 2rem;
+    margin: 2rem 2rem;
+    background-color: transparent; /* form itself is transparent; backdrop handled by wrapper */
+}
+
+/* Frosted backdrop wrapper */
+.contact__backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin: 2rem 1rem;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.45);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 6px rgba(0,0,0,0.45);
+    z-index: 3; /* appear above backgrounds */
+}
+
+/* fallback for browsers that don't support backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .contact__backdrop {
+        background: rgba(0,0,0,0.6);
+    }
 }
 
 .contact__des {
@@ -12,10 +35,12 @@
     margin: 5rem;
 }
 
+/* form input color handled below */
+
 input, #firstname, #lastname, #email {
     padding: 5px 0 5px 0;
     margin: 0 auto;
-    background-color: black;
+    /* background-color: black; */
     border: inset 0;
     border-bottom: 1px solid #d2d2d2;
     width: 75%;
@@ -25,7 +50,7 @@ input, #firstname, #lastname, #email {
 textarea, #message {
     padding: 5px 0 6rem 0;
     margin: 0 auto;
-    background-color: black;
+    /* background-color: black; */
     border: inset 0;
     border-bottom: 1px solid #d2d2d2;
     width: 75%;
@@ -60,9 +85,8 @@ textarea, #message {
 
 /* Responsive: make form fields full width on smaller screens */
 @media (max-width: 720px) {
-    .contact {
-        margin: 2rem 1rem;
-    }
+    .contact__backdrop { margin: 1rem 0.5rem; padding: 1rem; }
+    .contact { margin: 0; }
     input, #firstname, #lastname, #email, textarea, #message {
         width: 100% !important;
         padding: 8px 10px !important;

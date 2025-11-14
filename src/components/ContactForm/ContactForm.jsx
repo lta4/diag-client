@@ -9,7 +9,8 @@ function ContactForm() {
         return <p>Thanks for your message! We've received it and will respond shortly!</p>
 }
     return (
-        <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="">
+        <div className="contact__backdrop">
+            <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="">
             <h2 className="contact__des">
                 Discover the sound -- master of vibes
             </h2>
@@ -63,7 +64,8 @@ function ContactForm() {
             <button type="submit" disabled={state.submitting} className="contact__btn">
                 Submit
             </button>
-        </form>
+            </form>
+        </div>
     );
 };
 
