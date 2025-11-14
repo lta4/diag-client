@@ -105,10 +105,10 @@ textarea, #message {
 /* Desktop: make the frosted panel narrower and centered */
 @media (min-width: 1024px) {
     .contact__backdrop {
-        max-width: 900px;
-        width: 80%;
+        max-width: 1440px;
+        width: 100%;
         margin: 3rem auto;
         padding: 3rem 2rem;
     }
-    .contact__des { margin: 3rem 0; }
+    .contact__des { margin: 2rem 0; }
 }
