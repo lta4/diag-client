@@ -45,6 +45,7 @@ input, #firstname, #lastname, #email {
     /* border-bottom: 1px solid #d2d2d2; */
     width: 75%;
     display: block;
+    transition: border-color 180ms ease, box-shadow 200ms ease;
 }
 
 textarea, #message {
@@ -83,25 +84,6 @@ textarea, #message {
     transition: background 0.3s ease;
 }
 
-/* Responsive: make form fields full width on smaller screens */
-@media (max-width: 720px) {
-    .contact__backdrop { margin: 1rem 0.5rem; padding: 1rem; }
-    .contact { margin: 0; }
-    input, #firstname, #lastname, #email, textarea, #message {
-        width: 100% !important;
-        padding: 8px 10px !important;
-        margin: 0.5rem 0 !important;
-    }
-    .contact__des { margin: 2rem 0 !important; }
-    .contact__btn { width: 100% !important; max-width: 320px; }
-}
-
-@media (max-width: 480px) {
-    .contact { margin: 1.25rem 0.75rem; }
-    .contact__des { margin: 1.5rem 0 !important; }
-    .contact__btn { height: 44px !important; }
-}
-
 /* Desktop: make the frosted panel narrower and centered */
 @media (min-width: 1024px) {
     .contact__backdrop {
@@ -111,4 +93,56 @@ textarea, #message {
         padding: 3rem 2rem;
     }
     .contact__des { margin: 2rem 0; }
+}
+
+/* Responsive: make form fields full width on smaller screens */
+@media (max-width: 720px) {
+    .contact__backdrop { margin: 1rem 0.5rem; padding: 1rem; }
+    .contact { margin: 0; }
+    input, #firstname, #lastname, #email, textarea, #message {
+        width: 100% !important;
+        padding: 8px 10px !important;
+        margin: 0.5rem 0 !important;
+    }
+    /* mobile-only: add bottom border for the named inputs */
+    #firstname, #lastname, #email {
+        border-bottom: 1px solid #d2d2d2;
+        padding-bottom: 8px !important;
+    }
+    /* focus styles */
+    #firstname:focus, #lastname:focus, #email:focus,
+    #firstname:focus-visible, #lastname:focus-visible, #email:focus-visible {
+        outline: none;
+        border-bottom-color: var(--theme-color);
+        box-shadow: inset 0 -3px 8px rgba(10,73,97,0.08);
+    }
+    .contact__des { margin: 2rem 0 !important; }
+    .contact__btn { width: 100% !important; max-width: 320px; }
+}
+
+/* Tablet: apply bottom borders similar to mobile for better readability */
+@media (min-width: 721px) and (max-width: 1023px) {
+    input, #firstname, #lastname, #email, textarea, #message {
+        width: 90% !important;
+        padding: 8px 12px !important;
+        margin: 0.5rem 0 !important;
+    }
+    #firstname, #lastname, #email {
+        border-bottom: 1px solid #d2d2d2;
+        padding-bottom: 8px !important;
+    }
+    /* tablet focus styles */
+    #firstname:focus, #lastname:focus, #email:focus,
+    #firstname:focus-visible, #lastname:focus-visible, #email:focus-visible {
+        outline: none;
+        border-bottom-color: var(--theme-color);
+        box-shadow: inset 0 -3px 8px rgba(10,73,97,0.08);
+    }
+    .contact__backdrop { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 480px) {
+    .contact { margin: 1.25rem 0.75rem; }
+    .contact__des { margin: 1.5rem 0 !important; }
+    .contact__btn { height: 44px !important; }
 }
