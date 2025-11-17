@@ -1,10 +1,10 @@
 export const links = [
     {
-        title: "Instagram",
-        url: "https://instagram.com"
+        title: "Beatport",
+        url: "https://www.beatport.com"
     },
     {
         title: "YouTube",
-        url: "https://youtube.com"
+        url: "https://www.youtube.com"
     },
 ];
