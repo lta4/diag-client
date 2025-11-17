@@ -1,10 +1,12 @@
 import React from "react";
 import "./LinkButton.css";
 
-const LinkButton = () => {
+const LinkButton = ({ title, url }) => {
     return (
-        <div>
-            <h1>Link tree</h1>
+        <div className="link-button">
+            <a href={url} target="_blank" rel="noreferrer" className="link-button__anchor">
+                {title}
+            </a>
         </div>
     );
 };

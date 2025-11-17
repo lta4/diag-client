@@ -3,11 +3,13 @@ import { links } from "../../data/data";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import "./LinkTree.css";
 
-function LinkTree({ title, url }) {
+function LinkTree() {
     return (
-        <a href={url}>
-            {title}
-        </a>
+        <div>
+            {links.map((link, index) => (
+                <LinkButton key={index} title={link.title} url={link.url} />
+            ))}
+        </div>
     );
 };
 

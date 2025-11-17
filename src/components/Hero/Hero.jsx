@@ -16,7 +16,7 @@ import jFourteenInk from "../../assets/jFourteenInk.jpg";
 import jFourteenSlate from "../../assets/jFourteenSlate.jpg";
 import jFourteenInk60p from "../../assets/jFourteenInk60p.jpg";
 import jFourteenSlate72p from "../../assets/jFourteenSlate72p.jpg";
-import LinkButton from "../LinkButton/LinkButton";
+import LinkTree from "../../pages/LinkTree/LinkTree.jsx";
 import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -65,7 +65,7 @@ const Hero = (props) => {
                             alt="" 
                             className="hero__wall--image" 
                         />
-                        <LinkButton />
+                        <LinkTree />
                     </div>
                 <div className="hero__inquire" id="inquire">
                     <ContactForm />
