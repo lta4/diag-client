@@ -4,18 +4,10 @@ import Header from "../Header/Header";
 import Show from "../Show/Show";
 // import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
-import jOne from "../../assets/jOne.jpg";
 import jOneInk from "../../assets/jOneInk.jpg";
-import jOneSlate from "../../assets/jOneSlate.jpg";
-import JFifteen from "../../assets/jFifteen.jpg";
 import jFifteenInk from "../../assets/jFifteenInk.jpg";
-import jFifteenSlate from "../../assets/jFifteenSlate.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
-import JFourteen from "../../assets/jFourteen.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
-import jFourteenSlate from "../../assets/jFourteenSlate.jpg";
-import jFourteenInk60p from "../../assets/jFourteenInk60p.jpg";
-import jFourteenSlate72p from "../../assets/jFourteenSlate72p.jpg";
 import LinkTree from "../../pages/LinkTree/LinkTree.jsx";
 import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
@@ -51,6 +43,10 @@ const Hero = (props) => {
                         <Link to="/Show"
                             className="hero__show--preview__cta">
                                 View Show
+                        </Link>
+                        {/* LinkTree CTA: goes to the LinkTree page */}
+                        <Link to="/LinkTree" className="hero__linktree-cta">
+                            Linktree
                         </Link>
                     </div>
                 </div>
