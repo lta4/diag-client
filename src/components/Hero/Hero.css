@@ -35,7 +35,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 100vh;
+    /* use the project hero min height (desktop/tablet will be ~60vh) to avoid huge gaps between stacked walls */
+    min-height: var(--hero-min-height);
     position: relative;
     overflow: hidden; /* ensure children (images) do not overflow their wall */
 }
