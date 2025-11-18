@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.css";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Show from "../Show/Show";
 // import Mix from "../Mix/Mix";
@@ -13,6 +14,10 @@ import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
 const Hero = (props) => {
+
+    const StreamButton = () => {
+        const navigate = useNavigate();
+    }
 
     return (
         <div className="hero" id="home">
@@ -40,10 +45,10 @@ const Hero = (props) => {
                 <div className="hero__shows" id="shows">
                     <div className="hero__show--preview">
                         <Show />
-                        <Link to="/Show"
+                        {/* <Link to="/Show"
                             className="hero__show--preview__cta">
                                 View Show
-                        </Link>
+                        </Link> */}
                         {/* LinkTree CTA: goes to the LinkTree page */}
                         <Link to="/LinkTree" className="hero__linktree-cta">
                             Linktree

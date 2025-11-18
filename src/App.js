@@ -7,6 +7,7 @@ import ScrollUp from "./components/ScrollUp/ScrollUp";
 // import { defaultLayoutIcons, DefaultVideoLayout } from
 // "@vidstack/react/player/layouts/default";
 import Header from "./components/Header/Header";
+import LinkTree from "./pages/LinkTree/LinkTree";
 import About from "./pages/About/About";
 import Video from "./pages/Video/Video";
 import Privacy from "./pages/Privacy/Privacy";
@@ -47,6 +48,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/About" element={<About />} />
+          <Route path="/LinkTree" element={<LinkTree />} />"
           <Route path="/Video" element={<Video />} />
           <Route path="/Privacy" element={<Privacy />} />
           <Route path="/Term" element={<Term />} />
