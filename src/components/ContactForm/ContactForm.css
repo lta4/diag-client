@@ -78,6 +78,7 @@ textarea, #message {
     display: block;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
 }
 
 .contact__btn:nth-child(n):hover {
@@ -118,7 +119,7 @@ textarea, #message {
         box-shadow: inset 0 -3px 8px rgba(10,73,97,0.08);
     }
     .contact__des { margin: 2rem 0 !important; }
-    .contact__btn { width: 100% !important; max-width: 320px; }
+    .contact__btn {  max-width: 320px; }
 }
 
 /**************TABLET***********/
