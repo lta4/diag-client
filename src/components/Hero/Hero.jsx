@@ -45,14 +45,6 @@ const Hero = (props) => {
                 <div className="hero__shows" id="shows">
                     <div className="hero__show--preview">
                         <Show />
-                        {/* <Link to="/Show"
-                            className="hero__show--preview__cta">
-                                View Show
-                        </Link> */}
-                        {/* LinkTree CTA: goes to the LinkTree page */}
-                        <Link to="/LinkTree" className="hero__linktree-cta">
-                            Linktree
-                        </Link>
                     </div>
                 </div>
                     <div className="hero__wall">
@@ -66,13 +58,12 @@ const Hero = (props) => {
                             alt="" 
                             className="hero__wall--image" 
                         />
-                        <LinkTree />
+                        <Link to="/LinkTree" className="hero__linktree-cta">
+                            Stream
+                        </Link>
                     </div>
                 <div className="hero__inquire" id="inquire">
                     <ContactForm />
-                    {/* <hr />
-                    <Link to="/">{<ContactForm />}</Link>
-                    <hr /> */}
                 </div>
                 <ScrollToTop className="hero__scroll"/>
             </div>
