@@ -3,6 +3,7 @@ import "./Footer.css";
 import { NavLink } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 import { SiSongkick } from "react-icons/si";
 import { FaSpotify } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -21,7 +22,7 @@ const Footer = () => {
                         <FaFacebookF className="footer__link" />
                     </NavLink>
                     <NavLink to="https://www.tiktok.com/@diagnosticmusic?_r=1&_t=ZP-916LhS5VoY3">
-                        <FaTwitter className="footer__link" />
+                        <FaTiktok className="footer__link" />
                     </NavLink>
                     <NavLink to="https://www.songkick.com/artists/10389354-diagnostic-music">
                         <SiSongkick className="footer__link" />
