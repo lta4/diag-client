@@ -22,15 +22,15 @@ const Footer = () => {
                     <NavLink to="https://www.tiktok.com/@diagnosticmusic?_r=1&_t=ZP-916LhS5VoY3">
                         <FaTwitter className="footer__link" />
                     </NavLink>
-                    <NavLink to="https://open.spotify.com/artist/0T62YioSTCaw1NRFNbE4lE?si=s36brJ5sT1GtdAxgegRz2A">
+                    {/* <NavLink to="https://open.spotify.com/artist/0T62YioSTCaw1NRFNbE4lE?si=s36brJ5sT1GtdAxgegRz2A">
                         <FaSpotify className="footer__link"/>
-                    </NavLink>
-                    <NavLink to="https://www.youtube.com/@DiagnosticMusic0">
+                    </NavLink> */}
+                    {/* <NavLink to="https://www.youtube.com/@DiagnosticMusic0">
                         <FaYoutube className="footer__link" />
-                    </NavLink>
-                    <NavLink to="https://soundcloud.com/kid-diagnostic?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                    </NavLink> */}
+                    {/* <NavLink to="https://soundcloud.com/kid-diagnostic?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
                         <FaSoundcloud className="footer__link"/>
-                    </NavLink>
+                    </NavLink> */}
                 </div>
             </div>
             <div className="footer__policy">
