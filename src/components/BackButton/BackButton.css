@@ -1,4 +1,4 @@
-.back-button {
+.back__button {
   display: inline-block;
   margin: 1rem;
   padding: 0.5rem 1rem;
@@ -9,4 +9,4 @@
   cursor: pointer;
 }
 
-.back-button:hover { opacity: 0.9; }
+.back__button:hover { opacity: 0.9; }

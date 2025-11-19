@@ -14,7 +14,7 @@ export default function BackButton({ label = 'Back', fallback = '/' }) {
   };
 
   return (
-    <button onClick={handleBack} className="back-button">
+    <button onClick={handleBack} className="back__button">
       {label}
     </button>
   );
