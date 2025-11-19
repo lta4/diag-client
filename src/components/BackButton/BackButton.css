@@ -1,0 +1,12 @@
+.back-button {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-button:hover { opacity: 0.9; }

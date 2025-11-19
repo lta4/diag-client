@@ -1,0 +1,39 @@
+/* Simple, accessible link button used on LinkTree */
+.link-button {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 0.5rem 0;
+}
+
+.link-button__anchor {
+	display: inline-block;
+	width: 100%;
+	max-width: 520px;
+	padding: 0.9rem 1rem;
+	background: var(--card-bg, #111);
+	color: var(--text-on-card, #fff);
+	text-decoration: none;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+	text-align: center;
+	font-weight: 600;
+	transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+
+.link-button__anchor:hover,
+.link-button__anchor:focus {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+	background: var(--card-bg-hover, #222);
+}
+
+@media (min-width: 720px) {
+	.link-button {
+		margin: 0.75rem 0;
+	}
+	.link-button__anchor {
+		padding: 1rem 1.25rem;
+	}
+}
+

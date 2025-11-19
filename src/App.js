@@ -2,17 +2,18 @@ import React from "react";
 import './App.css';
 import Hero from "./components/Hero/Hero";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from './layouts/MainLayout';
+import MinimalLayout from './layouts/MinimalLayout';
 import ScrollUp from "./components/ScrollUp/ScrollUp";
 // import { MediaPlayer, MediaProvider } from "@vidstack/react";
 // import { defaultLayoutIcons, DefaultVideoLayout } from
 // "@vidstack/react/player/layouts/default";
-import Header from "./components/Header/Header";
 import LinkTree from "./pages/LinkTree/LinkTree";
 import About from "./pages/About/About";
 import Video from "./pages/Video/Video";
 import Privacy from "./pages/Privacy/Privacy";
 import Term from "./pages/Term/Term";
-import Footer from "./components/Footer/Footer";
+ 
 
 function App() {
   // API response state not currently used in UI
@@ -44,16 +45,18 @@ function App() {
         <Router>
           <ScrollUp />
           {/* <ScrollToBottom /> */}
-          <Header />
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/LinkTree" element={<LinkTree />} />"
-          <Route path="/Video" element={<Video />} />
-          <Route path="/Privacy" element={<Privacy />} />
-          <Route path="/Term" element={<Term />} />
-        </Routes>
-        <Footer />
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<Hero />} />
+              <Route path="/About" element={<About />} />
+              <Route path="/Video" element={<Video />} />
+              <Route path="/Privacy" element={<Privacy />} />
+              <Route path="/Term" element={<Term />} />
+            </Route>
+            <Route element={<MinimalLayout />}>
+              <Route path="/LinkTree" element={<LinkTree />} />
+            </Route>
+          </Routes>
         </Router>
         {/* <ScrollRestoration
           getKey={(location, matches) => {

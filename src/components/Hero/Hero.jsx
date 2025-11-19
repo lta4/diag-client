@@ -9,7 +9,6 @@ import jOneInk from "../../assets/jOneInk.jpg";
 import jFifteenInk from "../../assets/jFifteenInk.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
-import LinkTree from "../../pages/LinkTree/LinkTree.jsx";
 import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
