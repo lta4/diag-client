@@ -1,12 +1,12 @@
 /* Simple, accessible link button used on LinkTree */
-.link-button {
+.link__button {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	margin: 0.5rem 0;
 }
 
-.link-button__anchor {
+.link__button--anchor {
 	display: inline-block;
 	width: 100%;
 	max-width: 520px;
@@ -21,18 +21,18 @@
 	transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
 }
 
-.link-button__anchor:hover,
-.link-button__anchor:focus {
+.link__button--anchor:hover,
+.link__button--anchor:focus {
 	transform: translateY(-3px);
 	box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 	background: var(--card-bg-hover, #222);
 }
 
 @media (min-width: 720px) {
-	.link-button {
+	.link__button {
 		margin: 0.75rem 0;
 	}
-	.link-button__anchor {
+	.link__button--anchor {
 		padding: 1rem 1.25rem;
 	}
 }

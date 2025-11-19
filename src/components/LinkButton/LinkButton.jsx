@@ -3,8 +3,8 @@ import "./LinkButton.css";
 
 const LinkButton = ({ title, url }) => {
     return (
-        <div className="link-button">
-            <a href={url} target="_blank" rel="noreferrer" className="link-button__anchor">
+        <div className="link__button">
+            <a href={url} target="_blank" rel="noreferrer" className="link__button--anchor">
                 {title}
             </a>
         </div>
