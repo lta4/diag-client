@@ -5,10 +5,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { SiSongkick } from "react-icons/si";
-import { FaSpotify } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaSoundcloud } from "react-icons/fa6";
-import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -27,15 +23,6 @@ const Footer = () => {
                     <NavLink to="https://www.songkick.com/artists/10389354-diagnostic-music">
                         <SiSongkick className="footer__link" />
                     </NavLink>
-                    {/* <NavLink to="https://open.spotify.com/artist/0T62YioSTCaw1NRFNbE4lE?si=s36brJ5sT1GtdAxgegRz2A">
-                        <FaSpotify className="footer__link"/>
-                    </NavLink> */}
-                    {/* <NavLink to="https://www.youtube.com/@DiagnosticMusic0">
-                        <FaYoutube className="footer__link" />
-                    </NavLink> */}
-                    {/* <NavLink to="https://soundcloud.com/kid-diagnostic?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
-                        <FaSoundcloud className="footer__link"/>
-                    </NavLink> */}
                 </div>
             </div>
             <div className="footer__policy">
