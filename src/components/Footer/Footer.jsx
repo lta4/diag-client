@@ -3,6 +3,7 @@ import "./Footer.css";
 import { NavLink } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { SiSongkick } from "react-icons/si";
 import { FaSpotify } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaSoundcloud } from "react-icons/fa6";
@@ -13,14 +14,17 @@ const Footer = () => {
         <>
             <div className="footer" id="inquire">
                 <div className="footer__social">
-                    <NavLink to="https://www.youtube.com/@DiagnosticMusic0">
-                        <FaFacebookF className="footer__link" />
-                    </NavLink>
                     <NavLink to="https://www.instagram.com/diagnosticmusic/">
                         <FaInstagram className="footer__link" />
                     </NavLink>
+                    <NavLink to="https://www.youtube.com/@DiagnosticMusic0">
+                        <FaFacebookF className="footer__link" />
+                    </NavLink>
                     <NavLink to="https://www.tiktok.com/@diagnosticmusic?_r=1&_t=ZP-916LhS5VoY3">
                         <FaTwitter className="footer__link" />
+                    </NavLink>
+                    <NavLink to="https://www.songkick.com/artists/10389354-diagnostic-music">
+                        <SiSongkick className="footer__link" />
                     </NavLink>
                     {/* <NavLink to="https://open.spotify.com/artist/0T62YioSTCaw1NRFNbE4lE?si=s36brJ5sT1GtdAxgegRz2A">
                         <FaSpotify className="footer__link"/>
