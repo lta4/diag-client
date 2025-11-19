@@ -6,7 +6,7 @@ import BackButton from '../../components/BackButton/BackButton';
 
 function LinkTree() {
     return (
-        <div className="linktree__page">
+        <div className="linktree">
             <BackButton label="Back to site" />
             <div className="linktree__list">
                 {links.map((link, index) => (

@@ -1,5 +1,5 @@
 /* LinkTree page layout */
-.linktree__page {
+.linktree {
 	min-height: 60vh;
 	padding: 2rem 1rem;
 	display: flex;
@@ -20,7 +20,7 @@
 }
 
 @media (min-width: 900px) {
-	.linktree__page {
+	.linktree {
 		padding: 3rem 1.5rem;
 	}
 	.linktree__list {
