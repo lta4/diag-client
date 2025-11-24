@@ -123,7 +123,8 @@ textarea, #message {
 
     .contact__btn {  
         max-width: 320px;
-        background-color: #efefef; 
+        background-color: #efefef;
+        color: black;
     }
 }
 
