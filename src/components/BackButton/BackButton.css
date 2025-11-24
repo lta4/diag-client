@@ -7,6 +7,42 @@
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 6px;
   cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: background 140ms ease, transform 140ms ease;
 }
 
 .back__button:hover { opacity: 0.9; }
+
+.back__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent, #fff);
+  transform: translateX(0);
+  transition: transform 180ms cubic-bezier(.2,.9,.3,1), opacity 180ms ease;
+  opacity: 0.95;
+}
+
+.back__label { font-weight: 600; }
+
+.back__button:hover .back__icon,
+.back__button:focus .back__icon {
+  transform: translateX(-4px);
+  opacity: 1;
+}
+
+.back__button:focus {
+  outline: 3px solid rgba(255,255,255,0.08);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back__button,
+  .back__icon {
+    transition: none !important;
+    transform: none !important;
+  }
+}
