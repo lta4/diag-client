@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./Video.css";
 import CUDiag from "../../assets/CUDiag.jpg";
 // Using embed iframe for YouTube content instead of vidstack player
@@ -9,17 +9,36 @@ import ScrollToTop from "react-scroll-to-top";
 
 function Plans() {
 
+    const videoRef = useRef(null);
+
+    const handleWatch = () => {
+        if (videoRef.current) {
+            videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    };
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     return (
             <div className="video">
-                {/* <div className="video__title">
-                    Diagnostic
-                </div> */}
-                {/* <img src={CUDiag} alt="CUDiag" /> */}
-                <div className="video__container">
+                <div className="video__hero" style={{ backgroundImage: `url(${CUDiag})` }}>
+                    <div className="video__hero-overlay" />
+                    <div className="video__hero-content">
+                        <h1 className="video__hero-title">Diagnostic</h1>
+                        <p className="video__hero-sub">A short film about the small, strange things that make up a life.</p>
+                        <p className="video__hero-desc">Featuring a single performance captured in one take — cinematic, intimate, and raw. Tap below to jump straight to the video.</p>
+                        <button className="watch-button" onClick={handleWatch} aria-label="Watch Diagnostic">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M5 3v18l15-9L5 3z" fill="currentColor" />
+                            </svg>
+                            <span>Watch Now</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div className="video__container" ref={videoRef} id="featured-video">
                 {/* <MediaPlayer playsInline title="Sprite Fight" src="https://files.vidstack.io/sprite-fight/720p.mp4">
                     <MediaProvider />
                         <Poster 
@@ -41,6 +60,11 @@ function Plans() {
                         allowFullScreen
                     />
                 </div>
+                </div>
+
+                <div className="video__meta">
+                    <h2 className="video__meta-title">Diagnostic</h2>
+                    <p className="video__meta-desc">A short film — start at 8:57 for the featured scene. Full runtime available on the embedded player.</p>
                 </div>
                 {/* <Thumbnail.Root
                     src="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
