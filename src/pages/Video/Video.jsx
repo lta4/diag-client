@@ -11,15 +11,15 @@ function Plans() {
 
     const videoRef = useRef(null);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const handleWatch = () => {
         if (videoRef.current) {
             videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
             <div className="video">
@@ -66,19 +66,7 @@ function Plans() {
                     <h2 className="video__meta-title">Diagnostic</h2>
                     <p className="video__meta-desc">A short film — start at 8:57 for the featured scene. Full runtime available on the embedded player.</p>
                 </div>
-                {/* <Thumbnail.Root
-                    src="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
-                    time={10}
-                    className="vds-thumbnail"
-                >
-                    <Thumbnail.Img />
-                </Thumbnail.Root> */}
-                {/* <Title /> */}
-                {/* <div className="vds-time-group">
-                    <Time type="current" className="vds-time" />
-                        <div className="vds-time-divider"></div>
-                    <Time type="current" className="vds-time"/>
-                </div> */}
+
                 <ScrollToTop className="hero__scroll"/>
             </div>
         );
