@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Video.css";
 import CUDiag from "../../assets/CUDiag.jpg";
+import DiagBlur from "../../assets/DiagBlur.jpg";
 // Using embed iframe for YouTube content instead of vidstack player
 // import { Thumbnail } from "@vidstack/react";
 // import { Time, type TimeProps } from "@vidstack/react";
@@ -33,7 +34,7 @@ function Plans() {
 
     return (
             <div className="video">
-                <div className="video__hero" style={{ backgroundImage: `url(${CUDiag})` }}>
+                <div className="video__hero" style={{ backgroundImage: `url(${DiagBlur})` }}>
                     <div className="video__hero-overlay" />
                     <div className={`video__hero-content ${mounted ? 'is-mounted' : ''}`}>
                         <h1 className="video__hero-title">Diagnostic</h1>

@@ -17,7 +17,7 @@ function Show() {
 
         document.body.removeChild(script);
       };
-    }, []);
+    }, [id]);
 
     return (
         <>
