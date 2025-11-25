@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Video.css";
 import CUDiag from "../../assets/CUDiag.jpg";
 // Using embed iframe for YouTube content instead of vidstack player
@@ -15,7 +15,17 @@ function Plans() {
         window.scrollTo(0, 0);
     }, []);
 
+    const [played, setPlayed] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReduced) setMounted(true);
+        else setMounted(false);
+    }, []);
+
     const handleWatch = () => {
+        setPlayed(true);
         if (videoRef.current) {
             videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -25,7 +35,7 @@ function Plans() {
             <div className="video">
                 <div className="video__hero" style={{ backgroundImage: `url(${CUDiag})` }}>
                     <div className="video__hero-overlay" />
-                    <div className="video__hero-content">
+                    <div className={`video__hero-content ${mounted ? 'is-mounted' : ''}`}>
                         <h1 className="video__hero-title">Diagnostic</h1>
                         <p className="video__hero-sub">A short film about the small, strange things that make up a life.</p>
                         <p className="video__hero-desc">Featuring a single performance captured in one take — cinematic, intimate, and raw. Tap below to jump straight to the video.</p>
@@ -50,15 +60,26 @@ function Plans() {
                 </MediaPlayer> */}
                 {/* <img src={CUDiag} alt="CUDiag" /> */}
                 <div className="video__container--media">
-                    <iframe
-                        title="Diagnostic - YouTube"
-                        className="video__iframe"
-                        src="https://www.youtube.com/embed/SK6WN-y5P-0?si=noteC9NPfmZs754J&amp;start=537"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                    />
+                    {!played ? (
+                        <div className={`video__poster ${mounted ? 'is-mounted' : ''}`} role="button" tabIndex={0} onClick={handleWatch} onKeyDown={(e) => { if (e.key === 'Enter') handleWatch(); }} aria-label="Play video">
+                            <img src={CUDiag} alt="Diagnostic poster" />
+                            <div className="video__poster-play">
+                                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M5 3v18l15-9L5 3z" fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    ) : (
+                        <iframe
+                            title="Diagnostic - YouTube"
+                            className="video__iframe"
+                            src="https://www.youtube.com/embed/SK6WN-y5P-0?si=noteC9NPfmZs754J&amp;start=537&autoplay=1"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        />
+                    )}
                 </div>
                 </div>
 
