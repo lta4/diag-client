@@ -30,7 +30,7 @@ html {
   --body-color: hsl(0, 0%, 6%);
   /* Body font fallback stack: system UI -> Montserrat (web) -> generic sans-serif */
   /* Put Proza Libre first so browsers use it when available */
-  --body-font: 'Proza Libre', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Montserrat', sans-serif;
+  --body-font: 'Oswald','Proza Libre', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Montserrat', sans-serif;
   --second-font: "Dancing Script", cursive;
   --h2-font-size: 2rem;
   --small-font-size: 0.785rem;
