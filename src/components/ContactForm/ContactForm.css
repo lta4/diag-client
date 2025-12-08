@@ -46,6 +46,7 @@ input, #firstname, #lastname, #email {
     width: 75%;
     display: block;
     transition: border-color 180ms ease, box-shadow 200ms ease;
+    font-family: "Lora";
 }
 
 textarea, #message {
@@ -56,6 +57,7 @@ textarea, #message {
     border-bottom: 1px solid #d2d2d2;
     width: 75%;
     display: block;
+    font-family: "Lora";
 }
 
 /* input, #message {
