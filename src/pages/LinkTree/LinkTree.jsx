@@ -1,7 +1,7 @@
 import React from "react";
+import "./LinkTree.css";
 import { links } from "../../data/data";
 import LinkButton from "../../components/LinkButton/LinkButton";
-import "./LinkTree.css";
 import BackButton from '../../components/BackButton/BackButton';
 import { FaSpotify, FaApple, FaYoutube, FaSoundcloud } from 'react-icons/fa';
 import { SiBeatport } from 'react-icons/si';
@@ -14,10 +14,10 @@ function LinkTree() {
                 {links.map((link, index) => {
                     let Icon = null;
                     if (link.type === 'spotify') Icon = FaSpotify;
-                    else if (link.type === 'apple') Icon = FaApple;
-                    else if (link.type === 'youtube') Icon = FaYoutube;
-                    else if (link.type === 'soundcloud') Icon = FaSoundcloud;
                     else if (link.type === 'beatport') Icon = SiBeatport;
+                    else if (link.type === 'soundcloud') Icon = FaSoundcloud;
+                    else if (link.type === 'youtube') Icon = FaYoutube;
+                    else if (link.type === 'apple') Icon = FaApple;
 
                     const style = link.iconColor ? { '--link-icon-hover-color': link.iconColor, '--link-icon-color': link.iconColor } : undefined;
 
