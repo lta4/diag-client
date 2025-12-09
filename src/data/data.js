@@ -23,10 +23,10 @@ export const links = [
     type: "youtube",
     iconColor: "#FF0000"
     },
-    {
-        title: "Apple Music",
-        url: "https://music.apple.com/us/artist/diagnostic/1539290133",
-        type: "apple",
-        iconColor: "#fff"
-    }
+    // {
+    //     title: "Apple Music",
+    //     url: "https://music.apple.com/us/artist/diagnostic/1539290133",
+    //     type: "apple",
+    //     iconColor: "#fff"
+    // }
 ];
