@@ -33,6 +33,8 @@
     display: flex;
     justify-content: center;
     margin: 5rem;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 /* form input color handled below */
@@ -46,7 +48,8 @@ input, #firstname, #lastname, #email {
     width: 75%;
     display: block;
     transition: border-color 180ms ease, box-shadow 200ms ease;
-    font-family: "Lora";
+    font-family: "EB Garamond";
+    font-weight: 700;
 }
 
 textarea, #message {
@@ -57,7 +60,8 @@ textarea, #message {
     border-bottom: 1px solid #d2d2d2;
     width: 75%;
     display: block;
-    font-family: "Lora";
+    font-family: "EB Garamond";
+    font-weight: 700;
 }
 
 /* input, #message {
@@ -70,8 +74,19 @@ textarea, #message {
     border-radius: none;
 }
 
+.contact__input--return {
+    color: var(--text-color);
+    font-family: "EB Garamond";
+    font-size: 1.3rem;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    text-align: center;
+    margin: 2rem;
+}
+
 .contact__input, textarea {
     resize: none;
+    /* font-size: 1rem; */
 }
 
 .contact__btn {
@@ -82,6 +97,8 @@ textarea, #message {
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    font-family: "Oswald";
+    font-weight: 500;
 }
 
 .contact__btn:nth-child(n):hover {

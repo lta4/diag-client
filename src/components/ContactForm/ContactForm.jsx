@@ -6,7 +6,7 @@ function ContactForm() {
     const [state, handleSubmit] = useForm("xyzzbedg");
     if (state.succeeded) {
 
-        return <p>Thanks for your message! We've received it and will respond shortly!</p>
+        return <p className="contact__input--return">Thanks for your message! We've received it and will respond shortly!</p>
 }
     return (
         <div className="contact__backdrop">
