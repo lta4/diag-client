@@ -9,13 +9,13 @@ export const links = [
     title: "Beatport",
     url: "https://www.beatport.com",
     type: "beatport",
-    iconColor: "#FF6E00"
+    iconColor: "#01FF95"
     },
     {
     title: "SoundCloud",
     url: "https://soundcloud.com/kid-diagnostic?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
     type: "soundcloud",
-    iconColor: "#FF5600"
+    iconColor: "#FF5500"
     },
     {
     title: "YouTube",
