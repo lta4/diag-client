@@ -10,6 +10,11 @@
 	display: inline-block;
 	width: 100%;
 	max-width: 520px;
+	/* per-button icon variables (can be overridden) */
+	--link-icon-size: 1.05em;
+	--link-icon-color: var(--text-on-card, #fff);
+	--link-icon-hover-color: var(--card-accent, #1db954);
+
 	padding: 0.9rem 1rem;
 	background: var(--card-bg, #111);
 	color: var(--text-on-card, #fff);
@@ -21,11 +26,37 @@
 	transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
 }
 
+.link__button__icon, .link-button__icon {
+	display: inline-block;
+	vertical-align: -0.08em;
+	margin-right: 0.6rem;
+	color: var(--link-icon-color);
+	width: calc(var(--link-icon-size));
+	height: calc(var(--link-icon-size));
+	font-size: calc(var(--link-icon-size));
+	line-height: 1;
+	fill: currentColor; /* svg fill uses currentColor */
+	transition: color 160ms ease, transform 160ms ease;
+}
+
 .link__button--anchor:hover,
 .link__button--anchor:focus {
 	transform: translateY(-3px);
 	box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 	background: var(--card-bg-hover, #222);
+}
+
+/* icon color change on hover/focus */
+.link__button--anchor:hover .link__button__icon,
+.link__button--anchor:focus .link__button__icon {
+	color: var(--link-icon-hover-color);
+	transform: translateY(-2px) scale(1.04);
+}
+
+/* accessible focus ring */
+.link__button--anchor:focus-visible {
+	outline: 3px solid rgba(255,255,255,0.12);
+	outline-offset: 4px;
 }
 
 @media (min-width: 720px) {
