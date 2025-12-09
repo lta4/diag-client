@@ -60,11 +60,11 @@
 
 .profile__description--text {
     grid-column: 2 / 3;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 0 0 1rem 0;
     font-family: "EB Garamond", sans-serif;
-    font-style: italic;
-    text-transform: lowercase;
+    font-weight: 800;
+    text-transform: none;
 }
 
 /********************MEDIA QUERYS*******************/
