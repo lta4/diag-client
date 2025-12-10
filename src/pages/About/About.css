@@ -16,7 +16,7 @@
 
 .profile__grid {
     display: grid;
-    grid-template-columns: 600px 1fr;
+    grid-template-columns: minmax(320px, 600px) 1fr;
     grid-template-rows: auto 1fr;
     gap: 1.5rem 2rem;
     width: 100%;
@@ -36,7 +36,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    margin-top: 15rem;
+    margin: clamp(1rem, 6vw, 4rem) 0 0 1rem;
     border-radius: 6px;
 }
 
@@ -44,7 +44,7 @@
 
 .profile__description {
     grid-column: 2 / 3; /* right column under main image */
-    margin-top: 15rem;
+    margin-top: clamp(3rem, 6vw, 9rem);
     line-height: 1.6;
     padding: 0.5rem 0;
     text-transform: uppercase;

@@ -15,7 +15,8 @@ function About() {
             <section className="profile">
                 <div className="profile__set">
                     <div className="profile__grid">
-                        <img src={JThirteen} alt="" className="profile__grid--image1" />
+                        <img src={JThirteen} alt="Jose Flores Spotlight"
+                        loading="lazy" aria-hidden="ture" className="profile__grid--image1" />
                         <img src={JSixteen} alt="" className="profile__grid--image2"/>
                         <div className="profile__description">
                             <h1 className="profile__description--title">Jose Flores</h1>

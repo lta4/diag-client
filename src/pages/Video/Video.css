@@ -65,6 +65,33 @@
 .watch-button svg { opacity: 0.95; }
 .watch-button:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,0.24); }
 
+.video__hero-ctas { 
+  display: inline-flex; 
+  gap: 0.6rem; 
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 1rem; 
+}
+.stream-button { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: transparent; 
+  color: #fff; 
+  border: 1px solid rgba(255,255,255,0.24); 
+  padding: 0.5rem 0.9rem; 
+  border-radius: 999px; 
+  font-weight: 700; 
+  text-decoration: none; 
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease; 
+}
+.stream-button:hover { 
+  background: rgba(255,255,255,0.06); 
+  transform: translateY(-3px); 
+  color: #fff; 
+}
+
+
 .video__poster {
   position: absolute;
   inset: 0;
@@ -160,6 +187,7 @@
   .video__hero-title { font-size: 1.6rem; }
   .video__hero { min-height: 36vh; }
   .video__container { padding: 2.5rem 0.5rem; }
+  .video__hero-ctas { flex-direction: column; gap: 0.5rem; }
 }
 
 

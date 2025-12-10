@@ -7,6 +7,7 @@ import DiagBlur from "../../assets/DiagBlur.jpg";
 // import { Time, type TimeProps } from "@vidstack/react";
 // import { Title, type TitleProps } from "@vidstack/react";
 import ScrollToTop from "react-scroll-to-top";
+import FeaturedMix from '../../components/FeaturedMix/FeaturedMix';
 
 function Plans() {
 
@@ -40,12 +41,15 @@ function Plans() {
                         <h1 className="video__hero-title">Diagnostic</h1>
                         <p className="video__hero-sub">A short film about the small, strange things that make up a life.</p>
                         <p className="video__hero-desc">Featuring a single performance captured in one take — cinematic, intimate, and raw. Tap below to jump straight to the video.</p>
-                        <button className="watch-button" onClick={handleWatch} aria-label="Watch Diagnostic">
+                        <div className="video__hero-ctas">
+                            <button className="watch-button" onClick={handleWatch} aria-label="Watch Diagnostic">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M5 3v18l15-9L5 3z" fill="currentColor" />
                             </svg>
                             <span>Watch Now</span>
-                        </button>
+                            </button>
+                            <a className="stream-button" href="/LinkTree" aria-label="Stream Diagnostic on streaming platforms">Stream</a>
+                        </div>
                     </div>
                 </div>
 
@@ -61,26 +65,7 @@ function Plans() {
                 </MediaPlayer> */}
                 {/* <img src={CUDiag} alt="CUDiag" /> */}
                 <div className="video__container--media">
-                    {!played ? (
-                        <div className={`video__poster ${mounted ? 'is-mounted' : ''}`} role="button" tabIndex={0} onClick={handleWatch} onKeyDown={(e) => { if (e.key === 'Enter') handleWatch(); }} aria-label="Play video">
-                            <img src={CUDiag} alt="Diagnostic poster" />
-                            <div className="video__poster-play">
-                                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M5 3v18l15-9L5 3z" fill="currentColor" />
-                                </svg>
-                            </div>
-                        </div>
-                    ) : (
-                        <iframe
-                            title="Diagnostic - YouTube"
-                            className="video__iframe"
-                            src="https://www.youtube.com/embed/SK6WN-y5P-0?si=noteC9NPfmZs754J&amp;start=537&autoplay=1"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
-                        />
-                    )}
+                    <FeaturedMix poster={CUDiag} embedUrl="https://www.youtube.com/embed/SK6WN-y5P-0" title="Diagnostic - YouTube" start={537} shouldPlay={played} />
                 </div>
                 </div>
 
