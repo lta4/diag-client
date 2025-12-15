@@ -5,6 +5,7 @@
     row-gap: 1rem;
     margin: 2rem 2rem;
     background-color: transparent; /* form itself is transparent; backdrop handled by wrapper */
+    border-radius: 12px; /* ensure form content respects the same radius */
 }
 
 /* Frosted backdrop wrapper */
@@ -23,6 +24,7 @@
     overflow: hidden; /* ensure children don't overflow rounded corners */
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
+    position: relative; /* ensure z-index takes effect */
 }
 
 /* fallback for browsers that don't support backdrop-filter */
