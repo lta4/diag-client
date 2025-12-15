@@ -36,7 +36,7 @@ const Hero = (props) => {
                         />
                     </div>
                     <div className="hero__wall">
-                        <img src={jFifteenInk}
+                        <img src={jFourteenInk}
                             alt=""
                             className="hero__wall--image" 
                         />
@@ -53,7 +53,7 @@ const Hero = (props) => {
                         />
                     </div>
                     <div className="hero__wall">
-                        <img src={jFourteenInk}
+                        <img src={jFifteenInk}
                             alt="" 
                             className="hero__wall--image" 
                         />
