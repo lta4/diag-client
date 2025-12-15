@@ -1,23 +1,29 @@
 /* LinkTree page layout */
 .linktree {
+	--linktree-hero-height: 36vh; /* default hero height variable on the container */
 	min-height: 60vh;
 	padding: 2rem 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	background: var(--page-bg, transparent);
+	background: #000; /* keep entire page black */
 }
 
 .linktree__hero {
 	width: 100%;
-	min-height: 36vh;
+	min-height: var(--linktree-hero-height);
 	background-size: cover;
 	background-position: center;
-	position: relative;
+	position: fixed; /* fixed at top */
+	top: 0;
+	left: 0;
+	right: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 60;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 .linktree__hero-overlay {
 	position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
@@ -25,6 +31,16 @@
 .linktree__hero-inner { position: relative; z-index: 2; text-align: center; color: #fff; padding: 2rem 1rem; }
 .linktree__title { font-size: 2rem; margin: 0 0 0.25rem; }
 .linktree__subtitle { margin: 0 0 0.5rem; opacity: 0.9; }
+
+/* Reduce hero height on smaller screens so it doesn't dominate viewport */
+@media (max-width: 900px) {
+	.linktree { --linktree-hero-height: 30vh; }
+}
+@media (max-width: 480px) {
+	.linktree { --linktree-hero-height: 24vh; }
+	.linktree__hero-inner { padding: 1rem; }
+	.linktree__title { font-size: 1.25rem; }
+}
 
 .linktree__list {
 	width: 100%;
@@ -36,7 +52,10 @@
 	padding: 0 0.5rem;
 }
 
-.linktree__hero + .linktree__list { margin-top: 1.25rem; }
+.linktree__hero + .linktree__list { margin-top: calc(var(--linktree-hero-height) + 1.25rem); }
+
+/* ensure page content is pushed down so fixed hero doesn't overlap */
+.linktree { padding-top: calc(var(--linktree-hero-height) + 2.25rem); }
 
 @media (min-width: 900px) {
 	.linktree {
