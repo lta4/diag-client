@@ -45,6 +45,7 @@ input, #firstname, #lastname, #email {
     background-color: black;
     border: inset 0;
     border-bottom: 1px solid #d2d2d2;
+    border-radius: none;
     width: 75%;
     display: block;
     transition: border-color 180ms ease, box-shadow 200ms ease;
@@ -58,6 +59,7 @@ textarea, #message {
     background-color: black;
     border: inset 0;
     border-bottom: 1px solid #d2d2d2;
+    border-radius: none;
     width: 75%;
     display: block;
     font-family: "EB Garamond";
@@ -121,7 +123,6 @@ textarea, #message {
         width: 100% !important;
         padding: 8px 10px !important;
         margin: 0.5rem 0 !important;
-        border-radius: none;
     }
 
     #message {
