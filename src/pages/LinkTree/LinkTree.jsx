@@ -3,13 +3,21 @@ import "./LinkTree.css";
 import { links } from "../../data/data";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import BackButton from '../../components/BackButton/BackButton';
+import Banner from '../../assets/CDiagBanner.jpg';
 import { FaSpotify, FaApple, FaYoutube, FaSoundcloud } from 'react-icons/fa';
 import { SiBeatport } from 'react-icons/si';
 
 function LinkTree() {
     return (
         <div className="linktree">
-            <BackButton label="Back to site" />
+            <div className="linktree__hero" style={{ backgroundImage: `url(${Banner})` }}>
+                <div className="linktree__hero-overlay" />
+                <div className="linktree__hero-inner">
+                    <BackButton label="Back to site" />
+                    <h1 className="linktree__title">Stream Diagnostic</h1>
+                    <p className="linktree__subtitle">Listen on your favorite platforms</p>
+                </div>
+            </div>
             <div className="linktree__list">
                 {links.map((link, index) => {
                     let Icon = null;

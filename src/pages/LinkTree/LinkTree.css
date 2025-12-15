@@ -9,6 +9,23 @@
 	background: var(--page-bg, transparent);
 }
 
+.linktree__hero {
+	width: 100%;
+	min-height: 36vh;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.linktree__hero-overlay {
+	position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
+}
+.linktree__hero-inner { position: relative; z-index: 2; text-align: center; color: #fff; padding: 2rem 1rem; }
+.linktree__title { font-size: 2rem; margin: 0 0 0.25rem; }
+.linktree__subtitle { margin: 0 0 0.5rem; opacity: 0.9; }
+
 .linktree__list {
 	width: 100%;
 	max-width: 720px;
@@ -18,6 +35,8 @@
 	margin-top: 1rem;
 	padding: 0 0.5rem;
 }
+
+.linktree__hero + .linktree__list { margin-top: 1.25rem; }
 
 @media (min-width: 900px) {
 	.linktree {
