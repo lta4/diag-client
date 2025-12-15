@@ -136,13 +136,18 @@
 /* Mobile-specific adjustments: keep mobile look you liked without changing tablet/desktop */
 @media (max-width: 768px) {
     .hero__container {
-        padding: 0 0.5rem;
+        padding: 0; /* allow images to be full-bleed on mobile */
+        justify-content: flex-start; /* ensure stacked walls start at top and no vertical centering gap */
+        width: 100vw; /* ensure container spans the viewport width */
+        margin-left: calc(50% - 50vw); /* negate any parent container centering */
+        margin-right: calc(50% - 50vw);
     }
     /* reduce the vertical footprint of each stacked wall on mobile */
     .hero__wall {
         min-height: 30vh;
         margin: 0;
         padding: 0;
+    align-items: stretch; /* ensure images take the full width/height without gaps */
     }
     /* ensure images fully cover the wall and don't introduce gaps */
     .hero__wall--image,
@@ -154,6 +159,7 @@
         object-fit: cover;
         display: block;
         margin: 0;
+    /* ensure no inline-gap issues; images are block-level */
     }
     /* tighten surrounding sections */
     .hero__shows { margin: 1.5rem 0; }
@@ -161,6 +167,10 @@
 
     /* disable any parallax transforms if present */
     .hero__layer { transform: none !important; }
+    /* hide tiny sub-pixel gaps by making the hero background solid black on mobile */
+    .hero,
+    .hero__container,
+    .hero__wall { background-color: #000; }
 }
 
 /* Desktop-only parallax: use background-attachment fixed for a simple parallax on wider screens */
