@@ -43,9 +43,23 @@
   text-align: center;
 }
 
-.video__hero-title { font-size: 2.25rem; margin: 0 0 0.25rem; }
-.video__hero-sub { margin: 0 0 0.75rem; opacity: 0.9; }
-.video__hero-desc { margin: 0 0 1rem; opacity: 0.85; max-width: 72ch; margin-left: auto; margin-right: auto; }
+.video__hero-title { 
+  font-size: 2.25rem; 
+  margin: 0 0 0.25rem; 
+}
+
+.video__hero-sub { 
+  margin: 0 0 0.75rem; 
+  opacity: 0.9; 
+}
+
+.video__hero-desc { 
+  margin: 0 0 1rem; 
+  opacity: 0.85; 
+  max-width: 72ch; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
 
 .watch-button {
   display: inline-flex;

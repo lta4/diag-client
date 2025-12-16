@@ -27,6 +27,12 @@
     position: relative; /* ensure z-index takes effect */
 }
 
+/* Temporary debug helper: toggle `.debug-outline` in DevTools to visualize edges and stacking */
+.contact__backdrop.debug-outline {
+    outline: 3px dashed magenta;
+    z-index: 99999 !important;
+}
+
 /* fallback for browsers that don't support backdrop-filter */
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
     .contact__backdrop {

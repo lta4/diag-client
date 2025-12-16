@@ -40,9 +40,10 @@ function Plans() {
                 <div className="video__hero" style={{ backgroundImage: `url(${JThree})` }}>
                     <div className="video__hero-overlay" />
                     <div className={`video__hero-content ${mounted ? 'is-mounted' : ''}`}>
-                        <h1 className="video__hero-title">Diagnostic</h1>
-                        <p className="video__hero-sub">A short film about the small, strange things that make up a life.</p>
-                        <p className="video__hero-desc">Featuring a single performance captured in one take — cinematic, intimate, and raw. Tap below to jump straight to the video.</p>
+                        <h2 className="video__hero-title">Live Performance</h2>
+                        <p className="video__hero-sub">Diagnostic--Club Set</p>
+                        <p className="video__hero-sub">Recorded Live in San Diego</p>
+                        <p className="video__hero-desc">A blend of house, groove, and late-night energy</p>
                         <div className="video__hero-ctas">
                             <button className="watch-button" onClick={handleWatch} aria-label="Watch Diagnostic">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
