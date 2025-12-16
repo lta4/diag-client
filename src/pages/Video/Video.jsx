@@ -71,12 +71,14 @@ function Plans() {
                     <FeaturedMix poster={CUDiag} embedUrl="https://www.youtube.com/embed/SK6WN-y5P-0" title="Diagnostic - YouTube" start={537} shouldPlay={played} />
                 </div>
                 </div>
-
                 <div className="video__meta">
                     <h2 className="video__meta-title">Diagnostic</h2>
                     <p className="video__meta-desc">Venue: Aero Club, San Diego</p>
                     <p className="video__meta-desc">Genre: House / Minimal / Groove</p>
                     <p className="video__meta-desc">Runtime: 30:26 min</p>
+                </div>
+                <div className="video__meta">
+                    <h1 className="video__meta-title">"A late-night set built for dark rooms and heavy movement."</h1>
                 </div>
 
                 <ScrollToTop className="hero__scroll"/>

@@ -35,8 +35,8 @@ const Footer = () => {
             </div>
             <div className="footer__date">
                 <div className="footer__date--description">
-                    © {new Date().getFullYear()}, Built 
-                    with love by {` `}
+                    <p>© {new Date().getFullYear()} Fignewt</p>
+                    <p>Designed & Developed by {` `}</p>
                     <a href="mailto=andrew@fignewt.com" alt="" className="footer__date--link">
                         Andrew Arias
                     </a>
