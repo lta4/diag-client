@@ -17,6 +17,12 @@
   justify-content: center;
 }
 
+/* charcoal background to blend with banner and video */
+.video { 
+  background-color: #0f1111; 
+  color: #e6e6e6; 
+}
+
 .video__hero {
   position: relative;
   width: 100%;
@@ -32,7 +38,7 @@
 .video__hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 60%);
+  background: linear-gradient(180deg, rgba(6,7,7,0.28) 0%, rgba(8,9,9,0.62) 60%);
 }
 
 .video__hero-content {
