@@ -74,7 +74,9 @@ function Plans() {
 
                 <div className="video__meta">
                     <h2 className="video__meta-title">Diagnostic</h2>
-                    <p className="video__meta-desc">A short film — start at 8:57 for the featured scene. Full runtime available on the embedded player.</p>
+                    <p className="video__meta-desc">Venue: Aero Club, San Diego</p>
+                    <p className="video__meta-desc">Genre: House / Minimal / Groove</p>
+                    <p className="video__meta-desc">Runtime: 30:26 min</p>
                 </div>
 
                 <ScrollToTop className="hero__scroll"/>
