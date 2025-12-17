@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./Video.css";
+import BG from "../../assets/BGbackgrond.png";
 import JFour from "../../assets/jFour.jpg";
 import JThree from "../../assets/jThree.jpg";
 import ScrollToTop from "react-scroll-to-top";
@@ -30,7 +31,7 @@ function Plans() {
     };
 
     return (
-            <div className="video">
+            <div className="video" style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="video__hero" style={{ backgroundImage: `url(${JThree})` }}>
                     <div className="video__hero-overlay" />
                     <div className={`video__hero-content ${mounted ? 'is-mounted' : ''}`}>
