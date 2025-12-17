@@ -10,7 +10,9 @@ const FeaturedMix = ({ poster, embedUrl, title, start, shouldPlay = false }) => 
 
     const handlePlay = () => setPlayed(true);
 
-    const src = `${embedUrl}${embedUrl.includes('?') ? '&' : '?'}autoplay=1${start ? `&start=${start}` : ''}`;
+    // Add autoplay + muted fallback so browsers that block autoplay without mute will still play
+    const autoplayParams = `autoplay=1&mute=1`;
+    const src = `${embedUrl}${embedUrl.includes('?') ? '&' : '?'}${autoplayParams}${start ? `&start=${start}` : ''}`;
 
     return (
         <div className="featured-mix">

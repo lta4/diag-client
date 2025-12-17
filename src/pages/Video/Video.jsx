@@ -1,12 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./Video.css";
-import CUDiag from "../../assets/CUDiag.jpg";
-import DiagBlur from "../../assets/DiagBlur.jpg";
-import JOne from "../../assets/jOne.jpeg";
-import JTwo from "../../assets/jTwo.jpg";
 import JFour from "../../assets/jFour.jpg";
-import JFive from "../../assets/jFive.jpg";
-import JEleven from "../../assets/jEleven.jpeg";
 import JThree from "../../assets/jThree.jpg";
 import ScrollToTop from "react-scroll-to-top";
 import FeaturedMix from '../../components/FeaturedMix/FeaturedMix';

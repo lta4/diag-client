@@ -1,6 +1,6 @@
 .featured-mix { 
     display: block; 
-    max-width: 1000px; 
+    max-width: 1100px; /* slightly larger card */
     margin: 0 auto; 
 }
 .fm-poster { 
@@ -32,6 +32,10 @@
 .fm-embed { 
     position: relative; 
     padding-top: 56.25%; 
+    border-radius: 8px; 
+    overflow: hidden; /* ensure iframe respects radius */
+    box-shadow: 0 14px 36px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.04);
 }
 .fm-iframe { 
     position: absolute; 

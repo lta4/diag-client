@@ -148,7 +148,8 @@
   flex-direction: row;
   align-self: center;
   padding: 6rem 0.5rem;
-  width: 65%;
+  width: 75%;
+  max-width: 1200px;
   height: 50%;
 }
 
