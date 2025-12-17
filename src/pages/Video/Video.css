@@ -1,16 +1,3 @@
-/* .vds-thumbnail {
-    /* CSS variables available for customization (defaults shown). */
-    /* --media-thumbnail-bg: black; */
-    /* --media-thumbnail-border: 1px solid white; */
-    /* --media-thumbnail-aspect-ratio: 16 / 9; */
-    /* Applies when scaling thumbnails up. */
-    /* --media-thumbnail-min-width: 120px; */
-    /* --media-thumbnail-min-height: calc(var(--media-thumbnail-min-width) / var(--aspect-ratio)); */
-    /* Applies when scaling thumbnails down. */
-    /* --media-thumbnail-max-width: 180px; */
-    /* --media-thumbnail-max-height: calc(var(--media-thumbnail-max-width) / var(--aspect-ratio)); 
-} */
-
 .video {
   display: flex;
   flex-direction: column;
@@ -92,6 +79,7 @@
   justify-content: center; 
   margin-top: 1rem; 
 }
+
 .stream-button { 
   display: inline-flex; 
   align-items: center; 
@@ -105,12 +93,12 @@
   text-decoration: none; 
   transition: background 160ms ease, color 160ms ease, transform 160ms ease; 
 }
+
 .stream-button:hover { 
   background: rgba(255,255,255,0.06); 
   transform: translateY(-3px); 
   color: #fff; 
 }
-
 
 .video__poster {
   position: absolute;
@@ -120,6 +108,7 @@
   justify-content: center;
   cursor: pointer;
 }
+
 .video__poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .video__poster-play {
   position: absolute;
