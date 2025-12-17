@@ -125,6 +125,13 @@ img.footer__link.footer__link--bit:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* add spacing between inline footer items */
+}
+
+.footer__date--description p {
+    margin: 0; /* ensure gap controls spacing, not default p margins */
+    padding: 0;
 }
 
 .footer__date--link {
