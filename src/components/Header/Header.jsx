@@ -74,21 +74,16 @@ const Header = () => {
                 {isMobile ? (
                     <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
                         <ul className={listClassName}>
-                            <li>
+                            {/* <li>
                                 <Link smooth to="/#shows" className={linkClassName} onClick={closeMobileMenu}>
                                     Shows
                                 </Link>
-                            </li>
-                            {/* <li>
-                                <Link smooth to="/#mix" className={linkClassName} onClick={closeMobileMenu}>
-                                    Mixes
-                                </Link>
                             </li> */}
-                            <li>
+                            {/* <li>
                                 <Link smooth to="/#inquire" className={linkClassName} onClick={closeMobileMenu}>
                                     Inquire
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <NavLink to="/About" className={linkClassName} onClick={closeMobileMenu}>
                                     About
@@ -116,21 +111,16 @@ const Header = () => {
                     </div>
                 ) : (
                     <ul className={listClassName}>
-                        <li>
+                        {/* <li>
                             <Link smooth to="/#shows" className={linkClassName}>
                                 Shows
                             </Link>
-                        </li>
-                        {/* <li>
-                            <Link smooth to="/#mix" className={linkClassName}>
-                                Mixes
-                            </Link>
                         </li> */}
-                        <li>
+                        {/* <li>
                             <Link smooth to="/#inquire" className={linkClassName}>
                                 Inquire
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <NavLink to="/About" className={linkClassName}>
                                 About
