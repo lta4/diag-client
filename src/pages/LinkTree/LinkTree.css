@@ -48,8 +48,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	margin-top: 1rem;
+	margin-top: 2rem;
 	padding: 0 0.5rem;
+	/* sticky: keep list visible beneath the fixed hero as user scrolls */
+	position: sticky;
+	top: calc(var(--linktree-hero-height) + 1rem);
+	z-index: 60; /* below hero (60) but above page content */
+	/* ensure sticky area is visually separate when overlapping content */
+	background: linear-gradient(transparent, transparent);
 }
 
 .linktree__hero + .linktree__list { margin-top: calc(var(--linktree-hero-height) + 1.25rem); }
