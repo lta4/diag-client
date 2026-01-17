@@ -11,7 +11,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     box-sizing: border-box;
 }
@@ -106,10 +106,13 @@
     text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-/* .hero__shows {
+.hero__shows {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
     text-align: center;
     margin-top: 1.25rem;
-} */
+}
 
 /* .hero__shows--preview {
     display: flex;

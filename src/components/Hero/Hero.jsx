@@ -42,9 +42,7 @@ const Hero = (props) => {
                         />
                     </div>
                 <div className="hero__shows" id="shows">
-                    <div className="hero__shows--preview">
-                        <Show />
-                    </div>
+                    <Show />
                 </div>
                     <div className="hero__wall">
                         <img src={jOneInk} 
