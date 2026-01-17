@@ -9,39 +9,27 @@ function Show() {
     const host = hostRef.current;
     if (!host) return;
 
-    // create anchor and script like the working index.html embed
-    const anchor = document.createElement("a");
-    anchor.href = `https://www.songkick.com/artists/${id}`;
-    anchor.className = "songkick-widget";
-    anchor.setAttribute("data-theme", "dark");
-    anchor.setAttribute("data-track-button", "off");
-    anchor.setAttribute("data-detect-style", "off");
-    anchor.setAttribute("data-background-color", "rgb(0,0,0,1)");
-    anchor.setAttribute("data-font-color", "rgb(255,255,255,1)");
-    anchor.setAttribute("data-button-bg-color", "rgb(255,255,255,1)");
-    anchor.setAttribute("data-button-text-color", "rgb(0,0,0,1)");
-    anchor.setAttribute("data-locale", "en");
-    anchor.setAttribute("data-other-artists", "off");
-    anchor.setAttribute("data-share-button", "off");
-    anchor.setAttribute("data-country-filter", "off");
-    anchor.setAttribute("data-rsvp", "on");
-    anchor.setAttribute("data-request-show", "off");
-    anchor.setAttribute("data-past-events", "off");
-    anchor.setAttribute("data-past-events-offtour", "off");
-    anchor.setAttribute("data-remind-me", "off");
-    // keep the anchor display none initially like your static embed
-    anchor.style.display = "none";
+    // Create a single wrapper and insert the anchor into it so cleanup is simple
+    const wrapper = document.createElement("div");
+    wrapper.className = "songkick-wrapper";
+    wrapper.innerHTML = `<a href="https://www.songkick.com/artists/${id}" class="songkick-widget" data-theme="dark" data-track-button="off" data-detect-style="off" data-background-color="rgb(0,0,0,1)" data-font-color="rgb(255,255,255,1)" data-button-bg-color="rgb(255,255,255,1)" data-button-text-color="rgb(0,0,0,1)" data-locale="en" data-other-artists="off" data-share-button="off" data-country-filter="off" data-rsvp="on" data-request-show="off" data-past-events="off" data-past-events-offtour="off" data-remind-me="off" style="display: none;"></a>`;
 
-    const script = document.createElement("script");
-    script.src = `//widget-app.songkick.com/injector/${id}`;
-    script.async = true;
+    // Append wrapper to host
+    host.appendChild(wrapper);
 
-    host.appendChild(anchor);
-    host.appendChild(script);
+    // Ensure injector script exists once on the page
+    const scriptSrc = `//widget-app.songkick.com/injector/${id}`;
+    let script = document.querySelector(`script[src="${scriptSrc}"]`);
+    if (!script) {
+      script = document.createElement("script");
+      script.src = scriptSrc;
+      script.async = true;
+      document.body.appendChild(script);
+    }
 
     return () => {
-      if (host.contains(script)) host.removeChild(script);
-      if (host.contains(anchor)) host.removeChild(anchor);
+      // Remove only the wrapper (and its children). Leave global script in place.
+      if (host.contains(wrapper)) host.removeChild(wrapper);
     };
   }, [id]);
 

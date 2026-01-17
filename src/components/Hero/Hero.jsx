@@ -9,7 +9,7 @@ import jOneInk from "../../assets/jOneInk.jpg";
 import jFifteenInk from "../../assets/jFifteenInk.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
 const Hero = (props) => {
@@ -55,9 +55,6 @@ const Hero = (props) => {
                             alt="" 
                             className="hero__wall--image" 
                         />
-                        <Link to="/LinkTree" className="hero__linktree-cta">
-                            Stream
-                        </Link>
                     </div>
                 <div className="hero__inquire" id="inquire">
                     <ContactForm />
