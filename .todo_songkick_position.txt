@@ -1,0 +1,2 @@
+Task: Position Songkick widget in hero
+Status: guidance provided to user; no file edits applied yet.
