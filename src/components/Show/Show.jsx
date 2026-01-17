@@ -45,7 +45,7 @@ function Show() {
     };
   }, [id]);
 
-  return <div className="show-widget-host" ref={hostRef} />;
+  return <div className="hero__shows" ref={hostRef} />;
 }
 
 export default Show;
