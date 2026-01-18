@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Gallery.css";
 import ScrollToTop from "react-scroll-to-top";
-
-// load images from src/assets (webpack require.context supported in CRA)
-function importAll(r) {
-    return r.keys().map((key) => {
-        const mod = r(key);
-        return { src: mod.default || mod, name: key.replace("./", "") };
-    });
-}
-
-const IMAGES = importAll(require.context("../../assets", false, /\.(png|jpe?g|jpeg|webp)$/));
+import IMAGES from "../../data/galleryData";
 
 function Gallery() {
     const [selected, setSelected] = useState(null); // index of selected image
