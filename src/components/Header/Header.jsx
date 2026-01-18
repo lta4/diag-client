@@ -95,6 +95,11 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li>
+                                <NavLink to="Gallery" className={linkClassName} onClick={closeMobileMenu}>
+                                    Gallery
+                                </NavLink>
+                            </li>
+                            <li>
                                 <NavLink to="/Video" className={linkClassName} onClick={closeMobileMenu}>
                                     Video
                                 </NavLink>
@@ -129,6 +134,11 @@ const Header = () => {
                         <li>
                             <NavLink to="/LinkTree" className={linkClassName}>
                                 Stream
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/Gallery" className={linkClassName}>
+                                Gallery
                             </NavLink>
                         </li>
                         <li>
