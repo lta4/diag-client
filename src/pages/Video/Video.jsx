@@ -50,6 +50,9 @@ function Plans() {
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h2>Featured Video</h2>
+                </div>
                 <div className="video__container" ref={videoRef} id="featured-video">
                 <div className="video__container--media">
                     <FeaturedMix poster={JFour} embedUrl="https://www.youtube.com/embed/SK6WN-y5P-0" title="Diagnostic - YouTube" start={537} shouldPlay={played} />
