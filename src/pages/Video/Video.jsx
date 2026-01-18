@@ -67,7 +67,6 @@ function Plans() {
                 <div className="video__meta">
                     <h1 className="video__meta-title">"A late-night set built for dark rooms and heavy movement."</h1>
                 </div>
-
                 <ScrollToTop className="hero__scroll"/>
             </div>
         );
