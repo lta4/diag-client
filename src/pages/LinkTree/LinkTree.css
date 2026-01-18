@@ -1,6 +1,6 @@
 /* LinkTree page layout */
 .linktree {
-	--linktree-hero-height: 36vh; /* default hero height variable on the container */
+	--linktree-hero-height: 45vh; /* default hero height variable on the container */
 	min-height: 60vh;
 	padding: 2rem 1rem;
 	display: flex;
