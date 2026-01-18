@@ -50,8 +50,8 @@ function Plans() {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h2>Featured Video</h2>
+                <div className="video__phrase">
+                    <h2 className="video__phrase-text">Featured Video</h2>
                 </div>
                 <div className="video__container" ref={videoRef} id="featured-video">
                 <div className="video__container--media">
