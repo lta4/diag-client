@@ -8,7 +8,7 @@ function Gallery() {
     }, []);
 
     return (
-        <div>
+        <div className="gallery">
             <h2>Gallery</h2>
         </div>
     );
