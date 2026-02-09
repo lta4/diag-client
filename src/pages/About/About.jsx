@@ -26,7 +26,7 @@ function About() {
 
                             <p className="profile__description--text">From iconic tracks of the past to the freshest sounds of today, we’re curating the ultimate internet radio show experience.</p>
 
-                            <p className="profile__description--text">🔥 Subscribe now and dive into the groove with Diagnostic & Friends — where the music never stops.</p>
+                            <p className="profile__description--text">🔥 Subscribe now and dive into the groove with Diagnostic & Friends — where the music does not stop.</p>
                         </div>
                     </div>
                 </div>
