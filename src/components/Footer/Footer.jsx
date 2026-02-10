@@ -10,6 +10,7 @@ const Footer = () => {
     return (
         <>
             <div className="footer" id="inquire">
+                <div className="footer__backdrop">
                 <div className="footer__social">
                     <NavLink to="https://www.instagram.com/diagnosticmusic/">
                         <FaInstagram className="footer__link" />
@@ -23,6 +24,7 @@ const Footer = () => {
                     <NavLink to="https://www.songkick.com/artists/10389354-diagnostic-music">
                         <SiSongkick className="footer__link" />
                     </NavLink>
+                </div>
                 </div>
             </div>
             <div className="footer__policy">
