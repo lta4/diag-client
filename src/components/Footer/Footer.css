@@ -110,11 +110,11 @@ img.footer__link.footer__link--bit:hover {
     height: 2.4rem;
     padding: 0.35rem;
     border-radius: 0.5rem;
-    background: rgba(255,255,255,0.02);
+    background: rgba(0, 0, 0, 0.459);
     --webkit-backdrop-filter: blur(10px);
     backdrop-filter:(10px);
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.497);
     transition: background 0.2s ease, transform 0.15s ease, filter 0.2s ease;
     text-decoration: none;
     color: white;
@@ -126,7 +126,7 @@ img.footer__link.footer__link--bit:hover {
 }
 
 .footer__social .footer__link:hover {
-    background: rgba(255,255,255,0.04);
+    background: rgba(10, 10, 10, 0.535);
     transform: translateY(-3px);
 }
 
