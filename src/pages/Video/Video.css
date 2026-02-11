@@ -144,7 +144,7 @@
 .video__meta {
   max-width: 850px;
   width: 100%;
-  margin: 0.75rem 0 2rem;
+  margin: 0.5rem auto 4rem;
   /* padding: 0 1rem; */
   text-align: left;
 }
@@ -184,10 +184,11 @@
 
 .video__meta {
   max-width: 850px;
-  /* margin: 0.5rem auto 4rem; */
+  margin: 0.5rem auto 4rem;
   padding: 0 1rem;
   text-align: left;
 }
+
 .video__meta-title { 
   font-size: 1.25rem; margin: 0 0 0.25rem; 
 }

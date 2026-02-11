@@ -12,11 +12,11 @@ function LinkTree() {
         <div className="linktree">
             <div className="linktree__hero" style={{ backgroundImage: `url(${Banner})` }}>
                 <div className="linktree__hero-overlay" />
-                <div className="linktree__hero-inner">
-                    {/* <BackButton label="Back to site" /> */}
+                {/* <div className="linktree__hero-inner">
+                    <BackButton label="Back to site" />
                     <h1 className="linktree__title">Stream Diagnostic</h1>
                     <p className="linktree__subtitle">Listen on your favorite platforms</p>
-                </div>
+                </div> */}
             </div>
             <div className="linktree__list">
                 {links.map((link, index) => {
