@@ -16,6 +16,14 @@ function About() {
         { year: '2019', title: 'Residency', text: 'Started a monthly residency showcasing new talent and collaborative sets.' }
     ];
 
+    const SKILLS = [
+        { name: "Production", level: 0.92 },
+        { name: "Live Performance", level: 0.88 },
+        { name: "Mixing / Mastering", level: 0.78 },
+        { name: "Sound Design", level: 0.72 },
+        { name: "DJing", level: 0.85 }
+    ];
+
     return (
         <>
             <main className="about">
@@ -37,6 +45,7 @@ function About() {
                         </div>
                     </div>
                 </section>
+                
                 {/* Timeline / milestones */}
                 <section className="about__timeline" aria-labelledby="timeline-title">
                     <h2 id="timeline-title" className="timeline__title">Timeline</h2>
@@ -53,6 +62,31 @@ function About() {
                         ))}
                     </ol>
                 </section>
+
+                {/* Skills / badges */}
+                <section className="about__skills" aria-labelledby="skills-title">
+                    <h2 id="skills-title" className="skills__title">Skills</h2>
+                    <div className="skills__grid">
+                        {SKILLS.map((s) => (
+                            <div className="skill" key={s.name}>
+                                <div className="skill__head">
+                                    <span className="skill__label">{s.name}</span>
+                                    <span className="skill__percent">{Math.round(s.level * 100)}%</span>
+                                </div>
+                                <div
+                                    className="skill__bar"
+                                    role="progressbar"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                    aria-valuenow={Math.round(s.level * 100)}
+                                >
+                                    <div className="skill__fill" style={{ width: `${s.level * 100}%` }} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
                 {/** Profile Section */}
                 <section className="profile">
                     <div className="profile__set">
