@@ -1,0 +1,77 @@
+/* Sticky mini-player (fixed on bottom-right, hidden on small screens) */
+.sticky-player {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  width: 320px;
+  max-width: calc(100% - 36px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(10,10,10,0.92);
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.5rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  color: #fff;
+  font-family: inherit;
+}
+
+.sticky-player__left {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.sticky-player__thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex: 0 0 64px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+}
+
+.sticky-player__thumb.placeholder {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display: inline-block;
+}
+
+.sticky-player__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.sticky-player__title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-player__toggle {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  border: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.sticky-player__media {
+  display: none; /* keep media element hidden; it drives audio/video only */
+}
+
+/* hide on small screens to avoid covering content */
+@media (max-width: 720px) {
+  .sticky-player { display: none; }
+}

@@ -1,10 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Video.css";
 import BG from "../../assets/BGbackgrond.png";
 import JFour from "../../assets/jFour.jpg";
 import JThree from "../../assets/jThree.jpg";
 import ScrollToTop from "react-scroll-to-top";
 import FeaturedMix from '../../components/FeaturedMix/FeaturedMix';
+import StickyPlayer from "../../components/StickyPlayer/StickyPlayer";
+import Poster from "../../assets/jFifteenInk.jpg"; // replace with your poster or remove if absent
+import SampleVideo from "../../assets/NOCTURNA.mp3"; // replace with your video or remove if absent
 
 function Plans() {
 
@@ -16,6 +19,7 @@ function Plans() {
 
     const [played, setPlayed] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const [playingTitle, setPlayingTitle] = useState("Featured Video");
 
     useEffect(() => {
         const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -68,6 +72,12 @@ function Plans() {
                     <h1 className="video__meta-title">"A late-night set built for dark rooms and heavy movement."</h1>
                 </div>
                 <ScrollToTop className="hero__scroll"/>
+                {/* Sticky mini-player: keeps playback available while scrolling */}
+                <StickyPlayer
+                    src={SampleVideo}         /* replace or pass audio URL */
+                    poster={Poster}          /* optional thumbnail */
+                    title={playingTitle}
+                />
             </div>
         );
     };
