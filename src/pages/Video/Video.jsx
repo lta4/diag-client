@@ -20,7 +20,28 @@ function Plans() {
     const [played, setPlayed] = useState(false);
     const [mounted, setMounted] = useState(false);
     const [playingTitle, setPlayingTitle] = useState("Featured Video");
+    // --- captions + chapters ---
+    const CHAPTERS = [
+      { label: "Intro / Build", time: 0 },
+      { label: "Peak — Groove", time: 120 },
+      { label: "Late Night Drop", time: 600 },
+      { label: "Outro", time: 1800 }
+    ];
+    const [startTime, setStartTime] = useState(537);
+    const [captionsOn, setCaptionsOn] = useState(false);
 
+    const baseEmbed = "https://www.youtube.com/embed/SK6WN-y5P-0";
+    const computedEmbed = `${baseEmbed}?start=${startTime || 0}&autoplay=${played ? 1 : 0}${captionsOn ? "&cc_load_policy=1" : ""}`;
+
+    const jumpToChapter = (c) => {
+      setStartTime(c.time);
+      setPlayingTitle(`Featured — ${c.label}`);
+      setPlayed(true);
+      if (videoRef.current) videoRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+    const toggleCaptions = () => setCaptionsOn((v) => !v);
+    // --- end captions + chapters ---
+    
     useEffect(() => {
         const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (!prefersReduced) setMounted(true);
@@ -59,7 +80,21 @@ function Plans() {
                 </div>
                 <div className="video__container" ref={videoRef} id="featured-video">
                 <div className="video__container--media">
-                    <FeaturedMix poster={JFour} embedUrl="https://www.youtube.com/embed/SK6WN-y5P-0" title="Diagnostic - YouTube" start={537} shouldPlay={played} />
+                    {/* computedEmbed applies start/autoplay/cc params */}
+                    <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played} />
+
+                    <div className="video__controls-extra">
+                      <button className={`video__btn ${captionsOn ? 'is-active' : ''}`} onClick={toggleCaptions} aria-pressed={captionsOn} aria-label="Toggle captions">
+                        CC
+                      </button>
+                      <nav className="video__chapters" aria-label="Chapters">
+                        {CHAPTERS.map((c, idx) => (
+                          <button key={idx} className="video__chapter" onClick={() => jumpToChapter(c)}>
+                            {c.label}
+                          </button>
+                        ))}
+                      </nav>
+                    </div>
                 </div>
                 </div>
                 <div className="video__meta">
