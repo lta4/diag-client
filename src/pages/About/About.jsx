@@ -167,13 +167,6 @@ function About() {
                 <section className="profile">
                     <div className="profile__set">
                         <div className="profile__grid">
-                            <img
-                                src={JThirteen}
-                                alt="Jose Flores Spotlight"
-                                loading="lazy"
-                                aria-hidden="true"
-                                className="profile__grid--image1"
-                            />
                             <img src={JSixteen} alt="" className="profile__grid--image2"/>
                             <div className="profile__description">
                                 <h1 className="profile__description--title">Jose Flores</h1>
@@ -188,6 +181,17 @@ function About() {
                         </div>
                     </div>
                 </section>
+
+                {/* Profile Portrait */}
+               <section className="profile__portrait-section">
+                <img
+                  src={JThirteen}
+                  alt="Jose Flores Spotlight"
+                  loading="lazy"
+                  className="profile__portrait-large"
+                />
+               </section>
+
             </main>
 
             <ScrollToTop className="hero__scroll" />
