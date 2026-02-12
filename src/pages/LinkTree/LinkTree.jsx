@@ -8,10 +8,21 @@ import { FaSpotify, FaApple, FaYoutube, FaSoundcloud } from 'react-icons/fa';
 import { SiBeatport } from 'react-icons/si';
 
 function LinkTree() {
+    // toggle this to control the live indicator
+    const isLive = true;
+
     return (
         <div className="linktree">
             <div className="linktree__hero" style={{ backgroundImage: `url(${Banner})` }}>
                 <div className="linktree__hero-overlay" />
+                {isLive && (
+                    <div className="linktree__hero-badge">
+                        <span className="live-badge" aria-hidden="true">
+                            <span className="live-dot" />
+                            LIVE
+                        </span>
+                    </div>
+                )}
                 {/* <div className="linktree__hero-inner">
                     <BackButton label="Back to site" />
                     <h1 className="linktree__title">Stream Diagnostic</h1>
