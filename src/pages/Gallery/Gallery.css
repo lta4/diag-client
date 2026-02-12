@@ -259,3 +259,33 @@
     .gallery__grid { grid-template-columns: 1fr; gap: 0.75rem; }
     .gallery__item img { height: 220px; }
 }
+
+/* Entry animations: staggered fade + lift for gallery items */
+.gallery__grid--masonry .gallery__item {
+  opacity: 0;
+  transform: translateY(14px) scale(0.995);
+  transition: opacity 420ms cubic-bezier(.2,.9,.3,1), transform 420ms cubic-bezier(.2,.9,.3,1), box-shadow 360ms;
+  transition-delay: calc(var(--i, 0) * 70ms);
+  will-change: opacity, transform;
+}
+
+/* reveal */
+.gallery__grid--masonry .gallery__item.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* slightly stagger hover/surface shadow after visible */
+.gallery__grid--masonry .gallery__item.is-visible:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .gallery__grid--masonry .gallery__item,
+  .gallery__grid--masonry .gallery__item.is-visible {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

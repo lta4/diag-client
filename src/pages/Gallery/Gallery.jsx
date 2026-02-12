@@ -9,6 +9,25 @@ function Gallery() {
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
 
+    // entry animation: observe items and add .is-visible with a stagger using CSS var --i
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        obs.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -80px 0px" }
+        );
+
+        const items = document.querySelectorAll(".gallery__grid--masonry .gallery__item");
+        items.forEach((el) => observer.observe(el));
+        return () => observer.disconnect();
+    }, []);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -94,6 +113,7 @@ function Gallery() {
                         <button
                             key={img.name + i}
                             className="gallery__item"
+                            style={{ ['--i']: i }}
                             onClick={() => open(i)}
                             aria-label={`Open ${img.name}`}
                         >
