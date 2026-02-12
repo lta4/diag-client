@@ -147,22 +147,6 @@ function About() {
                  </div>
                </section>
 
-               {/* Testimonials */}
-               <section className="about__testimonials" aria-labelledby="testimonials-title">
-                 <h2 id="testimonials-title" className="testimonials__title">What people say</h2>
-                 <div className="testimonials__grid">
-                   {TESTIMONIALS.map((t, i) => (
-                     <blockquote key={i} className="testimonial">
-                       <p className="testimonial__text">“{t.text}”</p>
-                       <footer className="testimonial__cite">
-                         <span className="testimonial__name">{t.name}</span>
-                         <span className="testimonial__role">{t.role}</span>
-                       </footer>
-                     </blockquote>
-                   ))}
-                 </div>
-               </section>
-
                 {/** Profile Section */}
                 <section className="profile">
                     <div className="profile__set">
@@ -181,6 +165,22 @@ function About() {
                         </div>
                     </div>
                 </section>
+
+                {/* Testimonials */}
+               <section className="about__testimonials" aria-labelledby="testimonials-title">
+                 <h2 id="testimonials-title" className="testimonials__title">What people say</h2>
+                 <div className="testimonials__grid">
+                   {TESTIMONIALS.map((t, i) => (
+                     <blockquote key={i} className="testimonial">
+                       <p className="testimonial__text">“{t.text}”</p>
+                       <footer className="testimonial__cite">
+                         <span className="testimonial__name">{t.name}</span>
+                         <span className="testimonial__role">{t.role}</span>
+                       </footer>
+                     </blockquote>
+                   ))}
+                 </div>
+               </section>
 
                 {/* Profile Portrait */}
                <section className="profile__portrait-section">

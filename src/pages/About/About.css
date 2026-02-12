@@ -401,7 +401,7 @@
     .profile__description--title { font-size: 2rem; }
     .profile__description--text { font-size: 1rem; }
     .profile__portrait-section { justify-content: center; }
-    .profile__portrait-large { width: 140px; height: 140px; flex: 0 0 140px; }
+    /* .profile__portrait-large { width: 140px; height: 140px; flex: 0 0 140px; } */
     .skills__grid { grid-template-columns: 1fr; }
     .skill { padding: 0.5rem; }
     .skill__label { font-size: 0.95rem; }
