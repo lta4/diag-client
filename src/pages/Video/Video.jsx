@@ -195,7 +195,7 @@ function Plans() {
                     <h1 className="video__meta-title">"A late-night set built for dark rooms and heavy movement."</h1>
                 </div>
                 
-                 <ScrollToTop className="hero__scroll"/>
+                 <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
                  {/* Sticky mini-player: keeps playback available while scrolling */}
                  <StickyPlayer
                      src={SampleVideo}         /* replace or pass audio URL */
