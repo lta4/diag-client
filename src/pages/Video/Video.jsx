@@ -144,9 +144,15 @@ function Plans() {
                         </button>
 
                         <div className="video__social-ctas video__social-ctas--compact" aria-label="Follow">
-                          <a className="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter/></a>
-                          <a className="social-icon" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram/></a>
-                          <a className="social-icon" href="https://www.youtube.com/@DiagnosticMusic0" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube/></a>
+                          {/* <a className="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <FaTwitter/>
+                          </a> */}
+                          <a className="social-icon" href="https://www.instagram.com/diagnosticmusic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <FaInstagram/>
+                          </a>
+                          <a className="social-icon" href="https://www.youtube.com/@DiagnosticMusic0" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <FaYoutube/>
+                          </a>
                         </div>
 
                         {/* embed panel rendered inside overlay for compact access */}
