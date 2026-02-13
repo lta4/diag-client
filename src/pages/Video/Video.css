@@ -287,4 +287,106 @@
   border-color: rgba(255,200,120,0.12);
 }
 
+/* Share / Embed / Download buttons + social CTAs */
+.video__cta-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.video__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 0.45rem 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+.video__action svg { width: 16px; height: 16px; opacity: 0.96; }
+.video__action:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(90deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+/* CTA overlay (top-left compact stack) */
+.video__ct a-overlay,
+.video__cta-overlay { /* keep existing name support */
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1200;
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.video__cta-stack {
+  display: flex;
+  gap: 0.45rem;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(6,6,8,0.7);
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+}
+
+/* smaller square action buttons for overlay */
+.video__action--small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 44px;
+  height: 36px;
+  padding: 0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* compact social row */
+.video__social-ctas--compact {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+/* embed panel overlay */
+.video__embed-panel--overlay {
+  margin-top: 0.45rem;
+  width: min(360px, 46vw);
+  background: rgba(6,6,8,0.92);
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* small adjustments */
+.video__embed-panel--overlay .video__embed-text { font-size: 0.82rem; padding: 0.45rem; }
+.video__embed-panel--overlay .video__embed-actions { margin-top: 0.4rem; justify-content: flex-end; }
+
+/* ensure container is positioned so overlay absolute anchors correctly */
+.video__container--media { position: relative; }
+
+/* responsive: move overlay below player on small screens */
+@media (max-width: 720px) {
+  .video__cta-overlay, .video__cta-stack { position: static; width: 100%; box-shadow: none; background: transparent; padding: 0; border: none; }
+  .video__action--small { width: auto; height: auto; }
+  .video__social-ctas--compact { margin-top: 0; }
+}
+
+/* accessibility helpers */
+.visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px); white-space: nowrap; }
+
 
