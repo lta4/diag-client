@@ -107,7 +107,7 @@ function About() {
                 </section>
 
                 {/* Timeline / milestones */}
-                <section className="about__timeline" aria-labelledby="timeline-title">
+                {/* <section className="about__timeline" aria-labelledby="timeline-title">
                     <h2 id="timeline-title" className="timeline__title">Timeline</h2>
                     <ol className="timeline__list">
                         {TIMELINE.map((t, i) => (
@@ -121,7 +121,7 @@ function About() {
                             </li>
                         ))}
                     </ol>
-                </section>
+                </section> */}
 
                 {/* Skills / badges */}
                 <section className="about__skills" aria-labelledby="skills-title">
