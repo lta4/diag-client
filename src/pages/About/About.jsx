@@ -22,9 +22,9 @@ const SKILLS = [
 // Stats data (bullet 4)
 const STATS = [
   { label: "Years active", value: 10, suffix: "+" },
-  { label: "Releases", value: 50, suffix: "+" },
-  { label: "Shows", value: 200, suffix: "+" },
-  { label: "Clients", value: 25, suffix: "+" }
+  { label: "Releases", value: 10, suffix: "+" },
+  { label: "Shows", value: 40, suffix: "+" },
+  { label: "Clients", value: 12, suffix: "+" }
 ];
 
 // Testimonials data
