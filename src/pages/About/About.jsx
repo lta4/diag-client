@@ -194,7 +194,7 @@ function About() {
 
             </main>
 
-            <ScrollToTop className="hero__scroll" />
+            <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
         </>
     );
 }

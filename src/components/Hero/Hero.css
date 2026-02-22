@@ -17,15 +17,17 @@
 }
 
 .hero__scroll {
-    background: #222;
+    background-color: #000;
     color: #fff;
+    border-radius: 50%;
     transition: background 0.3s;
+    
 }
 
-.hero__scroll:hover {
+/* .hero__scroll:hover {
     background: var(--theme-color);
     color: #fff;
-}
+} */
 
 /**********************DJ Component****************/
 

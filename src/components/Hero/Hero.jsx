@@ -59,7 +59,8 @@ const Hero = (props) => {
                 <div className="hero__inquire" id="inquire">
                     <ContactForm />
                 </div>
-                <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }}/>
+                <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
+                {/* <ScrollToTop className="hero__scroll" /> */}
             </div>
         </div>
     );
