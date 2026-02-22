@@ -136,6 +136,7 @@
 
 /* ensure hero is positioned for absolute badge placement */
 .linktree__hero {
-  position: relative;
+  position: fixed;
+  /* position: relative; */
 }
 
