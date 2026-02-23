@@ -26,72 +26,28 @@
 	box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
-/* full-cover, heavily zoomed & blurred hero with robust fallback */
-
-/* ensure hero covers the viewport and acts as background */
-.linktree__hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;                 /* full viewport cover */
-  overflow: hidden;
-  background: transparent;
-  isolation: isolate;                /* keep blend modes contained */
-}
-
-/* heavy zoom + blur of the provided image (or gradient fallback) */
-.linktree__hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-
-  /* use the provided image if available, otherwise use a dark gradient fallback */
-  background-image: var(--hero-bg, linear-gradient(180deg,#080808 0%, #141414 100%));
-  /* large background-size intentionally zooms the image so low-res becomes abstract */
-  background-size: 120% 120%;
-  background-position: 50% 40%;
-  background-repeat: no-repeat;
-
-  transform: scale(1.18);
-  filter: blur(3px) saturate(1.05) contrast(0.95) brightness(0.98);
-  opacity: 0.96;
-}
-
-/* extra texture + colored bokeh/noise layer to hide artifacts and add atmosphere */
-.linktree__hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  mix-blend-mode: screen;
-
-  background-image:
-    radial-gradient(18rem 18rem at 8% 14%, rgba(255,120,90,0.06), transparent 28%),
-    radial-gradient(12rem 12rem at 82% 20%, rgba(120,200,255,0.05), transparent 26%),
-    radial-gradient(14rem 14rem at 50% 6%, rgba(255,200,120,0.05), transparent 30%),
-    /* tiny monochrome noise tile (inline svg data URI) */
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='40' height='40' filter='url(%23n)' opacity='0.12' fill='%23000'/></svg>");
-  background-size: cover, cover, cover, 40px 40px;
-  transform: scale(1.02);
-  filter: blur(20px) saturate(1.08);
-  opacity: 0.84;
-}
-
-/* overlay tint above visual layers to keep CTAs readable */
 .linktree__hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.6));
+	position: absolute; 
+	inset: 0; 
+	background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
 }
 
-/* ensure hero inner content is above all background layers */
-.linktree__hero > *:not(.linktree__hero-overlay) {
-  position: relative;
-  z-index: 4;
+.linktree__hero-inner { 
+	position: relative; 
+	z-index: 2; 
+	text-align: center; 
+	color: #fff; 
+	padding: 2rem 1rem; 
+}
+
+.linktree__title { 
+	font-size: 2rem; 
+	margin: 0 0 0.25rem; 
+}
+
+.linktree__subtitle { 
+	margin: 0 0 0.5rem; 
+	opacity: 0.9; 
 }
 
 /* Reduce hero height on smaller screens so it doesn't dominate viewport */

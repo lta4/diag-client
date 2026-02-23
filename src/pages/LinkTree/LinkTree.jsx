@@ -4,8 +4,10 @@ import { links } from "../../data/data";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import BackButton from '../../components/BackButton/BackButton';
 import Banner from '../../assets/CDiagBanner.jpg';
-import SDiagBanner from '../../assets/SDiagBanner.jpg';
-import CDiagBanner from '../../assets/CDiagBanner.jpg';
+// import SDiagBanner from '../../assets/SDiagBanner.jpg';
+// import JFourteenSlate72p from '../../assets/jFourteenSlate72p.jpg';
+// import JFourteenSlate from '../../assets/jFourteenSlate.jpg';
+// import CDiagBanner from '../../assets/CDiagBanner.jpg';
 
 import { FaSpotify, FaApple, FaYoutube, FaSoundcloud } from 'react-icons/fa';
 import { SiBeatport } from 'react-icons/si';
@@ -16,8 +18,7 @@ function LinkTree() {
 
     return (
         <div className="linktree">
-            {/* use CSS variable so CSS can aggressively zoom/blur or fall back to an abstract background */}
-            <div className="linktree__hero" style={{ ['--hero-bg']: `url(${CDiagBanner})` }}>
+            <div className="linktree__hero" style={{ backgroundImage: `url(${Banner})` }}>
                 <div className="linktree__hero-overlay" />
                 {isLive && (
                     <div className="linktree__hero-badge">
