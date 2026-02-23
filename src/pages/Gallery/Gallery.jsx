@@ -6,6 +6,8 @@ import IMAGES from "../../data/galleryData";
 function Gallery() {
     const [selected, setSelected] = useState(null); // index of selected image
     const [copied, setCopied] = useState(false);
+    const [titleTyped, setTitleTyped] = useState("");
+    const [subTyped, setSubTyped] = useState("");
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
 
@@ -97,12 +99,58 @@ function Gallery() {
         a.remove();
     };
 
+    useEffect(() => {
+      const title = "Gallery";
+      const subtitle = "A selection of images — click to enlarge. Use ← → to navigate.";
+      const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) {
+        setTitleTyped(title);
+        setSubTyped(subtitle);
+        return;
+      }
+
+      let tIdx = 0;
+      let sIdx = 0;
+      const tDelay = 60; // ms per char for title
+      const sDelay = 28; // ms per char for subtitle
+      const startSubtitleAfter = title.length * tDelay + 350; // ms
+
+      const typeTitle = () => {
+        if (tIdx <= title.length) {
+          setTitleTyped(title.slice(0, tIdx));
+          tIdx++;
+          setTimeout(typeTitle, tDelay);
+        }
+      };
+
+      const typeSubtitle = () => {
+        if (sIdx <= subtitle.length) {
+          setSubTyped(subtitle.slice(0, sIdx));
+          sIdx++;
+          setTimeout(typeSubtitle, sDelay);
+        }
+      };
+
+      typeTitle();
+      const subTimer = setTimeout(typeSubtitle, startSubtitleAfter);
+
+      return () => clearTimeout(subTimer);
+    }, []);
+
     return (
         <div className="gallery">
             <header className="gallery__hero">
                 <div className="gallery__hero-inner">
-                    <h2 className="gallery__title">Gallery</h2>
-                    <p className="gallery__sub">A selection of images — click to enlarge. Use ← → to navigate.</p>
+                    <h2 className="gallery__title gallery__title--typing">
+                      <span aria-hidden="true">{titleTyped}</span>
+                      <span className="typing-cursor" aria-hidden="true">▌</span>
+                      <span className="sr-only">{titleTyped || "Gallery"}</span>
+                    </h2>
+                    <p className="gallery__sub gallery__sub--typing">
+                      <span aria-hidden="true">{subTyped}</span>
+                      <span className="typing-cursor typing-cursor--small" aria-hidden="true">▌</span>
+                      <span className="sr-only">{subTyped || "A selection of images — click to enlarge. Use left right arrows to navigate."}</span>
+                    </p>
                 </div>
             </header>
 
