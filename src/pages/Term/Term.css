@@ -1,18 +1,39 @@
-.legal {
-    margin: 5rem 5rem;
-}
-
-/* .legal__sec {
-
+/* .legal {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px;
 } */
 
-.legal__title {
+.policy {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.policy__body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 4rem 2rem;
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    line-height: 1.6;
+
 }
 
-/* .legal__para {
+.policy__title {
+    /* font-weight: bold; */
+    /* margin-bottom: 5px; */
+    /* font-size: 50px; */
+}
 
-} */
+.policy__desc {
+    margin-bottom: 15px;
+}
+
+.policy__list {
+    list-style: disc;
+    list-style-position: outside;
+    margin: 0.5rem 0 1rem 1.25rem;
+    padding: 0;
+    color: inherit;
+}
