@@ -40,8 +40,6 @@ function Term() {
                         <li>Any message content you provide</li>
                     </ul>
 
-                    <hr className="hr" />
-
                     <h3 className="policy__title">B. Automatically Collected Information</h3>
                     <p className="policy__desc">When you visit our website, certain information is collected automatically through cookies and analytics tools, including:</p>
                     <ul className="policy__list">
@@ -53,8 +51,6 @@ function Term() {
                         <li>Referring URLS</li>
                     </ul>
                     <p className="policy-desc">This data helps us understand how visitors use our website.</p>
-
-                    <hr className="hr" />
 
                     <h2 className="policy__title">2. Use of Google Analytics</h2>
                     <p className="policy__desc">We use <a href="https://chatgpt.com/c/6918e609-b6b0-8325-972c-c30f8783f715#:~:text=We%20use%20Google-,Analytics,-to%20analyze%20website">Google Analytics</a> to analyze website traffic and usage patterns.</p>
@@ -69,8 +65,6 @@ function Term() {
                     https://policies.google.com/privacy</p>
                     <p className="policy__desc">You may opt out of Google Analytics tracking using Google’s browser add-on:
                     https://tools.google.com/dlpage/gaoptout</p>
-
-                    <hr className="hr" />
 
                     <h2 className="policy__title">3. Embedded Third-Party Content</h2>
                     <p className="policy__desc">Our website may include embedded content such as:</p>
@@ -88,8 +82,6 @@ function Term() {
                         <li>Monitor engagement</li>
                     </ul>
                     <p className="policy__desc">We are not responsible for the privacy practices of third-party services. We encourage you to review their privacy policies.</p>
-
-                    <hr className="hr" />
 
                     <h2 className="policy__title">4. How We Use Your Information</h2>
                     <p className="policy__desc">We use information to:</p>
@@ -110,8 +102,6 @@ function Term() {
                         <li>We will not share your email address with third parties for marketing purposes.</li>
                     </ul>
 
-                    <hr className="hr" />
-
                     <h2 className="policy__title">6. Cookies and Tracking Technoligies</h2>
                     <p className="policy__desc">We use cookies and similar tracking technologies to:</p>
                     <ul className="policy__list">
@@ -120,8 +110,6 @@ function Term() {
                         <li>Improve user experience</li>
                     </ul>
                     <p className="policy__desc">You can control cookies through your browser settings. Disabling cookies may affect certain features of the website.</p>
-
-                    <hr className="hr" />
 
                     <h2 className="policy__title">7. Data Retention</h2>
                     <p className="policy__desc">We retain personal information only as long as necessary to:</p>
@@ -132,17 +120,11 @@ function Term() {
                         <li>Enforce agreements</li>
                     </ul>
 
-                    <hr className="hr" />
-
                     <h2 className="policy__title">8. Data Security</h2>
                     <p className="policy__desc">We implement reasonable security measures to protect your information. However, no method of transmission over the Internet is 100% secure.</p>
 
-                    <hr className="hr" />
-
                     <h2 className="policy__title">9. Childrens Privacy</h2>
                     <p className="policy__desc">This website is not intended for children under 13. We do not knowingly collect personal information from children.</p>
-
-                    <hr className="hr" />
 
                     <h2 className="policy__title">10. Your Privacy Rights</h2>
                     <p className="policy__desc">Depending on your location, you may have rights including:</p>
@@ -153,8 +135,6 @@ function Term() {
                         <li>Opting out of certain data processing</li>
                     </ul>
                     <p className="policy__desc">To exercise these rights, contact us using the information below.</p>
-
-                    <hr className="hr" />
 
                     <h2 className="policy__title">11. Changes to This Policy</h2>
                     <p className="policy__desc">We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised “Last Updated” date.</p>
