@@ -1,16 +1,32 @@
+import React, { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import React from "react";
 import "./ContactForm.css";
 
 function ContactForm() {
-    const [state, handleSubmit] = useForm("xyzzbedg");
-    if (state.succeeded) {
+    const [email, setEmail] = useState("");
+    const [agreed, setAgreed] = useState(false);
 
-        return <p className="contact__input--return">Thanks for your message! We've received it and will respond shortly!</p>
-}
+    const [state, handleSubmit] = useForm("xyzzbedg");
+
+        if (state.succeeded) {
+
+            return <p className="contact__input--return">Thanks for your message! We've received it and will respond shortly!</p>
+        }
+
+    const onSubmit = (e) => {
+        if (!agreed) {
+            e.preventDefault();
+            //simple UX feedback -  replace toast if you have one
+            alert("You must agree to the Privacy Policy before submitting.");
+            return;
+        }
+        //pass event to Formspree handle
+        handleSubmit(e);
+    }
+
     return (
         <div className="contact__backdrop">
-            <form onSubmit={handleSubmit} autoComplete="on" className="contact" id="">
+            <form onSubmit={onSubmit} autoComplete="on" className="contact" id="">
             <h2 className="contact__des">
                 Discover the sound -- master of vibes
             </h2>
@@ -44,6 +60,9 @@ function ContactForm() {
                 name="email"
                 placeholder=" EMAIL"
                 className="contact__input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
             />
             <ValidationError
                 prefix="Email"
@@ -61,9 +80,21 @@ function ContactForm() {
                 field="message"
                 errors={state.errors}
             />
-            <button type="submit" disabled={state.submitting} className="contact__btn">
-                Submit
-            </button>
+
+            <label className="contact__consent" style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.5rem" }}>
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        checked={agreed}
+                        onChange={(e) => setAgreed(e.target.checked)}
+                        required
+                    />
+                    <span style={{ fontSize: "0.9rem" }}>I agree to the Privacy Policy</span>
+                </label>
+            
+                <button type="submit" disabled={!agreed || state.submitting} className="contact__btn" style={{ marginTop: "0.75rem" }}>
+                    {state.submitting ? "Sending..." : "Submit"}
+                </button>
             </form>
         </div>
     );
