@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import "./CookieBanner.css";
 
 export default function CookieBanner() {
     const [visible, setVisible] = useState(false);
+    const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
         const consent = localStorage.getItem("cookieConsent");
 
         if (!consent) {
             setVisible(true);
+
+            // trigger animation slightly after mount
+            setTimeout(() => setAnimate(true), 50);
         }
     }, []);
 
     const handleAccept = () => {
         localStorage.setItem("cookieConsent", "accepted");
         setVisible(false);
+        setTimeout(() => setVisible(false), 300);
 
         window.dispatchEvent(new Event("cookieAccepted"));
     };
@@ -23,16 +27,24 @@ export default function CookieBanner() {
     const handleDecline = () => {
         localStorage.setItem("cookieConsent", "declined");
         setVisible(false);
+        setTimeout(() => setVisible(false), 300);
     };
 
     if (!visible) return null;
 
     return (
-        <div style={styles.banner}>
+        <div
+            style={{
+                ...styles.card,
+                opacity: animate ? 1 : 0,
+                transform: animate ? "translateY(0)" : "translateY(20px)",
+            }}
+        >
             <div style={styles.text}>
+                We use cookies to improve your experience and analyze traffic. By clicking "Accept", you agree to our {" "}
                 <Link to="/privacy-policy" style={styles.link}>
                     Privacy Policy
-                </Link>
+                </Link>.
             </div>
 
             <div style={styles.buttons}>
@@ -43,48 +55,55 @@ export default function CookieBanner() {
                     Accept
                 </button>
             </div>
+            
         </div>
     );
 }
 
 const styles = {
-    banner: {
+    card: {
         position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: "#111",
-        color: "fff",
-        padding: "16px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+        bottom: "20px",
+        left: "20px",
+        maxWidth: "360px",
+        padding: "20px",
+        borderRadius: "16px",
+        backdropFilter: "blur(14px)",
+        WebkitBackdropFilter: "blur(14px)",
+        background: "rgba(20, 20, 20, 0.75)",
+        color: "#fff",
+        boxShadow: "0 8px 30px rgba(0,0,0,0.4)",
         zIndex: 9999,
-        flexWrap: "wrap",
+        transition: "all 0.3s ease",
     },
     text: {
         fontSize: "0.9rem",
-        maxWidth: "70%",
+        lineHeight: "1.4",
+        marginBottom: "14px",
     },
     link: {
-        color: "#4da6ff",
+        color: "#7ab8ff",
         textDecoration: "underline",
     },
     buttons: {
         display: "flex",
+        justifyContent: "flex-end",
         gap: "10px",
-        marginTop: "10px",
     },
     accept: {
-        backgroundColor: "#4da6ff",
+        backgroundColor: "#7ab8ff",
         border: "none",
         padding: "8px 14px",
+        borderRadius: "8px",
         cursor: "pointer",
+        fontWeight: 500,
     },
     decline: {
         backgroundColor: "transparent",
-        border: "1px solid #999",
+        border: "1px solid rgba(255,255,255,0.4)",
+        color: "#fff",
         padding: "8px 14px",
+        borderRadius: "8px",
         cursor: "pointer",
     },
 };
