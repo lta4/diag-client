@@ -81,7 +81,7 @@ function ContactForm() {
                 errors={state.errors}
             />
 
-            <label className="contact__consent" style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.5rem" }}>
+            <label className="contact__consent" style={{ display: "flex", justifyItems: "left", gap: "0.5rem", marginTop: "0.5rem" }}>
                     <input
                         type="checkbox"
                         name="consent"

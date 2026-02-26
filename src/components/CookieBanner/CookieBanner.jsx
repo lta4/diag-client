@@ -65,6 +65,7 @@ const styles = {
         position: "fixed",
         bottom: "10px",
         right: "6rem",
+        width: "90%",
         maxWidth: "360px",
         padding: "20px",
         borderRadius: "16px",
