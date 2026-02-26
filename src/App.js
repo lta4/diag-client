@@ -14,6 +14,7 @@ import Gallery from "./pages/Gallery/Gallery";
 import Video from "./pages/Video/Video";
 import Privacy from "./pages/Privacy/Privacy";
 import Term from "./pages/Term/Term";
+import CookieBanner from "./components/CookieBanner/CookieBanner";
  
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
           return location.key;
         }}
         /> */}
+        {/* <CookieBanner /> */}
     </>
   );
 };

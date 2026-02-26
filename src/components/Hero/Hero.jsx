@@ -11,6 +11,7 @@ import FWDiag from "../../assets/FWDiag.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
 // import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
+import CookieBanner from "../CookieBanner/CookieBanner";
 
 const Hero = (props) => {
 
@@ -42,12 +43,7 @@ const Hero = (props) => {
                         />
                     </div>
                 <div className="hero__shows" id="shows">
-                    {/* decorative blended/parallax backdrop for Songkick (Show renders the widget) */}
-                    <section className="songkick-section" aria-label="Upcoming shows">
-                        <div className="songkick-inner">
-                            <Show />
-                        </div>
-                    </section>
+                     <Show />
                 </div>
                     <div className="hero__wall">
                         <img src={jOneInk} 
@@ -66,6 +62,7 @@ const Hero = (props) => {
                 </div>
                 <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
                 {/* <ScrollToTop className="hero__scroll" /> */}
+                <CookieBanner />
             </div>
         </div>
     );
