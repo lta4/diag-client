@@ -63,7 +63,7 @@ export default function CookieBanner() {
 const styles = {
     card: {
         position: "fixed",
-        bottom: "20px",
+        bottom: "10px",
         left: "20px",
         maxWidth: "360px",
         padding: "20px",
@@ -77,9 +77,9 @@ const styles = {
         transition: "all 0.3s ease",
     },
     text: {
-        fontSize: "0.9rem",
+        fontSize: "0.85rem",
         lineHeight: "1.4",
-        marginBottom: "14px",
+        marginBottom: "12px",
     },
     link: {
         color: "#7ab8ff",
