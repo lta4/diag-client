@@ -42,7 +42,12 @@ const Hero = (props) => {
                         />
                     </div>
                 <div className="hero__shows" id="shows">
-                    <Show />
+                    {/* decorative blended/parallax backdrop for Songkick (Show renders the widget) */}
+                    <section className="songkick-section" aria-label="Upcoming shows">
+                        <div className="songkick-inner">
+                            <Show />
+                        </div>
+                    </section>
                 </div>
                     <div className="hero__wall">
                         <img src={jOneInk} 
