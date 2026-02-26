@@ -64,7 +64,7 @@ const styles = {
     card: {
         position: "fixed",
         bottom: "10px",
-        left: "20px",
+        right: "6rem",
         maxWidth: "360px",
         padding: "20px",
         borderRadius: "16px",
