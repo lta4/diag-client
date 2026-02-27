@@ -4,10 +4,6 @@ import { links } from "../../data/data";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import BackButton from '../../components/BackButton/BackButton';
 import Banner from '../../assets/CDiagBanner.jpg';
-// import SDiagBanner from '../../assets/SDiagBanner.jpg';
-// import JFourteenSlate72p from '../../assets/jFourteenSlate72p.jpg';
-// import JFourteenSlate from '../../assets/jFourteenSlate.jpg';
-// import CDiagBanner from '../../assets/CDiagBanner.jpg';
 
 import { FaSpotify, FaApple, FaYoutube, FaSoundcloud } from 'react-icons/fa';
 import { SiBeatport } from 'react-icons/si';
@@ -18,6 +14,7 @@ function LinkTree() {
 
     return (
         <div className="linktree">
+            <BackButton label="Back to site" className="linktree__back-floating" />
             <div className="linktree__hero" style={{ backgroundImage: `url(${Banner})` }}>
                 <div className="linktree__hero-overlay" />
                 {isLive && (
@@ -48,7 +45,7 @@ function LinkTree() {
                     return <LinkButton key={index} title={link.title} url={link.url} Icon={Icon} style={style} />
                 })}
             </div>
-                    <BackButton label="Back to site" />
+                    {/* <BackButton label="Back to site" /> */}
             
         </div>
     );
