@@ -12,7 +12,7 @@
 
 .linktree__back-floating {
 	position: fixed;
-	top: 1rem;
+	top: .05rem;
 	left: 1rem;
 	z-index: 120;
 
