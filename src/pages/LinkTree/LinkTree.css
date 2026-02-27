@@ -109,16 +109,33 @@
 }
 
 .linktree__list {
-	width: 100%;
+	/* width: 100%; */
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: calc(var(--linktree-hero-height_ + 1.25rem));
+	padding: 0 0.75rem;
 	max-width: 720px;
 	display: flex;
 	flex-direction: column;
-	align-items: stretch;
-	/* margin-top: 2rem; */
-	padding: 0 0.5rem;
-	position: relative;
-	z-index: 60; /* below hero (60) but above page content */
-	background: linear-gradient(transparent, transparent);
+	align-items: center;
+	box-sizing: border-box;
+	/* position: relative; */
+	/* z-index: 60; */
+	/* background: linear-gradient(transparent, transparent); */
+}
+
+.linktree__list > * {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+@media (max-width: 520px) {
+	.linktree__list {
+		padding: 0 0.05rem;
+		margin-top: calc(var(--linktree-hero-height) + 0.75rem);
+	}
+	.linktree__list > * { max-width: 100%; }
 }
 
 .linktree__hero + .linktree__list { 
