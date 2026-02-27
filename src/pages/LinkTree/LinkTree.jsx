@@ -3,7 +3,8 @@ import "./LinkTree.css";
 import { links } from "../../data/data";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import BackButton from '../../components/BackButton/BackButton';
-import Banner from '../../assets/CDiagBanner.jpg';
+// import Banner from '../../assets/CDiagBanner.jpg';
+import Banner from "../../assets/SDiagBanner.jpg";
 
 import { FaSpotify, FaApple, FaYoutube, FaSoundcloud } from 'react-icons/fa';
 import { SiBeatport } from 'react-icons/si';
@@ -47,9 +48,7 @@ function LinkTree() {
 
                     return <LinkButton key={index} title={link.title} url={link.url} Icon={Icon} style={style} />
                 })}
-            </div>
-                    {/* <BackButton label="Back to site" /> */}
-            
+            </div>            
         </div>
     );
 };

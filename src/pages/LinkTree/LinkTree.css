@@ -5,16 +5,10 @@
 	min-height: 100vh;
 
 	background-size: cover;
-	background-position: center;
+	background-position: left center;
 	background-repeat: no-repeat;
 
-	/* background-attachment: fixed; */
-
-	/* filter: blur(35px);
-  	transform: scale(1.1);
-	opacity: 0.55; */
-
-	/* blur trick */
+	background-attachment: fixed;
 }
 
 .linktree::before {
@@ -22,10 +16,10 @@
 	position: fixed;
 	inset: 0;
 
-	backdrop-filter: blur(1px);
-	-webkit-backdrop-filter: blur(1px);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
 
-	/* background: rgba(0, 0, 0, 0.75); */
+	background: rgba(0, 0, 0, 0.15);
 
 	z-index: 0;
 }
