@@ -1,13 +1,38 @@
 /* LinkTree page layout */
+
 .linktree {
-	--linktree-hero-height: 41vh; /* default hero height variable on the container */
-	min-height: 60vh;
-	padding: 2rem 1rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	background: #000; /* keep entire page black */
+	position: relative;
+	min-height: 100vh;
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	/* background-attachment: fixed; */
+
+	/* filter: blur(35px);
+  	transform: scale(1.1);
+	opacity: 0.55; */
+
+	/* blur trick */
+}
+
+.linktree::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+
+	backdrop-filter: blur(1px);
+	-webkit-backdrop-filter: blur(1px);
+
+	/* background: rgba(0, 0, 0, 0.75); */
+
+	z-index: 0;
+}
+
+.linktree > * {
+	position: relative;
+	z-index: 1;
 }
 
 .linktree__back-floating {
@@ -44,7 +69,7 @@
 	min-height: var(--linktree-hero-height);
 	background-size: cover;
 	background-position: center;
-	position: fixed; /* fixed at top */
+	position: relative;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -55,11 +80,11 @@
 	box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
-.linktree__hero-overlay {
+/* .linktree__hero-overlay {
 	position: absolute; 
 	inset: 0; 
 	background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
-}
+} */
 
 .linktree__hero-inner { 
 	position: relative; 
@@ -97,11 +122,8 @@
 	align-items: stretch;
 	/* margin-top: 2rem; */
 	padding: 0 0.5rem;
-	/* sticky: keep list visible beneath the fixed hero as user scrolls */
-	position: sticky;
-	top: calc(var(--linktree-hero-height) + 1rem);
+	position: relative;
 	z-index: 60; /* below hero (60) but above page content */
-	/* ensure sticky area is visually separate when overlapping content */
 	background: linear-gradient(transparent, transparent);
 }
 
@@ -111,7 +133,7 @@
 
 /* ensure page content is pushed down so fixed hero doesn't overlap */
 .linktree { 
-	padding-top: calc(var(--linktree-hero-height) + 2.25rem); 
+	padding-top: 3rem 1.5rem;
 }
 
 @media (min-width: 900px) {
@@ -165,7 +187,6 @@
 
 /* ensure hero is positioned for absolute badge placement */
 .linktree__hero {
-  position: fixed;
-  /* position: relative; */
+  position: relative;
 }
 

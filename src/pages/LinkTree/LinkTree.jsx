@@ -13,9 +13,12 @@ function LinkTree() {
     const isLive = true;
 
     return (
-        <div className="linktree">
-            <BackButton label="Back to site" className="linktree__back-floating" />
-            <div className="linktree__hero" style={{ backgroundImage: `url(${Banner})` }}>
+        <div 
+            className="linktree"
+            style={{ backgroundImage: `url(${Banner})` }}
+        >
+            <BackButton label="Back to Site" className="linktree__back-floating" />
+            <div className="linktree__hero">
                 <div className="linktree__hero-overlay" />
                 {isLive && (
                     <div className="linktree__hero-badge">
