@@ -194,9 +194,10 @@
   gap: 0.6rem;
   padding: 0.28rem 0.6rem;
   border-radius: 999px;
-  /* background: transparent; */
+  background: transparent;
   background: rgba(255,20,60,0.08);
-  color: #ff4658;
+  /* color: #ff4658; */
+  color: yellow;
   font-weight: 800;
   font-size: 0.78rem;
   letter-spacing: 0.06em;
@@ -207,6 +208,7 @@
   width: 0.6rem;
   height: 0.6rem;
   background: #ff3b4e;
+  /* color: yellow; */
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255,59,78,0.6);
   animation: live-pulse 1.6s infinite;
