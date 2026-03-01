@@ -168,11 +168,24 @@
 
 /* Live indicator badge in the hero (compact, pulsing) */
 .linktree__hero-badge {
-  position: absolute;
-  top: 1rem;
+
+  position: fixed;
+  top: 0.5rem;
   right: 1rem;
-  z-index: 60;
-  pointer-events: none;
+  z-index: 120;
+  padding: 0.5rem 0.9rem;
+  /* border-radius: 999px; */
+  /* background: rgba(0, 0, 0, 0.45); */
+  /* border: 1px solid rgba(255, 255, 255, 0.08); */
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
+  pointer-events: auto;
+  transition: all 0.25s ease;
+}
+
+.linktree__hero-badge:hover {
+	/* background: rgba(255, 255, 255, 0.08); */
+	/* transform: translateY(-2px); */
 }
 
 .live-badge {
@@ -181,6 +194,7 @@
   gap: 0.6rem;
   padding: 0.28rem 0.6rem;
   border-radius: 999px;
+  /* background: transparent; */
   background: rgba(255,20,60,0.08);
   color: #ff4658;
   font-weight: 800;
