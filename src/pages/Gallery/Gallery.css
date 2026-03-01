@@ -19,6 +19,64 @@
     border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
+/* .gallery__hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery__hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("/SDiagBanner.jpg") no-repeat 15% center;
+  background-size: cover;
+  filter: brightness(0.6);
+  transition: transform 1.2s ease, filter 0.6s ease;
+}
+
+.gallery__hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/grain.png");
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.gallery__hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.hero-sub {
+  opacity: 0.6;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.hero-enter {
+  margin-top: 2rem;
+  opacity: 0;
+  letter-spacing: 4px;
+  transition: opacity 0.4s ease;
+}
+
+.gallery__hero:hover .gallery__hero-bg {
+  transform: scale(1.06);
+  filter: brightness(0.8);
+}
+
+.gallery__hero:hover .hero-enter {
+  opacity: 1;
+} */
+
+/* dkfjalkdsjf */
+
 .gallery__hero-inner { 
     text-align: center; 
     padding: 2rem 1rem; 
@@ -29,10 +87,10 @@
     margin: 0 0 0.5rem; 
 }
 
-.gallery__sub { 
+/* .gallery__sub { 
     margin: 0; 
     opacity: 0.85; 
-}
+} */
 
 .gallery__body {
     width: 100%; 

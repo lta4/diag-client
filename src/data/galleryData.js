@@ -1,4 +1,5 @@
 // Curated gallery images - import explicitly to avoid showing images used elsewhere
+
 // import jOne from "../assets/jOne.jpg";
 import jTwo from "../assets/jTwo.jpg";
 import jThree from "../assets/jThree.jpg";
@@ -9,6 +10,7 @@ import jEleven from "../assets/jEleven.jpeg";
 // import jThirteen from "../assets/jThirteen.jpg";
 // import jFifteen from "../assets/jFifteen.jpg";
 // import FWDiag from "../assets/FWDiag.jpg";
+import SDiagBanner from "../assets/SDiagBanner.jpg";
 
 const IMAGES = [
 //   { src: jOne, name: "jOne.jpg" },
@@ -21,6 +23,7 @@ const IMAGES = [
 //   { src: jThirteen, name: "jThirteen.jpg" },
 //   { src: jFifteen, name: "jFifteen.jpg" },
 //   { src: FWDiag, name: "FWDiag.jpg" },
+  { src: SDiagBanner, name: "SDiagBanner.jpg" },
 ];
 
 export default IMAGES;

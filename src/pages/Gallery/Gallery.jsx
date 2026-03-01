@@ -154,6 +154,17 @@ function Gallery() {
                 </div>
             </header>
 
+            {/* <header calssName="gallery__hero">
+                <div className="gallery__hero-bg">
+
+                <di className="gallery__herp-content">
+                    <h2>Diagnostic & Friends</h2>
+                    <p className="her-sub">Independent Electronic Lable</p>
+                    <div className="hero-enter">ENTER</div>
+                </di>
+                </div>
+            </header> */}
+
             <main className="gallery__body">
                 {/* masonry grid: uses CSS columns for an organic masonry layout */}
                 <div className="gallery__grid gallery__grid--masonry">
