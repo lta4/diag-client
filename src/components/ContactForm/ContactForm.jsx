@@ -32,7 +32,7 @@ function ContactForm() {
             </h2>
             <input
                 id="firstname"
-                type="firstname"
+                type="text"
                 name="firstname"
                 placeholder=" FIRST NAME"
                 className="contact__input"
@@ -44,7 +44,7 @@ function ContactForm() {
             />
             <input 
                 id="lastname"
-                type="lastname"
+                type="text"
                 name="lastname"
                 placeholder=" LAST NAME"
                 className="contact__input"
@@ -81,7 +81,7 @@ function ContactForm() {
                 errors={state.errors}
             />
 
-            <label className="contact__consent" style={{ display: "flex", justifyItems: "left", gap: "0.5rem", marginTop: "0.5rem" }}>
+            <label className="contact__consent">
                     <input
                         type="checkbox"
                         name="consent"
@@ -89,7 +89,7 @@ function ContactForm() {
                         onChange={(e) => setAgreed(e.target.checked)}
                         required
                     />
-                    <span style={{ fontSize: "0.9rem" }}>I agree to the Privacy Policy</span>
+                    <span style={{ fontSize: "0.9rem" }}>I agree to the <a href="/privacy" target="_blank" rel="noopener noreferrer" onClick={(e)=>e.stopPropagation()}>Privacy Policy</a></span>
                 </label>
             
                 <button type="submit" disabled={!agreed || state.submitting} className="contact__btn" style={{ marginTop: "0.75rem" }}>

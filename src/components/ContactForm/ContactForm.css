@@ -102,6 +102,37 @@ textarea, #message {
     /* font-size: 1rem; */
 }
 
+/* Consent / checkbox styling -------------------------------------------------- */
+.contact__consent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    width: 75%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    color: var(--text-color);
+    font-family: "EB Garamond";
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* Ensure checkboxes aren't styled by the broad `input` rules above */
+input[type="checkbox"] {
+    appearance: auto;
+    -webkit-appearance: checkbox;
+    width: 1.05rem;
+    height: 1.05rem;
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+/* Make the consent text tappable on mobile */
+.contact__consent span {
+    line-height: 1.2;
+    margin-top: 0.5rem;
+}
+
 .contact__btn {
     width: 90px;
     height: 40px;
