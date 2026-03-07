@@ -3,29 +3,27 @@ import { Link } from "react-router-dom";
 import "./NotFound.css";
 
 export default function NotFound() {
-    return (
-        <div className="notfound-container">
-            <h1 className="glitch" data-text="404">
-                404
-            </h1>
+  return (
+    <div className="notfound-container">
 
-            <h2 className="subtitle">
-                SIGNAL LOST
-            </h2>
+      <h1 className="glitch" data-text="404">
+        404
+      </h1>
 
-            <p className="description">
-                Looks like this page got lost in the mix.
-            </p>
+      <h2 className="subtitle">SIGNAL LOST</h2>
 
-            <div className="waveform">
-                {Array.from({ length: 400 }).map((_, i) => (
-                    <span key={i}></span>
-                ))}
-            </div>
+      <p className="description">
+        This page drifted off the frequency.
+      </p>
 
-            <Link to="/" className="home-button">
-                Return to Diagnostic
-            </Link>
-        </div>
-    );
+      <div className="pulse-line">
+        <div className="pulse"></div>
+      </div>
+
+      <Link to="/" className="home-button">
+        Return to Diagnostic
+      </Link>
+
+    </div>
+  );
 }
