@@ -136,7 +136,7 @@ function Term() {
                     <h2 className="policy__title">12. Contact Information</h2>
                     <p className="policy__desc">If you have questions about this Privacy Policy, please contact:</p>
                     <h3 className="policy__title">Email: <a href="mailto:andrew@fignewt.com">andrew@fignewt.com</a></h3>
-                    <h3 className="policy__title">Website <a href="andrew@fignewt.com">fignewt.com</a></h3>
+                    <h3 className="policy__title">Website: <a href="andrew@fignewt.com">fignewt.com</a></h3>
 
                     <hr className="hr" />
                     
