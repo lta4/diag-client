@@ -63,31 +63,40 @@
 /* PULSE LINE */
 
 .pulse-line {
-  width: 300px;
+  width: 320px;
   height: 2px;
-  background: white;
+  background: rgba(255,255,255,0.4);
   position: relative;
   margin-top: 40px;
   overflow: hidden;
 }
 
+/* moving spike */
+
 .pulse {
   position: absolute;
-  width: 60px;
-  height: 20px;
+  top: -9px;
+  width: 30px;
+  height: 18px;
+
   border-left: 2px solid white;
   border-bottom: 2px solid white;
+
   transform: rotate(-45deg);
-  animation: pulseMove 3s linear infinite;
+
+  animation: pulseMove 2.5s linear infinite;
 }
 
 @keyframes pulseMove {
+
   0% {
-    left: -60px;
+    left: -40px;
   }
+
   100% {
-    left: 100%;
+    left: 340px;
   }
+
 }
 
 /* BUTTON */
