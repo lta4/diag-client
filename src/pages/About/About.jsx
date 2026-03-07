@@ -4,20 +4,20 @@ import JThirteen from "../../assets/jThirteen.jpg";
 import JSixteen from "../../assets/jSixteen.jpg";
 import ScrollToTop from "react-scroll-to-top";
 
-const TIMELINE = [
-  { year: "2025", title: "New Album Release", text: "Released the latest studio album — a blend of live and electronic textures." },
-  { year: "2023", title: "Regional Tour", text: "Played 30+ shows across the west coast, focusing on immersive live sets." },
-  { year: "2021", title: "Debut EP", text: "Self-released a debut EP that landed on several indie playlists." },
-  { year: "2019", title: "Residency", text: "Started a monthly residency showcasing new talent and collaborative sets." }
-];
+// const TIMELINE = [
+//   { year: "2025", title: "New Album Release", text: "Released the latest studio album — a blend of live and electronic textures." },
+//   { year: "2023", title: "Regional Tour", text: "Played 30+ shows across the west coast, focusing on immersive live sets." },
+//   { year: "2021", title: "Debut EP", text: "Self-released a debut EP that landed on several indie playlists." },
+//   { year: "2019", title: "Residency", text: "Started a monthly residency showcasing new talent and collaborative sets." }
+// ];
 
-const SKILLS = [
-  { name: "Production", level: 0.92 },
-  { name: "Live Performance", level: 0.88 },
-  { name: "Mixing / Mastering", level: 0.78 },
-  { name: "Sound Design", level: 0.72 },
-  { name: "DJing", level: 0.85 }
-];
+// const SKILLS = [
+//   { name: "Production", level: 0.92 },
+//   { name: "Live Performance", level: 0.88 },
+//   { name: "Mixing / Mastering", level: 0.78 },
+//   { name: "Sound Design", level: 0.72 },
+//   { name: "DJing", level: 0.85 }
+// ];
 
 // Stats data (bullet 4)
 const STATS = [
@@ -124,7 +124,7 @@ function About() {
                 </section> */}
 
                 {/* Skills / badges */}
-                <section className="about__skills" aria-labelledby="skills-title">
+                {/* <section className="about__skills" aria-labelledby="skills-title">
                  <h2 id="skills-title" className="skills__title">Skills</h2>
                  <div className="skills__grid">
                    {SKILLS.map((s) => (
@@ -145,7 +145,7 @@ function About() {
                      </div>
                    ))}
                  </div>
-               </section>
+               </section> */}
 
                 {/** Profile Section */}
                 <section className="profile">
