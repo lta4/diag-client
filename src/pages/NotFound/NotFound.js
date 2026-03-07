@@ -17,7 +17,7 @@ export default function NotFound() {
                 Looks like this page got lost in the mix.
             </p>
 
-            <div>
+            <div className="waveform">
                 {Array.from({ length: 20 }).map((_, i) => {
                     <span key={i}></span>
                 })}
