@@ -14,7 +14,7 @@ export default function NotFound() {
             </h2>
 
             <p className="description">
-                Looks like this page got lost in the mix. Tis page drifted off the frequency.
+                Looks like this page got lost in the mix.
             </p>
 
             <div>
