@@ -15,6 +15,7 @@ import Video from "./pages/Video/Video";
 import Privacy from "./pages/Privacy/Privacy";
 import Term from "./pages/Term/Term";
 import CookieBanner from "./components/CookieBanner/CookieBanner";
+import NotFound from "./pages/NotFound/NotFound";
  
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
             <Route element={<MinimalLayout />}>
               <Route path="/LinkTree" element={<LinkTree />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
         {/* <ScrollRestoration
