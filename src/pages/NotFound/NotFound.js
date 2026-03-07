@@ -18,9 +18,9 @@ export default function NotFound() {
             </p>
 
             <div className="waveform">
-                {Array.from({ length: 20 }).map((_, i) => {
+                {Array.from({ length: 20 }).map((_, i) => (
                     <span key={i}></span>
-                })}
+                ))}
             </div>
 
             <Link to="/" className="home-button">
