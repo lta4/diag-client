@@ -1,41 +1,112 @@
 .notfound-container {
-    height: 100vh;
-    background: #000;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
-.notfound-code {
-    font-size: 120px;
-    margin: 0;
-    letter-spacing: 5px;
+/* GLITCH TEXT */
+
+.glitch {
+  font-size: 120px;
+  position: relative;
+  letter-spacing: 5px;
 }
 
-.notfound-title {
-    font-size: 28px;
-    margin-top: 10px;
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
 }
 
-.notfound-text {
-    margin-top: 10px;
-    opacity: 0.7;
+.glitch::before {
+  animation: glitchTop 2s infinite linear;
+  color: red;
+  clip-path: inset(0 0 50% 0);
 }
 
-.notfound-button {
-    margin-top: 30px;
-    padding: 12px 24px;
-    border: 1px solid white;
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
+.glitch::after {
+  animation: glitchBottom 1.5s infinite linear;
+  color: cyan;
+  clip-path: inset(50% 0 0 0);
 }
 
-.notfound-button:hover {
-    background: white;
-    color: black;
+@keyframes glitchTop {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+  0% { transform: translate(0); }
+  20% { transform: translate(2px, 2px); }
+  40% { transform: translate(-2px, -1px); }
+  60% { transform: translate(1px, -2px); }
+  80% { transform: translate(-1px, 2px); }
+  100% { transform: translate(0); }
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+
+.description {
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+/* WAVEFORM */
+
+.waveform {
+  display: flex;
+  gap: 5px;
+  margin-top: 40px;
+}
+
+.waveform span {
+  width: 4px;
+  height: 20px;
+  background: white;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.waveform span:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.waveform span:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0% { height: 10px; }
+  50% { height: 40px; }
+  100% { height: 10px; }
+}
+
+/* BUTTON */
+
+.home-button {
+  margin-top: 40px;
+  padding: 12px 28px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.home-button:hover {
+  background: white;
+  color: black;
 }
