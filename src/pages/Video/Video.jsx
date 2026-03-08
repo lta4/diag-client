@@ -104,7 +104,7 @@ function Plans() {
 
     return (
             <div className="video" style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div className="video__hero" style={{ backgroundImage: `url(${JThree})` }}>
+                {/* <div className="video__hero" style={{ backgroundImage: `url(${JThree})` }}>
                     <div className="video__hero-overlay" />
                     <div className={`video__hero-content ${mounted ? 'is-mounted' : ''}`}>
                         <h2 className="video__hero-title">Live Performance</h2>
@@ -121,12 +121,16 @@ function Plans() {
                             <a className="stream-button" href="/LinkTree" aria-label="Stream Diagnostic on streaming platforms">Stream</a>
                         </div>
                     </div>
-                </div>
-                <div className="video__phrase">
+                </div> */}
+                {/* <div className="video__phrase">
                     <h2 className="video__phrase-text">Featured Video</h2>
-                </div>
+                </div> */}
                 <div className="video__container" ref={videoRef} id="featured-video">
                 <div className="video__container--media">
+                  <div className="video__title-overlay">
+                    <h1>DIAGNOSTIC</h1>
+                    <p>LIVE SET</p>
+                  </div>
                     {/* computedEmbed applies start/autoplay/cc params */}
                     <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played} />
 
