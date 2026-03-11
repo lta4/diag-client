@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Video.css";
 import BG from "../../assets/BGbackground.png";
 import JFour from "../../assets/jFour.jpg";
-import JThree from "../../assets/jThree.jpg";
+// import JThree from "../../assets/jThree.jpg";
 import ScrollToTop from "react-scroll-to-top";
 import FeaturedMix from '../../components/FeaturedMix/FeaturedMix';
 import StickyPlayer from "../../components/StickyPlayer/StickyPlayer";
@@ -82,13 +82,13 @@ function Plans() {
     };
     // --- end share/embed/download ---
     
-    const jumpToChapter = (c) => {
-      setStartTime(c.time);
-      setPlayingTitle(`Featured — ${c.label}`);
-      setPlayed(true);
-      if (videoRef.current) videoRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
-    };
-    const toggleCaptions = () => setCaptionsOn((v) => !v);
+    // const jumpToChapter = (c) => {
+    //   setStartTime(c.time);
+    //   setPlayingTitle(`Featured — ${c.label}`);
+    //   setPlayed(true);
+    //   if (videoRef.current) videoRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    // };
+    // const toggleCaptions = () => setCaptionsOn((v) => !v);
     // --- end captions + chapters ---
     
     useEffect(() => {
