@@ -106,7 +106,10 @@ function Plans() {
     // };
 
     return (
-            <div className="video" style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            // <div className="video" style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="video">
+              <div className="gallery__parallax">
+              <div className="gallery__content">
 
                 {/* <div className="video__hero" style={{ backgroundImage: `url(${JThree})` }}>
                     <div className="video__hero-overlay" />
@@ -214,6 +217,8 @@ function Plans() {
                      poster={Poster}          /* optional thumbnail */
                      title={playingTitle}
                  />
+                 </div>
+                </div>
              </div>
          );
      };
