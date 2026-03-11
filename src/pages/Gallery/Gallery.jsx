@@ -139,6 +139,8 @@ function Gallery() {
 
     return (
         <div className="gallery">
+            <div className="gallery__parallax">
+            <div className="gallery__content">
             <header className="gallery__hero">
                 <div className="gallery__hero-inner">
                     <h2 className="gallery__title gallery__title--typing">
@@ -154,14 +156,14 @@ function Gallery() {
                 </div>
             </header>
 
-            {/* <header calssName="gallery__hero">
+            {/* <header className="gallery__hero">
                 <div className="gallery__hero-bg">
 
-                <di className="gallery__herp-content">
+                <div className="gallery__hero-content">
                     <h2>Diagnostic & Friends</h2>
-                    <p className="her-sub">Independent Electronic Lable</p>
+                    <p className="hero-sub">Independent Electronic Lable</p>
                     <div className="hero-enter">ENTER</div>
-                </di>
+                </div>
                 </div>
             </header> */}
 
@@ -203,6 +205,8 @@ function Gallery() {
                 </div>
             )}
             <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
+            </div>
+            </div>
         </div>
     );
 }

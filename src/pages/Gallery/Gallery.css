@@ -9,6 +9,34 @@
     color: #e6e6e6;
 }
 
+.gallery__parallax {
+  background-image: url("../../assets/BGbackground.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* dark overlay so images stand out */
+.gallery__parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.55);
+}
+
+/* gallery content sits above overlay */
+.gallery__content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem;
+}
+
+
+
+
+
 .gallery__hero {
     width: 100%;
     height: var(--gallery-hero-height);

@@ -13,13 +13,13 @@ import FWDiag from "../assets/FWDiag.jpg";
 // import SDiagBanner from "../assets/SDiagBanner.jpg";
 
 const IMAGES = [
-  { src: jOne, name: "Maverick's" },
-  { src: jTwo, name: "Sycamore Den" },
-  { src: jThree, name: "Sycamore Den" },
-  { src: jFour, name: "Mavericks's" },
+  { src: jOne, name: "San Diego @ Maverick's" },
+  { src: jTwo, name: "San Diego @ Sycamore Den" },
+  { src: jThree, name: "San Diego @ Sycamore Den" },
+  { src: jFour, name: "San Diego @ Mavericks's" },
   // { src: jFive, name: "jFive.jpg" },
-  { src: jSix, name: "Fish Tank" },
-  { src: jEleven, name: "Mavericks's" },
+  { src: jSix, name: "San Diego @ Fish Tank" },
+  { src: jEleven, name: "San Diego @ Mavericks's" },
   { src: jThirteen, name: "Jose 1" },
   { src: jFifteen, name: "Jose 2" },
   { src: FWDiag, name: "Diagnostic" },
