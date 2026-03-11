@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Video.css";
-import BG from "../../assets/BGbackgrond.png";
+import BG from "../../assets/BGbackground.png";
 import JFour from "../../assets/jFour.jpg";
 import JThree from "../../assets/jThree.jpg";
 import ScrollToTop from "react-scroll-to-top";
@@ -21,18 +21,20 @@ function Plans() {
     const [played, setPlayed] = useState(false);
     const [mounted, setMounted] = useState(false);
     const [playingTitle, setPlayingTitle] = useState("Featured Video");
+
     // --- captions + chapters ---
-    const CHAPTERS = [
-      { label: "Intro / Build", time: 0 },
-      { label: "Peak — Groove", time: 120 },
-      { label: "Late Night Drop", time: 600 },
-      { label: "Outro", time: 1800 }
-    ];
+    // const CHAPTERS = [
+    //   { label: "Intro / Build", time: 0 },
+    //   { label: "Peak — Groove", time: 120 },
+    //   { label: "Late Night Drop", time: 600 },
+    //   { label: "Outro", time: 1800 }
+    // ];
+
     const [startTime, setStartTime] = useState(537);
     const [captionsOn, setCaptionsOn] = useState(false);
 
     const baseEmbed = "https://www.youtube.com/embed/SK6WN-y5P-0";
-    const computedEmbed = `${baseEmbed}?start=${startTime || 0}&autoplay=${played ? 1 : 0}${captionsOn ? "&cc_load_policy=1" : ""}`;
+    const computedEmbed = `${baseEmbed}?start=${startTime||0}&autoplay=${played?1:0}${captionsOn ? "&cc_load_policy=1" : ""}${played ? "&mute=1" : ""}`;
 
     // --- share / embed / download / social CTAs ---
     const [embedOpen, setEmbedOpen] = useState(false);
@@ -95,15 +97,17 @@ function Plans() {
         else setMounted(false);
     }, []);
 
-    const handleWatch = () => {
-        setPlayed(true);
-        if (videoRef.current) {
-            videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    };
+    /* Banner */
+    // const handleWatch = () => {
+    //     setPlayed(true);
+    //     if (videoRef.current) {
+    //         videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    //     }
+    // };
 
     return (
             <div className="video" style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+
                 {/* <div className="video__hero" style={{ backgroundImage: `url(${JThree})` }}>
                     <div className="video__hero-overlay" />
                     <div className={`video__hero-content ${mounted ? 'is-mounted' : ''}`}>
@@ -122,9 +126,11 @@ function Plans() {
                         </div>
                     </div>
                 </div> */}
+
                 {/* <div className="video__phrase">
                     <h2 className="video__phrase-text">Featured Video</h2>
                 </div> */}
+
                 <div className="video__container" ref={videoRef} id="featured-video">
                 <div className="video__container--media">
                   <div className="video__title-overlay">
@@ -166,7 +172,8 @@ function Plans() {
                               <strong>Embed</strong>
                               <button className="video__embed-close" onClick={() => setEmbedOpen(false)} aria-label="Close embed panel">✕</button>
                             </div>
-                            <textarea readOnly value={embedCode} className="video__embed-text" rows={3} />
+                            <label htmlFor="embed-code" className="visually-hidden">Embed code</label>
+                            <textarea id="embed-code" readOnly value={embedCode} className="video__embed-text" rows={3} />
                             <div className="video__embed-actions">
                               <button className="video__action" onClick={copyEmbed} aria-label="Copy embed code">{embedCopied ? "Copied" : "Copy"}</button>
                             </div>
@@ -175,7 +182,7 @@ function Plans() {
                       </div>
                     </div>
 
-                    <div className="video__controls-extra">
+                    {/* <div className="video__controls-extra">
                       <button className={`video__btn ${captionsOn ? 'is-active' : ''}`} onClick={toggleCaptions} aria-pressed={captionsOn} aria-label="Toggle captions">
                         CC
                       </button>
@@ -186,7 +193,8 @@ function Plans() {
                           </button>
                         ))}
                       </nav>
-                    </div>
+                    </div> */}
+
                  </div>
                  </div>
                 <div className="video__meta">

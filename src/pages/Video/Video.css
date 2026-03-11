@@ -125,7 +125,7 @@
 
 .video__title-overlay {
   position: absolute;
-  bottom: 9rem;
+  bottom: 6rem;
   left: 40px;
   z-index: 5;
   color: white;
@@ -380,6 +380,7 @@
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.04);
   box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+  max-width: 360px;
 }
 
 /* smaller square action buttons for overlay */
