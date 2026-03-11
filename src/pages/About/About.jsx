@@ -86,7 +86,7 @@ function About() {
                         </p>
                         <div className="about__ctas">
                             {/* <a className="btn btn--primary" href="/resume.pdf" download>Download Resume</a> */}
-                            <a className="btn" href="/contact">Contact</a>
+                            <a className="btn" href="/inquire">Contact</a>
                         </div>
                     </div>
                 </section>

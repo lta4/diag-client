@@ -121,9 +121,11 @@
   margin-top: 4rem;
 } */
 
+/******* Video Title Overlay **********/
+
 .video__title-overlay {
   position: absolute;
-  bottom: 40px;
+  bottom: 9rem;
   left: 40px;
   z-index: 5;
   color: white;
