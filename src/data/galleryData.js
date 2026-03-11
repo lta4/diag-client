@@ -13,16 +13,16 @@ import FWDiag from "../assets/FWDiag.jpg";
 // import SDiagBanner from "../assets/SDiagBanner.jpg";
 
 const IMAGES = [
-  { src: jOne, name: "jOne.jpg" },
-  { src: jTwo, name: "jTwo.jpg" },
-  { src: jThree, name: "jThree.jpg" },
-  { src: jFour, name: "jFour.jpg" },
+  { src: jOne, name: "Maverick's" },
+  { src: jTwo, name: "Sycamore Den" },
+  { src: jThree, name: "Sycamore Den" },
+  { src: jFour, name: "Mavericks's" },
   // { src: jFive, name: "jFive.jpg" },
-  { src: jSix, name: "jSix.jpeg" },
-  { src: jEleven, name: "jEleven.jpeg" },
-  { src: jThirteen, name: "jThirteen.jpg" },
-  { src: jFifteen, name: "jFifteen.jpg" },
-  { src: FWDiag, name: "FWDiag.jpg" },
+  { src: jSix, name: "Fish Tank" },
+  { src: jEleven, name: "Mavericks's" },
+  { src: jThirteen, name: "Jose 1" },
+  { src: jFifteen, name: "Jose 2" },
+  { src: FWDiag, name: "Diagnostic" },
   // { src: SDiagBanner, name: "SDiagBanner.jpg" },
 ];
 

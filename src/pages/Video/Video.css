@@ -282,6 +282,7 @@
   font-weight: 800;
   transition: transform .12s ease, background .12s ease, box-shadow .12s;
 }
+
 .video__btn.is-active {
   background: linear-gradient(90deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
   box-shadow: 0 8px 20px rgba(0,0,0,0.35);
