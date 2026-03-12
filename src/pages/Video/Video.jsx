@@ -108,8 +108,8 @@ function Plans() {
     return (
             // <div className="video" style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="video">
-              <div className="gallery__parallax">
-              <div className="gallery__content">
+              <div className="video__parallax">
+              <div className="video__content">
 
                 {/* <div className="video__hero" style={{ backgroundImage: `url(${JThree})` }}>
                     <div className="video__hero-overlay" />
