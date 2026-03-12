@@ -251,12 +251,14 @@
 .gallery__modal {
     position: fixed;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  /* start modal content below the fixed header so controls are visible */
+  align-items: flex-start;
+  justify-content: center;
     background: rgba(6,7,7,0.78);
-    z-index: 1200;
-    padding: 2rem;
+  /* keep modal above header */
+  z-index: 1200;
+  padding: calc(var(--header-height) + 1.25rem) 2rem 2rem;
 }
 .gallery__modal-inner {
     position: relative;
@@ -268,7 +270,17 @@
     justify-content: center;
     flex-direction: column;
 }
-.gallery__modal-img { max-width: 100%; max-height: 80vh; border-radius: 6px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+.gallery__modal-img {
+  /* cap image width so it doesn't grow too large on wide screens */
+  max-width: min(1000px, 90vw);
+  width: 100%;
+  height: auto;
+  /* limit height so image won't reach into the header area */
+  max-height: calc(80vh - var(--header-height));
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
 
 .gallery__modal-caption { color: rgba(255,255,255,0.9); margin-top: 0.6rem; font-weight: 600; }
 .gallery__modal-close,
@@ -287,7 +299,7 @@
     cursor: pointer;
 }
 
-.gallery__modal-close { right: -8px; top: -8px; }
+.gallery__modal-close { right: 12px; top: 12px; background: rgba(0,0,0,0.6); color: #fff; }
 .gallery__modal-prev { left: -14px; top: 50%; transform: translateY(-50%); }
 .gallery__modal-next { right: -14px; top: 50%; transform: translateY(-50%); }
 
