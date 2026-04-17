@@ -459,37 +459,53 @@
 /* accessibility helpers */
 .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px); white-space: nowrap; }
 
-/* Consolidated responsive breakpoints: desktop / tablet / mobile. Placed last to override above rules. */
+/* -------------------------- Media queries -------------------------- */
+/* All @media rules are collected here so they appear at the end of the file. */
 
+/* Reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .video__hero-content { transition: none !important; transform: none !important; }
+}
+
+/* Desktop: >= 1024px */
 @media (min-width: 1024px) {
-  /* Desktop: keep row layout with centered media */
   .video__container { flex-direction: row; padding: 6rem 0.5rem; }
   .video__container--media { max-width: 900px; }
   .video__title-overlay { left: 40px; bottom: 3.5rem; }
 }
 
+/* Tablet: 720px — 1023px */
 @media (min-width: 720px) and (max-width: 1023px) {
-  /* Tablet: slightly tighter spacing but keep centered media */
   .video__container { flex-direction: row; padding: 4rem 0.75rem; width: 95%; }
   .video__container--media { max-width: 760px; }
   .video__title-overlay { left: 28px; bottom: 3rem; }
 }
 
+/* Mobile: <= 719px */
 @media (max-width: 719px) {
-  /* Mobile: stack media above meta and center content */
   .video__container { flex-direction: column; padding: 1.25rem 0.6rem; align-items: center; }
   .video__container--media { width: 100%; max-width: 100%; padding-bottom: 56.25%; }
   .video__title-overlay, .video__container--media .video__title-overlay { left: 16px; bottom: 20px; }
   .video__title-overlay h1 { font-size: 20px; letter-spacing: 4px; }
   .video__meta { text-align: center; padding: 0 1rem; margin: 0.5rem auto 2rem; }
 
+  /* Chapters / controls stacking */
+  .video__controls-extra { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  .video__chapter { width: 100%; text-align: center; }
+
   /* Move CTA overlay beneath the media and render the stack horizontally */
   .video__cta-overlay { position: static; display: flex; justify-content: center; width: 100%; margin-top: 0.75rem; }
   .video__cta-stack { position: static; display: flex; flex-direction: row; justify-content: center; gap: 0.6rem; align-items: center; flex-wrap: wrap; width: auto; max-width: 520px; margin: 0.25rem auto; background: transparent; box-shadow: none; padding: 0; border: none; }
-
   .video__action--small { width: auto; height: auto; padding: 0.45rem 0.6rem; }
   .video__action { white-space: nowrap; }
   .video__social-ctas--compact { margin-top: 0; }
 }
+
+/* Extra small screens: <= 480px tweaks */
+@media (max-width: 480px) {
+  .video__container { padding: 1.25rem 0.5rem; }
+  .video__container--media { padding-bottom: 56.25%; }
+}
+
 
 
