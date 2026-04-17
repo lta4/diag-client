@@ -192,7 +192,7 @@
   max-width: 850px;
   width: 100%;
   margin: 0.5rem auto 4rem;
-  /* padding: 0 1rem; */
+  padding: 0 1rem;
   text-align: left;
 }
 
@@ -239,12 +239,7 @@
   }
 }
 
-.video__meta {
-  max-width: 850px;
-  margin: 0.5rem auto 4rem;
-  padding: 0 1rem;
-  text-align: left;
-}
+/* (duplicate .video__meta removed) */
 
 .video__meta-title { 
   /* font-size: 1.25rem; 

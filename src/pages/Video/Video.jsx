@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Video.css";
-import BG from "../../assets/BGbackground.png";
 import JFour from "../../assets/jFour.jpg";
 // import JThree from "../../assets/jThree.jpg";
 import ScrollToTop from "react-scroll-to-top";
@@ -8,7 +7,7 @@ import FeaturedMix from '../../components/FeaturedMix/FeaturedMix';
 import StickyPlayer from "../../components/StickyPlayer/StickyPlayer";
 import Poster from "../../assets/jFifteenInk.jpg"; // replace with your poster or remove if absent
 import SampleVideo from "../../assets/NOCTURNA.mp3"; // replace with your video or remove if absent
-import { FaTwitter, FaInstagram, FaYoutube, FaDownload, FaShareAlt, FaLink } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaDownload, FaShareAlt, FaLink } from "react-icons/fa";
 
 function Plans() {
 
@@ -18,9 +17,9 @@ function Plans() {
         window.scrollTo(0, 0);
     }, []);
 
-    const [played, setPlayed] = useState(false);
-    const [mounted, setMounted] = useState(false);
-    const [playingTitle, setPlayingTitle] = useState("Featured Video");
+  const [played] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [playingTitle] = useState("Featured Video");
 
     // --- captions + chapters ---
     // const CHAPTERS = [
@@ -30,16 +29,16 @@ function Plans() {
     //   { label: "Outro", time: 1800 }
     // ];
 
-    const [startTime, setStartTime] = useState(537);
-    const [captionsOn, setCaptionsOn] = useState(false);
+  const [startTime] = useState(537);
+  const [captionsOn] = useState(false);
 
     const baseEmbed = "https://www.youtube.com/embed/SK6WN-y5P-0";
     const computedEmbed = `${baseEmbed}?start=${startTime||0}&autoplay=${played?1:0}${captionsOn ? "&cc_load_policy=1" : ""}${played ? "&mute=1" : ""}`;
 
     // --- share / embed / download / social CTAs ---
-    const [embedOpen, setEmbedOpen] = useState(false);
-    const [shareCopied, setShareCopied] = useState(false);
-    const [embedCopied, setEmbedCopied] = useState(false);
+  const [embedOpen, setEmbedOpen] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
+  const [embedCopied, setEmbedCopied] = useState(false);
 
     const pageUrl = window.location.origin + "/Video#featured-video";
     const shareUrl = computedEmbed || pageUrl;
