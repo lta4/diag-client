@@ -82,7 +82,10 @@ function About() {
                     <div className="about__intro">
                         <h1 className="about__title">Jose Flores — Producer &amp; Live Performer</h1>
                         <p className="about__lead">
-                            I craft immersive soundscapes and raw live energy for stage and studio. Shows, collabs, and commissions available.
+                            I craft immersive soundscapes and raw live energy for stage and studio.
+                        </p>
+                        <p className="about__lead">
+                            Shows, collabs, and commissions available.
                         </p>
                         <div className="about__ctas">
                             {/* <a className="btn btn--primary" href="/resume.pdf" download>Download Resume</a> */}

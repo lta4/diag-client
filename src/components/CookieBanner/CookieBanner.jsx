@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaCookieBite } from "react-icons/fa";
+import "./CookieBanner.css";
 
 // export default function CookieBanner() {
 //     const [visible, setVisible] = useState(false);
