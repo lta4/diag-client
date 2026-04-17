@@ -177,6 +177,8 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto; /* center the container */
+  justify-content: center; /* keep media centered horizontally */
+  align-items: flex-start;
 }
 
 .video__container--media {
@@ -185,7 +187,15 @@
   height: 0;
   width: 100%;
   max-width: 850px;
-  margin: 0 auto;
+  margin: 0 auto; /* ensure media stays centered inside container */
+}
+
+/* Make sure the title overlay anchors to the media box and never the page */
+.video__container--media .video__title-overlay {
+  position: absolute;
+  left: 40px;
+  bottom: 3.5rem;
+  pointer-events: none;
 }
 
 .video__meta {
@@ -448,5 +458,31 @@
 
 /* accessibility helpers */
 .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px); white-space: nowrap; }
+
+/* Consolidated responsive breakpoints: desktop / tablet / mobile. Placed last to override above rules. */
+
+@media (min-width: 1024px) {
+  /* Desktop: keep row layout with centered media */
+  .video__container { flex-direction: row; padding: 6rem 0.5rem; }
+  .video__container--media { max-width: 900px; }
+  .video__title-overlay { left: 40px; bottom: 3.5rem; }
+}
+
+@media (min-width: 720px) and (max-width: 1023px) {
+  /* Tablet: slightly tighter spacing but keep centered media */
+  .video__container { flex-direction: row; padding: 4rem 0.75rem; width: 95%; }
+  .video__container--media { max-width: 760px; }
+  .video__title-overlay { left: 28px; bottom: 3rem; }
+}
+
+@media (max-width: 719px) {
+  /* Mobile: stack media above meta and center content */
+  .video__container { flex-direction: column; padding: 1.25rem 0.6rem; align-items: center; }
+  .video__container--media { width: 100%; max-width: 100%; padding-bottom: 56.25%; }
+  .video__title-overlay, .video__container--media .video__title-overlay { left: 16px; bottom: 20px; }
+  .video__title-overlay h1 { font-size: 20px; letter-spacing: 4px; }
+  .video__meta { text-align: center; padding: 0 1rem; margin: 0.5rem auto 2rem; }
+  .video__cta-overlay, .video__cta-stack { position: static; width: 100%; box-shadow: none; background: transparent; padding: 0; border: none; align-items: center; }
+}
 
 
