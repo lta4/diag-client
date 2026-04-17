@@ -482,7 +482,14 @@
   .video__title-overlay, .video__container--media .video__title-overlay { left: 16px; bottom: 20px; }
   .video__title-overlay h1 { font-size: 20px; letter-spacing: 4px; }
   .video__meta { text-align: center; padding: 0 1rem; margin: 0.5rem auto 2rem; }
-  .video__cta-overlay, .video__cta-stack { position: static; width: 100%; box-shadow: none; background: transparent; padding: 0; border: none; align-items: center; }
+
+  /* Move CTA overlay beneath the media and render the stack horizontally */
+  .video__cta-overlay { position: static; display: flex; justify-content: center; width: 100%; margin-top: 0.75rem; }
+  .video__cta-stack { position: static; display: flex; flex-direction: row; justify-content: center; gap: 0.6rem; align-items: center; flex-wrap: wrap; width: auto; max-width: 520px; margin: 0.25rem auto; background: transparent; box-shadow: none; padding: 0; border: none; }
+
+  .video__action--small { width: auto; height: auto; padding: 0.45rem 0.6rem; }
+  .video__action { white-space: nowrap; }
+  .video__social-ctas--compact { margin-top: 0; }
 }
 
 
