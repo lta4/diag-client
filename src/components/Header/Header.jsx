@@ -90,18 +90,18 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="LinkTree" className={linkClassName} onClick={closeMobileMenu}>
-                                    Stream
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="Gallery" className={linkClassName} onClick={closeMobileMenu}>
+                                <NavLink to="/Gallery" className={linkClassName} onClick={closeMobileMenu}>
                                     Gallery
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/Video" className={linkClassName} onClick={closeMobileMenu}>
-                                    Video
+                                    Diagnostic & Friends
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="Linktree" className={linkClassName} onClick={closeMobileMenu}>
+                                    Stream
                                 </NavLink>
                             </li>
                             <li>
@@ -132,11 +132,6 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/LinkTree" className={linkClassName}>
-                                Stream
-                            </NavLink>
-                        </li>
-                        <li>
                             <NavLink to="/Gallery" className={linkClassName}>
                                 Gallery
                             </NavLink>
@@ -144,6 +139,11 @@ const Header = () => {
                         <li>
                             <NavLink to="/Video" className={linkClassName}>
                                 Diagnostic & Friends
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="Linktree" className={linkClassName}>
+                                Stream
                             </NavLink>
                         </li>
                         <li>
