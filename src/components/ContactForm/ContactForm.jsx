@@ -14,13 +14,11 @@ function ContactForm() {
         }
 
     const onSubmit = (e) => {
-        if (!agreed) {
-            e.preventDefault();
-            //simple UX feedback -  replace toast if you have one
-            alert("You must agree to the Privacy Policy before submitting.");
-            return;
-        }
-        //pass event to Formspree handle
+        // if (!agreed) {
+        //     e.preventDefault();
+        //     alert("You must agree to the Privacy Policy before submitting.");
+        //     return;
+        // }
         handleSubmit(e);
     }
 
@@ -80,21 +78,23 @@ function ContactForm() {
                 field="message"
                 errors={state.errors}
             />
-
-            <label className="contact__consent">
-                    <input
-                        type="checkbox"
-                        name="consent"
-                        checked={agreed}
-                        onChange={(e) => setAgreed(e.target.checked)}
-                        required
-                    />
-                    <span style={{ fontSize: "0.9rem" }}>I agree to the <a href="/privacy" target="_blank" rel="noopener noreferrer" onClick={(e)=>e.stopPropagation()}>Privacy Policy</a></span>
-                </label>
             
-                <button type="submit" disabled={!agreed || state.submitting} className="contact__btn" style={{ marginTop: "0.75rem" }}>
+            {/* <label className="contact__consent">
+                <input
+                    type="checkbox"
+                    name="consent"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    required
+                />
+                <span style={{ fontSize: "0.9rem" }}>I agree to the 
+                    <a href="/privacy" target="_blank" rel="noopener noreferrer" onClick={(e)=>e.stopPropagation()}>Privacy Policy</a>
+                </span>
+            </label>
+            
+            <button type="submit" disabled={!agreed || state.submitting} className="contact__btn" style={{ marginTop: "0.75rem" }}>
                     {state.submitting ? "Sending..." : "Submit"}
-                </button>
+            </button> */}
             </form>
         </div>
     );
