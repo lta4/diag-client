@@ -21,6 +21,21 @@ export default function CookieBanner() {
     try { localStorage.setItem('cookieConsent', 'accepted'); } catch (e) {}
     setAccepted(true);
     setVisible(false);
+
+    // analytics: push consent event then initialize analytics if available
+    try {
+      if (window && window.dataLayer && Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: 'cookie_consent', action: 'accept', timestamp: new Date().toISOString() });
+      }
+      if (window && typeof window.gtag === 'function') {
+        window.gtag('event', 'cookie_consent', { consent_action: 'accept' });
+      }
+      // call a site-provided initializer if present (non-breaking)
+      if (window && typeof window.initializeAnalytics === 'function') {
+        try { window.initializeAnalytics(); } catch (e) { /* ignore */ }
+      }
+    } catch (e) { /* ignore analytics errors */ }
+
     window.dispatchEvent(new Event('cookieAccepted'));
   }
 
@@ -28,6 +43,21 @@ export default function CookieBanner() {
     try { localStorage.setItem('cookieConsent', 'declined'); } catch (e) {}
     setAccepted(false);
     setVisible(false);
+
+    // analytics: push decline event and optionally disable analytics
+    try {
+      if (window && window.dataLayer && Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: 'cookie_consent', action: 'decline', timestamp: new Date().toISOString() });
+      }
+      if (window && typeof window.gtag === 'function') {
+        window.gtag('event', 'cookie_consent', { consent_action: 'decline' });
+      }
+      if (window && typeof window.disableAnalytics === 'function') {
+        try { window.disableAnalytics(); } catch (e) { /* ignore */ }
+      }
+    } catch (e) { /* ignore analytics errors */ }
+
+    window.dispatchEvent(new Event('cookieDeclined'));
   }
 
   if (!visible) return null;

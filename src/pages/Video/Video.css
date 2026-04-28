@@ -207,6 +207,13 @@
 }
 
 /* Responsive adjustments for video page */
+@media (max-width: 1440px) {
+  .video__title-overlay {
+    bottom: 20px;
+  }
+
+}
+
 @media (max-width: 900px) {
 
   .video__container { 
