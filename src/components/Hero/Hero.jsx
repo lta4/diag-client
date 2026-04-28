@@ -11,7 +11,6 @@ import FWDiag from "../../assets/FWDiag.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
 // import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
-import CookieBanner from "../CookieBanner/CookieBanner";
 
 const Hero = (props) => {
 
@@ -62,7 +61,7 @@ const Hero = (props) => {
                 </div>
                 <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
                 {/* <ScrollToTop className="hero__scroll" /> */}
-                <CookieBanner />
+                {/* CookieBanner rendered globally in MainLayout */}
             </div>
         </div>
     );

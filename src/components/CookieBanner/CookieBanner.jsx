@@ -1,134 +1,52 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FaCookieBite } from "react-icons/fa";
-import "./CookieBanner.css";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaCookieBite } from 'react-icons/fa';
+import './CookieBanner.css';
 
-// export default function CookieBanner() {
-//     const [visible, setVisible] = useState(false);
-//     const [animate, setAnimate] = useState(false);
+export default function CookieBanner() {
+  const [visible, setVisible] = useState(false);
+  const [accepted, setAccepted] = useState(false);
 
-//     useEffect(() => {
-//         const consent = localStorage.getItem("cookieConsent");
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('cookieConsent');
+      if (!stored) setVisible(true);
+      else setAccepted(stored === 'accepted');
+    } catch (e) {
+      setVisible(true);
+    }
+  }, []);
 
-//         if (!consent) {
-//             setVisible(true);
+  function accept() {
+    try { localStorage.setItem('cookieConsent', 'accepted'); } catch (e) {}
+    setAccepted(true);
+    setVisible(false);
+    window.dispatchEvent(new Event('cookieAccepted'));
+  }
 
-//             // trigger animation slightly after mount
-//             setTimeout(() => setAnimate(true), 50);
-//         }
-//     }, []);
+  function decline() {
+    try { localStorage.setItem('cookieConsent', 'declined'); } catch (e) {}
+    setAccepted(false);
+    setVisible(false);
+  }
 
-//     const handleAccept = () => {
-//         localStorage.setItem("cookieConsent", "accepted");
-//         setVisible(false);
-//         setTimeout(() => setVisible(false), 300);
+  if (!visible) return null;
 
-//         window.dispatchEvent(new Event("cookieAccepted"));
-//     };
-
-//     const handleDecline = () => {
-//         localStorage.setItem("cookieConsent", "declined");
-//         setVisible(false);
-//         setTimeout(() => setVisible(false), 300);
-//     };
-
-//     if (!visible) return null;
-
-//     return (
-//         <div
-//             style={{
-//                 ...styles.card,
-//                 opacity: animate ? 1 : 0,
-//                 transform: animate ? "translateY(0)" : "translateY(20px)",
-//             }}
-//         >
-//             <div style={styles.text}>
-//                 We use cookies to improve your experience and analyze traffic. By clicking "Accept", you agree to our {" "}
-//                 <Link to="/privacy-policy" style={styles.link}>
-//                     Privacy Policy
-//                 </Link>.
-//             </div>
-
-//             <div style={styles.buttons}>
-//                 <button onClick={handleDecline} style={styles.decline}>
-//                     Decline
-//                 </button>
-//                 <button onClick={handleAccept} style={styles.accept}>
-//                     Accept
-//                 </button>
-//             </div>
-            
-//         </div>
-//     );
-// }
-
-// const styles = {
-//     card: {
-//         position: "fixed",
-//         bottom: "10px",
-//         right: "6rem",
-//         width: "90%",
-//         maxWidth: "360px",
-//         padding: "20px",
-//         borderRadius: "16px",
-//         backdropFilter: "blur(14px)",
-//         WebkitBackdropFilter: "blur(14px)",
-//         background: "rgba(20, 20, 20, 0.75)",
-//         color: "#fff",
-//         boxShadow: "0 8px 30px rgba(0,0,0,0.4)",
-//         zIndex: 9999,
-//         transition: "all 0.3s ease",
-//     },
-//     text: {
-//         fontSize: "0.85rem",
-//         lineHeight: "1.4",
-//         marginBottom: "12px",
-//     },
-//     link: {
-//         color: "#7ab8ff",
-//         textDecoration: "underline",
-//     },
-//     buttons: {
-//         display: "flex",
-//         justifyContent: "flex-end",
-//         gap: "10px",
-//     },
-//     accept: {
-//         backgroundColor: "#7ab8ff",
-//         border: "none",
-//         padding: "8px 14px",
-//         borderRadius: "8px",
-//         cursor: "pointer",
-//         fontWeight: 500,
-//     },
-//     decline: {
-//         backgroundColor: "transparent",
-//         border: "1px solid rgba(255,255,255,0.4)",
-//         color: "#fff",
-//         padding: "8px 14px",
-//         borderRadius: "8px",
-//         cursor: "pointer",
-//     },
-// };
-
-function CookieConsent() {
   return (
-    <div className="cookie-banner">
-        <FaCookieBite className="cookie-icon" />
-      <div className="cookie-banner__content">
-
-        {/* <FaCookieBite className="cookie-icon" /> */}
-
-        <p>
-          We use cookies to improve your experience. By using this site you agree
-          to our <a href="/privacy-policy">Privacy Policy</a>.
-        </p>
-
-        <button>Accept</button>
-
+    <div className="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+      <div className="cookie-banner__inner">
+        <FaCookieBite className="cookie-banner__icon" aria-hidden="true" />
+        <div className="cookie-banner__text">
+          <p>
+            We use cookies to improve your experience and analyze traffic. By continuing to use this site you agree to our{' '}
+            <Link to="/Privacy" className="cookie-banner__link">Privacy Policy</Link>.
+          </p>
+        </div>
+        <div className="cookie-banner__actions">
+          <button className="cookie-banner__btn cookie-banner__btn--decline" onClick={decline}>Decline</button>
+          <button className="cookie-banner__btn cookie-banner__btn--accept" onClick={accept}>Accept</button>
+        </div>
       </div>
     </div>
   );
-}
-
-export default CookieConsent;
+};
