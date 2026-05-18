@@ -71,3 +71,10 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.react-scroll-to-top,
+.react-scroll-to-top *,
+button[aria-label="Scroll to top"] {
+  z-index: 100_001 !important;
+  pointer-events: auto !important;
+}

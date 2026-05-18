@@ -8,6 +8,7 @@ import StickyPlayer from "../../components/StickyPlayer/StickyPlayer";
 import Poster from "../../assets/jFifteenInk.jpg"; // replace with your poster or remove if absent
 import SampleVideo from "../../assets/NOCTURNA.mp3"; // replace with your video or remove if absent
 import { FaInstagram, FaYoutube, FaDownload, FaShareAlt, FaLink } from "react-icons/fa";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 function Plans() {
 
@@ -208,6 +209,8 @@ function Plans() {
                 <div className="video__meta">
                     <h1 className="video__meta-title">"A late-night set built for dark rooms and heavy movement."</h1>
                 </div>
+
+                <Newsletter />
                 
                  <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
                  {/* Sticky mini-player: keeps playback available while scrolling */}

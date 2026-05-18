@@ -22,8 +22,19 @@
   bottom: 0;
   display: flex;
   justify-content: center;
-  z-index: 9999;
+  /* z-index: 9999; */
+  z-index: 9990;
   padding: 1rem;
+}
+
+.cookie-banner-bg,
+.cookie-banner__bg {
+  pointer-events: none;
+}
+
+.cookie-banner__controls {
+  pointer-events: auto;
+  z-index: 9991;
 }
 
 .cookie-banner__inner {
