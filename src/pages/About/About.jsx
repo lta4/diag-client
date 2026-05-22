@@ -35,6 +35,11 @@ const TESTIMONIALS = [
     text: "Jose's sets bring an energy that's rare — dancers never leave the floor. Professional, reliable, and endlessly creative."
   },
   {
+    name: "Mac Taggard",
+    role: "General Manager - Aero Club",
+    text: "Our guests LOVE when Jose performs, because we all trust that he knows what he’s doing. The energy becomes electric and good vibes radiate."
+  },
+  {
     name: "Mark Rivera",
     role: "Label Owner — Drift Records",
     text: "Production quality is top-tier. Collaborating with Jose elevated the release — musicality and attention to detail are exceptional."
