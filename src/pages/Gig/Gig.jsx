@@ -1,5 +1,6 @@
 import React from "react";
 import "./Gig.css"
+import Show from "../../components/Show/Show";
 
 const Gig = () => {
     return (
@@ -8,11 +9,17 @@ const Gig = () => {
                 <section className="gig__hero">
                     <div className="gig__intro">
                         <h1 className="gig__title">Gig</h1>
+                        <p>I am Gig</p>
+                    </div>
+                </section>
+                <section className="gig__show">
+                    <div className="gig__show--container">
+                        <Show />
                     </div>
                 </section>
             </main>
         </>
     );
-};
+};  
 
 export default Gig;
