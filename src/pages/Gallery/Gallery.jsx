@@ -2,16 +2,69 @@ import React, { useEffect, useState, useRef } from "react";
 import "./Gallery.css";
 import ScrollToTop from "react-scroll-to-top";
 import IMAGES from "../../data/galleryData";
+import JFour from "../../assets/jFour.jpg";
+import FeaturedMix from "../../components/FeaturedMix/FeaturedMix";
 
 function Gallery() {
-    const [selected, setSelected] = useState(null); // index of selected image
+
+    const videoRef = useRef(null);
+
+    const [played] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    const [playingTitle] = useState("Featured Video");
+
+    const [startTime] = useState(537);
+    const [captionsOn] = useState(false);
+    
+    const baseEmbed = "https://www.youtube.com/embed/SK6WN-y5P-0";
+    const computedEmbed = `${baseEmbed}?start=${startTime||0}&autoplay=${played?1:0}${captionsOn ? "&cc_load_policy=1" : ""}${played ? "&mute=1" : ""}`;
+    
+    /******* Share|Embed|Download|Social CTAs *******/
+    const [embedOpen, setEmbedOpen] = useState(false);
+    const [shareCopied, setShareCopied] = useState(false);
+    const [embedCopied, setEmbedCopied] = useState(false);
+    
+    const pageUrl = window.location.origin + "/Video#featured-video";
+    const shareUrl = computedEmbed || pageUrl;
+
+    /******** Image Index ***********/
+    const [selected, setSelected] = useState(null); 
     const [copied, setCopied] = useState(false);
     const [titleTyped, setTitleTyped] = useState("");
     const [subTyped, setSubTyped] = useState("");
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
 
-    // entry animation: observe items and add .is-visible with a stagger using CSS var --i
+    const shareVideo = async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: "Diagnostic — Featured Video", text: "Watch this set", url: shareUrl });
+          return;
+        } catch (e) { /* user cancelled */ }
+      }
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        setShareCopied(true);
+        setTimeout(() => setShareCopied(false), 1600);
+      } catch (e) { /* ignore */ }
+    };
+
+    const embedCode = `<iframe src="${computedEmbed}" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    const copyEmbed = async () => {
+        try {
+            await navigator.clipboard.writeText(embedCode);
+            setEmbedCopied(true);
+            setTimeout(() => setEmbedCopied(false), 1600);
+          } catch (e) { /* ignore */ }
+        };
+
+    useEffect(() => {
+            const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReduced) setMounted(true);
+            else setMounted(false);
+        }, []);
+
+    /************ Entry Stagger Animation ************/
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries, obs) => {
@@ -166,6 +219,11 @@ function Gallery() {
                 </div>
                 </div>
             </header> */}
+
+            {/* Insert video below the hero and above the gallery grid */}
+            <div className="gallery__video" aria-hidden={false}>
+              <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played}/>
+            </div>
 
             <main className="gallery__body">
                 {/* masonry grid: uses CSS columns for an organic masonry layout */}
