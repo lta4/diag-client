@@ -91,7 +91,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <NavLink to="/About" className={linkClassName} onClick={closeMobileMenu}>
-                                    About
+                                    Biography
                                 </NavLink>
                             </li>
                             <li>
@@ -102,6 +102,16 @@ const Header = () => {
                             <li>
                                 <NavLink to="/Video" className={linkClassName} onClick={closeMobileMenu}>
                                     Diagnostic & Friends
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/Gig" className={linkClassName} onClick={closeMobileMenu}>
+                                    Shows
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink>
+                                    Contact
                                 </NavLink>
                             </li>
                             <li>
@@ -138,7 +148,7 @@ const Header = () => {
                         </li>
                         <li>
                             <NavLink to="/About" className={linkClassName}>
-                                About
+                                Biography
                             </NavLink>
                         </li>
                         <li>
@@ -149,6 +159,16 @@ const Header = () => {
                         <li>
                             <NavLink to="/Video" className={linkClassName}>
                                 Diagnostic & Friends
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/Gig" className={linkClassName}>
+                                Shows
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink>
+                                Contact
                             </NavLink>
                         </li>
                         <li>
