@@ -56,9 +56,9 @@ const Hero = (props) => {
                             className="hero__wall--image" 
                         />
                     </div>
-                <div className="hero__inquire" id="inquire">
+                {/* <div className="hero__inquire" id="inquire">
                     <ContactForm />
-                </div>
+                </div> */}
                 <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
                 {/* <ScrollToTop className="hero__scroll" /> */}
                 {/* CookieBanner rendered globally in MainLayout */}

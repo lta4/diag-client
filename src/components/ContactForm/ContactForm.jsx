@@ -79,7 +79,7 @@ function ContactForm() {
                 errors={state.errors}
             />
             
-            {/* <label className="contact__consent">
+            {/* <label className="reach__consent">
                 <input
                     type="checkbox"
                     name="consent"
@@ -92,7 +92,7 @@ function ContactForm() {
                 </span>
             </label>
             
-            <button type="submit" disabled={!agreed || state.submitting} className="contact__btn" style={{ marginTop: "0.75rem" }}>
+            <button type="submit" disabled={!agreed || state.submitting} className="reach__btn" style={{ marginTop: "0.75rem" }}>
                     {state.submitting ? "Sending..." : "Submit"}
             </button> */}
             </form>
