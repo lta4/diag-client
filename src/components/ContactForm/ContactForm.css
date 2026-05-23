@@ -1,15 +1,15 @@
-.contact {
+.reach {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 6fr;
     row-gap: 1rem;
     margin: 2rem 2rem;
-    background-color: transparent; /* form itself is transparent; backdrop handled by wrapper */
-    border-radius: 12px; /* ensure form content respects the same radius */
+    background-color: transparent;
+    border-radius: 12px;
 }
 
-/* Frosted backdrop wrapper */
-.contact__backdrop {
+/*********** Frosted backdrop wrapper **************/
+/* .reach__backdrop {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,27 +20,21 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 6px 28px rgba(0,0,0,0.45);
-    z-index: 3; /* appear above backgrounds */
-    overflow: hidden; /* ensure children don't overflow rounded corners */
+    z-index: 3;
+    overflow: hidden;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    position: relative; /* ensure z-index takes effect */
-}
+    position: relative;
+} */
 
-/* Temporary debug helper: toggle `.debug-outline` in DevTools to visualize edges and stacking */
-.contact__backdrop.debug-outline {
-    outline: 3px dashed magenta;
-    z-index: 99999 !important;
-}
-
-/* fallback for browsers that don't support backdrop-filter */
+/*********** Browsers that don't support backdrop-filter **********/
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-    .contact__backdrop {
+    .reach__backdrop {
         background: rgba(0,0,0,0.6);
     }
 }
 
-.contact__des {
+.reach__des {
     display: flex;
     justify-content: center;
     margin: 5rem;
@@ -48,8 +42,7 @@
     font-weight: 500;
 }
 
-/* form input color handled below */
-
+/*********** Form Input ***********/
 input, #firstname, #lastname, #email {
     padding: 5px 0 5px 0;
     margin: 0 auto;
@@ -81,13 +74,13 @@ textarea, #message {
     width: 40%;
 } */
 
-.contact__input {
+.reach__input {
     color: var(--text-color);
     /* border-bottom-right-radius: 40px 40px; */
     border-radius: none;
 }
 
-.contact__input--return {
+.reach__input--return {
     color: var(--text-color);
     font-family: "EB Garamond";
     font-size: 1.3rem;
@@ -97,13 +90,13 @@ textarea, #message {
     margin: 2rem;
 }
 
-.contact__input, textarea {
+.reach__input, textarea {
     resize: none;
     /* font-size: 1rem; */
 }
 
-/* Consent / checkbox styling -------------------------------------------------- */
-.contact__consent {
+/************** Consent | Checkbox ***************/
+.reach__consent {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -128,12 +121,12 @@ input[type="checkbox"] {
 }
 
 /* Make the consent text tappable on mobile */
-.contact__consent span {
+.reach__consent span {
     line-height: 1.2;
     margin-top: 0.5rem;
 }
 
-.contact__btn {
+.reach__btn {
     width: 90px;
     height: 40px;
     margin: 0 auto;
@@ -145,7 +138,7 @@ input[type="checkbox"] {
     font-weight: 500;
 }
 
-.contact__btn:nth-child(n):hover {
+.reach__btn:nth-child(n):hover {
     background-color: var(--theme-color);
     /* background: var(--first-color); */
     color: var(--text-color);
@@ -157,9 +150,9 @@ input[type="checkbox"] {
 
 @media (max-width: 720px) {
 
-    .contact__backdrop { margin: 1rem 0.5rem; padding: 1rem; }
+    .reach__backdrop { margin: 1rem 0.5rem; padding: 1rem; }
 
-    .contact { margin: 0; }
+    .reach { margin: 0; }
 
     input, #firstname, #lastname, #email, textarea, #message {
         width: 100% !important;
@@ -183,12 +176,12 @@ input[type="checkbox"] {
         box-shadow: inset 0 -3px 8px rgba(10,73,97,0.08);
     }
 
-    .contact__des { 
+    .reach__des { 
         margin: 2rem 0 !important; 
         text-align: center;
     }
 
-    .contact__btn {  
+    .reach__btn {  
         max-width: 320px;
         background-color: #efefef;
         color: black;
@@ -221,27 +214,27 @@ input[type="checkbox"] {
         box-shadow: inset 0 -3px 8px rgba(10,73,97,0.08);
     }
 
-    .contact__backdrop { padding: 2rem 1.5rem; }
+    .reach__backdrop { padding: 2rem 1.5rem; }
 }
 
 @media (max-width: 480px) {
-    .contact { margin: 1.25rem 0.75rem; }
-    .contact__des { margin: 1.5rem 0 !important; }
-    .contact__btn { height: 44px !important; }
+    .reach { margin: 1.25rem 0.75rem; }
+    .reach__des { margin: 1.5rem 0 !important; }
+    .reach__btn { height: 44px !important; }
 }
 
 /***********DESKTOP***********/
 
 @media (min-width: 1024px) {
 
-    .contact__backdrop {
+    .reach__backdrop {
         max-width: 1440px;
         width: 100%;
         margin: 3rem auto;
         padding: 3rem 2rem;
     }
 
-    .contact__des { margin: 2rem 0; }
+    .reach__des { margin: 2rem 0; }
     /* desktop: make inputs wider and cap max-width for readability */
     input, #firstname, #lastname, #email, textarea, #message {
         width: 85% !important;

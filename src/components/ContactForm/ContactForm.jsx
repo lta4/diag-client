@@ -10,7 +10,7 @@ function ContactForm() {
 
         if (state.succeeded) {
 
-            return <p className="contact__input--return">Thanks for your message! We've received it and will respond shortly!</p>
+            return <p className="reach__input--return">Thanks for your message! We've received it and will respond shortly!</p>
         }
 
     const onSubmit = (e) => {
@@ -23,9 +23,9 @@ function ContactForm() {
     }
 
     return (
-        <div className="contact__backdrop">
-            <form onSubmit={onSubmit} autoComplete="on" className="contact" id="">
-            <h2 className="contact__des">
+        <div className="reach__backdrop">
+            <form onSubmit={onSubmit} autoComplete="on" className="reach" id="">
+            <h2 className="reach__des">
                 Discover the sound -- master of vibes
             </h2>
             <input
@@ -33,7 +33,7 @@ function ContactForm() {
                 type="text"
                 name="firstname"
                 placeholder=" FIRST NAME"
-                className="contact__input"
+                className="reach__input"
             />
             <ValidationError
                 prefix="First Name"
@@ -45,7 +45,7 @@ function ContactForm() {
                 type="text"
                 name="lastname"
                 placeholder=" LAST NAME"
-                className="contact__input"
+                className="reach__input"
             />
             <ValidationError
                 prefix="Last Name"
@@ -57,7 +57,7 @@ function ContactForm() {
                 type="email"
                 name="email"
                 placeholder=" EMAIL"
-                className="contact__input"
+                className="reach__input"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -71,7 +71,7 @@ function ContactForm() {
                 id="message"
                 name="message"
                 placeholder=" DROP A NOTE"
-                className="contact__input"
+                className="reach__input"
             />
             <ValidationError
                 prefix="Message"

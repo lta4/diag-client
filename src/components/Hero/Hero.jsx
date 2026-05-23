@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
-import Show from "../Show/Show";
+// import Show from "../Show/Show";
 // import Mix from "../Mix/Mix";
 import ContactForm from "../ContactForm/ContactForm";
 import jOneInk from "../../assets/jOneInk.jpg";
@@ -41,9 +41,9 @@ const Hero = (props) => {
                             className="hero__wall--image" 
                         />
                     </div>
-                <div className="hero__shows" id="shows">
+                {/* <div className="hero__shows" id="shows">
                      <Show />
-                </div>
+                </div> */}
                     <div className="hero__wall">
                         <img src={jOneInk} 
                             alt="" 
