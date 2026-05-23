@@ -13,6 +13,7 @@ import About from "./pages/About/About";
 import Gallery from "./pages/Gallery/Gallery";
 import Video from "./pages/Video/Video";
 import Gig from "./pages/Gig/Gig";
+import Contact from "./pages/Contact/Contact";
 import Privacy from "./pages/Privacy/Privacy";
 import Term from "./pages/Term/Term";
 import CookieBanner from "./components/CookieBanner/CookieBanner";
@@ -56,6 +57,7 @@ function App() {
               <Route path="/Gallery" element={<Gallery />} />
               <Route path="/Video" element={<Video />} />
               <Route path="/Gig" element={<Gig />} />
+              <Route path="/Contact" element={<Contact />} />
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/Term" element={<Term />} />
             </Route>

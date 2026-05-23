@@ -3,9 +3,15 @@ import "./Gig.css"
 
 const Gig = () => {
     return (
-        <div>
-            <h1>Gig</h1>
-        </div>
+        <>
+            <main className="gig">
+                <section className="gig__hero">
+                    <div className="gig__intro">
+                        <h1 className="gig__title">Gig</h1>
+                    </div>
+                </section>
+            </main>
+        </>
     );
 };
 

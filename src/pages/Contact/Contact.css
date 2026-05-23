@@ -1,0 +1,13 @@
+.contact {
+    position: relative;
+    width: 100%;
+    min-height: var(--hero-min-height);
+    overflow: hidden;
+}
+
+.contact__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}

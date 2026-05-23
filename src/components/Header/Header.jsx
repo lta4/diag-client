@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import BWDiag from "../../assets/BWDiag.jpg";
 // import wDiag from "../../assets/wDiag.jpg"
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
 import "./Header.css";
-import { HashLink as Link } from "react-router-hash-link";
+// import { HashLink as Link } from "react-router-hash-link";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,11 +75,6 @@ const Header = () => {
                     <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
                         <ul className={listClassName}>
                             {/* <li>
-                                <Link smooth to="/#shows" className={linkClassName} onClick={closeMobileMenu}>
-                                    Shows
-                                </Link>
-                            </li> */}
-                            {/* <li>
                                 <Link smooth to="/#inquire" className={linkClassName} onClick={closeMobileMenu}>
                                     Inquire
                                 </Link>
@@ -110,7 +105,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink>
+                                <NavLink to="/Contact" className={linkClassName} onClick={closeMobileMenu}>
                                     Contact
                                 </NavLink>
                             </li>
@@ -167,7 +162,7 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink>
+                            <NavLink to="/Contact" className={linkClassName}>
                                 Contact
                             </NavLink>
                         </li>

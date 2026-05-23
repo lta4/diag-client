@@ -1,0 +1,13 @@
+.gig {
+    position: relative;
+    width: 100%;
+    min-height: var(--hero-min-height);
+    overflow: hidden;
+}
+
+.gig__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
