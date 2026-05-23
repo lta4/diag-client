@@ -30,11 +30,6 @@ const STATS = [
 // Testimonials data
 const TESTIMONIALS = [
   {
-    name: "Lena Morales",
-    role: "Promoter — Sunset Sessions",
-    text: "Jose's sets bring an energy that's rare — dancers never leave the floor. Professional, reliable, and endlessly creative."
-  },
-  {
     name: "Mac Taggard",
     role: "General Manager - Aero Club",
     text: "Our guests LOVE when Jose performs, because we all trust that he knows what he’s doing. The energy becomes electric and good vibes radiate."

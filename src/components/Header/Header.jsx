@@ -85,6 +85,11 @@ const Header = () => {
                                 </Link>
                             </li> */}
                             <li>
+                                <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
                                 <NavLink to="/About" className={linkClassName} onClick={closeMobileMenu}>
                                     About
                                 </NavLink>
@@ -126,6 +131,11 @@ const Header = () => {
                                 Inquire
                             </Link>
                         </li> */}
+                        <li>
+                            <NavLink to="/" className={linkClassName}>
+                                Home
+                            </NavLink>
+                        </li>
                         <li>
                             <NavLink to="/About" className={linkClassName}>
                                 About
