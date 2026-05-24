@@ -311,6 +311,16 @@ function Gallery() {
             </div>
         </div>
 
+        <div className="video__meta">
+            <h2 className="video__meta-title">Diagnostic</h2>
+            <p className="video__meta-desc">Venue: Aero Club, San Diego</p>
+            <p className="video__meta-desc">Genre: House / Minimal / Groove</p>
+            <p className="video__meta-desc">Runtime: 30:26 min</p>
+        </div>
+        <div className="video__meta">
+            <h1 className="video__meta-title">"A late-night set built for dark rooms and heavy movement."</h1>
+        </div>
+
             {/* Insert video below the hero and above the gallery grid */}
             {/* <div className="gallery__video" aria-hidden={false}>
               <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played}/>
