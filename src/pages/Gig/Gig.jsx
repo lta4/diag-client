@@ -1,6 +1,7 @@
 import React from "react";
 import "./Gig.css"
 import Show from "../../components/Show/Show";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 const Gig = () => {
     return (
@@ -15,6 +16,11 @@ const Gig = () => {
                 <section className="gig__show">
                     <div className="gig__show--container">
                         <Show />
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <Newsletter />
                     </div>
                 </section>
             </main>
