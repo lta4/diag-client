@@ -4,6 +4,8 @@ import ScrollToTop from "react-scroll-to-top";
 import IMAGES from "../../data/galleryData";
 import JFour from "../../assets/jFour.jpg";
 import FeaturedMix from "../../components/FeaturedMix/FeaturedMix";
+import SampleVideo from "../../assets/NOCTURNA.mp3";
+import { FaInstagram, FaYoutube, FaDownload, FaShareAlt, FaLink } from "react-icons/fa";
 
 function Gallery() {
 
@@ -19,7 +21,7 @@ function Gallery() {
     const baseEmbed = "https://www.youtube.com/embed/SK6WN-y5P-0";
     const computedEmbed = `${baseEmbed}?start=${startTime||0}&autoplay=${played?1:0}${captionsOn ? "&cc_load_policy=1" : ""}${played ? "&mute=1" : ""}`;
     
-    /******* Share|Embed|Download|Social CTAs *******/
+    // Share|Embed|Download|Social CTAs
     const [embedOpen, setEmbedOpen] = useState(false);
     const [shareCopied, setShareCopied] = useState(false);
     const [embedCopied, setEmbedCopied] = useState(false);
@@ -27,7 +29,7 @@ function Gallery() {
     const pageUrl = window.location.origin + "/Video#featured-video";
     const shareUrl = computedEmbed || pageUrl;
 
-    /******** Image Index ***********/
+    // Image Index
     const [selected, setSelected] = useState(null); 
     const [copied, setCopied] = useState(false);
     const [titleTyped, setTitleTyped] = useState("");
@@ -58,13 +60,27 @@ function Gallery() {
           } catch (e) { /* ignore */ }
         };
 
+    const downloadVideo = () => {
+          try {
+            // prefer local/sample asset if present
+            const href = SampleVideo || baseEmbed;
+            const a = document.createElement("a");
+            a.href = href;
+            a.setAttribute("download", "");
+            a.target = "_blank";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+          } catch (e) { /* ignore */ }
+        };
+
     useEffect(() => {
             const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (!prefersReduced) setMounted(true);
             else setMounted(false);
         }, []);
 
-    /************ Entry Stagger Animation ************/
+    // Entry Stagger Animation
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries, obs) => {
@@ -94,7 +110,7 @@ function Gallery() {
             if (e.key === "ArrowRight") { e.preventDefault(); next(e); }
             if (e.key === "ArrowLeft") { e.preventDefault(); prev(e); }
             if (e.key === "Tab") {
-                // simple focus trap inside modal
+                // focus trap inside modal
                 const root = modalRef.current;
                 if (!root) return;
                 const focusables = Array.from(root.querySelectorAll('button,a,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])'))
@@ -191,6 +207,7 @@ function Gallery() {
     }, []);
 
     return (
+        
         <div className="gallery">
             <div className="gallery__parallax">
             <div className="gallery__content">
@@ -220,10 +237,84 @@ function Gallery() {
                 </div>
             </header> */}
 
-            {/* Insert video below the hero and above the gallery grid */}
-            <div className="gallery__video" aria-hidden={false}>
-              <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played}/>
+            <div className="video__container" ref={videoRef} id="featured-video">
+                <div className="video__container--media">
+                  <div className="video__title-overlay">
+                    <h1>DIAGNOSTIC</h1>
+                    <p>LIVE SET</p>
+                  </div>
+                <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played} />
+
+                {/* CTA overlay top-left of the video */}
+                <div className={`video__cta-overlay ${embedOpen ? "is-open" : ""}`} role="region" aria-label="Share and actions">
+                    <div className="video__cta-stack">
+                        <button className="video__action video__action--small" onClick={shareVideo} aria-label="Share video">
+                        <FaShareAlt />
+                        <span className="visually-hidden">
+                            Share
+                        </span>
+                        </button>
+                        <button className="video__action video__action--small" onClick={() => setEmbedOpen((s) => !s)} aria-expanded={embedOpen} aria-controls="embed-panel" aria-label="Get embed code">
+                          <FaLink /> 
+                        <span className="visually-hidden">
+                            Embed
+                        </span>
+                        </button>
+                        {/* <button className="video__action video__action--small" onClick={downloadVideo} aria-label="Download">
+                          <FaDownload />
+                        <span className="visually-hidden">
+                            Download
+                        </span>
+                        </button> */}
+
+                        <div className="video__social-ctas video__social-ctas--compact" aria-label="Follow">
+                          <a className="social-icon" href="https://www.instagram.com/diagnosticmusic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <FaInstagram />
+                          </a>
+                          <a className="social-icon" href="https://www.youtube.com/@DiagnosticMusic0" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <FaYoutube />
+                          </a>
+                        </div>
+
+                        {/* embed panel rendered inside overlay for compact access */}
+                        {embedOpen && (
+                        <div id="embed-panel" className="video__embed-panel--overlay" role="region" aria-label="Embed code">
+                            <div className="video__embed-header">
+                              <strong>Embed</strong>
+                              <button className="video__embed-close" onClick={() => setEmbedOpen(false)} aria-label="Close embed panel">✕</button>
+                            </div>
+                            <label htmlFor="embed-code" className="visually-hidden">
+                                Embed code
+                            </label>
+                            <textarea id="embed-code" readOnly value={embedCode} className="video__embed-text" rows={3} />
+                            <div className="video__embed-actions">
+                              <button className="video__action" onClick={copyEmbed} aria-label="Copy embed code">{embedCopied ? "Copied" : "Copy"}</button>
+                            </div>
+                        </div>
+                        )}
+                    </div>
+                </div>
+
+                    {/* <div className="video__controls-extra">
+                      <button className={`video__btn ${captionsOn ? 'is-active' : ''}`} onClick={toggleCaptions} aria-pressed={captionsOn} aria-label="Toggle captions">
+                        CC
+                      </button>
+                      <nav className="video__chapters" aria-label="Chapters">
+                        {CHAPTERS.map((c, idx) => (
+                          <button key={idx} className="video__chapter" onClick={() => jumpToChapter(c)}>
+                            {c.label}
+                          </button>
+                        ))}
+                      </nav>
+                    </div> */}
+
             </div>
+        </div>
+
+            {/* Insert video below the hero and above the gallery grid */}
+            {/* <div className="gallery__video" aria-hidden={false}>
+              <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played}/>
+            </div> */}
 
             <main className="gallery__body">
                 {/* masonry grid: uses CSS columns for an organic masonry layout */}
@@ -247,10 +338,16 @@ function Gallery() {
             {selected != null && (
                 <div className="gallery__modal" role="dialog" aria-modal="true" onClick={close}>
                     <div className="gallery__modal-inner" onClick={(e) => e.stopPropagation()} ref={modalRef}>
-                        <button ref={closeBtnRef} className="gallery__modal-close" onClick={close} aria-label="Close">×</button>
-                        <button className="gallery__modal-prev" onClick={prev} aria-label="Previous">‹</button>
+                        <button ref={closeBtnRef} className="gallery__modal-close" onClick={close} aria-label="Close">
+                            ×
+                        </button>
+                        <button className="gallery__modal-prev" onClick={prev} aria-label="Previous">
+                            ‹
+                        </button>
                         <img className="gallery__modal-img" src={IMAGES[selected].src} alt={IMAGES[selected].name} />
-                        <button className="gallery__modal-next" onClick={next} aria-label="Next">›</button>
+                        <button className="gallery__modal-next" onClick={next} aria-label="Next">
+                            ›
+                        </button>
 
                         <div className="gallery__modal-caption">{IMAGES[selected].name.replace(/[-_]/g, " ")}</div>
 
