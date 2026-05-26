@@ -11,7 +11,7 @@ import ScrollUp from "./components/ScrollUp/ScrollUp";
 import LinkTree from "./pages/LinkTree/LinkTree";
 import About from "./pages/About/About";
 import Gallery from "./pages/Gallery/Gallery";
-import Video from "./pages/Video/Video";
+// import Video from "./pages/Video/Video";
 import Gig from "./pages/Gig/Gig";
 import Contact from "./pages/Contact/Contact";
 import Privacy from "./pages/Privacy/Privacy";
@@ -55,7 +55,7 @@ function App() {
               <Route path="/" element={<Hero />} />
               <Route path="/About" element={<About />} />
               <Route path="/Gallery" element={<Gallery />} />
-              <Route path="/Video" element={<Video />} />
+              {/* <Route path="/Video" element={<Video />} /> */}
               <Route path="/Gig" element={<Gig />} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/Privacy" element={<Privacy />} />

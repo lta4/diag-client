@@ -94,11 +94,11 @@ const Header = () => {
                                     Gallery
                                 </NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink to="/Video" className={linkClassName} onClick={closeMobileMenu}>
                                     Diagnostic & Friends
                                 </NavLink>
-                            </li>
+                            </li> */}
                             <li>
                                 <NavLink to="/Gig" className={linkClassName} onClick={closeMobileMenu}>
                                     Shows
@@ -151,11 +151,11 @@ const Header = () => {
                                 Gallery
                             </NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink to="/Video" className={linkClassName}>
                                 Diagnostic & Friends
                             </NavLink>
-                        </li>
+                        </li> */}
                         <li>
                             <NavLink to="/Gig" className={linkClassName}>
                                 Shows
