@@ -28,3 +28,25 @@
     align-self: stretch; */
     margin-top: 1.25rem;
 }
+
+/*********** Gig Wall ***********/
+.gig__wall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* use the project hero min height (desktop/tablet will be ~60vh) to avoid huge gaps between stacked walls */
+    min-height: var(--hero-min-height);
+    position: relative;
+    overflow: hidden; /* ensure children (images) do not overflow their wall */
+}
+
+.gig__wall--image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensure cover fit for all hero images */
+    display: block;
+    pointer-events: none;
+    max-height: 90vh;
+}

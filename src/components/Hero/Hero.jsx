@@ -44,18 +44,18 @@ const Hero = (props) => {
                 {/* <div className="hero__shows" id="shows">
                      <Show />
                 </div> */}
-                    <div className="hero__wall">
+                    {/* <div className="hero__wall">
                         <img src={jOneInk} 
                             alt="" 
                             className="hero__wall--image" 
                         />
-                    </div>
-                    <div className="hero__wall">
+                    </div> */}
+                    {/* <div className="hero__wall">
                         <img src={jFifteenInk}
                             alt="" 
                             className="hero__wall--image" 
                         />
-                    </div>
+                    </div> */}
                 {/* <div className="hero__inquire" id="inquire">
                     <ContactForm />
                 </div> */}

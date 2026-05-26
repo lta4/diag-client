@@ -1,5 +1,6 @@
 import React from "react";
 import "./Gig.css"
+import jOneInk from "../../assets/jOneInk.jpg";
 import Show from "../../components/Show/Show";
 import Newsletter from "../../components/Newsletter/Newsletter";
 
@@ -16,6 +17,14 @@ const Gig = () => {
                 <section className="gig__show">
                     <div className="gig__show--container">
                         <Show />
+                    </div>
+                </section>
+                <section>
+                    <div className="gig__wall">
+                        <img src={jOneInk}
+                            alt="J One Ink"
+                            className="gig__wall--image"
+                        />
                     </div>
                 </section>
                 <section>
