@@ -169,8 +169,8 @@ function Gallery() {
     };
 
     useEffect(() => {
-      const title = "Gallery";
-      const subtitle = "A selection of images — click to enlarge. Use ← → to navigate.";
+      const title = "Diagnostic & Friends";
+      const subtitle = "Live set with a curation of images — click to enlarge. Use ← → to navigate.";
       const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (prefersReduced) {
         setTitleTyped(title);
@@ -210,34 +210,23 @@ function Gallery() {
         
         <div className="gallery">
             <div className="gallery__parallax">
-            <div className="gallery__content">
-            <header className="gallery__hero">
-                <div className="gallery__hero-inner">
-                    <h2 className="gallery__title gallery__title--typing">
-                      <span aria-hidden="true">{titleTyped}</span>
-                      <span className="typing-cursor" aria-hidden="true">▌</span>
-                      <span className="sr-only">{titleTyped || "Gallery"}</span>
-                    </h2>
-                    <p className="gallery__sub gallery__sub--typing">
-                      <span aria-hidden="true">{subTyped}</span>
-                      <span className="typing-cursor typing-cursor--small" aria-hidden="true">▌</span>
-                      <span className="sr-only">{subTyped || "A selection of images — click to enlarge. Use left right arrows to navigate."}</span>
-                    </p>
-                </div>
-            </header>
+              <header className="gallery__hero">
+                 <div className="gallery__hero-inner">
+                     <h2 className="gallery__title gallery__title--typing">
+                       <span aria-hidden="true">{titleTyped}</span>
+                       <span className="typing-cursor" aria-hidden="true">▌</span>
+                       <span className="sr-only">{titleTyped || "Diagnostic & Friends"}</span>
+                     </h2>
+                     <p className="gallery__sub gallery__sub--typing">
+                       <span aria-hidden="true">{subTyped}</span>
+                       <span className="typing-cursor typing-cursor--small" aria-hidden="true">▌</span>
+                       <span className="sr-only">{subTyped || "Live set with a curation of images — click to enlarge. Use left right arrows to navigate."}</span>
+                     </p>
+                 </div>
+             </header>
 
-            {/* <header className="gallery__hero">
-                <div className="gallery__hero-bg">
-
-                <div className="gallery__hero-content">
-                    <h2>Diagnostic & Friends</h2>
-                    <p className="hero-sub">Independent Electronic Lable</p>
-                    <div className="hero-enter">ENTER</div>
-                </div>
-                </div>
-            </header> */}
-
-            <div className="video__container" ref={videoRef} id="featured-video">
+            <div className="gallery__inner">
+              <div className="video__container" ref={videoRef} id="featured-video">
                 <div className="video__container--media">
                   <div className="video__title-overlay">
                     <h1>DIAGNOSTIC</h1>
@@ -311,14 +300,16 @@ function Gallery() {
             </div>
         </div>
 
-        <div className="video__meta">
+        <div className="video__meta video__meta--split" role="region" aria-label="Video information">
+          <div className="video__meta-left">
             <h2 className="video__meta-title">Diagnostic</h2>
-            <p className="video__meta-desc">Venue: Aero Club, San Diego</p>
-            <p className="video__meta-desc">Genre: House / Minimal / Groove</p>
-            <p className="video__meta-desc">Runtime: 30:26 min</p>
-        </div>
-        <div className="video__meta">
-            <h1 className="video__meta-title">"A late-night set built for dark rooms and heavy movement."</h1>
+            <div className="video__meta-desc">Venue: Aero Club, San Diego</div>
+            <div className="video__meta-desc">Genre: House / Minimal / Groove</div>
+            <div className="video__meta-desc">Runtime: 30:26</div>
+          </div>
+          <div className="video__meta-right">
+            <p className="video__meta-blurb">"A late-night set built for dark rooms and heavy movement."</p>
+          </div>
         </div>
 
             {/* Insert video below the hero and above the gallery grid */}
@@ -371,7 +362,7 @@ function Gallery() {
             )}
             <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
             </div>
-            </div>
+        </div>
         </div>
     );
 }

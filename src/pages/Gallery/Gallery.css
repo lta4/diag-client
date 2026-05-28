@@ -5,37 +5,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: #0f1111; /* keep site aesthetic */
+    background: #0f1111; 
     color: #e6e6e6;
 }
 
+/* Keep one wrapper for parallax/background layering */
 .gallery__parallax {
   background-image: url("../../assets/BGbackground.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
   position: relative;
+  overflow: visible;
 }
 
-/* dark overlay so images stand out */
+/* Prefer CSS pseudo element for background layers instead of extra divs */
 .gallery__parallax::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(10,10,10,0.55);
+  z-index: -1;
 }
-
-/* gallery content sits above overlay */
-.gallery__content {
-  position: relative;
-  z-index: 2;
-  padding: 4rem 2rem;
-}
-
-
-
-
 
 .gallery__hero {
     width: 100%;
@@ -47,261 +38,163 @@
     border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-/* .gallery__hero {
-  position: relative;
-  height: 60vh;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.gallery__hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url("/SDiagBanner.jpg") no-repeat 15% center;
-  background-size: cover;
-  filter: brightness(0.6);
-  transition: transform 1.2s ease, filter 0.6s ease;
-}
-
-.gallery__hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/grain.png");
-  opacity: 0.08;
-  pointer-events: none;
-}
-
-.gallery__hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-}
-
-.hero-sub {
-  opacity: 0.6;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-}
-
-.hero-enter {
-  margin-top: 2rem;
-  opacity: 0;
-  letter-spacing: 4px;
-  transition: opacity 0.4s ease;
-}
-
-.gallery__hero:hover .gallery__hero-bg {
-  transform: scale(1.06);
-  filter: brightness(0.8);
-}
-
-.gallery__hero:hover .hero-enter {
-  opacity: 1;
-} */
-
-/* dkfjalkdsjf */
-
 .gallery__hero-inner { 
     text-align: center; 
     padding: 2rem 1rem; 
 }
 
-.gallery__title { 
-    font-size: 2.25rem; 
-    margin: 0 0 0.5rem; 
-}
-
-/* .gallery__sub { 
-    margin: 0; 
-    opacity: 0.85; 
-} */
-
-.gallery__body {
-    width: 100%; 
-    max-width: 1200px; 
-    padding: 3rem 1rem; 
-    box-sizing: border-box; 
-}
-
-.gallery__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-
-/* Masonry-style gallery using CSS columns (lightweight, responsive).
-   Items are inline-blocks that flow into columns; images keep their natural aspect ratio.
-*/
-.gallery__grid--masonry {
-  column-gap: 1rem;
-  /* starting column count for wide screens */
-  column-count: 4;
-  width: 100%;
+/* Layout container for the video + gallery */
+.gallery__inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
-/* responsive column counts */
-@media (max-width: 1100px) {
-  .gallery__grid--masonry { 
-    column-count: 3; 
-    column-gap: 0.9rem; 
-  }
-}
-@media (max-width: 800px) {
-  .gallery__grid--masonry { 
-    column-count: 2; 
-    column-gap: 0.8rem; 
-  }
-}
-@media (max-width: 480px) {
-  .gallery__grid--masonry { 
-    column-count: 1; 
-    column-gap: 0; 
-    padding: 0.75rem; 
-  }
-}
-
-.gallery__item {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-    transition: transform 180ms ease, box-shadow 180ms ease;
-}
-.gallery__item img { 
-    display: block; 
-    width: 100%; 
-    height: 220px; 
-    object-fit: cover; 
-    vertical-align: middle; 
-}
-
-/* item style for masonry: inline-block so columns stack them vertically */
-.gallery__item {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 1rem;
-  position: relative;
+/* Video container — responsive, centered, subtle card */
+.video__container {
+  max-width: 1100px;
+  margin: 1.25rem auto;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.04);
-  border: 1px solid rgba(255,255,255,0.03);
-  transition: transform 260ms cubic-bezier(.2,.9,.3,1), box-shadow 260ms;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  column-break-inside: avoid;
+  background: #000;
+  box-shadow: 0 8px 30px rgba(3, 6, 10, 0.45);
+}
+
+/* Keep the media area responsive. If FeaturedMix renders an iframe, this keeps aspect ratio. */
+.video__container--media {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  background: #000;
+}
+
+/* Overlay title centered at bottom-left, subtle gradient for legibility */
+.video__title-overlay {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(2,6,12,0.6);
+  background: linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0));
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+
+/* CTA overlay (top-left) */
+.video__cta-overlay {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 6;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  pointer-events: none; /* keep host non-blocking; children override */
+}
+.video__cta-overlay .video__cta-stack { pointer-events: auto; display:flex; gap:0.35rem; align-items:center; }
+
+/* small square action buttons */
+.video__action {
+  width: 40px;
+  height: 40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
   cursor: pointer;
 }
+.video__action:focus { outline: 2px solid #7ab8ff; outline-offset: 2px; }
 
-/* images keep natural heights so columns create masonry effect */
-.gallery__item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 520ms ease, filter 260ms ease;
-  will-change: transform;
+/* embed overlay panel — compact and legible */
+.video__embed-panel--overlay {
+  margin-left: 0.5rem;
+  min-width: 320px;
+  max-width: 420px;
+  background: rgba(6,8,10,0.86);
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 24px rgba(2,6,12,0.6);
 }
 
-/* subtle hover lift and zoom */
-.gallery__item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-}
-.gallery__item:hover img {
-  transform: scale(1.03);
-  filter: saturate(1.02);
-}
-
-/* overlay meta at the bottom of each card */
-.gallery__meta {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.6rem 0.75rem;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transform: translateY(8px);
-  opacity: 0;
-  transition: transform 240ms ease, opacity 240ms ease;
-}
-
-/* reveal overlay on hover (or focus for keyboard users) */
-.gallery__item:hover .gallery__meta,
-.gallery__item:focus .gallery__meta {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Modal / Lightbox */
-.gallery__modal {
-    position: fixed;
-    inset: 0;
+/* Video meta split layout */
+.video__meta--split {
   display: flex;
-  /* start modal content below the fixed header so controls are visible */
-  align-items: flex-start;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0.75rem auto 1.25rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(6,6,8,0.02));
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.video__meta-left { flex: 1 1 55%; }
+.video__meta-right { flex: 1 1 45%; text-align: right; }
+.video__meta-title { margin: 0 0 0.25rem 0; font-size: 1.15rem; }
+.video__meta-desc { margin: 0.18rem 0; color: rgba(255,255,255,0.78); font-size: 0.95rem; }
+.video__meta-blurb { margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.92); font-style: italic; }
+
+/* Masonry grid: use CSS columns for simple responsive masonry */
+.gallery__grid--masonry {
+  column-gap: 1rem;
+  column-fill: balance;
+  column-count: 3;
+  margin-top: 1rem;
+}
+.gallery__item {
+  display: inline-block; /* required for column masonry */
+  width: 100%;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 240ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms;
+}
+.gallery__item img { width: 100%; height: auto; display:block; }
+.gallery__item:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(3,6,12,0.22); }
+
+/* Modal improvements */
+.gallery__modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,4,8,0.85);
+  display: flex;
+  align-items: center;
   justify-content: center;
-    background: rgba(6,7,7,0.78);
-  /* keep modal above header */
-  z-index: 1200;
-  padding: calc(var(--header-height) + 1.25rem) 2rem 2rem;
+  z-index: 9999;
+  padding: 1.25rem;
 }
 .gallery__modal-inner {
-    position: relative;
-    max-width: 1200px;
-    width: 100%;
-    max-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.gallery__modal-img {
-  /* cap image width so it doesn't grow too large on wide screens */
-  max-width: min(1000px, 90vw);
+  max-width: 1100px;
   width: 100%;
-  height: auto;
-  /* limit height so image won't reach into the header area */
-  max-height: calc(80vh - var(--header-height));
-  object-fit: contain;
-  border-radius: 6px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  position: relative;
+  border-radius: 10px;
+  outline: none;
 }
-
-.gallery__modal-caption { color: rgba(255,255,255,0.9); margin-top: 0.6rem; font-weight: 600; }
+.gallery__modal-img { width: 100%; height: auto; display:block; border-radius: 8px; }
 .gallery__modal-close,
 .gallery__modal-prev,
 .gallery__modal-next {
-    position: absolute;
-    background: rgba(255,255,255,0.06);
-    border: 0;
-    color: #fff;
-    width: 44px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    cursor: pointer;
+  position: absolute;
+  top: 12px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
-
-.gallery__modal-close { right: 12px; top: 12px; background: rgba(0,0,0,0.6); color: #fff; }
-.gallery__modal-prev { left: -14px; top: 50%; transform: translateY(-50%); }
-.gallery__modal-next { right: -14px; top: 50%; transform: translateY(-50%); }
+.gallery__modal-close { right: 12px; top: 12px; }
+.gallery__modal-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.gallery__modal-next { right: 12px; top: 50%; transform: translateY(-50%); }
 
 /* Modal action buttons (share / download) */
 .gallery__modal-actions {
