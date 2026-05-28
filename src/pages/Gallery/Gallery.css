@@ -41,6 +41,7 @@
 .gallery__hero-inner { 
     text-align: center; 
     padding: 2rem 1rem; 
+    font-size: 1.4rem;
 }
 
 /* Layout container for the video + gallery */
