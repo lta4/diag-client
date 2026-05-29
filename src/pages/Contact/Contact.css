@@ -21,9 +21,8 @@
   max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
-  /* border-radius: 10px; */
   overflow: hidden;
-  min-height: 100vh;               /* full viewport height for full-cover */
+  min-height: 100vh;              /* full viewport height for full-cover */
   background-size: cover;         /* key: cover entire area */
   background-position: center;    /* center the focal point */
   background-repeat: no-repeat;
