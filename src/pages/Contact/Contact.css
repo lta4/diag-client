@@ -1,36 +1,94 @@
 .contact {
-    position: relative;
-    width: 100%;
-    min-height: var(--hero-min-height);
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: var(--hero-min-height);
+  overflow: hidden;
 }
 
 .contact__hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 /************* Contact Wall ************/
 .contact__wall {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    /* use the project hero min height (desktop/tablet will be ~60vh) to avoid huge gaps between stacked walls */
-    min-height: var(--hero-min-height);
-    position: relative;
-    overflow: hidden; /* ensure children (images) do not overflow their wall */
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  min-height: 100vh;               /* full viewport height for full-cover */
+  background-size: cover;         /* key: cover entire area */
+  background-position: center;    /* center the focal point */
+  background-repeat: no-repeat;
+  background-attachment: scroll;   /* use 'fixed' only if desired */
 }
 
-.contact__wall--image {
+/* optional semi-dark overlay for legibility */
+.contact__wall::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.36));
+}
+
+/* overlay container for the form (keeps same responsive behavior) */
+.contact__form-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* desktop: right */
+  pointer-events: none;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* form card: interactive area */
+.contact__form-card {
+  pointer-events: auto;
+  width: 420px;
+  max-width: 40%;
+  background: rgba(6,6,8,0.78);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 12px 30px rgba(2,6,12,0.6);
+  color: #fff;
+}
+
+/* tablet: center overlay and reduce card width */
+@media (max-width: 1024px) {
+  .contact__wall { min-height: 72vh; }
+  .contact__form-overlay { justify-content: center; align-items: center; padding: 1rem; }
+  .contact__form-card { width: 84%; max-width: calc(100% - 2rem); }
+}
+
+/* mobile: put form full-width pinned to bottom, image flows naturally */
+@media (max-width: 720px) {
+  .contact__wall { min-height: auto; }
+  .contact__form-overlay { justify-content: center; align-items: flex-end; padding: 0.75rem; }
+  .contact__form-card {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* ensure cover fit for all hero images */
-    display: block;
-    pointer-events: none;
-    max-height: 90vh;
+    max-width: 100%;
+    border-radius: 12px;
+    padding: 0.85rem;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(6,6,8,0.65), rgba(6,6,8,0.75));
+    box-shadow: 0 8px 20px rgba(2,6,12,0.55);
+  }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contact__form-card { transition: none; transform: none; }
 }
