@@ -6,9 +6,13 @@ import jThree from "../assets/jThree.jpg";
 import jFour from "../assets/jFour.jpg";
 // import jFive from "../assets/jFive.jpg";
 import jSix from "../assets/jSix.jpeg";
+import jEight from "../assets/jEight.jpeg";
+import jNine from "../assets/jNine.jpeg";
+import jTen from "../assets/jTen.jpeg";
 import jEleven from "../assets/jEleven.jpeg";
 import jThirteen from "../assets/jThirteen.jpg";
 import jFifteen from "../assets/jFifteen.jpg";
+import jSixteen from "../assets/jSixteen.jpg";
 import FWDiag from "../assets/FWDiag.jpg";
 // import SDiagBanner from "../assets/SDiagBanner.jpg";
 
@@ -18,10 +22,14 @@ const IMAGES = [
   { src: jThree, name: "San Diego @ Sycamore Den" },
   { src: jFour, name: "San Diego @ Mavericks's" },
   // { src: jFive, name: "jFive.jpg" },
-  { src: jSix, name: "San Diego @ Fish Tank" },
+  { src: jEight, name: "San Diego @ Mavericks's" },
+  { src: jNine, name: "San Diego @ Mavericks's" },
+  { src: jTen, name: "San Diego @ Mavericks's" },
+  { src: jSix, name: "San Diego @ Mavericks's" },
   { src: jEleven, name: "San Diego @ Mavericks's" },
   { src: jThirteen, name: "Jose 1" },
   { src: jFifteen, name: "Jose 2" },
+  { src: jSixteen, name: "Jose 3" },
   { src: FWDiag, name: "Diagnostic" },
   // { src: SDiagBanner, name: "SDiagBanner.jpg" },
 ];

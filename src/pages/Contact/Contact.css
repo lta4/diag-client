@@ -14,6 +14,29 @@
 }
 
 /************* Contact Wall ************/
+/* fixed background element — covers viewport and stays put while content scrolls */
+.contact__bg {
+  position: fixed;
+  inset: 0;                      /* top:0; right:0; bottom:0; left:0 */
+  z-index: -2;                   /* behind all page content */
+  background-size: cover;        /* ensure full-cover */
+  background-position: center;   /* focal center */
+  background-repeat: no-repeat;
+  will-change: transform;        /* hint for perf */
+  background-attachment: scroll; /* not needed for fixed element, kept for fallback */
+}
+
+/* optional dark overlay above the image but behind content */
+.contact__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.14), rgba(0,0,0,0.42));
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* keep the wall area as the content container but no bg on it */
 .contact__wall {
   position: relative;
   display: block;
@@ -21,22 +44,10 @@
   max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
-  overflow: hidden;
-  min-height: 100vh;              /* full viewport height for full-cover */
-  background-size: cover;         /* key: cover entire area */
-  background-position: center;    /* center the focal point */
-  background-repeat: no-repeat;
-  background-attachment: scroll;   /* use 'fixed' only if desired */
-}
-
-/* optional semi-dark overlay for legibility */
-.contact__wall::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.36));
+  border-radius: 10px;
+  overflow: visible;       /* allow footer/content to overlap visually */
+  min-height: 100vh;       /* match viewport so fixed bg is visible */
+  z-index: 0;              /* sits above the fixed bg (z: -2) */
 }
 
 /* overlay container for the form (keeps same responsive behavior) */
@@ -74,8 +85,18 @@
 
 /* mobile: put form full-width pinned to bottom, image flows naturally */
 @media (max-width: 720px) {
-  .contact__wall { min-height: auto; }
-  .contact__form-overlay { justify-content: center; align-items: flex-end; padding: 0.75rem; }
+  .contact__bg {
+    position: absolute; /* flows with content on small screens */
+    z-index: -2;
+  }
+  .contact__wall {
+    min-height: auto;
+  }
+  .contact__form-overlay {
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0.75rem;
+  }
   .contact__form-card {
     width: 100%;
     max-width: 100%;
@@ -87,7 +108,15 @@
   }
 }
 
-/* reduced motion */
+/* reduced-motion */
 @media (prefers-reduced-motion: reduce) {
+  .contact__bg { will-change: auto; }
   .contact__form-card { transition: none; transform: none; }
+}
+
+/* ensure footer sits above background (transparent over image) */
+.footer {
+  background: transparent;
+  position: relative;
+  z-index: 2; /* above .contact__bg (z: -2) and page content (z:0) */
 }

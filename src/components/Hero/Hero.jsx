@@ -8,6 +8,7 @@ import ContactForm from "../ContactForm/ContactForm";
 import jOneInk from "../../assets/jOneInk.jpg";
 import jFifteenInk from "../../assets/jFifteenInk.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
+import jFourteen from "../../assets/jFourteen.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
 // import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
@@ -36,7 +37,7 @@ const Hero = (props) => {
                         />
                     </div>
                     <div className="hero__wall">
-                        <img src={jFourteenInk}
+                        <img src={jFourteen}
                             alt=""
                             className="hero__wall--image" 
                         />
