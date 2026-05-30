@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./Gallery.css";
 import ScrollToTop from "react-scroll-to-top";
 import IMAGES from "../../data/galleryData";
+import BGbackground from "../../assets/BGbackground.png";
 import JFour from "../../assets/jFour.jpg";
 import FeaturedMix from "../../components/FeaturedMix/FeaturedMix";
 import SampleVideo from "../../assets/NOCTURNA.mp3";
@@ -206,10 +207,16 @@ function Gallery() {
       return () => clearTimeout(subTimer);
     }, []);
 
+    // render a fixed background behind the whole gallery page
     return (
-        
+      <>
+        <div
+          className="gallery__bg"
+          aria-hidden="true"
+          style={{ backgroundImage: `url(${BGbackground})` }}
+        />
         <div className="gallery">
-            <div className="gallery__parallax">
+            {/* <div className="gallery__parallax"> */}
               <header className="gallery__hero">
                  <div className="gallery__hero-inner">
                      <h2 className="gallery__title gallery__title--typing">
@@ -362,8 +369,9 @@ function Gallery() {
             )}
             <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
             </div>
+        {/* </div> */}
         </div>
-        </div>
+        </>
     );
 }
 

@@ -5,28 +5,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: #0f1111; 
+    /* background: #0f1111;  */
     color: #e6e6e6;
 }
 
 /* Keep one wrapper for parallax/background layering */
-.gallery__parallax {
+/* .gallery__parallax {
   background-image: url("../../assets/BGbackground.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
   overflow: visible;
-}
+} */
 
 /* Prefer CSS pseudo element for background layers instead of extra divs */
-.gallery__parallax::before {
+/* .gallery__parallax::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(10,10,10,0.55);
   z-index: -1;
-}
+} */
 
 .gallery__hero {
     width: 100%;
@@ -50,6 +50,8 @@
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 /* Video container — responsive, centered, subtle card */
@@ -234,6 +236,38 @@
 .gallery__modal-next,
 .gallery__modal-action {
   z-index: 1220;
+}
+
+/* fixed background element behind the whole page */
+.gallery__bg {
+  position: fixed;
+  inset: 0;                  /* top:0; right:0; bottom:0; left:0 */
+  z-index: -3;               /* behind everything */
+  background-size: cover;    /* ensure full cover */
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  pointer-events: none;      /* don't interfere with interactions */
+}
+
+/* ensure gallery content sits above the bg */
+.gallery {
+  position: relative;
+  z-index: 0; /* content above .gallery__bg (z: -3) */
+}
+
+/* optional: if you want the gallery area to match viewport height */
+.gallery__hero,
+.gallery__body {
+  /* no change required; use min-height on specific sections if needed */
+}
+
+/* mobile fallback: on some mobile browsers fixed backgrounds behave poorly */
+@media (max-width: 720px) {
+  .gallery__bg {
+    position: absolute;
+    z-index: -3;
+  }
 }
 
 @media (max-width: 1024px) {
