@@ -12,14 +12,14 @@
     padding: 2rem 1rem;
 }
 
-.about__portrait {
+/* .about__portrait {
     width: 350px;
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-}
+} */
 
 .about__title {
     font-size: 2.5rem;
@@ -365,7 +365,7 @@
 
 /************* Profile Portrait *******************/
 
-.profile__portrait-section {
+/* .profile__portrait-section {
     max-width: 1100px;
     margin: 1.5rem auto;
     padding: 0 1rem;
@@ -382,7 +382,7 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     border: 1px solid rgba(255,255,255,0.03);
     flex: 0 0 220px;
-}
+} */
 
 /********************MEDIA QUERYS*******************/
 
@@ -417,4 +417,27 @@
     .profile__description--title { font-size: 1.5rem; margin-top: 0.5rem; }
     .profile__description--text { font-size: 0.95rem; }
     .profile__grid--image2 { margin-top: 1rem; }
+}
+
+/* fixed background element that stays put while content scrolls */
+.about__bg {
+  position: fixed;
+  inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+  z-index: -3;                /* behind all page content */
+  background-size: cover;     /* cover whole viewport */
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* make sure main about content sits above the bg */
+.about {
+  position: relative;
+  z-index: 0; /* above .about__bg */
+}
+
+/* mobile fallback: some mobile browsers handle fixed poorly */
+@media (max-width: 720px) {
+  .about__bg { position: absolute; z-index: -3; }
 }

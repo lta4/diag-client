@@ -9,6 +9,7 @@ import jOneInk from "../../assets/jOneInk.jpg";
 import jFifteenInk from "../../assets/jFifteenInk.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
 import jFourteen from "../../assets/jFourteen.jpg";
+import jThirteen from "../../assets/jThirteen.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
 // import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
@@ -27,7 +28,7 @@ const Hero = (props) => {
                     <div className="hero__wall">
                         <div
                             className="hero__parallax"
-                            style={{ backgroundImage: `url(${FWDiag})` }}
+                            style={{ backgroundImage: `url(${jThirteen})` }}
                             aria-hidden="true"
                         />
                         <img src={FWDiag}
