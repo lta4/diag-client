@@ -4,6 +4,30 @@
     /* Add any specific styles for the About section here */
 }
 
+.about__bg--over {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.about__bg--title {
+  margin: 0;
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.98;
+  text-align: left;
+  max-width: 44ch;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
 /* Hero landing: full viewport intro */
 .about__hero {
   min-height: 100vh;
@@ -86,12 +110,28 @@
 
 /* responsive tweaks */
 @media (max-width: 1024px) {
+  .about__bg--over { left: 8%; transform: translateY(-50%);}
+  .about__bg--title { font-size: clamp(2rem, 5vw, 3.4rem); max-width: 36ch;}
   .about__hero { padding: 2.5rem 1rem; }
   .about__scroll { bottom: 20px; width: 40px; height: 40px; }
   .about__intro { padding: 0 1rem; }
 }
 
 @media (max-width: 720px) {
+  .about__bg--over {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    padding: 1rem 0;
+    justify-content: center;
+  }
+  .about__bg--title {
+    text-align: center;
+    font-size: 1.4rem;
+    max-width: 100%;
+    line-height: 1.1;
+  }
   .about__hero { padding: 2rem 0.75rem; min-height: 70vh; }
   .about__scroll { bottom: 14px; }
   .about__intro { font-size: 0.98rem; }

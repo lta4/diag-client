@@ -67,8 +67,13 @@ export default function About() {
         className="about__bg"
         aria-hidden="true"
         style={{ backgroundImage: `url(${jFourteen})` }}
-      />
-
+      >
+        <div className="about__bg--over">
+          <h1 className="about__bg--title">
+            Jose Flores
+          </h1>
+        </div> 
+      </div>
       <main className="about">
         <section className="about__hero" aria-label="About landing">
           <div className="about__intro">
