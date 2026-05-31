@@ -33,12 +33,13 @@ const Hero = (props) => {
                             style={{ backgroundImage: `url(${jThirteen})` }}
                         >
                             <div className="about__bg--over">
-                            <div
-                              className="about__bg--title"
-                              aria-hidden="true"
-                              style={{ backgroundImage: `url(${GWDiag})` }}
-                            >
-                            </div>
+                                <div
+                                className="about__bg--title"
+                                aria-hidden="true"
+                                style={{ backgroundImage: `url(${GWDiag})` }}
+                                >
+                                    {/* empty space for Diagnostic */}
+                                </div>
                             </div> 
                         </div>
                         {/* <div
