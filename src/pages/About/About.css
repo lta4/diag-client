@@ -49,7 +49,7 @@
     margin-bottom: 1.5rem;
 } */
 
-.about__intro {
+/* .about__intro {
   display: flex;
   flex-direction: column;
   justify-items: flex-end;
@@ -62,7 +62,7 @@
 .about__title {
   font-size: 2.8rem;
   margin: 0 0 0.5rem 0;
-}
+} */
 
 /* scroll hint / button */
 .about__scroll {
@@ -114,7 +114,7 @@
   .about__bg--title { font-size: clamp(2rem, 5vw, 3.4rem); max-width: 36ch;}
   .about__hero { padding: 2.5rem 1rem; }
   .about__scroll { bottom: 20px; width: 40px; height: 40px; }
-  .about__intro { padding: 0 1rem; }
+  /* .about__intro { padding: 0 1rem; } */
 }
 
 @media (max-width: 720px) {

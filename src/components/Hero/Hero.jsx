@@ -8,6 +8,7 @@ import ContactForm from "../ContactForm/ContactForm";
 import jOneInk from "../../assets/jOneInk.jpg";
 import jFifteenInk from "../../assets/jFifteenInk.jpg";
 import FWDiag from "../../assets/FWDiag.jpg";
+import GWDiag from "../../assets/GWDiag.png";
 import jFourteen from "../../assets/jFourteen.jpg";
 import jThirteen from "../../assets/jThirteen.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
@@ -27,10 +28,24 @@ const Hero = (props) => {
                     {/* Desktop-only parallax wrapper: background image handled in CSS for desktop, img fallback remains for mobile */}
                     <div className="hero__wall">
                         <div
+                            className="about__bg"
+                            aria-hidden="true"
+                            style={{ backgroundImage: `url(${jThirteen})` }}
+                        >
+                            <div className="about__bg--over">
+                            <div
+                              className="about__bg--title"
+                              aria-hidden="true"
+                              style={{ backgroundImage: `url(${GWDiag})` }}
+                            >
+                            </div>
+                            </div> 
+                        </div>
+                        {/* <div
                             className="hero__parallax"
                             style={{ backgroundImage: `url(${jThirteen})` }}
                             aria-hidden="true"
-                        />
+                        /> */}
                         <img src={FWDiag}
                             alt=""
                             className={`FWDiag--image ${/* add visible class when loaded */"FWDiag--seen"}`}

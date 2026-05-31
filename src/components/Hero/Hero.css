@@ -41,6 +41,30 @@
     overflow: hidden; /* ensure children (images) do not overflow their wall */
 }
 
+.about__bg--over {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.about__bg--title {
+  margin: 0;
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.98;
+  text-align: left;
+  max-width: 44ch;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
 /* parallax layer (desktop-only styling applied below) */
 .hero__parallax {
     position: absolute;
@@ -218,4 +242,22 @@
 .scroll-up-btn:hover {
     background: #ff6600;
     color: #fff;
+}
+
+/* Ensure the decorative title shows its background image */
+.about__bg--title {
+  display: inline-block;         /* make block-level so bg is visible */
+  min-width: 440px;              /* adjust to taste */
+  min-height: 220px;             /* adjust to taste */
+  padding: 1rem 1.25rem;
+  background-size: contain;      /* or 'cover' depending on desired crop */
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  color: rgba(255,255,255,0.95);
+  z-index: 2;                    /* ensure it sits above the page bg but below any foreground images */
+}
+
+/* If FWDiag or other image overlays it, push title forward */
+.hero__wall img.FWDiag--image.is-visible {
+  z-index: 1;
 }

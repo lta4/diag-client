@@ -62,7 +62,6 @@ export default function About() {
 
   return (
     <>
-      {/* fixed background behind the about page content */}
       <div
         className="about__bg"
         aria-hidden="true"
@@ -76,7 +75,7 @@ export default function About() {
       </div>
       <main className="about">
         <section className="about__hero" aria-label="About landing">
-          <div className="about__intro">
+          {/* <div className="about__intro">
             <h1 className="about__title">Jose Flores</h1>
             <h2 className="about__subtitle">Producer & Live Performer</h2>
             <p className="about__lead">
@@ -88,7 +87,7 @@ export default function About() {
             <div className="about__ctas">
               <a className="btn" href="/inquire">Contact</a>
             </div>
-          </div>
+          </div> */}
 
           <button
             className="about__scroll"
