@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./About.css";
 import jFourteen from "../../assets/jFourteen.jpg";
 import JThirteen from "../../assets/jThirteen.jpg";
+import jEleven from "../../assets/jEleven.jpeg";
 import JSixteen from "../../assets/jSixteen.jpg";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -101,55 +102,54 @@ export default function About() {
 
         {/* Remaining page content — scrolled into view after the hero */}
         <div id="about-content" className="about__content">
-          {/* Stats row with subtle count-up */}
-          <section className="about__stats" aria-labelledby="stats-title">
-            <h2 id="stats-title" className="sr-only">Key stats</h2>
-            <div className="stats__grid">
-              {STATS.map((s) => (
-                <div className="stat" key={s.label}>
-                  <div className="stat__value" aria-hidden="true">
-                    <CountUp to={s.value} />{s.suffix}
-                  </div>
-                  <div className="stat__label">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Profile Section */}
-          <section className="profile">
-            <div className="profile__set">
-              <div className="profile__grid">
-                <img src={JSixteen} alt="" className="profile__grid--image2" />
-                <div className="profile__description">
-                  <h1 className="profile__description--title">Jose Flores</h1>
-                  <p className="profile__description--text">Bartender by day and DJ by night, you’ll find me spinning beats at some of the best bars and venues across San Diego, CA. Join me on a sonic journey through underground rhythms and timeless house classics.</p>
-
-                  <p className="profile__description--text">My YouTube channel is your destination for electrifying Latin house mixes paired with captivating visuals, creating an immersive vibe you can feel.</p>
-
-                  <p className="profile__description--text">From iconic tracks of the past to the freshest sounds of today, we’re curating the ultimate internet radio show experience.</p>
-
-                  <p className="profile__description--text">🔥 Subscribe now and dive into the groove with Diagnostic & Friends — where the music does not stop.</p>
+          {/* (moved) remaining page content — profile + testimonials follow */}
+          {/* Profile + Testimonials block: stats will render above the image/description */}
+          <div className="about__profile-block">
+            <section className="profile">
+              {/* Stats moved here: same layout as before */}
+              <div className="about__stats" aria-labelledby="stats-title">
+                <h2 id="stats-title" className="sr-only">Key stats</h2>
+                <div className="stats__grid">
+                  {STATS.map((s) => (
+                    <div className="stat" key={s.label}>
+                      <div className="stat__value" aria-hidden="true">
+                        <CountUp to={s.value} />{s.suffix}
+                      </div>
+                      <div className="stat__label">{s.label}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-          </section>
 
-          {/* Testimonials */}
-          <section className="about__testimonials" aria-labelledby="testimonials-title">
-            <h2 id="testimonials-title" className="testimonials__title">What people say</h2>
-            <div className="testimonials__grid">
-              {TESTIMONIALS.map((t, i) => (
-                <blockquote key={i} className="testimonial">
-                  <p className="testimonial__text">“{t.text}”</p>
-                  <footer className="testimonial__cite">
-                    <span className="testimonial__name">{t.name}</span>
-                    <span className="testimonial__role">{t.role}</span>
-                  </footer>
-                </blockquote>
-              ))}
-            </div>
-          </section>
+              <div className="profile__set">
+                <div className="profile__grid">
+                  <img src={jEleven} alt="Jose Flores portrait" className="profile__grid--image2" />
+                  <div className="profile__description">
+                    <h1 className="profile__description--title">Jose Flores</h1>
+                    <p className="profile__description--text">Bartender by day and DJ by night, you’ll find me spinning beats at some of the best bars and venues across San Diego, CA. Join me on a sonic journey through underground rhythms and timeless house classics.</p>
+                    <p className="profile__description--text">My YouTube channel is your destination for electrifying Latin house mixes paired with captivating visuals, creating an immersive vibe you can feel.</p>
+                    <p className="profile__description--text">From iconic tracks of the past to the freshest sounds of today, we’re curating the ultimate internet radio show experience.</p>
+                    <p className="profile__description--text">🔥 Subscribe now and dive into the groove with Diagnostic & Friends — where the music does not stop.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="about__testimonials" aria-labelledby="testimonials-title">
+              <h2 id="testimonials-title" className="sr-only">What people say</h2>
+              <div className="testimonials__row">
+                {TESTIMONIALS.map((t, i) => (
+                  <blockquote key={i} className="testimonial testimonial--compact">
+                    <p className="testimonial__text">“{t.text}”</p>
+                    <footer className="testimonial__cite">
+                      <span className="testimonial__name">{t.name}</span>
+                      <span className="testimonial__role">{t.role}</span>
+                    </footer>
+                  </blockquote>
+                ))}
+              </div>
+            </section>
+          </div>
         </div>{/* /#about-content */}
       </main>
 
