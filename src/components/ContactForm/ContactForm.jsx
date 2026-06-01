@@ -14,11 +14,6 @@ function ContactForm() {
         }
 
     const onSubmit = (e) => {
-        // if (!agreed) {
-        //     e.preventDefault();
-        //     alert("You must agree to the Privacy Policy before submitting.");
-        //     return;
-        // }
         handleSubmit(e);
     }
 
@@ -79,22 +74,16 @@ function ContactForm() {
                 errors={state.errors}
             />
             
-            {/* <label className="reach__consent">
-                <input
-                    type="checkbox"
-                    name="consent"
-                    checked={agreed}
-                    onChange={(e) => setAgreed(e.target.checked)}
-                    required
-                />
-                <span style={{ fontSize: "0.9rem" }}>I agree to the 
-                    <a href="/privacy" target="_blank" rel="noopener noreferrer" onClick={(e)=>e.stopPropagation()}>Privacy Policy</a>
-                </span>
-            </label>
-            
-            <button type="submit" disabled={!agreed || state.submitting} className="reach__btn" style={{ marginTop: "0.75rem" }}>
-                    {state.submitting ? "Sending..." : "Submit"}
-            </button> */}
+            {/* Submit button (consent handled by cookie banner) */}
+            <div className="reach__actions" style={{ marginTop: "0.75rem" }}>
+                <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="reach__btn"
+                >
+                    {state.submitting ? "Sending..." : "Send Message"}
+                </button>
+            </div>
             </form>
         </div>
     );
