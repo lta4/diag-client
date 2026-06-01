@@ -3,7 +3,7 @@ import "./Gallery.css";
 import ScrollToTop from "react-scroll-to-top";
 import IMAGES from "../../data/galleryData";
 import BGbackground from "../../assets/BGbackground.png";
-import JFour from "../../assets/jFour.jpg";
+import CDiagBanner from "../../assets/CDiagBanner.jpg";
 import FeaturedMix from "../../components/FeaturedMix/FeaturedMix";
 import SampleVideo from "../../assets/NOCTURNA.mp3";
 import { FaInstagram, FaYoutube, FaDownload, FaShareAlt, FaLink } from "react-icons/fa";
@@ -239,7 +239,7 @@ function Gallery() {
                     <h1>DIAGNOSTIC</h1>
                     <p>LIVE SET</p>
                   </div>
-                <FeaturedMix poster={JFour} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played} />
+                <FeaturedMix poster={CDiagBanner} embedUrl={computedEmbed} title="Diagnostic - YouTube" start={startTime} shouldPlay={played} />
 
                 {/* CTA overlay top-left of the video */}
                 <div className={`video__cta-overlay ${embedOpen ? "is-open" : ""}`} role="region" aria-label="Share and actions">
