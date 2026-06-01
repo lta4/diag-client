@@ -249,7 +249,7 @@
 .about__bg--title {
   display: inline-block;         /* make block-level so bg is visible */
   min-width: 440px;              /* adjust to taste */
-  min-height: 220px;             /* adjust to taste */
+  min-height: 140px;             /* adjust to taste */
   padding: 1rem 1.25rem;
   background-size: contain;      /* or 'cover' depending on desired crop */
   background-repeat: no-repeat;
