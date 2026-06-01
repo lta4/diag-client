@@ -328,7 +328,7 @@
 }
 .about__stats .stats__grid {
   display: flex;
-  gap: 1rem;
+  gap: 7rem;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap; /* single row on wide screens */
