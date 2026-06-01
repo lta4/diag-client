@@ -11,11 +11,11 @@ const Contact = () => {
         aria-hidden="true"
         style={{ backgroundImage: `url(${jFifteen})` }}
       />
-      <section className="contact__hero">
+      {/* <section className="contact__hero">
         <div className="contact__intro">
           <h1 className="contact__title">Contact</h1>
         </div>
-      </section>
+      </section> */}
 
       <section>
         <div className="contact__wall">

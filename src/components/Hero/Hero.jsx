@@ -11,6 +11,7 @@ import FWDiag from "../../assets/FWDiag.jpg";
 import GWDiag from "../../assets/GWDiag.png";
 import jFourteen from "../../assets/jFourteen.jpg";
 import jThirteen from "../../assets/jThirteen.jpg";
+import CDiagBanner from "../../assets/CDiagBanner.jpg";
 import jFourteenInk from "../../assets/jFourteenInk.jpg";
 // import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
@@ -54,7 +55,7 @@ const Hero = (props) => {
                         />
                     </div>
                     <div className="hero__wall">
-                        <img src={jFourteen}
+                        <img src={CDiagBanner}
                             alt=""
                             className="hero__wall--image" 
                         />
