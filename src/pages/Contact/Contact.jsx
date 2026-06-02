@@ -19,6 +19,17 @@ const Contact = () => {
 
       <section>
         <div className="contact__wall">
+          <div className="contact__left" aria-hidden="false">
+            <div className="contact__left-inner">
+              <h2 className="contact__left-title">Get in touch</h2>
+              <p className="contact__left-copy">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
           <div className="contact__form-overlay" aria-hidden={false}>
             <div className="contact__form-card">
               <ContactForm />

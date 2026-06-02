@@ -132,7 +132,7 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1100px;
-  margin: 0.75rem auto 1.25rem;
+  margin: 4rem auto 4rem;
   padding: 0.6rem 0.75rem;
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(6,6,8,0.02));
@@ -140,9 +140,9 @@
 }
 .video__meta-left { flex: 1 1 55%; }
 .video__meta-right { flex: 1 1 45%; text-align: right; }
-.video__meta-title { margin: 0 0 0.25rem 0; font-size: 1.15rem; }
+.video__meta-title { margin: 0 0 0.25rem 0; font-size: 1.15rem; text-transform: uppercase;}
 .video__meta-desc { margin: 0.18rem 0; color: rgba(255,255,255,0.78); font-size: 0.95rem; }
-.video__meta-blurb { margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.92); font-style: italic; }
+.video__meta-blurb { margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.92); font-style: italic; font-weight: 500; font-size: 1.05rem; }
 
 /* Masonry grid: use CSS columns for simple responsive masonry */
 .gallery__grid--masonry {

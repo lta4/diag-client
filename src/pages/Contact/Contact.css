@@ -76,6 +76,63 @@
   color: #fff;
 }
 
+/* Transparent left-side lorem block */
+.contact__left {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 320px;
+  max-width: 38%;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.contact__left-inner {
+  background: transparent; /* fully transparent background */
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.92); /* semi-transparent text */
+  text-shadow: 0 6px 18px rgba(0,0,0,0.55);
+}
+
+/* typography */
+.contact__left-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.contact__left-copy {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  opacity: 0.95;
+}
+
+/* responsive: center on tablet, stack on mobile */
+@media (max-width: 1024px) {
+  .contact__left { left: 6%; width: 360px; }
+}
+@media (max-width: 720px) {
+  .contact__left {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 0.75rem;
+  }
+  .contact__left-inner {
+    /* add slight backdrop on small screens for legibility */
+    background: rgba(0,0,0,0.28);
+    padding: 0.85rem;
+    border-radius: 10px;
+  }
+  .contact__form-overlay { align-items: flex-end; padding-bottom: 1rem; }
+}
+
 /* tablet: center overlay and reduce card width */
 @media (max-width: 1024px) {
   .contact__wall { min-height: 72vh; }
