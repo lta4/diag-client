@@ -66,100 +66,21 @@
   text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-/* parallax layer (desktop-only styling applied below) */
-.hero__parallax {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: 0;
-    will-change: transform;
-}
-
-/* target actual img elements inside hero walls */
-.hero__wall--image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
-    max-height: 90vh;
-}
-
-/**********************FWDiag Component****************/
-
-.FWDiag--image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* same cover behavior as other hero images */
-    display: block;
-    background-repeat: no-repeat;
-    max-height: 100vh;
-}
-
-/* Fade-in for FWDiag image */
-.FWDiag--image {
-    opacity: 0;
-    transition: opacity 4.3s ease-in-out;
-}
-
-.FWDiag--image.is-visible {
-    opacity: 1;
-}
-
-/* overlay for centered hero text */
-.hero__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
-
-.hero__overlay-inner {
-    pointer-events: auto;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 6px 18px rgba(0,0,0,0.6);
-}
-
-/********* Shows *********/
-/* .hero__shows {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    text-align: center;
-    margin-top: 1.25rem;
-} */
-
-/********* Inquire *********/
-/* .hero__inquire {
-    margin: 1rem;
-} */
-
 /* Media Queries */
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .FWDiag--image { max-height: 60vh; }
-    .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; }
+    /* .FWDiag--image { max-height: 60vh; } */
+    /* .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; } */
     /* .hero__shows { margin: 2.5rem 0.75rem; } */
 }
 
 @media screen and (min-width: 481px) and (max-width: 720px) {
-    .FWDiag--image { max-height: 70vh; background-position: center top; }
-    .hero__overlay-inner { padding: 0 1rem; }
+    /* .FWDiag--image { max-height: 70vh; background-position: center top; } */
+    /* .hero__overlay-inner { padding: 0 1rem; } */
     /* .hero__shows { margin: 4rem 1rem; } */
 }
 
 @media screen and (max-width: 900px) {
-    .FWDiag--image { max-height: 85vh; }
+    /* .FWDiag--image { max-height: 85vh; } */
     /* .hero__shows { margin: 6rem 1.5rem; } */
 }
 
@@ -179,53 +100,10 @@
         padding: 0;
     align-items: stretch; /* ensure images take the full width/height without gaps */
     }
-    /* ensure images fully cover the wall and don't introduce gaps */
-    .hero__wall--image,
-    .FWDiag--image,
-    /* catch-all: any img inside a hero wall */
-    .hero__wall img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        margin: 0;
-    /* ensure no inline-gap issues; images are block-level */
-    }
-    /* tighten surrounding sections */
-    /* .hero__shows { margin: 1.5rem 0; } */
-    /* .hero__inquire { margin: 0.75rem 0; } */
-
-    /* disable any parallax transforms if present */
-    .hero__layer { transform: none !important; }
-    /* hide tiny sub-pixel gaps by making the hero background solid black on mobile */
-    .hero,
-    .hero__container,
-    .hero__wall { background-color: #000; }
 }
 
-/* Desktop-only parallax: use background-attachment fixed for a simple parallax on wider screens */
 @media (min-width: 1024px) {
-    /* Make the first hero wall occupy the full viewport so next images don't peek through */
-    .hero__wall:first-of-type {
-        min-height: 100vh;
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-    }
-    .hero__parallax {
-        position: fixed; /* fixed to viewport for parallax effect */
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100vh;
-        background-attachment: fixed;
-        background-position: center center;
-        z-index: -1; /* sit behind content */
-    }
-    /* ensure container content stacks above the fixed parallax */
-    .hero__container { position: relative; z-index: 2; }
-    /* hide the img fallback on desktop since parallax uses background-image */
-    .FWDiag--image { display: none; }
+    /* .hero__container { position: relative; z-index: 2; } */
 }
 
 /****************Hero Scroll***********************/
@@ -256,9 +134,4 @@
   /* background-position: center center; */
   color: rgba(255,255,255,0.95);
   z-index: 2;                    /* ensure it sits above the page bg but below any foreground images */
-}
-
-/* If FWDiag or other image overlays it, push title forward */
-.hero__wall img.FWDiag--image.is-visible {
-  z-index: 1;
 }

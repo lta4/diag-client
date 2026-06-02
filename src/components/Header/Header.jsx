@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import BWDiag from "../../assets/BWDiag.jpg";
-// import wDiag from "../../assets/wDiag.jpg"
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";

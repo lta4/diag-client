@@ -2,17 +2,8 @@ import React from "react";
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
-// import Show from "../Show/Show";
-// import Mix from "../Mix/Mix";
-import ContactForm from "../ContactForm/ContactForm";
-import jOneInk from "../../assets/jOneInk.jpg";
-import jFifteenInk from "../../assets/jFifteenInk.jpg";
-import FWDiag from "../../assets/FWDiag.jpg";
 import GWDiag from "../../assets/GWDiag.png";
-import jFourteen from "../../assets/jFourteen.jpg";
 import jThirteen from "../../assets/jThirteen.jpg";
-import CDiagBanner from "../../assets/CDiagBanner.jpg";
-import jFourteenInk from "../../assets/jFourteenInk.jpg";
 // import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -26,7 +17,6 @@ const Hero = (props) => {
         <div className="hero" id="home">
             <div className="hero__container">
                 <Header />
-                    {/* Desktop-only parallax wrapper: background image handled in CSS for desktop, img fallback remains for mobile */}
                     <div className="hero__wall">
                         <div
                             className="about__bg"
@@ -43,41 +33,8 @@ const Hero = (props) => {
                                 </div>
                             </div> 
                         </div>
-                        {/* <div
-                            className="hero__parallax"
-                            style={{ backgroundImage: `url(${jThirteen})` }}
-                            aria-hidden="true"
-                        /> */}
-                        <img src={FWDiag}
-                            alt=""
-                            className={`FWDiag--image ${/* add visible class when loaded */"FWDiag--seen"}`}
-                            onLoad={(e) => e.currentTarget.classList.add("is-visible")}
-                        />
                     </div>
-                    <div className="hero__wall">
-                        <img src={CDiagBanner}
-                            alt=""
-                            className="hero__wall--image" 
-                        />
-                    </div>
-                {/* <div className="hero__shows" id="shows">
-                     <Show />
-                </div> */}
-                    {/* <div className="hero__wall">
-                        <img src={jOneInk} 
-                            alt="" 
-                            className="hero__wall--image" 
-                        />
-                    </div> */}
-                    {/* <div className="hero__wall">
-                        <img src={jFifteenInk}
-                            alt="" 
-                            className="hero__wall--image" 
-                        />
-                    </div> */}
-                {/* <div className="hero__inquire" id="inquire">
-                    <ContactForm />
-                </div> */}
+                        
                 <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
                 {/* <ScrollToTop className="hero__scroll" /> */}
                 {/* CookieBanner rendered globally in MainLayout */}
