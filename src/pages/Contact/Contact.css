@@ -63,18 +63,45 @@
   z-index: 2;
 }
 
-/* form card: interactive area */
+/* card wrapper for the form to provide contrast and spacing
+   now uses a gradient so the bottom fades into the page bg */
 .contact__form-card {
   pointer-events: auto;
+  position: relative;         /* needed for pseudo/content stacking */
   width: 420px;
   max-width: 40%;
-  background: rgba(6,6,8,0.78);
+  /* gradient fades the card to transparent at the bottom so the bg image shows through */
+  background: linear-gradient(
+    180deg,
+    rgba(6,6,8,0.88) 0%,
+    rgba(6,6,8,0.78) 45%,
+    rgba(6,6,8,0.38) 75%,
+    rgba(6,6,8,0.00) 100%
+  );
   padding: 1rem;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 12px 30px rgba(2,6,12,0.6);
+  border: none; /* remove hard border that creates a line */
+  box-shadow: 0 12px 30px rgba(2,6,12,0.48); /* keep soft shadow */
   color: #fff;
+  backdrop-filter: blur(6px); /* soft blur to help the blend */
 }
+
+/* optional small decorative bottom glow to smooth edge */
+.contact__form-card::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 26px;
+  pointer-events: none;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.12));
+  z-index: 0;
+}
+
+/* ensure form contents sit above the decorative pseudo */
+.contact__form-card > * { position: relative; z-index: 1; }
 
 /* Transparent left-side lorem block */
 .contact__left {
@@ -159,9 +186,13 @@
     max-width: 100%;
     border-radius: 12px;
     padding: 0.85rem;
-    backdrop-filter: blur(6px);
-    background: linear-gradient(180deg, rgba(6,6,8,0.65), rgba(6,6,8,0.75));
-    box-shadow: 0 8px 20px rgba(2,6,12,0.55);
+    background: linear-gradient(
+      180deg,
+      rgba(6,6,8,0.86) 0%,
+      rgba(6,6,8,0.6) 50%,
+      rgba(6,6,8,0.08) 78%,
+      rgba(6,6,8,0.00) 100%
+    );
   }
 }
 

@@ -14,8 +14,7 @@ const Gig = () => {
                 />
                 <section className="gig__hero">
                     <div className="gig__intro">
-                        <h1 className="gig__title">Gig</h1>
-                        <p>I am Gig</p>
+                        <h1 className="gig__title">Upcoming Events</h1>
                     </div>
                 </section>
                 <section className="gig__show">
