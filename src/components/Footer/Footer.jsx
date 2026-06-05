@@ -18,7 +18,7 @@ export default function Footer() {
         </div> */}
         <div className="footer__social" aria-label="Social links">
                     <NavLink to="https://www.instagram.com/diagnosticmusic/" aria-label="Instagram">
-                        <FaInstagram className="social__link" alt="View Instagram"/>
+                        <FaInstagram className="social-link" alt="View Instagram"/>
                     </NavLink>
                     <NavLink to="https://www.youtube.com/@DiagnosticMusic0" aria-label="YouTube">
                         <FaFacebookF className="social-link" alt="View YouTube"/>
