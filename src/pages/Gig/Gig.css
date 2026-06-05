@@ -3,6 +3,10 @@
     width: 100%;
     min-height: var(--hero-min-height);
     overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
 .gig__hero {
@@ -11,17 +15,127 @@
     align-items: center;
     padding: 2rem 1rem;
     text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.gig__bg {
-  position: fixed;
-  inset: 0;                      /* top:0; right:0; bottom:0; left:0 */
-  z-index: -2;                   /* behind all page content */
-  background-size: cover;        /* ensure full-cover */
-  background-position: center;   /* focal center */
-  background-repeat: no-repeat;
-  will-change: transform;        /* hint for perf */
-  background-attachment: scroll; /* not needed for fixed element, kept for fallback */
+.gig__title {
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+  margin: 0;
+}
+.gig__subtitle {
+  color: rgba(255,255,255,0.78);
+  margin: 0.25rem 0 0 0;
+  font-size: 0.98rem;
+}
+
+/* Page layout */
+.gig {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Main content: listing + optional sidebar */
+.gig__content {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* main list + sidebar */
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Gig list grid (cards) */
+.gig__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.gig__item {
+  background: rgba(6,6,8,0.7);
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.gig__item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.gig__item-title { font-weight: 700; margin: 0; }
+.gig__item-meta { font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+
+/* Sidebar */
+.gig__sidebar {
+  position: relative;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(6,6,8,0.6);
+  min-height: 120px;
+}
+
+/* small control area for filters/search */
+.gig__controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Desktop (default) done above. Tablet */
+@media (max-width: 1024px) {
+  .gig {
+    padding: 1.5rem;
+  }
+  .gig__content {
+    grid-template-columns: 1fr 300px;
+    gap: 1rem;
+  }
+  .gig__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+  .gig__item img { height: 140px; }
+  .gig__sidebar { padding: 0.85rem; }
+}
+
+/* Mobile: single column, stacked layout */
+@media (max-width: 720px) {
+  .gig__hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .gig__content {
+    grid-template-columns: 1fr; /* no sidebar side-by-side */
+  }
+  .gig__list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .gig__item {
+    padding: 0.75rem;
+  }
+  .gig__item img { height: 180px; border-radius: 8px; }
+  .gig__sidebar {
+    order: 2;
+    width: 100%;
+    padding: 0.75rem;
+  }
+  .gig__controls { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .gig__list .gallery__item,
+  .gig__item { transition: none; }
 }
 
 /*********** SHOW ***********/
@@ -61,3 +175,25 @@
     pointer-events: none;
     max-height: 90vh;
 }
+
+/* ensure the background div is full-viewport and behind all page content */
+.gig__bg {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  z-index: -10; /* behind everything; increase if header/footer use larger negatives */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  /* fallback visible color while debugging — remove or replace with var(--bg) later */
+  background-color: rgba(0,0,0,0.12);
+}
+
+/* make sure page content sits above the bg */
+.gig {
+  position: relative;
+  z-index: 0;
+  background: transparent;
+}
+
+/* if any child uses a full-screen overlay, reduce its z-index or raise the bg z-index negative further */
