@@ -53,10 +53,20 @@ body {
   color: var(--text-color);
 }
 
-html, body {
+html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1 auto;
 }
 
 code {
@@ -77,4 +87,21 @@ a {
 button[aria-label="Scroll to top"] {
   z-index: 100_001 !important;
   pointer-events: auto !important;
+}
+
+/******** Global Media *********/
+
+@media (max-width: 480px) {
+  .hero__scroll,
+  .about__scroll,
+  .react-scroll-to-top,
+  .react-scroll-to-top * ,
+  .scroll-to-top,
+  .scroll-to-top-button,
+  .scrollTop,
+  .ScrollToTop {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
 }
