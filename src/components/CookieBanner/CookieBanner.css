@@ -30,6 +30,7 @@
 }
 
 .cookie-banner__inner {
+  position: relative; /* ensure absolute close button positions correctly */
   display: flex;
   align-items: center;
   gap: 12px;
@@ -41,8 +42,29 @@
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(2,6,12,0.45);
   border: 1px solid rgba(255,255,255,0.04);
-  font-size: 0.95rem;
+  padding-right: 56px;
 }
+
+/* close "X" in the top-right of the inner panel */
+.cookie-banner__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+}
+.cookie-banner__close:focus { outline: 2px solid #7ab8ff; outline-offset: 3px; }
 
 /* icon */
 .cookie-banner__icon {
@@ -115,6 +137,7 @@
     gap: 10px;
     padding: 10px;
     border-radius: 10px;
+    padding-right: 12px;
   }
   .cookie-banner__text { text-align: center; }
   .cookie-banner__actions {
