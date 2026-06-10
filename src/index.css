@@ -54,7 +54,7 @@ body {
 }
 
 html, body, #root {
-  /* height: 100%; */
+  /* height: 100%; */ /******* Stops scroll down ******/
   margin: 0;
   padding: 0;
 }

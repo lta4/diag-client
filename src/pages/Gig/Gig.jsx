@@ -1,5 +1,6 @@
 import React from "react";
 import "./Gig.css"
+import BGbackground from "../../assets/BGbackground.png";
 import jOneInk from "../../assets/jOneInk.jpg";
 import jOne from "../../assets/jOne.jpg";
 import Show from "../../components/Show/Show";
@@ -10,7 +11,7 @@ const Gig = () => {
         <>
             <main className="gig">
                 <div 
-                    className="gig__bg" aria-hidden="true" style={{ backgroundImage: `url(${jOne})` }} 
+                    className="gig__bg" aria-hidden="true" style={{ backgroundImage: `url(${BGbackground})` }} 
                 />
                 <section className="gig__hero">
                     <div className="gig__intro">
