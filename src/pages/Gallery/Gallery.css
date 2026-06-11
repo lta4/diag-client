@@ -370,3 +370,30 @@
   .gallery__title { font-size: 1.4rem; }
   .gallery__sub { font-size: 0.95rem; }
 }
+
+/* Desktop: make gallery hero occupy the full viewport */
+@media (min-width: 1025px) {
+  .gallery__hero {
+    min-height: 100vh; /* full viewport */
+    display: flex;
+    align-items: center;    /* vertically center inner content */
+    justify-content: center;/* horizontally center if desired */
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  /* If you have a fixed header, subtract its height:
+     replace min-height:100vh with min-height: calc(100vh - var(--header-height, 0px)); */
+  /* .gallery__hero { min-height: calc(100vh - var(--header-height, 64px)); } */
+
+  .gallery__hero-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* tune to left align if needed */
+    justify-content: center;
+    padding: 2rem 0;
+  }
+}
