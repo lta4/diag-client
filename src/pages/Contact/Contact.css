@@ -18,7 +18,7 @@
 .contact__bg {
   position: fixed;
   inset: 0;                      /* top:0; right:0; bottom:0; left:0 */
-  z-index: -2;                   /* behind all page content */
+  z-index: -2;                /*   behind all page content */
   background-size: cover;        /* ensure full-cover */
   background-position: center;   /* focal center */
   background-repeat: no-repeat;
@@ -103,17 +103,44 @@
 /* ensure form contents sit above the decorative pseudo */
 .contact__form-card > * { position: relative; z-index: 1; }
 
+/* .about__bg--over {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.about__bg--title {
+  margin: 0;
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.98;
+  text-align: left;
+  max-width: 44ch;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+} */
+
 /* Transparent left-side lorem block */
 .contact__left {
   position: absolute;
   left: 4%;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 3;
-  width: 320px;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  /* width: 320px;
   max-width: 38%;
   box-sizing: border-box;
-  pointer-events: auto;
+  pointer-events: auto; */
 }
 
 .contact__left-inner {
@@ -127,8 +154,15 @@
 /* typography */
 .contact__left-title {
   margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.98;
+  text-align: left;
+  max-width: 44ch;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 .contact__left-copy {
   margin: 0;
@@ -200,7 +234,8 @@
 @media (min-width: 1025px) {
   .contact__wall {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    /* make left column wider so it sits closer to the page center */
+    grid-template-columns: 46% 1fr; /* adjust 46% → 48% → 50% to taste */
     gap: 2rem;
     align-items: center; /* center left block vertically in the row */
     padding: 3rem 1rem;
@@ -216,6 +251,7 @@
     align-self: center;   /* ensure left column sits centered in its grid cell */
     display: flex;
     align-items: center;  /* vertically center the inner box */
+    max-width: 560px;     /* cap so the left box doesn't stretch too far */
   }
 
   .contact__left-inner {
@@ -239,10 +275,60 @@
     max-width: 720px;
     box-sizing: border-box;
     margin: 0;
-    /* max-height: 100vh; */
     overflow-y: auto;     /* allow scrolling if content exceeds this height */
     padding: 1rem;        /* slightly reduced padding to tighten the card */
     border-radius: 10px;
+  }
+}
+
+/* Force-reset offsets and vertically center the left inner block to match profile title */
+@media (min-width: 1025px) {
+  /* ensure left column is in-flow (override any earlier absolute rules) */
+  .contact__left {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex;
+    align-items: center;        /* vertical centering inside the grid cell */
+    justify-content: flex-end;  /* keep it toward the center gutter */
+    padding-right: 1rem;
+    max-width: none;
+  }
+
+  /* make the inner block vertically centered and match profile title scale */
+  .contact__left-inner {
+    margin: 0;
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* center content vertically inside the inner box */
+    align-items: flex-start;    /* left-align text (same as profile title) */
+    padding: 0;
+  }
+
+  /* match title sizing/line-height to the profile title so baselines align */
+  .contact__left-title {
+    font-size: clamp(2rem, 3.6vw, 2.8rem);
+    line-height: 1.03;
+    margin: 0 0 0.45rem 0;
+  }
+}
+
+/* Nudge the left inner block upward on desktop so it lines up with the profile title */
+@media (min-width: 1025px) {
+  .contact__left {
+    /* keep it aligned to the right edge but allow inner vertical offset */
+    align-items: flex-start; /* anchor at top of grid cell so translateY moves predictably */
+  }
+
+  .contact__left-inner {
+    /* lift the block — increase the absolute value to move it higher */
+    transform: translateY(-100%);
+    /* ensure no accidental stacking shift */
+    position: relative;
+    z-index: 1;
   }
 }
 
