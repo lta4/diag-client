@@ -89,48 +89,79 @@
   margin-bottom: 1rem;
 }
 
-/* Desktop (default) done above. Tablet */
-@media (max-width: 1024px) {
+/* Responsive: Laptop / Tablet / Mobile */
+
+/* LAPTOP: wide laptops — 3-column grid for list, sidebar right */
+@media (min-width: 1025px) and (max-width: 1439px) {
   .gig {
-    padding: 1.5rem;
+    padding: 2.5rem 1.25rem;
   }
+
   .gig__content {
-    grid-template-columns: 1fr 300px;
+    display: grid;
+    grid-template-columns: 1fr 320px; /* list + sidebar */
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .gig__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
+
+  .gig__item img { height: 180px; }
+  .gig__sidebar { min-width: 280px; }
+}
+
+/* TABLET: 2-column list, sidebar below or collapses to narrow column */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .gig {
+    padding: 2rem 1rem;
+  }
+
+  .gig__content {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 1rem;
+  }
+
   .gig__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.9rem;
   }
-  .gig__item img { height: 140px; }
-  .gig__sidebar { padding: 0.85rem; }
+
+  .gig__item img { height: 160px; }
+  .gig__sidebar { min-width: 240px; padding: 0.85rem; }
 }
 
-/* Mobile: single column, stacked layout */
+/* MOBILE: single column, stacked flow; sidebar moves below list */
 @media (max-width: 720px) {
-  .gig__hero {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .gig {
+    padding: 1rem;
   }
+
   .gig__content {
-    grid-template-columns: 1fr; /* no sidebar side-by-side */
+    display: block; /* stack everything */
   }
+
   .gig__list {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-  .gig__item {
-    padding: 0.75rem;
-  }
-  .gig__item img { height: 180px; border-radius: 8px; }
+
+  .gig__item img { height: 220px; object-fit: cover; }
   .gig__sidebar {
-    order: 2;
+    margin-top: 1rem;
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.85rem;
+    border-radius: 10px;
   }
-  .gig__controls { flex-direction: column; align-items: stretch; gap: 0.5rem; }
 }
+
+/* small tweak: ensure images scale nicely */
+.gig__item img { width: 100%; object-fit: cover; border-radius: 8px; }
 
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
