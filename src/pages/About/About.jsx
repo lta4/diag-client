@@ -56,6 +56,28 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const el = document.querySelector(".about");
+    const title = el?.querySelector(".about__bg--title");
+
+    function update() {
+      const atTop = window.scrollY < 50;
+      if (el) el.classList.toggle("show-title", atTop);
+      if (title) title.setAttribute("aria-hidden", atTop ? "false" : "true");
+    }
+
+    // initial state on mount (landing)
+    update();
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
   const scrollToContent = () => {
     const el = document.getElementById("about-content");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });

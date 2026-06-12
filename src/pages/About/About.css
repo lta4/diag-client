@@ -26,6 +26,9 @@
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  transition: opacity 260ms ease, transform 260ms ease, visibility 260ms;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Hero landing: full viewport intro */
@@ -137,9 +140,40 @@
   .about__intro { font-size: 0.98rem; }
 }
 
-/* respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .about__scroll { transition: none; }
+/* hide title when not at top */
+.about:not(.show-title) .about__bg--title {
+  opacity: 0;
+  transform: translateY(-6px);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Tablet & Mobile: place title above middle of the viewport and center it */
+@media (max-width: 1024px) {
+  .about__bg--over {
+    position: absolute;
+    left: 50%;
+    top: 35vh; /* above middle */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    padding: 0 4%;
+  }
+  .about__bg--title {
+    text-align: center;
+    max-width: 90%;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    line-height: 1.02;
+  }
+}
+
+/* slightly higher on small phones */
+@media (max-width: 720px) {
+  .about__bg--over { top: 30vh; padding: 0 6%; }
+  .about__bg--title { font-size: clamp(1.4rem, 5vw, 2.4rem); }
 }
 
 /***************************PROFILE***********************/
