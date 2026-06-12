@@ -256,17 +256,24 @@
   z-index: 0; /* content above .gallery__bg (z: -3) */
 }
 
-/* optional: if you want the gallery area to match viewport height */
-.gallery__hero,
-.gallery__body {
-  /* no change required; use min-height on specific sections if needed */
-}
-
 /* mobile fallback: on some mobile browsers fixed backgrounds behave poorly */
 @media (max-width: 720px) {
   .gallery__bg {
-    position: absolute;
+    position: absolute;          /* keep behind content but flow with page */
     z-index: -3;
+    /* slight zoom so the image appears larger (tweak 120%-160% to taste) */
+    background-size: 140% auto;
+    /* anchor toward the top so visible portion matches Gig mobile */
+    background-position: center top;
+    background-attachment: scroll; /* avoid fixed-attachment mobile quirks */
+    transform: translateY(-6%);    /* subtle vertical shift to expose top of image */
+  }
+
+  /* keep the hero taller so the background shows more of the image */
+  .gallery__hero {
+    height: 34vh;
+    min-height: 34vh;
+    background-position: center top;
   }
 }
 
