@@ -135,3 +135,35 @@
   color: rgba(255,255,255,0.95);
   z-index: 2;                    /* ensure it sits above the page bg but below any foreground images */
 }
+
+/* Tablet & Mobile: move about__bg--title slightly above center and center it horizontally */
+@media (max-width: 1024px) {
+  .about__bg--over {
+    position: absolute !important;
+    left: 50% !important;
+    top: 20vh !important;                /* slightly above the middle */
+    transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    pointer-events: none;
+    padding: 0 4%;
+    z-index: 2;
+  }
+
+  .about__bg--title {
+    text-align: center !important;
+    margin: 0;
+    max-width: 90%;
+    width: min(92%, 780px);
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    line-height: 1.02;
+  }
+}
+
+/* Slight tweak for smaller phones */
+@media (max-width: 720px) {
+  .about__bg--over { top: 19vh !important; padding: 0 6%; }
+  .about__bg--title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
+}
