@@ -381,35 +381,30 @@
     width: 100%;
     max-width: 100%;
     margin: 0 0 0.75rem;
+    order: 1;
   }
 
   .contact__left-inner {
     background: rgba(0,0,0,0.28); /* slight backdrop for legibility */
     padding: 0.85rem;
     border-radius: 10px;
+    text-align: left;
   }
 
   .contact__form-overlay {
-    position: relative;
+    position: relative !important;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding: 0.75rem;
-    pointer-events: auto;
+    padding: 0.5rem;
+    order: 2;
   }
 
   .contact__form-card {
     width: 100%;
     max-width: 100%;
-    border-radius: 12px;
     padding: 0.85rem;
-    background: linear-gradient(
-      180deg,
-      rgba(6,6,8,0.86) 0%,
-      rgba(6,6,8,0.6) 50%,
-      rgba(6,6,8,0.08) 78%,
-      rgba(6,6,8,0.00) 100%
-    );
+    border-radius: 12px;
   }
 }
 
@@ -430,4 +425,91 @@
   background: transparent;
   position: relative;
   z-index: 2; /* above .contact__bg (z: -2) and page content (z:0) */
+}
+
+/* Tablet & Mobile: put description (contact__left) above the form,
+   keep desktop (>=1025px) unchanged. */
+@media (max-width: 1024px) {
+  .contact__wall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 2rem 1rem;
+  }
+
+  /* ensure left block is in-flow and sits above the form */
+  .contact__left {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 72%;
+    max-width: 720px;
+    margin: 0 auto;
+    order: 1;
+    pointer-events: auto;
+    display: block;
+  }
+  .contact__left-inner {
+    background: rgba(0,0,0,0.18);
+    padding: 0.9rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* form comes after the description */
+  .contact__form-overlay {
+    position: relative !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0;
+    order: 2;
+    pointer-events: auto;
+  }
+
+  .contact__form-card {
+    width: 640px;
+    max-width: 92%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 720px) {
+  .contact__wall {
+    display: block;
+    padding: 1rem;
+  }
+
+  .contact__left {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 0.75rem;
+    order: 1;
+  }
+  .contact__left-inner {
+    background: rgba(0,0,0,0.28);
+    padding: 0.85rem;
+    border-radius: 10px;
+    text-align: left;
+  }
+
+  .contact__form-overlay {
+    position: relative !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0.5rem;
+    order: 2;
+  }
+
+  .contact__form_card {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem;
+    border-radius: 12px;
+  }
 }
