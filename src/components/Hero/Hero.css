@@ -42,6 +42,21 @@
 
 /******************* BG Layer ****************/
 
+.about__bg {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.hero, .hero__container, .hero_wall {
+    position: relative;
+    z-index: 2;
+}
+
 .about__bg--over {
   position: absolute;
   left: 4%;
