@@ -31,8 +31,8 @@ const Gig = () => {
                         />
                     </div>
                 </section> */}
-                <section>
-                    <div>
+                <section className="gig__news">
+                    <div className="gig__news--container">
                         <Newsletter />
                     </div>
                 </section>

@@ -2,12 +2,16 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  /* background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(6,6,8,0.35)); */
+  /* align-items: center; */
+  /* min-height: 40vh; */
   padding: 1.25rem 1rem;
   box-sizing: border-box;
+  /* border: 1px solid rgba(255,255,255,0.04); */
 }
 .newsletter__inner {
   width: 100%;
-  max-width: 980px;
+  max-width: 60rem;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -16,6 +20,8 @@
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.04);
+  margin: 0 auto;
+  transform: translateX(6%);
 }
 .newsletter__copy h3 { margin: 0 0 0.25rem 0; font-size: 1.05rem; }
 .newsletter__copy p { margin: 0; color: rgba(255,255,255,0.82); font-size: 0.95rem; }
