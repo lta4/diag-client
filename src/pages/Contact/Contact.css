@@ -17,13 +17,18 @@
 /* fixed background element — covers viewport and stays put while content scrolls */
 .contact__bg {
   position: fixed;
-  inset: 0;                      /* top:0; right:0; bottom:0; left:0 */
-  z-index: -2;                /*   behind all page content */
+  inset: 0;              
+  z-index: -10;                /*   behind all page content */
   background-size: cover;        /* ensure full-cover */
-  background-position: center;   /* focal center */
+  background-position: center top;   /* focal center */
   background-repeat: no-repeat;
-  will-change: transform;        /* hint for perf */
-  background-attachment: scroll; /* not needed for fixed element, kept for fallback */
+  pointer-events: none;
+}
+
+.contact, .contact__wall {
+  position: relative;
+  z-index: 1;
+  background: transparent;
 }
 
 /* optional dark overlay above the image but behind content */
@@ -371,6 +376,8 @@
   .contact__wall {
     display: block;
     padding: 1rem;
+    min-height: 34dvh;
+    min-height: 34vh;
   }
 
   .contact__left {
