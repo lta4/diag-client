@@ -49,17 +49,17 @@
 .hero__bg {
     position: fixed;
     inset: 0;
-    z-index: -5;
+    z-index: -3;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     pointer-events: none;
 }
 
-/* .hero, .hero__container, .hero_wall {
+.hero, .hero__container, .hero_wall {
     position: relative;
-    z-index: 2;
-} */
+    z-index: 1;
+}
 
 .hero__bg--over {
   position: absolute;
@@ -161,7 +161,7 @@
 
 /* Slight tweak for smaller phones */
 @media (max-width: 720px) {
-/* .hero__wall { min-height: 34vh; } */
+.hero__wall { min-height: 34dvh; min-height: 34vh; }
   /* .about__bg--over { top: 19vh !important; padding: 0 6%; } */
   .hero__bg--title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
 }
