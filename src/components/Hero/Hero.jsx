@@ -19,13 +19,13 @@ const Hero = (props) => {
                 <Header />
                     <div className="hero__wall">
                         <div
-                            className="about__bg"
+                            className="hero__bg"
                             aria-hidden="true"
                             style={{ backgroundImage: `url(${jThirteen})` }}
                         >
-                            <div className="about__bg--over">
+                            <div className="hero__bg--over">
                                 <div
-                                className="about__bg--title"
+                                className="hero__bg--title"
                                 aria-hidden="true"
                                 style={{ backgroundImage: `url(${GWDiag})` }}
                                 >

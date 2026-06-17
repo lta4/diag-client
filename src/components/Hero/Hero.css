@@ -46,7 +46,7 @@
 
 /******************* BG Layer ****************/
 
-.about__bg {
+.hero__bg {
     position: fixed;
     inset: 0;
     z-index: -5;
@@ -56,12 +56,12 @@
     pointer-events: none;
 }
 
-.hero, .hero__container, .hero_wall {
+/* .hero, .hero__container, .hero_wall {
     position: relative;
     z-index: 2;
-}
+} */
 
-.about__bg--over {
+.hero__bg--over {
   position: absolute;
   left: 4%;
   top: 50%;
@@ -72,7 +72,7 @@
   align-items: center;
 }
 
-.about__bg--title {
+.hero__bg--title {
   margin: 0;
   font-size: clamp(2.4rem, 4.5vw, 4.5rem);
   font-weight: 900;
@@ -86,24 +86,6 @@
 }
 
 /* Media Queries */
-@media screen and (min-width: 320px) and (max-width: 480px) {
-    /* .FWDiag--image { max-height: 60vh; } */
-    /* .hero__overlay-inner { font-size: 0.95rem; padding: 0 0.75rem; } */
-    /* .hero__shows { margin: 2.5rem 0.75rem; } */
-}
-
-@media screen and (min-width: 481px) and (max-width: 720px) {
-    /* .FWDiag--image { max-height: 70vh; background-position: center top; } */
-    /* .hero__overlay-inner { padding: 0 1rem; } */
-    /* .hero__shows { margin: 4rem 1rem; } */
-}
-
-@media screen and (max-width: 900px) {
-    /* .FWDiag--image { max-height: 85vh; } */
-    /* .hero__shows { margin: 6rem 1.5rem; } */
-}
-
-/* Mobile-specific adjustments: keep mobile look you liked without changing tablet/desktop */
 @media (max-width: 768px) {
     .hero__container {
         padding: 0; /* allow images to be full-bleed on mobile */
@@ -119,10 +101,6 @@
         padding: 0;
     align-items: stretch; /* ensure images take the full width/height without gaps */
     }
-}
-
-@media (min-width: 1024px) {
-    /* .hero__container { position: relative; z-index: 2; } */
 }
 
 /****************Hero Scroll***********************/
@@ -143,7 +121,7 @@
 }
 
 /* Ensure the decorative title shows its background image */
-.about__bg--title {
+.hero__bg--title {
   display: inline-block;         /* make block-level so bg is visible */
   min-width: 440px;              /* adjust to taste */
   min-height: 140px;             /* adjust to taste */
@@ -157,7 +135,7 @@
 
 /* Tablet & Mobile: move about__bg--title slightly above center and center it horizontally */
 @media (max-width: 1024px) {
-  .about__bg--over {
+  .hero__bg--over {
     position: absolute !important;
     left: 50% !important;
     top: 20vh !important;                /* slightly above the middle */
@@ -171,7 +149,7 @@
     z-index: 2;
   }
 
-  .about__bg--title {
+  .hero__bg--title {
     text-align: center !important;
     margin: 0;
     max-width: 90%;
@@ -185,5 +163,5 @@
 @media (max-width: 720px) {
 /* .hero__wall { min-height: 34vh; } */
   /* .about__bg--over { top: 19vh !important; padding: 0 6%; } */
-  .about__bg--title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
+  .hero__bg--title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
 }
