@@ -184,6 +184,6 @@
 /* Slight tweak for smaller phones */
 @media (max-width: 720px) {
 .hero__wall { min-height: 34vh; }
-  .about__bg--over { top: 19vh !important; padding: 0 6%; }
+  /* .about__bg--over { top: 19vh !important; padding: 0 6%; } */
   .about__bg--title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
 }
