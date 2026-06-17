@@ -14,32 +14,39 @@ const Hero = (props) => {
     }
 
     return (
-        <div className="hero" id="home">
-            <div className="hero__container">
-                <Header />
-                    <div className="hero__wall">
-                        <div
-                            className="hero__bg"
-                            aria-hidden="true"
-                            style={{ backgroundImage: `url(${jThirteen})` }}
-                        >
-                            <div className="hero__bg--over">
-                                <div
-                                className="hero__bg--title"
+        <>
+            <div
+                className="hero__bg"
+                aria-hidden="true"
+                style={{ backgroundImage: `url(${jThirteen})` }}
+            />
+            <div className="hero" id="home">
+                <div className="hero__container">
+                    <Header />
+                        <div className="hero__wall">
+                            <div
+                                className="hero__bg"
                                 aria-hidden="true"
-                                style={{ backgroundImage: `url(${GWDiag})` }}
-                                >
-                                    {/* empty space for Diagnostic */}
-                                </div>
-                            </div> 
+                                style={{ backgroundImage: `url(${jThirteen})` }}
+                            >
+                                <div className="hero__bg--over">
+                                    <div
+                                    className="hero__bg--title"
+                                    aria-hidden="true"
+                                    style={{ backgroundImage: `url(${GWDiag})` }}
+                                    >
+                                        {/* empty space for Diagnostic */}
+                                    </div>
+                                </div> 
+                            </div>
                         </div>
-                    </div>
-                        
-                <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
-                {/* <ScrollToTop className="hero__scroll" /> */}
-                {/* CookieBanner rendered globally in MainLayout */}
+                            
+                    <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
+                    {/* <ScrollToTop className="hero__scroll" /> */}
+                    {/* CookieBanner rendered globally in MainLayout */}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
