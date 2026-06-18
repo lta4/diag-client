@@ -164,3 +164,35 @@
   /* .about__bg--over { top: 19vh !important; padding: 0 6%; } */
   .hero__bg--title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
 }
+
+/* MOBILE: make hero background less zoomed/cropped */
+@media (max-width: 720px) {
+  /* reduce hero height so the image isn't stretched/cropped too low */
+  .hero__wall {
+    min-height: 34dvh;
+    min-height: 34vh; /* fallback */
+  }
+
+  /* target the decorative bg(s) that use jThirteen */
+  .hero__bg {
+    /* show more of the image (less zoom) */
+    background-size: 100% auto;   /* change to 90% or 110% to tweak zoom */
+    background-position: center 18%; /* lift focal point toward top */
+    background-attachment: scroll; /* avoid fixed-attachment quirks on mobile */
+  }
+
+  /* if you also render the inner hero__bg wrapper, keep consistent sizing */
+  .hero__bg .hero__bg--over,
+  .hero__bg--over {
+    left: 50% !important;
+    top: 20vh !important;                /* slightly above the middle */
+    transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    pointer-events: none;
+    padding: 0 4%;
+    z-index: 2;
+  }
+}

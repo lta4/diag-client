@@ -1,3 +1,9 @@
+/* ===========================================================
+   Contact.css — organized: variables / base / layout / blocks /
+   components / responsive / reduced-motion / utilities
+   =========================================================== */
+
+/* ====== BASE / ROOT ====== */
 .contact {
   position: relative;
   width: 100%;
@@ -5,33 +11,19 @@
   overflow: hidden;
 }
 
-/* .contact__hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  text-align: center;
-} */
-
-/************* Contact Wall ************/
+/* ====== BACKGROUND LAYER ====== */
 /* fixed background element — covers viewport and stays put while content scrolls */
 .contact__bg {
   position: fixed;
-  inset: 0;              
-  z-index: -10;                /*   behind all page content */
-  background-size: cover;        /* ensure full-cover */
-  background-position: center top;   /* focal center */
+  inset: 0;
+  z-index: -10;                 /* behind all page content */
+  background-size: cover;
+  background-position: center top;
   background-repeat: no-repeat;
   pointer-events: none;
 }
 
-.contact, .contact__wall {
-  position: relative;
-  z-index: 1;
-  background: transparent;
-}
-
-/* optional dark overlay above the image but behind content */
+/* subtle overlay above the bg image to improve contrast */
 .contact__bg::after {
   content: "";
   position: absolute;
@@ -41,7 +33,14 @@
   z-index: 0;
 }
 
-/* keep the wall area as the content container but no bg on it */
+/* ensure page content sits above the bg */
+.contact, .contact__wall {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* ====== LAYOUT: WALL / CONTAINER ====== */
 .contact__wall {
   position: relative;
   display: block;
@@ -52,87 +51,11 @@
   border-radius: 10px;
   overflow: visible;       /* allow footer/content to overlap visually */
   min-height: 100vh;       /* match viewport so fixed bg is visible */
-  z-index: 0;              /* sits above the fixed bg (z: -2) */
+  z-index: 0;              /* sits above the fixed bg (z: -10) */
 }
 
-/* overlay container for the form (keeps same responsive behavior) */
-.contact__form-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* desktop: right */
-  pointer-events: none;
-  padding: 1.5rem;
-  box-sizing: border-box;
-  z-index: 2;
-}
-
-/* card wrapper for the form to provide contrast and spacing
-   now uses a gradient so the bottom fades into the page bg */
-.contact__form-card {
-  pointer-events: auto;
-  position: relative;         /* needed for pseudo/content stacking */
-  width: 420px;
-  max-width: 40%;
-  /* gradient fades the card to transparent at the bottom so the bg image shows through */
-  background: linear-gradient(
-    180deg,
-    rgba(6,6,8,0.88) 0%,
-    rgba(6,6,8,0.78) 45%,
-    rgba(6,6,8,0.38) 75%,
-    rgba(6,6,8,0.00) 100%
-  );
-  padding: 1rem;
-  border-radius: 10px;
-  border: none; /* remove hard border that creates a line */
-  box-shadow: 0 12px 30px rgba(2,6,12,0.48); /* keep soft shadow */
-  color: #fff;
-  backdrop-filter: blur(6px); /* soft blur to help the blend */
-}
-
-/* optional small decorative bottom glow to smooth edge */
-.contact__form-card::after {
-  content: "";
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 6px;
-  height: 26px;
-  pointer-events: none;
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.12));
-  z-index: 0;
-}
-
-/* ensure form contents sit above the decorative pseudo */
-.contact__form-card > * { position: relative; z-index: 1; }
-
-/* .about__bg--over {
-  position: absolute;
-  left: 4%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 0;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-}
-
-.about__bg--title {
-  margin: 0;
-  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
-  font-weight: 900;
-  line-height: 0.98;
-  text-align: left;
-  max-width: 44ch;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
-} */
-
-/* Transparent left-side lorem block */
+/* ====== LEFT DESCRIPTION BLOCK ====== */
+/* transparent left-side lorem block (desktop: absolute; tablet/mobile: in-flow) */
 .contact__left {
   position: absolute;
   left: 4%;
@@ -142,21 +65,17 @@
   pointer-events: none;
   display: flex;
   align-items: center;
-  /* width: 320px;
-  max-width: 38%;
-  box-sizing: border-box;
-  pointer-events: auto; */
 }
 
 .contact__left-inner {
-  background: transparent; /* fully transparent background */
+  background: transparent;
   padding: 0.25rem 0.5rem;
   border-radius: 8px;
-  color: rgba(255,255,255,0.92); /* semi-transparent text */
+  color: rgba(255,255,255,0.92);
   text-shadow: 0 6px 18px rgba(0,0,0,0.55);
 }
 
-/* typography */
+/* typography inside left block */
 .contact__left-title {
   margin: 0 0 0.5rem 0;
   font-size: clamp(2.4rem, 4.5vw, 4.5rem);
@@ -176,74 +95,74 @@
   opacity: 0.95;
 }
 
-/* responsive: center on tablet, stack on mobile */
-@media (max-width: 1024px) {
-  .contact__left { left: 6%; width: 360px; }
-}
-@media (max-width: 720px) {
-  .contact__left {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 0.75rem;
-  }
-  .contact__left-inner {
-    /* add slight backdrop on small screens for legibility */
-    background: rgba(0,0,0,0.28);
-    padding: 0.85rem;
-    border-radius: 10px;
-  }
-  .contact__form-overlay { align-items: flex-end; padding-bottom: 1rem; }
+/* ====== FORM OVERLAY & CARD ====== */
+/* overlay container for the form (desktop: absolute; tablet/mobile: relative/in-flow) */
+.contact__form-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* desktop: right */
+  pointer-events: none;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
-/* tablet: center overlay and reduce card width */
-@media (max-width: 1024px) {
-  .contact__wall { min-height: 72vh; }
-  .contact__form-overlay { justify-content: center; align-items: center; padding: 1rem; }
-  .contact__form-card { width: 84%; max-width: calc(100% - 2rem); }
+/* card wrapper: gradient so bottom fades into page bg */
+.contact__form-card {
+  pointer-events: auto;
+  position: relative;
+  width: 420px;
+  max-width: 40%;
+  background: linear-gradient(
+    180deg,
+    rgba(6,6,8,0.88) 0%,
+    rgba(6,6,8,0.78) 45%,
+    rgba(6,6,8,0.38) 75%,
+    rgba(6,6,8,0.00) 100%
+  );
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 12px 30px rgba(2,6,12,0.48);
+  color: #fff;
+  backdrop-filter: blur(6px);
 }
 
-/* mobile: put form full-width pinned to bottom, image flows naturally */
-@media (max-width: 720px) {
-  .contact__bg {
-    position: absolute; /* flows with content on small screens */
-    z-index: -2;
-  }
-  .contact__wall {
-    min-height: auto;
-  }
-  .contact__form-overlay {
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0.75rem;
-  }
-  .contact__form-card {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 12px;
-    padding: 0.85rem;
-    background: linear-gradient(
-      180deg,
-      rgba(6,6,8,0.86) 0%,
-      rgba(6,6,8,0.6) 50%,
-      rgba(6,6,8,0.08) 78%,
-      rgba(6,6,8,0.00) 100%
-    );
-  }
+/* decorative bottom glow */
+.contact__form-card::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 26px;
+  pointer-events: none;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.12));
+  z-index: 0;
 }
 
-/* DESKTOP: keep two-column layout but vertically center left content and slightly shorten form height */
+/* ensure form contents sit above the pseudo */
+.contact__form-card > * { position: relative; z-index: 1; }
+
+/* ====== FOOTER (ensure transparent over bg) ====== */
+.footer {
+  background: transparent;
+  position: relative;
+  z-index: 2; /* above .contact__bg and page content */
+}
+
+/* ====== RESPONSIVE: DESKTOP (>=1025px) ====== */
 @media (min-width: 1025px) {
   .contact__wall {
     display: grid;
-    /* make left column wider so it sits closer to the page center */
-    grid-template-columns: 46% 1fr; /* adjust 46% → 48% → 50% to taste */
+    grid-template-columns: 46% 1fr;
     gap: 2rem;
-    align-items: center; /* center left block vertically in the row */
+    align-items: center;
     padding: 3rem 1rem;
+    min-height: auto; /* let content define height when grid used */
   }
 
   .contact__left {
@@ -253,15 +172,21 @@
     transform: none;
     width: 100%;
     margin: 0;
-    align-self: center;   /* ensure left column sits centered in its grid cell */
+    align-self: center;
     display: flex;
-    align-items: center;  /* vertically center the inner box */
-    max-width: 560px;     /* cap so the left box doesn't stretch too far */
+    align-items: center;
+    max-width: 560px;
+    pointer-events: none;
   }
 
   .contact__left-inner {
     width: 100%;
-    margin: 0;            /* remove any top offset so it sits centered */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
   }
 
   .contact__form-overlay {
@@ -269,7 +194,7 @@
     inset: auto;
     display: block;
     justify-self: end;
-    align-self: center;   /* center the form vertically opposite the left block */
+    align-self: center;
     padding: 1.25rem;
     pointer-events: auto;
     z-index: 3;
@@ -280,71 +205,24 @@
     max-width: 720px;
     box-sizing: border-box;
     margin: 0;
-    overflow-y: auto;     /* allow scrolling if content exceeds this height */
-    padding: 1rem;        /* slightly reduced padding to tighten the card */
+    overflow-y: auto;
+    padding: 1rem;
     border-radius: 10px;
   }
+
+  /* small desktop nudge for design alignment */
+  .contact__left-inner { transform: translateY(-100%); position: relative; z-index: 1; }
 }
 
-/* Force-reset offsets and vertically center the left inner block to match profile title */
-@media (min-width: 1025px) {
-  /* ensure left column is in-flow (override any earlier absolute rules) */
-  .contact__left {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    display: flex;
-    align-items: center;        /* vertical centering inside the grid cell */
-    justify-content: flex-end;  /* keep it toward the center gutter */
-    padding-right: 1rem;
-    max-width: none;
-  }
-
-  /* make the inner block vertically centered and match profile title scale */
-  .contact__left-inner {
-    margin: 0;
-    width: 100%;
-    max-width: 520px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;   /* center content vertically inside the inner box */
-    align-items: flex-start;    /* left-align text (same as profile title) */
-    padding: 0;
-  }
-
-  /* match title sizing/line-height to the profile title so baselines align */
-  .contact__left-title {
-    font-size: clamp(2rem, 3.6vw, 2.8rem);
-    line-height: 1.03;
-    margin: 0 0 0.45rem 0;
-  }
-}
-
-/* Nudge the left inner block upward on desktop so it lines up with the profile title */
-@media (min-width: 1025px) {
-  .contact__left {
-    /* keep it aligned to the right edge but allow inner vertical offset */
-    align-items: flex-start; /* anchor at top of grid cell so translateY moves predictably */
-  }
-
-  .contact__left-inner {
-    /* lift the block — increase the absolute value to move it higher */
-    transform: translateY(-100%);
-    /* ensure no accidental stacking shift */
-    position: relative;
-    z-index: 1;
-  }
-}
-
-/* TABLET: center content, narrower form, left block above visually but centered */
-@media (max-width: 1024px) and (min-width: 721px) {
+/* ====== RESPONSIVE: TABLET (721px - 1024px) ====== */
+@media (min-width: 721px) and (max-width: 1024px) {
   .contact__wall {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 1.25rem;
     padding: 2rem 1rem;
+    min-height: 72vh;
   }
 
   .contact__left {
@@ -354,6 +232,7 @@
     width: 70%;
     max-width: 720px;
     margin: 0;
+    pointer-events: auto;
   }
 
   .contact__form-overlay {
@@ -366,19 +245,16 @@
   }
 
   .contact__form-card {
-    width: 560px;
-    max-width: 92%;
+    width: 84%;
+    max-width: calc(100% - 2rem);
   }
 }
 
-/* MOBILE: stacked flow, full-width form and left block above it */
+/* ====== RESPONSIVE: MOBILE (<=720px) ====== */
 @media (max-width: 720px) {
-  .contact__wall {
-    display: block;
-    padding: 1rem;
-    min-height: 34dvh;
-    min-height: 34vh;
-  }
+  /* layout becomes stacked; bg flows with content */
+  .contact__bg { position: absolute; z-index: -2; }
+  .contact__wall { display: block; padding: 1rem; min-height: 34dvh; min-height: 34vh; }
 
   .contact__left {
     position: relative;
@@ -389,22 +265,24 @@
     max-width: 100%;
     margin: 0 0 0.75rem;
     order: 1;
+    pointer-events: auto;
   }
 
   .contact__left-inner {
-    background: rgba(0,0,0,0.28); /* slight backdrop for legibility */
+    background: rgba(0,0,0,0.28);
     padding: 0.85rem;
     border-radius: 10px;
     text-align: left;
   }
 
   .contact__form-overlay {
-    position: relative !important;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     padding: 0.5rem;
     order: 2;
+    pointer-events: auto;
   }
 
   .contact__form-card {
@@ -412,6 +290,13 @@
     max-width: 100%;
     padding: 0.85rem;
     border-radius: 12px;
+    background: linear-gradient(
+      180deg,
+      rgba(6,6,8,0.86) 0%,
+      rgba(6,6,8,0.6) 50%,
+      rgba(6,6,8,0.08) 78%,
+      rgba(6,6,8,0.00) 100%
+    );
   }
 }
 
@@ -421,102 +306,8 @@
   .contact__form-card { padding: 0.75rem; }
 }
 
-/* reduced-motion */
+/* ====== REDUCED MOTION ====== */
 @media (prefers-reduced-motion: reduce) {
   .contact__bg { will-change: auto; }
   .contact__form-card { transition: none; transform: none; }
-}
-
-/* ensure footer sits above background (transparent over image) */
-.footer {
-  background: transparent;
-  position: relative;
-  z-index: 2; /* above .contact__bg (z: -2) and page content (z:0) */
-}
-
-/* Tablet & Mobile: put description (contact__left) above the form,
-   keep desktop (>=1025px) unchanged. */
-@media (max-width: 1024px) {
-  .contact__wall {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 2rem 1rem;
-  }
-
-  /* ensure left block is in-flow and sits above the form */
-  .contact__left {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 72%;
-    max-width: 720px;
-    margin: 0 auto;
-    order: 1;
-    pointer-events: auto;
-    display: block;
-  }
-  .contact__left-inner {
-    background: rgba(0,0,0,0.18);
-    padding: 0.9rem;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-  }
-
-  /* form comes after the description */
-  .contact__form-overlay {
-    position: relative !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.75rem 0;
-    order: 2;
-    pointer-events: auto;
-  }
-
-  .contact__form-card {
-    width: 640px;
-    max-width: 92%;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-}
-
-@media (max-width: 720px) {
-  .contact__wall {
-    display: block;
-    padding: 1rem;
-  }
-
-  .contact__left {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 0.75rem;
-    order: 1;
-  }
-  .contact__left-inner {
-    background: rgba(0,0,0,0.28);
-    padding: 0.85rem;
-    border-radius: 10px;
-    text-align: left;
-  }
-
-  .contact__form-overlay {
-    position: relative !important;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0.5rem;
-    order: 2;
-  }
-
-  .contact__form_card {
-    width: 100%;
-    max-width: 100%;
-    padding: 0.85rem;
-    border-radius: 12px;
-  }
 }
