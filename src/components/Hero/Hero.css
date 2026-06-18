@@ -81,6 +81,12 @@
     overflow: hidden;
 }
 
+/* ensure the hero fills the viewport (prefers dynamic viewport on mobile) */
+.hero__wall {
+  min-height: 100dvh; /* modern mobile browsers account for address bar */
+  min-height: 100vh;  /* fallback */
+}
+
 .hero__bg--over {
   position: absolute;
   left: 4%;
@@ -107,6 +113,14 @@
   background-size: initial;
   background-position: initial;
   background-repeat: no-repeat;
+}
+
+/* tighten any small offsets that could cause initial scroll */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: auto; /* avoid delayed snap on mount */
 }
 
 /* Media Queries */

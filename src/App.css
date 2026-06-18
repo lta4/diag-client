@@ -40,10 +40,11 @@
   mix-blend-mode: overlay;
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
   min-height: 100vh;
   background-color: var(--appColor);
   gap: 6rem;
-  overflow: hidden;
+  overflow: auto;
 }
 
 ::webkit-scrollbar {
