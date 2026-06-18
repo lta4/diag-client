@@ -369,7 +369,11 @@
 /* tighten text inside compact cards */
 .testimonial__text { margin: 0; font-size: 0.98rem; line-height: 1.4; }
 .testimonial__name { font-weight: 700; color: #fff; }
-.testimonial__role { color: rgba(255,255,255,0.75); font-size: 0.85rem; }
+.testimonial__role { 
+  color: rgba(255,255,255,0.75); 
+  font-size: 0.85rem;
+  margin-left: 5px; 
+}
 
 /* Responsive: allow wrapping and stack on small screens */
 @media (max-width: 920px) {
