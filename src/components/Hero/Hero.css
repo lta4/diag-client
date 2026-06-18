@@ -237,3 +237,38 @@ html, body, #root {
     pointer-events: none;
   }
 }
+
+/* Desktop: prevent accidental page scroll by accounting for .hero vertical padding */
+@media (min-width: 1025px) {
+  /* .hero has padding: 2rem 1rem; so top+bottom = 4rem — adjust if you change .hero padding */
+  .hero__wall {
+    height: calc(100svh - 4rem); /* prefer svh, fallback below */
+    height: calc(100dvh - 4rem);
+    height: calc(100vh  - 4rem);
+    min-height: 0;   /* avoid conflicting min-height */
+    overflow: hidden; /* keep internal overflow from creating extra page height */
+  }
+}
+
+/* ensure hero exactly fills viewport on desktop and doesn't add extra height */
+@media (min-width: 1025px) {
+  .hero {
+    padding-top: 0;   /* remove vertical padding that was adding extra height */
+    padding-bottom: 0;
+  }
+
+  .hero__wall {
+    /* subtract header height so hero section exactly equals visible area */
+    height: calc(100svh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
+    height: calc(100vh  - var(--header-height));
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* common culprit: large vertical margins on absolutely positioned overlay/title */
+  .hero__bg--over,
+  .hero__bg--title {
+    margin: 0;
+  }
+}

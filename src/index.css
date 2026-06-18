@@ -54,9 +54,10 @@ body {
 }
 
 html, body, #root {
-  /* height: 100%; */ /******* Stops scroll down ******/
+  height: 100%;
   margin: 0;
   padding: 0;
+  background: transparent;
 }
 
 .App {
