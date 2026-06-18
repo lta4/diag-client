@@ -1,12 +1,23 @@
 /*********** BG Layer ****************/
 .hero__bg {
-    position: fixed;
-    inset: 0;
-    z-index: -3;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -4; /* behind the diag overlay */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* GWDiag overlay fixed to viewport and centered — sits above jThirteen */
+.hero__diag {
+  position: fixed;
+  inset: 0;
+  z-index: -3; /* above .hero__bg but behind content */
+  background-size: 60% auto;          /* adjust % to taste on mobile/desktop */
+  background-position: center 18%;    /* lift focal point */
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .hero, .hero__container, .hero_wall {
@@ -82,6 +93,10 @@
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  background-image: none;
+  background-size: initial;
+  background-position: initial;
+  background-repeat: no-repeat;
 }
 
 /* Media Queries */
@@ -117,19 +132,6 @@
 .scroll-up-btn:hover {
     background: #ff6600;
     color: #fff;
-}
-
-/* Ensure the decorative title shows its background image */
-.hero__bg--title {
-  display: inline-block;         /* make block-level so bg is visible */
-  min-width: 440px;              /* adjust to taste */
-  min-height: 140px;             /* adjust to taste */
-  padding: 1rem 1.25rem;
-  background-size: contain;      /* or 'cover' depending on desired crop */
-  background-repeat: no-repeat;
-  /* background-position: center center; */
-  color: rgba(255,255,255,0.95);
-  z-index: 2;                    /* ensure it sits above the page bg but below any foreground images */
 }
 
 /* Tablet & Mobile: move about__bg--title slightly above center and center it horizontally */
