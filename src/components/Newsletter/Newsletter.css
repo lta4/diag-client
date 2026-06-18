@@ -55,9 +55,47 @@
 .newsletter__msg.success { color: #a5f3c5; }
 .newsletter__msg.error { color: #ff9aa3; }
 
+/* MOBILE: center newsletter and make controls full width */
 @media (max-width: 720px) {
-  .newsletter__inner { flex-direction: column; align-items: stretch; gap: 0.75rem; }
-  .newsletter__form { width: 100%; justify-content: space-between; }
-  .newsletter__form input { flex: 1 1 auto; min-width: 0; }
-  .newsletter__status { margin-left: 0; text-align: center; }
+  .newsletter__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+    transform: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 520px; /* match form width for visual centering */
+  }
+
+  .newsletter__copy {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .newsletter__form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 520px;
+    gap: 0.5rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .newsletter__form input,
+  .newsletter__form button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* keep input text left-aligned but block is centered; adjust if you want centered text */
+  .newsletter__form input { text-align: left; }
 }
