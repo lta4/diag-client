@@ -206,3 +206,20 @@
     min-height: 34vh;
   }
 }
+
+/* DESKTOP: place GWDiag (hero__diag) to match About's about__bg--title size & position */
+@media (min-width: 1025px) {
+  .hero__diag {
+    position: fixed;           /* viewport-anchored like About's title */
+    left: 3.5%;                  /* match About left gutter */
+    top: 48%;                  /* match About vertical anchor */
+    transform: translateY(-48%); /* center the element at that anchor */
+    z-index: -3;               /* keep behind content but above base bg */
+    width: min(60vw, 780px);   /* controls visual size — matches about__bg--title scale */
+    height: auto;
+    background-size: 65% auto;/* image fills this element's width */
+    background-position: left;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+}
