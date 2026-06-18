@@ -165,34 +165,25 @@
   .hero__bg--title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
 }
 
-/* MOBILE: make hero background less zoomed/cropped */
+/* MOBILE: make GWDiag (hero__bg--title) appear smaller and positioned higher */
 @media (max-width: 720px) {
-  /* reduce hero height so the image isn't stretched/cropped too low */
-  .hero__wall {
-    min-height: 34dvh;
-    min-height: 34vh; /* fallback */
+  .hero__bg--title {
+    background-size: 60% auto;      /* reduce visual size of the image */
+    background-position: center 18%;/* lift focal point toward top */
+    background-repeat: no-repeat;
+    width: min(78%, 360px);         /* limit element width on small screens */
+    height: auto;
+    margin: 0 auto;
+    padding: 0.4rem 0;              /* tighten vertical padding */
   }
 
-  /* target the decorative bg(s) that use jThirteen */
-  .hero__bg {
-    /* show more of the image (less zoom) */
-    background-size: 100% auto;   /* change to 90% or 110% to tweak zoom */
-    background-position: center 18%; /* lift focal point toward top */
-    background-attachment: scroll; /* avoid fixed-attachment quirks on mobile */
-  }
-
-  /* if you also render the inner hero__bg wrapper, keep consistent sizing */
-  .hero__bg .hero__bg--over,
+  /* keep the overlay positioned and centered above the hero */
   .hero__bg--over {
-    left: 50% !important;
-    top: 20vh !important;                /* slightly above the middle */
-    transform: translate(-50%, -50%) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    left: 50%;
+    transform: translateX(-50%);
     pointer-events: none;
-    padding: 0 4%;
-    z-index: 2;
   }
 }
