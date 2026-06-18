@@ -404,3 +404,41 @@
     padding: 2rem 0;
   }
 }
+
+/* MOBILE: show gallery hero ~half viewport so hero + video are both visible on landing */
+@media (max-width: 720px) {
+  .gallery__hero {
+    height: 50svh;
+    height: 50dvh;
+    height: 50vh;                 /* fallback */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    overflow: hidden;             /* avoid internal overflow pushing page taller */
+  }
+
+  .gallery__hero-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ensure the video sits immediately below the hero and is visible */
+  .video__container {
+    margin-top: 0.5rem;
+    /* allow video to be large enough to show half the viewport if desired */
+    /* optionally: set a max-height if needed, e.g. max-height: 50svh; */
+  }
+
+  /* tighten title/sub margins to avoid collapsing space */
+  .gallery__title,
+  .gallery__sub {
+    margin: 0;
+  }
+
+  /* small padding for content below */
+  .gallery__inner {
+    padding-top: 0.5rem;
+  }
+}
