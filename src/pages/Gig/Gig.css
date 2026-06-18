@@ -158,6 +158,18 @@
     padding: 0.85rem;
     border-radius: 10px;
   }
+
+  /* mobile: lower the gig hero content a bit so it isn't too close to the top */
+  .gig__hero {
+    padding-top: 4.5rem; /* increase to push content down on small screens */
+    box-sizing: border-box;
+  }
+
+  /* if your hero has an inner wrapper, nudge that too (safe fallback) */
+  .gig__hero .gig__hero-inner,
+  .gig__hero .hero__inner {
+    padding-top: 1rem;
+  }
 }
 
 /* small tweak: ensure images scale nicely */
