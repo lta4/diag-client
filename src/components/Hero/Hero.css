@@ -179,17 +179,16 @@
 
 /* MOBILE: make GWDiag (hero__bg--title) appear smaller and positioned higher */
 @media (max-width: 720px) {
-  .hero__bg--title {
-    background-size: 80% auto;      /* reduce visual size of the image */
-    background-position: center 18%;/* lift focal point toward top */
+  /* .hero__bg--title {
+    background-size: 80% auto;      
+    background-position: center 18%;
     background-repeat: no-repeat;
-    width: min(78%, 360px);         /* limit element width on small screens */
+    width: min(78%, 360px);        
     height: auto;
     margin: 0 auto;
-    padding: 0.4rem 0;              /* tighten vertical padding */
+    padding: 0.4rem 0;              
   }
 
-  /* keep the overlay positioned and centered above the hero */
   .hero__bg--over {
     display: flex;
     justify-content: center;
@@ -197,5 +196,13 @@
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
+  } */
+   .hero__diag {
+    background-size: 90% auto;    /* make overlay smaller on phones */
+    background-position: center 14%;
+  }
+  .hero__wall {
+    min-height: 34dvh;
+    min-height: 34vh;
   }
 }
