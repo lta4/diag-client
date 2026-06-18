@@ -168,7 +168,7 @@
 /* MOBILE: make GWDiag (hero__bg--title) appear smaller and positioned higher */
 @media (max-width: 720px) {
   .hero__bg--title {
-    background-size: 60% auto;      /* reduce visual size of the image */
+    background-size: 80% auto;      /* reduce visual size of the image */
     background-position: center 18%;/* lift focal point toward top */
     background-repeat: no-repeat;
     width: min(78%, 360px);         /* limit element width on small screens */
