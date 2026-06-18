@@ -1,4 +1,5 @@
 /*********** BG Layer ****************/
+/* base fixed background (jThirteen) — sits behind the diag overlay */
 .hero__bg {
   position: fixed;
   inset: 0;
@@ -14,15 +15,24 @@
   position: fixed;
   inset: 0;
   z-index: -3; /* above .hero__bg but behind content */
-  background-size: 60% auto;          /* adjust % to taste on mobile/desktop */
+  background-size: 75% auto;          /* adjust % to taste on mobile/desktop */
   background-position: center 18%;    /* lift focal point */
   background-repeat: no-repeat;
   pointer-events: none;
 }
 
-.hero, .hero__container, .hero_wall {
-    position: relative;
-    z-index: 1;
+/* ensure decorative title doesn't add another background image */
+.hero__bg--title {
+  background-image: none;
+  background-size: initial;
+  background-position: initial;
+  background-repeat: no-repeat;
+}
+
+/* ensure content sits above fixed layers */
+.hero, .hero__container, .hero__wall {
+  position: relative;
+  z-index: 1;
 }
 
 .hero {
