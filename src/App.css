@@ -29,14 +29,10 @@
 
 .App {
   position: relative;
-  /* background: transparent; */
-  /* background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2003575562495150723/C60BF4203B087936E6F4A23B2CBAF3771C0D9579/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"); */
-  /* height: 100vh; */
   height: 100%;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: cover; */
   mix-blend-mode: overlay;
   display: flex;
   flex-direction: column;
@@ -44,7 +40,6 @@
   min-height: 100dvh;
   min-height: 100vh;
   background-color: var(--appColor);
-  /* gap: 6rem; */
   overflow: auto;
 }
 

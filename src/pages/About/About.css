@@ -31,6 +31,46 @@
   visibility: visible;
 }
 
+/* Full-viewport landing hero for About (mobile-first) */
+.about__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -5;                /* sit behind content */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* make the intro/hero area fill the viewport on landing */
+.about,
+.about__hero,
+.about__wall {
+  position: relative;
+  z-index: 0;
+  /* prefer svh/dvh on mobile, fallback to vh */
+  min-height: 100svh;
+  min-height: 100dvh;
+  min-height: 100vh;
+  overflow: hidden; /* avoid internal content pushing page taller on first paint */
+}
+
+/* let content scroll normally after landing */
+.about > *:not(.about__hero):not(.about__wall) {
+  /* nothing special — flow normally below the hero */
+}
+
+/* Desktop: keep same full-viewport behaviour but allow header spacing if needed */
+@media (min-width: 1025px) {
+  .about,
+  .about__hero,
+  .about__wall {
+    min-height: calc(100svh - var(--header-height,56px));
+    min-height: calc(100dvh - var(--header-height,56px));
+    min-height: calc(100vh  - var(--header-height,56px));
+  }
+}
+
 /* Hero landing: full viewport intro */
 .about__hero {
   min-height: 100vh;
@@ -92,17 +132,6 @@
   /* background: transparent; */
   /* padding: 2rem 1rem 4rem; */
   /* z-index: 0; */
-}
-
-.about__bg {
-  position: fixed;
-  inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
-  z-index: -3;                /* behind all page content */
-  background-size: cover;     /* cover whole viewport */
-  background-position: center;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  will-change: transform;
 }
 
 /* make sure main about content sits above the bg */
@@ -173,7 +202,7 @@
 /* slightly higher on small phones */
 @media (max-width: 720px) {
   .about__bg--over { top: 30vh; padding: 0 6%; }
-  .about__bg--title { font-size: clamp(1.4rem, 5vw, 2.4rem); }
+  .about__bg--title { font-size: clamp(2.4rem, 5vw, 2.4rem); }
 }
 
 /***************************PROFILE***********************/
@@ -395,4 +424,18 @@
 }
 @media (max-width: 480px) {
   .about__stats .stat { flex: 1 1 100%; }
+}
+
+/* Ensure About landing hero fills the full mobile viewport so below content (stats) is not visible */
+@media (max-width: 720px) {
+  .about__hero {
+    /* prefer svh/dvh on modern browsers, fallback to vh */
+    height: 100svh;
+    height: 100dvh;
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden; /* prevents the rest of the page from peeking into the viewport */
+    padding-top: 1.25rem; /* keep modest top spacing without shrinking the hero */
+    padding-bottom: 1.25rem;
+  }
 }
