@@ -161,7 +161,7 @@
     grid-template-columns: 46% 1fr;
     gap: 2rem;
     align-items: center;
-    padding: 3rem 1rem;
+    padding: 3rem 4rem;
     min-height: auto; /* let content define height when grid used */
   }
 
