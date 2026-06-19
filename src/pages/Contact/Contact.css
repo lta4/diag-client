@@ -252,73 +252,55 @@
 
 /* ====== RESPONSIVE: MOBILE (<=720px) ====== */
 @media (max-width: 720px) {
-  /* layout becomes stacked; bg flows with content */
-  .contact__bg { position: absolute; z-index: -2; }
-  .contact__wall { display: block; padding: 1rem; min-height: 34dvh; min-height: 34vh; }
+  /* lower the left intro text so it's not so high on landing */
+  .contact__left-inner {
+    /* increase top padding to push everything down */
+    padding-top: 4.2rem; /* tweak 1.0rem → 1.6rem to taste */
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
 
+  .contact__left-title {
+    margin-top: 0.6rem;   /* extra nudge for the title itself */
+    margin-bottom: 0.45rem;
+  }
+
+  .contact__left-copy,
+  .contact__left--copy {
+    margin-top: 0.35rem;  /* keep copy spaced under the title */
+    line-height: 1.45;
+  }
+
+  /* put description in-flow and above the form on mobile */
   .contact__left {
     position: relative;
     left: auto;
     top: auto;
     transform: none;
+    order: 1;
     width: 100%;
     max-width: 100%;
-    margin: 0 0 0.75rem;
-    order: 1;
+    margin: 0 0 1rem;
+    z-index: 2; /* ensure text sits above form if there's slight overlap */
     pointer-events: auto;
-    padding-top: 3.25rem; /* pushes the whole left block down */
   }
 
-  .contact__left-inner {
-    background: rgba(0,0,0,0.28);
-    padding: 0.85rem;
-    border-radius: 10px;
-    text-align: left;
-    padding-top: 0.6rem; /* extra inner spacing so the title sits lower */
-  }
-
-  .contact__left-title {
-    margin: 0 0 0.5rem 0;
-    margin-top: 0.35rem; /* small safe nudge for the title itself */
-    font-size: clamp(2.4rem, 4.5vw, 4.5rem);
-    font-weight: 900;
-    line-height: 0.98;
-    text-align: left;
-    max-width: 44ch;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 6px 18px rgba(0,0,0,0.6);
-  }
-  .contact__left-copy {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.35;
-    opacity: 0.95;
-  }
-
+  /* keep the form below the description and full-width */
   .contact__form-overlay {
     position: relative;
+    inset: auto;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    padding: 0.5rem;
+    padding: 0 1rem 1rem;
     order: 2;
     pointer-events: auto;
+    z-index: 1;
   }
 
   .contact__form-card {
     width: 100%;
-    max-width: 100%;
-    padding: 0.85rem;
-    border-radius: 12px;
-    background: linear-gradient(
-      180deg,
-      rgba(6,6,8,0.86) 0%,
-      rgba(6,6,8,0.6) 50%,
-      rgba(6,6,8,0.08) 78%,
-      rgba(6,6,8,0.00) 100%
-    );
+    max-width: 720px;
+    margin: 0;
   }
 }
 
