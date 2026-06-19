@@ -442,3 +442,35 @@
     padding-top: 0.5rem;
   }
 }
+
+/* MOBILE: use 2 columns for the masonry gallery and ensure images fit cleanly */
+@media (max-width: 720px) {
+  .gallery__grid--masonry {
+    columns: 2;                /* two columns on phones */
+    column-gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .gallery__item {
+    display: inline-block;     /* required for CSS columns masonry */
+    width: 100%;
+    margin: 0 0 0.75rem;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .gallery__item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;         /* keep aspect visually pleasing */
+    border-radius: 6px;
+  }
+
+  .gallery__meta {
+    padding-top: 0.4rem;
+    font-size: 0.95rem;
+  }
+}
