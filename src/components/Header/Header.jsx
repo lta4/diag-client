@@ -1,185 +1,66 @@
-import { useState, useEffect, useRef } from "react";
-import BWDiag from "../../assets/BWDiag.jpg";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { IoClose, IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
+import { IoClose, IoMenu } from "react-icons/io5";
+import BWDiag from "../../assets/BWDiag.jpg";
 import "./Header.css";
-// import { HashLink as Link } from "react-router-hash-link";
 
-const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isTransparent, setIsTransparent] = useState(true);
-    const isMobile = useMediaQuery({ maxWidth: "1150px" });
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTop, setIsTop] = useState(true);
+  const isMobile = useMediaQuery({ maxWidth: 1150 });
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 40) {
-                setIsTransparent(false);
-            } else {
-                setIsTransparent(true);
-            }
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  useEffect(() => {
+    const onScroll = () => setIsTop(window.scrollY < 24);
+    onScroll(); // set initial state
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-    const closeMobileMenu = () => {
-        if (isMobile) {
-            setIsMenuOpen(false);
-        }
-    };
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
+  const closeMobileMenu = () => isMobile && setIsMenuOpen(false);
 
-    const listClassName = isMobile ? "nav__list" : "nav__list__web";
-    const linkClassName = "nav__link";
-    const buttonClassName = "nav__cta";
-    const bwRef = useRef(null);
+  return (
+    <header className={`header ${isTop ? "header--transparent" : ""}`}>
+      <nav className="nav">
+        <NavLink to="/" className="nav__logo" onClick={closeMobileMenu}>
+          <span className="nav__BWDiag">
+            <img
+              src={BWDiag}
+              alt="Home"
+              className={`nav__BWDiag--image ${!isTop ? "bw-visible" : "bw-hidden"}`}
+            />
+          </span>
+        </NavLink>
 
-    useEffect(() => {
-        const img = bwRef.current;
-        if (!img) return;
+        {isMobile && (
+          <div className="nav__toggle" onClick={toggleMenu} aria-label="Toggle menu">
+            <IoMenu />
+          </div>
+        )}
 
-        const onScroll = () => {
-            // show BWDiag once the user scrolls down a little
-            if (window.scrollY > 8) {
-                img.classList.add('bw-visible');
-            } else {
-                img.classList.remove('bw-visible');
-            }
-        };
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        // run initial check
-        onScroll();
-
-        return () => window.removeEventListener('scroll', onScroll);
-    }, []);
-
-    return (
-        <header className={`header${isTransparent ? " header--transparent" : ""}`}>
-            <nav className="nav active">
-                <NavLink to="/" className="nav__logo">
-                    <span className="nav__BWDiag">
-                        <img ref={bwRef} src={BWDiag} alt="Logo" className="nav__BWDiag--image" />
-                    </span>
-                </NavLink>
-                {isMobile && (
-                    <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
-                        <IoMenu />
-                    </div>
-                )}
-                {isMobile ? (
-                    <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu">
-                        <ul className={listClassName}>
-                            {/* <li>
-                                <Link smooth to="/#inquire" className={linkClassName} onClick={closeMobileMenu}>
-                                    Inquire
-                                </Link>
-                            </li> */}
-                            <li>
-                                <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/About" className={linkClassName} onClick={closeMobileMenu}>
-                                    Biography
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/Gallery" className={linkClassName} onClick={closeMobileMenu}>
-                                    Gallery
-                                </NavLink>
-                            </li>
-                            {/* <li>
-                                <NavLink to="/Video" className={linkClassName} onClick={closeMobileMenu}>
-                                    Diagnostic & Friends
-                                </NavLink>
-                            </li> */}
-                            <li>
-                                <NavLink to="/Gig" className={linkClassName} onClick={closeMobileMenu}>
-                                    Shows
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/Contact" className={linkClassName} onClick={closeMobileMenu}>
-                                    Contact
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="Linktree" className={linkClassName} onClick={closeMobileMenu}>
-                                    Stream
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/" className={`${linkClassName} ${buttonClassName}`} onClick={closeMobileMenu}>
-                                    DIAGNOSTIC
-                                </NavLink>
-                            </li>
-                        </ul>
-                        <div className="nav__close" id="nav-close" onClick={toggleMenu}>
-                            <IoClose />
-                        </div>
-                    </div>
-                ) : (
-                    <ul className={listClassName}>
-                        {/* <li>
-                            <Link smooth to="/#shows" className={linkClassName}>
-                                Shows
-                            </Link>
-                        </li> */}
-                        {/* <li>
-                            <Link smooth to="/#inquire" className={linkClassName}>
-                                Inquire
-                            </Link>
-                        </li> */}
-                        <li>
-                            <NavLink to="/" className={linkClassName}>
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/About" className={linkClassName}>
-                                Biography
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/Gallery" className={linkClassName}>
-                                Gallery
-                            </NavLink>
-                        </li>
-                        {/* <li>
-                            <NavLink to="/Video" className={linkClassName}>
-                                Diagnostic & Friends
-                            </NavLink>
-                        </li> */}
-                        <li>
-                            <NavLink to="/Gig" className={linkClassName}>
-                                Shows
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/Contact" className={linkClassName}>
-                                Contact
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="Linktree" className={linkClassName}>
-                                Stream
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="https://www.youtube.com/@DiagnosticMusic0" target="_blank" className={`${linkClassName} ${buttonClassName}`}>
-                                Join the Vibe
-                            </NavLink>
-                        </li>
-                    </ul>
-                )}
-            </nav>
-        </header>
-    );
-};
-
-export default Header;
+        {isMobile ? (
+          <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}>
+            <ul className="nav__list">
+              <li><NavLink to="/" onClick={closeMobileMenu}>Home</NavLink></li>
+              <li><NavLink to="/About" onClick={closeMobileMenu}>Biography</NavLink></li>
+              <li><NavLink to="/Gallery" onClick={closeMobileMenu}>Gallery</NavLink></li>
+              <li><NavLink to="/Gig" onClick={closeMobileMenu}>Shows</NavLink></li>
+              <li><NavLink to="/Contact" onClick={closeMobileMenu}>Contact</NavLink></li>
+            </ul>
+            <div className="nav__close" onClick={toggleMenu}><IoClose /></div>
+          </div>
+        ) : (
+          <ul className="nav__list__web">
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/About">Biography</NavLink></li>
+            <li><NavLink to="/Gallery">Gallery</NavLink></li>
+            <li><NavLink to="/Gig">Shows</NavLink></li>
+            <li><NavLink to="/Contact">Contact</NavLink></li>
+            <li><NavLink to="https://www.youtube.com/@DiagnosticMusic0" target="_blank" rel="noreferrer" className="nav__cta">Join the Vibe</NavLink></li>
+          </ul>
+        )}
+      </nav>
+    </header>
+  );
+}
