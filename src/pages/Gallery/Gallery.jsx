@@ -7,6 +7,7 @@ import CDiagBanner from "../../assets/CDiagBanner.jpg";
 import FeaturedMix from "../../components/FeaturedMix/FeaturedMix";
 import SampleVideo from "../../assets/NOCTURNA.mp3";
 import { FaInstagram, FaYoutube, FaDownload, FaShareAlt, FaLink } from "react-icons/fa";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 function Gallery() {
 
@@ -368,6 +369,9 @@ function Gallery() {
                 </div>
             )}
             <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
+            <div>
+              <Newsletter />
+            </div>
             </div>
         {/* </div> */}
         </div>
