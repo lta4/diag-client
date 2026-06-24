@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "@formspree/react";
 import "./Newsletter.css";
 
 /**
@@ -6,64 +7,43 @@ import "./Newsletter.css";
  * - Set REACT_APP_NEWSLETTER_ENDPOINT in .env (POST JSON { email })
  * - Or pass `endpoint` prop when mounting <Newsletter endpoint="https://..." />
  */
-export default function Newsletter({ endpoint }) {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
-  const api = endpoint || process.env.REACT_APP_NEWSLETTER_ENDPOINT || "";
+export default function Newsletter() {
+  // replace "YOUR_FORM_ID" with the id from Formspree (looks like: mlezkqwy)
+  const [state, handleSubmit] = useForm("xyzzbedg");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      setStatus("error");
-      return;
-    }
-    setStatus("sending");
-    try {
-      // POST JSON to endpoint. Endpoint must accept JSON { email }.
-      const res = await fetch(api, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+  // ensure errors is always an array so .length is safe
+  const errors = Array.isArray(state.errors) ? state.errors : [];
 
-      if (!res.ok) throw new Error("Network response not ok");
-      setStatus("success");
-      setEmail("");
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-    }
-  };
+  if (state.succeeded) {
+    return (
+      <div className="newsletter__success" role="status" aria-live="polite">
+        Thanks — you’re subscribed!
+      </div>
+    );
+  }
 
   return (
-    <section className="newsletter" aria-labelledby="newsletter-title">
-      <div className="newsletter__inner">
-        <div className="newsletter__copy">
-          <h3 id="newsletter-title">Join the mailing list</h3>
-          <p>Get new mixes, shows and drops. No spam — unsubscribe anytime.</p>
+    <form className="newsletter__form" onSubmit={handleSubmit} aria-label="Subscribe to newsletter">
+      <label htmlFor="email" className="sr-only">Email address</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+        aria-required="true"
+        className="newsletter__input"
+      />
+      <button type="submit" className="newsletter__submit" disabled={state.submitting}>
+        {state.submitting ? "Sending…" : "Subscribe"}
+      </button>
+      {errors.length > 0 && (
+        <div className="newsletter__error" role="alert" aria-live="polite">
+          {errors.map((e, i) => (
+            <div key={i}>{e.message || e.error || JSON.stringify(e)}</div>
+          ))}
         </div>
-
-        <form className="newsletter__form" onSubmit={handleSubmit} aria-live="polite">
-          <label htmlFor="newsletter-email" className="visually-hidden">Email address</label>
-          <input
-            id="newsletter-email"
-            type="email"
-            inputMode="email"
-            placeholder="you@domain.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button type="submit" disabled={status === "sending"}>
-            {status === "sending" ? "Joining…" : "Join"}
-          </button>
-        </form>
-
-        <div className="newsletter__status" aria-live="polite">
-          {status === "success" && <span className="newsletter__msg success">Thanks — check your inbox.</span>}
-          {status === "error" && <span className="newsletter__msg error">Could not subscribe. Try again.</span>}
-        </div>
-      </div>
-    </section>
+      )}
+    </form>
   );
 }
