@@ -4,6 +4,7 @@ import jFourteen from "../../assets/jFourteen.jpg";
 import JThirteen from "../../assets/jThirteen.jpg";
 import jEleven from "../../assets/jEleven.jpeg";
 import JSixteen from "../../assets/jSixteen.jpg";
+import Newsletter from "../../components/Newsletter/Newsletter";
 import ScrollToTop from "react-scroll-to-top";
 
 // Stats data
@@ -173,6 +174,9 @@ export default function About() {
             </section>
           </div>
         </div>{/* /#about-content */}
+        <div>
+          <Newsletter />
+        </div>
       </main>
 
       <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />

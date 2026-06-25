@@ -98,3 +98,75 @@
   /* keep input text left-aligned but block is centered; adjust if you want centered text */
   .newsletter__form input { text-align: left; }
 }
+
+/* NEWS: base / mobile-first */
+.news {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news__head {
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+.news__type {
+  font-weight: 600;
+  color: inherit;
+  line-height: 1.15;
+  font-size: 1rem; /* mobile */
+  margin: 0;
+}
+
+/* Tablet */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .news {
+    padding: 1rem 1.25rem;
+  }
+
+  .news__head {
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .news__type {
+    font-size: 1.25rem; /* tablet */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .news {
+    padding: 1.5rem 2rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .news__head {
+    width: auto;
+    max-width: none;
+    text-align: left;
+    margin-right: 1.25rem;
+  }
+
+  .news__type {
+    font-size: 1.6rem; /* desktop */
+    margin: 0;
+  }
+}
+
+/* small visual tweaks to keep spacing consistent with newsletter form */
+@media (max-width: 720px) {
+  .news__type { font-size: 0.98rem; }
+}
