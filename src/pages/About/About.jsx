@@ -149,10 +149,17 @@ export default function About() {
                   <img src={jEleven} alt="Jose Flores portrait" className="profile__grid--image2" />
                   <div className="profile__description">
                     <h1 className="profile__description--title">Jose Flores</h1>
-                    <p className="profile__description--text">Bartender by day and DJ by night, you’ll find me spinning beats at some of the best bars and venues across San Diego, CA. Join me on a sonic journey through underground rhythms and timeless house classics.</p>
+                    {/* <p className="profile__description--text">Bartender by day and DJ by night, you’ll find me spinning beats at some of the best bars and venues across San Diego, CA. Join me on a sonic journey through underground rhythms and timeless house classics.</p>
                     <p className="profile__description--text">My YouTube channel is your destination for electrifying Latin house mixes paired with captivating visuals, creating an immersive vibe you can feel.</p>
                     <p className="profile__description--text">From iconic tracks of the past to the freshest sounds of today, we’re curating the ultimate internet radio show experience.</p>
-                    <p className="profile__description--text">🔥 Subscribe now and dive into the groove with Diagnostic & Friends — where the music does not stop.</p>
+                    <p className="profile__description--text">🔥 Subscribe now and dive into the groove with Diagnostic & Friends — where the music does not stop.</p> */}
+                    <p className="profile__description--text">Diagnostic is a San Diego–based DJ and producer known for high-energy sets that blend tech house, Latin grooves, and driving percussion. His sound is built around rolling basslines, infectious rhythms, and groove-first selections that keep dance floors moving from the first track to the last.</p>
+
+                    <p className="profile__description--text">He’s built a reputation in San Diego’s nightlife scene by playing everything from neighborhood bars to packed clubs and private events. Every set is different, but the approach stays the same: read the room, build momentum, and keep people dancing.</p>
+
+                    <p className="profile__description--text">Drawing inspiration from artists like Solardo, Carl Cox, Ramon Bedoya, and Kofla, Diagnostic delivers a mix of underground house, Latin-influenced grooves, and high-energy selections that balance raw club energy with tight, rhythmic flow.</p>
+
+                    <p className="profile__description--text">Whether it’s a warehouse, nightclub, rooftop, or wedding, Diagnostic brings the same focus to every performance—creating a set that fits the room while keeping the energy consistent from start to finish. With live mixes on YouTube, SoundCloud, and Instagram (@diagnosticmusic), he’s continuing to grow his presence while representing San Diego’s underground dance music scene.</p>
                   </div>
                 </div>
               </div>
