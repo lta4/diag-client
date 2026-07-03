@@ -22,10 +22,17 @@
 }
 
 .gig__title {
-  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
-  margin: 0;
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.98;
+  max-width: 44ch;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
+
 .gig__subtitle {
   color: rgba(255,255,255,0.78);
   margin: 0.25rem 0 0 0;
