@@ -1,52 +1,66 @@
-.gallery {
-    --gallery-hero-height: 45vh;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /* background: #0f1111;  */
-    color: #e6e6e6;
+/* ============================
+   Gallery — organized stylesheet
+   Base styles first; media queries at the end
+   ============================ */
+
+/* Theme / variables */
+:root{
+  --gallery-hero-height: 45vh;
+  --content-max-width: 1200px;
+  --card-radius: 12px;
+  --card-shadow: 0 8px 30px rgba(3,6,10,0.45);
+  --muted-border: rgba(255,255,255,0.03);
+  --muted-contrast: rgba(255,255,255,0.06);
 }
 
-/* Keep one wrapper for parallax/background layering */
-/* .gallery__parallax {
-  background-image: url("../../assets/BGbackground.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+/* ----------------------------
+   Base container
+   ---------------------------- */
+.gallery{
+  --gallery-hero-height: var(--gallery-hero-height);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #e6e6e6;
   position: relative;
-  overflow: visible;
-} */
-
-/* Prefer CSS pseudo element for background layers instead of extra divs */
-/* .gallery__parallax::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(10,10,10,0.55);
-  z-index: -1;
-} */
-
-.gallery__hero {
-    width: 100%;
-    height: var(--gallery-hero-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
-    border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index: 0;
+  box-sizing: border-box;
 }
 
-.gallery__hero-inner { 
-    text-align: center; 
-    padding: 2rem 1rem; 
-    font-size: 1.4rem;
+/* ----------------------------
+   Hero
+   ---------------------------- */
+.gallery__hero{
+  width: 100%;
+  height: var(--gallery-hero-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  border-bottom: 1px solid var(--muted-border);
+  box-sizing: border-box;
+}
+.gallery__hero-inner{
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 1.4rem;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
 }
 
-/* Layout container for the video + gallery */
-.gallery__inner {
-  max-width: 1200px;
+/* hero titles */
+.gallery__title--typing{ font-size: clamp(1.6rem,3.6vw,2.6rem); }
+.gallery__title--typing,
+.gallery__sub--typing{ display:inline-block; white-space:pre-wrap; }
+
+/* ----------------------------
+   Inner container
+   ---------------------------- */
+.gallery__inner{
+  max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
@@ -54,27 +68,26 @@
   z-index: 1;
 }
 
-/* Video container — responsive, centered, subtle card */
-.video__container {
+/* ----------------------------
+   Video container / overlays
+   ---------------------------- */
+.video__container{
   max-width: 1100px;
   margin: 1.25rem auto;
-  border-radius: 12px;
+  border-radius: var(--card-radius);
   overflow: hidden;
   background: #000;
-  box-shadow: 0 8px 30px rgba(3, 6, 10, 0.45);
-  border: 1px solid white
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
 }
-
-/* Keep the media area responsive. If FeaturedMix renders an iframe, this keeps aspect ratio. */
-.video__container--media {
+.video__container--media{
   width: 100%;
   aspect-ratio: 16/9;
   position: relative;
   background: #000;
 }
-
-/* Overlay title centered at bottom-left, subtle gradient for legibility */
-.video__title-overlay {
+.video__title-overlay{
   position: absolute;
   left: 1rem;
   bottom: 1rem;
@@ -85,9 +98,7 @@
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
 }
-
-/* CTA overlay (top-left) */
-.video__cta-overlay {
+.video__cta-overlay{
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
@@ -95,387 +106,330 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  pointer-events: none; /* keep host non-blocking; children override */
+  pointer-events: none;
 }
-.video__cta-overlay .video__cta-stack { pointer-events: auto; display:flex; gap:0.35rem; align-items:center; }
-
-/* small square action buttons */
-.video__action {
-  width: 40px;
-  height: 40px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:8px;
-  background: rgba(255,255,255,0.04);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.06);
-  cursor: pointer;
+.video__cta-overlay .video__cta-stack{ pointer-events:auto; display:flex; gap:0.35rem; align-items:center; }
+.video__action{
+  width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:8px; background: rgba(255,255,255,0.04); color:#fff;
+  border:1px solid var(--muted-contrast); cursor:pointer;
 }
-.video__action:focus { outline: 2px solid #7ab8ff; outline-offset: 2px; }
-
-/* embed overlay panel — compact and legible */
-.video__embed-panel--overlay {
-  margin-left: 0.5rem;
-  min-width: 320px;
-  max-width: 420px;
-  background: rgba(6,8,10,0.86);
-  padding: 0.6rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 8px 24px rgba(2,6,12,0.6);
+.video__action:focus{ outline:2px solid #7ab8ff; outline-offset:2px; }
+.video__embed-panel--overlay{
+  margin-left:0.5rem; min-width:320px; max-width:420px;
+  background: rgba(6,8,10,0.86); padding:0.6rem; border-radius:10px;
+  border:1px solid rgba(255,255,255,0.04); box-shadow:0 8px 24px rgba(2,6,12,0.6);
 }
 
-/* Video meta split layout */
-.video__meta--split {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 4rem auto 4rem;
-  padding: 0.6rem 0.75rem;
-  border-radius: 8px;
+/* video meta */
+.video__meta--split{
+  display:flex; gap:1rem; align-items:center; justify-content:space-between;
+  max-width:1100px; margin:4rem auto; padding:0.6rem 0.75rem; border-radius:8px;
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(6,6,8,0.02));
-  border: 1px solid rgba(255,255,255,0.03);
+  border:1px solid var(--muted-border); box-sizing:border-box;
 }
-.video__meta-left { flex: 1 1 55%; }
-.video__meta-right { flex: 1 1 45%; text-align: right; }
-.video__meta-title { margin: 0 0 0.25rem 0; font-size: 1.15rem; text-transform: uppercase;}
-.video__meta-desc { margin: 0.18rem 0; color: rgba(255,255,255,0.78); font-size: 0.95rem; }
-.video__meta-blurb { margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.92); font-style: italic; font-weight: 500; font-size: 1.05rem; }
+.video__meta-left{ flex:1 1 55%; }
+.video__meta-right{ flex:1 1 45%; text-align:right; }
+.video__meta-title{ margin:0 0 0.25rem 0; font-size:1.15rem; text-transform:uppercase; }
+.video__meta-desc{ margin:0.18rem 0; color: rgba(255,255,255,0.78); font-size:0.95rem; }
+.video__meta-blurb{ margin:0; font-size:1.05rem; color: rgba(255,255,255,0.92); font-style:italic; font-weight:500; }
 
-/* Masonry grid: use CSS columns for simple responsive masonry */
-.gallery__grid--masonry {
-  column-gap: 1rem;
-  column-fill: balance;
-  column-count: 3;
-  margin-top: 1rem;
+/* ----------------------------
+   Masonry gallery grid
+   ---------------------------- */
+.gallery__grid--masonry{
+  column-gap:1rem;
+  column-fill:balance;
+  column-count:3;
+  margin-top:1rem;
 }
-.gallery__item {
-  display: inline-block; /* required for column masonry */
-  width: 100%;
-  margin: 0 0 1rem;
-  break-inside: avoid;
-  cursor: pointer;
-  border-radius: 8px;
-  overflow: hidden;
+.gallery__item{
+  display:inline-block; width:100%; margin:0 0 1rem; break-inside:avoid;
+  cursor:pointer; border-radius:8px; overflow:hidden;
   transition: transform 240ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms;
+  box-sizing:border-box;
 }
-.gallery__item img { width: 100%; height: auto; display:block; }
-.gallery__item:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(3,6,12,0.22); }
+.gallery__item img{ width:100%; height:auto; display:block; object-fit:cover; }
+.gallery__item:hover{ transform:translateY(-6px); box-shadow:0 12px 30px rgba(3,6,12,0.22); }
 
-/* Modal improvements */
-.gallery__modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(2,4,8,0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 1.25rem;
+/* meta beneath items */
+.gallery__meta{ padding-top:0.4rem; font-size:0.95rem; }
+
+/* ----------------------------
+   Modal (lightbox)
+   ---------------------------- */
+.gallery__modal{
+  position:fixed; inset:0; background: rgba(2,4,8,0.85);
+  display:flex; align-items:center; justify-content:center; z-index:9999; padding:1.25rem;
 }
 .gallery__modal-inner {
-  max-width: 1100px;
-  width: 100%;
+  /* constrain modal content to a consistent size so image never full-bleed */
   position: relative;
-  border-radius: 10px;
-  outline: none;
+  z-index: 1230;
+  width: min(880px, 90vw);
+  max-width: 90vw;
+  max-height: calc(100vh - 120px); /* leave room around edges for controls */
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  overflow: visible; /* keep controls clickable */
 }
-.gallery__modal-img { width: 100%; height: auto; display:block; border-radius: 8px; }
-.gallery__modal-close,
+
+/* Close button */
+.gallery__modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 10px;
+  background: rgba(6,6,8,0.64);          /* dark glass */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+  z-index: 1400;
+  pointer-events: auto;
+}
+
+/* Prev / Next arrows */
 .gallery__modal-prev,
 .gallery__modal-next {
   position: absolute;
-  top: 12px;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.gallery__modal-close { right: 12px; top: 12px; }
-.gallery__modal-prev { left: 12px; top: 50%; transform: translateY(-50%); }
-.gallery__modal-next { right: 12px; top: 50%; transform: translateY(-50%); }
-
-/* Modal action buttons (share / download) */
-.gallery__modal-actions {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-.gallery__modal-action {
-  background: rgba(255,255,255,0.06);
-  color: #fff;
+  border-radius: 10px;
+  background: rgba(6,6,8,0.52);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,0.04);
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: transform .12s ease, background .12s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.36);
+  z-index: 1350;
+  pointer-events: auto;
 }
 
-.gallery__modal-action:hover {
-  transform: translateY(-3px);
-  background: rgba(255,255,255,0.09);
-}
+/* explicit left/right positions */
+.gallery__modal-prev { left: 12px; }
+.gallery__modal-next { right: 12px; }
 
-/* ensure actions are visible on small screens */
-@media (max-width: 720px) {
-  .gallery__modal-actions { flex-direction: row; gap: 0.5rem; }
-  .gallery__modal-action { padding: 0.4rem 0.75rem; font-size: 0.95rem; }
-}
-
-/* small tweak: slightly increase z-index of modal controls */
+/* prevent any rule from stretching these controls */
 .gallery__modal-close,
 .gallery__modal-prev,
-.gallery__modal-next,
-.gallery__modal-action {
-  z-index: 1220;
+.gallery__modal-next {
+  max-width: 56px;
+  min-width: 44px;
+  box-sizing: border-box;
 }
 
-/* fixed background element behind the whole page */
-.gallery__bg {
-  position: fixed;
-  inset: 0;                  /* top:0; right:0; bottom:0; left:0 */
-  z-index: -3;               /* behind everything */
-  background-size: cover;    /* ensure full cover */
-  background-position: center;
-  background-repeat: no-repeat;
-  will-change: transform;
-  pointer-events: none;      /* don't interfere with interactions */
-}
-
-/* ensure gallery content sits above the bg */
-.gallery {
+/* keep caption and actions below the image so arrows remain clear */
+.gallery__modal-caption,
+.gallery__modal-actions,
+.gallery__modal-meta {
   position: relative;
-  z-index: 0; /* content above .gallery__bg (z: -3) */
+  z-index: 1295;
+  margin-top: 12px;
 }
 
-/* mobile fallback: on some mobile browsers fixed backgrounds behave poorly */
-@media (max-width: 720px) {
-  .gallery__bg {
-    position: absolute;          /* keep behind content but flow with page */
-    z-index: -3;
-    /* slight zoom so the image appears larger (tweak 120%-160% to taste) */
-    background-size: 140% auto;
-    /* anchor toward the top so visible portion matches Gig mobile */
-    background-position: center top;
-    background-attachment: scroll; /* avoid fixed-attachment mobile quirks */
-    transform: translateY(-6%);    /* subtle vertical shift to expose top of image */
-  }
-
-  /* keep the hero taller so the background shows more of the image */
-  .gallery__hero {
-    height: 34vh;
-    min-height: 34vh;
-    background-position: center top;
-  }
+.gallery__modal-img {
+  /* make all opened images size uniformly within the modal */
+  order: 1;
+  width: 100%;
+  height: auto;
+  max-height: calc(70vh);
+  object-fit: contain;
+  margin: 0;
+  display: block;
+  pointer-events: auto;
 }
 
-@media (max-width: 1024px) {
-    .gallery__grid { grid-template-columns: repeat(3, 1fr); }
-    .gallery__item img { height: 180px; }
+/* caption/meta/actions stack under image, take full width */
+.gallery__modal-caption,
+.gallery__modal-meta,
+.gallery__modal-actions {
+  order: 2;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  box-sizing: border-box;
+  padding: 8px 0 0;
+  position: relative; /* ensure not absolute */
+  float: none;
+  align-items: center;
 }
 
-@media (max-width: 720px) {
-    .gallery__grid { grid-template-columns: repeat(2, 1fr); }
-    .gallery__item img { height: 140px; }
-    .gallery__hero { height: 34vh; }
+/* caption left, actions centered beneath (change to flex-end if you prefer right) */
+.gallery__modal-caption,
+.gallery__modal-meta { justify-content: flex-start; text-align: left; }
+.gallery__modal-actions { justify-content: center; }
+
+/* ensure individual action buttons don't expand or float */
+.gallery__modal-actions > * {
+  margin: 0 6px;
+  flex: 0 0 auto;
 }
 
-@media (max-width: 420px) {
-    .gallery__grid { grid-template-columns: 1fr; gap: 0.75rem; }
-    .gallery__item img { height: 220px; }
+/* Stronger, non-!important overrides for modal controls and stacked caption/actions
+   - placed last so it overrides earlier rules without using !important
+   - increases selector specificity by repeating the modal class */
+.gallery__modal.gallery__modal .gallery__modal-inner {
+  /* ensure modal layout stays stacked and controls can sit outside image */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  overflow: visible;
 }
 
-/* Entry animations: staggered fade + lift for gallery items */
-.gallery__grid--masonry .gallery__item {
-  opacity: 0;
-  transform: translateY(14px) scale(0.995);
-  transition: opacity 420ms cubic-bezier(.2,.9,.3,1), transform 420ms cubic-bezier(.2,.9,.3,1), box-shadow 360ms;
-  transition-delay: calc(var(--i, 0) * 70ms);
-  will-change: opacity, transform;
+/* Controls: keep small, glassy, whitish and above the image */
+.gallery__modal.gallery__modal .gallery__modal-close,
+.gallery__modal.gallery__modal .gallery__modal-prev,
+.gallery__modal.gallery__modal .gallery__modal-next {
+  color: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  pointer-events: auto;
+  z-index: 1350;
 }
 
-/* reveal */
-.gallery__grid--masonry .gallery__item.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* slightly stagger hover/surface shadow after visible */
-.gallery__grid--masonry .gallery__item.is-visible:hover {
-  transform: translateY(-6px) scale(1.03);
-}
-
-/* reduce motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .gallery__grid--masonry .gallery__item,
-  .gallery__grid--masonry .gallery__item.is-visible {
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
-
-/* Typing intro + cursor */
-.gallery__title--typing {
-  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
-}
-
-.gallery__title--typing,
-.gallery__sub--typing {
-  display: inline-block;
-  white-space: pre-wrap;
-}
-
-.typing-cursor {
-  display: inline-block;
-  margin-left: 6px;
-  color: rgba(255,255,255,0.9);
-  opacity: 1;
-  animation: blink-cursor 1s steps(1) infinite;
-  font-weight: 700;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-.typing-cursor--small { font-size: 0.82em; margin-left: 8px; }
-
-/* cursor blink */
-@keyframes blink-cursor {
-  0%   { opacity: 1; }
-  50%  { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* ensure screen-reader only fallback text is hidden visually but accessible */
-.sr-only {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
+/* explicit positions remain; keep them absolute so they don't stretch */
+.gallery__modal.gallery__modal .gallery__modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
+}
+.gallery__modal.gallery__modal .gallery__modal-prev { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
+.gallery__modal.gallery__modal .gallery__modal-next { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
+
+/* ensure SVG/icons inherit the control color */
+.gallery__modal.gallery__modal .gallery__modal-close svg,
+.gallery__modal.gallery__modal .gallery__modal-prev svg,
+.gallery__modal.gallery__modal .gallery__modal-next svg {
+  fill: currentColor;
+  stroke: none;
 }
 
-/* reduce motion accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .typing-cursor { animation: none; opacity: 1; }
+/* Force caption/actions to be full-width and stacked under the image */
+.gallery__modal.gallery__modal .gallery__modal-caption,
+.gallery__modal.gallery__modal .gallery__modal-meta,
+.gallery__modal.gallery__modal .gallery__modal-actions {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: center; /* center action buttons below image */
+  z-index: 1295;
 }
 
-/* responsive tweaks for hero text */
-@media (max-width: 900px) {
-  .gallery__title { font-size: 1.9rem; }
-  .gallery__sub { font-size: 0.96rem; }
-}
-@media (max-width: 520px) {
-  .gallery__title { font-size: 1.4rem; }
-  .gallery__sub { font-size: 0.95rem; }
+/* make sure individual action buttons don't expand */
+.gallery__modal.gallery__modal .gallery__modal-actions > * {
+  flex: 0 0 auto;
+  margin: 0 6px;
 }
 
-/* Desktop: make gallery hero occupy the full viewport */
-@media (min-width: 1025px) {
-  .gallery__hero {
-    min-height: 100vh; /* full viewport */
-    display: flex;
-    align-items: center;    /* vertically center inner content */
-    justify-content: center;/* horizontally center if desired */
-    padding: 0 1rem;
-    box-sizing: border-box;
-  }
+/* ----------------------------
+   Background layer
+   ---------------------------- */
+.gallery__bg{
+  position: fixed; inset:0; z-index:-3;
+  background-size: cover; background-position:center; background-repeat:no-repeat;
+  will-change: transform; pointer-events:none;
+}
+.gallery{ position: relative; z-index:0; } /* content above background */
 
-  /* If you have a fixed header, subtract its height:
-     replace min-height:100vh with min-height: calc(100vh - var(--header-height, 0px)); */
-  /* .gallery__hero { min-height: calc(100vh - var(--header-height, 64px)); } */
-
-  .gallery__hero-inner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* tune to left align if needed */
-    justify-content: center;
-    padding: 2rem 0;
-  }
+/* ----------------------------
+   Utilities & Accessibility
+   ---------------------------- */
+.sr-only{
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0);
+  white-space:nowrap; border:0;
 }
 
-/* MOBILE: show gallery hero ~half viewport so hero + video are both visible on landing */
-@media (max-width: 720px) {
-  .gallery__hero {
-    height: 50svh;
-    height: 50dvh;
-    height: 50vh;                 /* fallback */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1rem;
-    box-sizing: border-box;
-    overflow: hidden;             /* avoid internal overflow pushing page taller */
-  }
-
-  .gallery__hero-inner {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* ensure the video sits immediately below the hero and is visible */
-  .video__container {
-    margin-top: 0.5rem;
-    /* allow video to be large enough to show half the viewport if desired */
-    /* optionally: set a max-height if needed, e.g. max-height: 50svh; */
-  }
-
-  /* tighten title/sub margins to avoid collapsing space */
-  .gallery__title,
-  .gallery__sub {
-    margin: 0;
-  }
-
-  /* small padding for content below */
-  .gallery__inner {
-    padding-top: 0.5rem;
-  }
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .gallery__grid--masonry .gallery__item,
+  .gallery__grid--masonry .gallery__item.is-visible{ transition:none !important; transform:none !important; opacity:1 !important; }
+  .typing-cursor{ animation:none; opacity:1; }
 }
 
-/* MOBILE: use 2 columns for the masonry gallery and ensure images fit cleanly */
-@media (max-width: 720px) {
-  .gallery__grid--masonry {
-    columns: 2;                /* two columns on phones */
-    column-gap: 0.75rem;
-    padding: 0 0.5rem;
-  }
+/* typing cursor */
+.typing-cursor{ display:inline-block; margin-left:6px; color:rgba(255,255,255,0.9); animation:blink-cursor 1s steps(1) infinite; font-weight:700; line-height:1; vertical-align:middle; }
+.typing-cursor--small{ font-size:0.82em; margin-left:8px; }
+@keyframes blink-cursor{ 0%{opacity:1}50%{opacity:0}100%{opacity:1} }
 
-  .gallery__item {
-    display: inline-block;     /* required for CSS columns masonry */
-    width: 100%;
-    margin: 0 0 0.75rem;
-    break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    box-sizing: border-box;
-    text-align: center;
-  }
+/* =============================
+   Responsive media queries (all at bottom)
+   ============================= */
 
-  .gallery__item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;         /* keep aspect visually pleasing */
-    border-radius: 6px;
-  }
+/* Narrow phones */
+@media (max-width:420px){
+  .gallery__grid--masonry{ column-count:1; gap:0.75rem; }
+  .gallery__item img{ height:220px; object-fit:cover; }
+  .gallery__title{ font-size:1.4rem; }
+  .gallery__sub{ font-size:0.95rem; }
+}
 
-  .gallery__meta {
-    padding-top: 0.4rem;
-    font-size: 0.95rem;
-  }
+/* Mobile */
+@media (max-width:720px){
+  /* background fallback */
+  .gallery__bg{ position:absolute; z-index:-3; background-size:140% auto; background-position:center top; background-attachment:scroll; transform:translateY(-6%); }
+
+  /* hero smaller */
+  .gallery__hero{ height:34vh; min-height:34vh; background-position:center top; }
+  .gallery__hero-inner{ width:100%; max-width:100%; padding:0.75rem 1rem; }
+
+  /* masonry → 2 columns */
+  .gallery__grid--masonry{ columns:2; column-gap:0.75rem; padding:0 0.5rem; }
+  .gallery__item{ margin:0 0 0.75rem; }
+  .gallery__item img{ border-radius:6px; }
+
+  /* video / layout tweaks */
+  .video__container{ margin-top:0.5rem; }
+  .gallery__meta{ font-size:0.95rem; padding-top:0.4rem; }
+
+  /* modal actions */
+  .gallery__modal-actions{ flex-direction:row; gap:0.5rem; }
+  .gallery__modal-action{ padding:0.4rem 0.75rem; font-size:0.95rem; }
+
+  /* optional half-viewport hero on landing */
+  .gallery__hero{ height:50svh; height:50dvh; height:50vh; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; box-sizing:border-box; overflow:hidden; }
+}
+
+/* Tablet */
+@media (min-width:721px) and (max-width:1024px){
+  .gallery__grid--masonry{ column-count:3; }
+  .gallery__item img{ height:180px; }
+  .gallery__title{ font-size:1.9rem; }
+  .gallery__sub{ font-size:0.96rem; }
+}
+
+/* Desktop / large screens */
+@media (min-width:1025px){
+  .gallery__hero{ min-height:100vh; display:flex; align-items:center; justify-content:center; padding:0 1rem; box-sizing:border-box; }
+  .gallery__hero-inner{ width:100%; max-width:var(--content-max-width); margin:0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2rem 0; }
+  .gallery__grid--masonry{ column-count:3; column-gap: 1rem; }
 }

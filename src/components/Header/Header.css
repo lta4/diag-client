@@ -119,7 +119,7 @@
 }
 
 .nav__link:hover {
-    color: var(--theme-color);
+    /* color: var(--theme-color); */
     /* color: var(--first-color); */
 }
 
