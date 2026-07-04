@@ -5,10 +5,12 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10000; /* explicit high value so it is never hidden */
+    z-index: 20000; /* explicit high value so it is never hidden */
     transition: background-color 0.35s ease, color 0.35s ease;
     text-transform: uppercase;
     font-size: var(--small-font-size);
+    transform: none;
+    --webkit-transform: none;
 }
 
 .header--transparent {
@@ -193,72 +195,36 @@
     }
 }
 
-/* Ensure header sits above fixed background layers */
+/* Minimal, last-in-file header rules to enable transparent -> solid fade on scroll */
+
 header.header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10000;
-  transition: background-color 240ms ease;
-}
-
-/* Logo visibility: hidden when header is transparent (on load), visible after scroll */
-.nav__BWDiag--image {
-  display: inline-block;
-  width: 44px;
-  height: auto;
-  transition: opacity 280ms ease, transform 280ms ease;
-  will-change: opacity, transform;
-}
-
-/* hidden state (landing) */
-.header.header--transparent .nav__BWDiag--image,
-.nav__BWDiag--image.bw-hidden {
-  opacity: 0;
-  transform: translateX(-8px) scale(0.96);
-  pointer-events: none;
-}
-
-/* visible state (scrolled) */
-.header:not(.header--transparent) .nav__BWDiag--image,
-.nav__BWDiag--image.bw-visible {
-  opacity: 1;
+  width: 100%;
+  z-index: 30000; /* ensure header sits above other layers */
+  transition: background-color 320ms ease, -webkit-backdrop-filter 320ms ease, backdrop-filter 320ms ease;
   transform: none;
   pointer-events: auto;
 }
 
-/* ensure nav links remain above background layers */
-.nav, nav {
-  position: relative;
-  z-index: 10001;
-}
-
-/* mobile menu basics (keep your existing rules; these are minimal) */
-.nav__toggle { cursor: pointer; display: inline-flex; align-items:center; }
-
-/* basic header shell and fade-in-on-scroll behavior */
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10000;
-  transition: background-color 300ms ease, color 300ms ease;
-  pointer-events: auto;
+/* landing (transparent) */
+header.header.header--transparent {
+  background-color: transparent;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 
-/* transparent at top */
-.header.header--transparent {
-  background-color: transparent;
-}
-
-/* solid when scrolled */
-.header:not(.header--transparent) {
+/* scrolled (solid) */
+header.header:not(.header--transparent) {
   background-color: rgba(0,0,0,0.92);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+}
+
+/* keep inner nav above content but under header shell if needed */
+header.header .nav {
+  position: relative;
+  z-index: 30001;
 }

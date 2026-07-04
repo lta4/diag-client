@@ -57,7 +57,9 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: transparent;
+  box-sizing: border-box;
+  /* avoid this absurd global stacking that hides UI; lower to sane value or remove */
+  z-index: 1001 !important;
 }
 
 .App {
