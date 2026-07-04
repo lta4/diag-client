@@ -1,8 +1,9 @@
 import React from "react";
 import "./Gig.css"
 import BGbackground from "../../assets/BGbackground.png";
-import jOneInk from "../../assets/jOneInk.jpg";
-import jOne from "../../assets/jOne.jpg";
+import HeroVideo from "../../components/HeroVideo/HeroVideo";
+import videoLoop from "../../assets/DiagB1.MP4"; // add your file
+// import videoPoster from "../../assets/gig-poster.jpg" // optional poster
 import Show from "../../components/Show/Show";
 import Newsletter from "../../components/Newsletter/Newsletter";
 
@@ -18,6 +19,13 @@ const Gig = () => {
                         <h1 className="gig__title">Upcoming Events</h1>
                     </div>
                 </section>
+                <header className="gig__hero">
+                    <HeroVideo src={videoLoop} loopEnd={4} />
+                    <div className="gig__hero-overlay">
+                        <h1 className="gig__title">Shows</h1>
+                        {/* optional CTA */}
+                    </div>
+                </header>
                 <section className="gig__show">
                     <div className="gig__show--container">
                         <Show />
