@@ -3,6 +3,7 @@ import "./About.css";
 import jFourteen from "../../assets/jFourteen.jpg";
 import JThirteen from "../../assets/jThirteen.jpg";
 import jEleven from "../../assets/jEleven.jpeg";
+import DNP20 from "../../assets/DNP20.jpeg";
 import JSixteen from "../../assets/jSixteen.jpg";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import ScrollToTop from "react-scroll-to-top";
@@ -146,7 +147,7 @@ export default function About() {
 
               <div className="profile__set">
                 <div className="profile__grid">
-                  <img src={jEleven} alt="Jose Flores portrait" className="profile__grid--image2" />
+                  <img src={DNP20} alt="Jose Flores portrait" className="profile__grid--image2" />
                   <div className="profile__description">
                     <h1 className="profile__description--title">Jose Flores</h1>
                     {/* <p className="profile__description--text">Bartender by day and DJ by night, you’ll find me spinning beats at some of the best bars and venues across San Diego, CA. Join me on a sonic journey through underground rhythms and timeless house classics.</p>
