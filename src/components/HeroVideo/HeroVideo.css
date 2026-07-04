@@ -1,0 +1,29 @@
+.heroVideo__wrap {
+    position: relative;
+    width: 100%;
+    height: 320px; /* safe default; adjust in Gig.css or via wrapper */
+    overflow: hidden;
+    display: block;
+    background: #000;
+}
+
+.heroVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cover the hero area */
+    display: block;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    will-change: transform;
+}
+
+/* make hero taller on desktop - optionally override in Gig.ss */
+
+@media (min-width: 1025px) {
+    .heroVideo__wrap {
+        height: 480px;
+    }
+}
