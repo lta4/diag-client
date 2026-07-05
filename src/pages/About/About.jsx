@@ -24,14 +24,14 @@ const TESTIMONIALS = [
     text: "Our guests LOVE when Jose performs, because we all trust that he knows what he’s doing. The energy becomes electric and good vibes radiate."
   },
   {
-    name: "Mark Rivera",
-    role: "Label Owner — Drift Records",
-    text: "Production quality is top-tier. Collaborating with Jose elevated the release — musicality and attention to detail are exceptional."
+    name: "Alex Martinez",
+    role: "Lead Bartender",
+    text: "Jose brings the same level of professionalism behind the decks that you'd expect from a seasoned performer. His attention to detail, ability to read a room, and overall musical knowledge consistently create a great experience for both guests and staff."
   },
   {
-    name: "Sofia Alvarez",
-    role: "Venue Director — The Hollow",
-    text: "Always on time, communicative, and the crowd response is incredible. A go-to artist for curated nights."
+    name: "Sarah Bennett",
+    role: "General Manager",
+    text: "I've worked with a lot of DJs over the years, and Jose stands out for his preparation, professionalism, and ability to match the energy of the venue. He understands how to build an atmosphere that keeps people engaged without ever overpowering the room"
   }
 ];
 
