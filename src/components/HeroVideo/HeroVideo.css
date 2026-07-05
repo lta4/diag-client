@@ -1,29 +1,48 @@
+/* Full-bleed banner that touches top and both sides of the viewport */
 .heroVideo__wrap {
-    position: relative;
-    width: 100%;
-    height: 320px; /* safe default; adjust in Gig.css or via wrapper */
-    overflow: hidden;
-    display: block;
-    background: #000;
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  /* center a full-viewport-width element inside a constrained container */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  left: 0;
+  transform: none;
+  height: 50vh;               /* banner height (half viewport) */
+  max-height: 580px;
+  min-height: 260px;
+  overflow: hidden;
+  margin-top: 0;
+  background: #000;
+  z-index: 0;                 /* header should still sit above this */
 }
 
+/* video stays covering the area */
 .heroVideo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* cover the hero area */
-    display: block;
-    pointer-events: none;
-    -webkit-user-select: none;
-    user-select: none;
-    will-change: transform;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
 }
 
-/* make hero taller on desktop - optionally override in Gig.ss */
-
+/* desktop: slightly taller hero */
 @media (min-width: 1025px) {
-    .heroVideo__wrap {
-        height: 480px;
-    }
+  .heroVideo__wrap {
+    height: 55vh;
+    max-height: 680px;
+  }
+}
+
+/* small screens: reduce height for better viewport fit */
+@media (max-width: 420px) {
+  .heroVideo__wrap {
+    height: 36vh;
+    max-height: 360px;
+    min-height: 180px;
+  }
 }

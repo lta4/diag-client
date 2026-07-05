@@ -5,7 +5,7 @@
     overflow: hidden;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -18,8 +18,23 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    margin: 6rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
+
+/* Ensure the page container/hero don't add spacing so the banner sits flush */
+.gig {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* avoid horizontal scroll from full-bleed element */
+}
+
+/* If you have a fixed header that should sit over the banner, ensure header z-index is higher */
+header.header { z-index: 30000; }
 
 .gig__title {
   margin: 0 0 0.5rem 0;

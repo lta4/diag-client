@@ -14,11 +14,11 @@ const Gig = () => {
                 <div 
                     className="gig__bg" aria-hidden="true" style={{ backgroundImage: `url(${BGbackground})` }} 
                 />
-                <section className="gig__hero">
+                {/* <section className="gig__hero">
                     <div className="gig__intro">
                         <h1 className="gig__title">Upcoming Events</h1>
                     </div>
-                </section>
+                </section> */}
                 <header className="gig__hero">
                     <HeroVideo src={videoLoop} loopEnd={4} />
                     <div className="gig__hero-overlay">
