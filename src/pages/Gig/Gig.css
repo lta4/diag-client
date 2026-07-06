@@ -9,32 +9,18 @@
     box-sizing: border-box;
 }
 
-.gig__hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* padding: 2rem 1rem; */
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-/* Ensure the page container/hero don't add spacing so the banner sits flush */
+/* ensure container doesn't add gaps */
 .gig {
-  padding: 0;
   margin: 0;
-  overflow-x: hidden; /* avoid horizontal scroll from full-bleed element */
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* If you have a fixed header that should sit over the banner, ensure header z-index is higher */
-header.header { z-index: 30000; }
+.gig__hero {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
 .gig__title {
   margin: 0 0 0.5rem 0;

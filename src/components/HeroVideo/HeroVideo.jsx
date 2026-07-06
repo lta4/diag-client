@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./HeroVideo.css";
 
 /**
@@ -9,6 +9,8 @@ import "./HeroVideo.css";
  */
 export default function HeroVideo({ src, poster, loopEnd = 4 }) {
     const ref = useRef(null);
+    const wrapRef = useRef(null);
+    const [edgeStyle, setEdgeStyle] = useState(null);
 
     useEffect(() => {
         const v = ref.current;
@@ -35,8 +37,44 @@ export default function HeroVideo({ src, poster, loopEnd = 4 }) {
         return () => v.removeEventListener("timeupdate", onTime);
     }, [loopEnd]);
 
+    useEffect(() => {
+        const wrap = wrapRef.current;
+        if (!wrap) return;
+
+        const calc = () => {
+            const parent = wrap.parentElement || document.body;
+            const pRect = parent.getBoundingClientRect();
+            const docW = document.documentElement.clientWidth || window.innerWidth;
+            const leftOffset = Math.round(pRect.left);                   // px to shift left
+            const rightOffset = Math.round(docW - pRect.right);         // px to add to width on right
+
+            // shift the wrapper left by parent's left offset and expand width to cover both gaps
+            setEdgeStyle({
+                left: `-${leftOffset}px`,
+                width: `calc(100vw + ${leftOffset + rightOffset}px)`
+            });
+        };
+
+        calc();
+        const ro =
+            typeof ResizeObserver !== "undefined"
+                ? new ResizeObserver(calc)
+                : null;
+        if (ro && wrap.parentElement) ro.observe(wrap.parentElement);
+        window.addEventListener("resize", calc, { passive: true });
+        return () => {
+            if (ro && wrap.parentElement) ro.disconnect();
+            window.removeEventListener("resize", calc);
+        };
+    }, []);
+
     return (
-        <div className="heroVideo__wrap" aria-hidden="true">
+        <div
+            ref={wrapRef}
+            className="heroVideo__wrap"
+            style={edgeStyle || undefined}
+            aria-hidden="true"
+        >
             <video
                 ref={ref}
                 className="heroVideo"
