@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import "./ContactForm.css";
 
@@ -7,6 +7,22 @@ function ContactForm() {
     const [agreed, setAgreed] = useState(false);
 
     const [state, handleSubmit] = useForm("xyzzbedg");
+    const [serverErrors, setServerErrors] = useState([]);
+    const [unblockLink, setUnblockLink] = useState(null);
+
+    useEffect(() => {
+        if (state.errors && state.errors.length) {
+            const msgs = state.errors.map((e) => (e.message ? e.message : JSON.stringify(e)));
+            setServerErrors(msgs);
+            // detect Formspree unblock link in any returned message
+            const joined = msgs.join(" ");
+            const m = joined.match(/https?:\/\/\S*formspree\.io\/unblock\/\S+/i);
+            setUnblockLink(m ? m[0] : null);
+        } else {
+            setServerErrors([]);
+            setUnblockLink(null);
+        }
+    }, [state.errors]);
 
         if (state.succeeded) {
 
@@ -19,6 +35,19 @@ function ContactForm() {
 
     return (
         <div className="reach__backdrop">
+            {serverErrors.length > 0 && (
+                <div className="reach__server-errors" role="alert" aria-live="assertive" style={{ color: "#ffdede", marginBottom: "0.5rem" }}>
+                    {serverErrors.map((m, i) => (
+                        <div key={i}>{m}</div>
+                    ))}
+                    {unblockLink && (
+                        <div style={{ marginTop: "0.5rem" }}>
+                            If this message mentions unblocking, you can follow this link to resolve it:{" "}
+                            <a href={unblockLink} target="_blank" rel="noreferrer noopener">{unblockLink}</a>
+                        </div>
+                    )}
+                </div>
+            )}
             <form onSubmit={onSubmit} autoComplete="on" className="reach" id="">
             <h2 className="reach__des">
                 Discover the sound -- master of vibes
