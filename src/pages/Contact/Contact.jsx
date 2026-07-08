@@ -24,17 +24,10 @@ const Contact = () => {
               <div className="contact__left-inner">
                 <h2 className="contact__left-title">Get in touch</h2>
                 <p className="contact__left-copy">
-                  Whether you’re booking a DJ set, commissioning a mix, or planning
-                  a creative collab, I tailor the vibe to the space and crowd.
-                </p>
-                <p className="contact__left--copy">
-                  When you reach out, please include: date, venue, expected crowd
-                  size, and a short note about the vibe or budget. I’ll get back
-                  within 48 hours with availability and a sample plan.
-                </p>
-                <p className="contact__left--copy">
-                  Use the form or DM on socials. Let’s make something that moves
-                  people.
+                  BRING DIAGNOSTIC TO YOUR EVENT
+                  Private events
+                  Clubs
+                  Curated experiences
                 </p>
               </div>
             </div>

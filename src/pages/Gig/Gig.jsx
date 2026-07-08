@@ -23,6 +23,7 @@ const Gig = () => {
                     <HeroVideo src={videoLoop} loopEnd={4} />
                     <div className="gig__hero-overlay">
                         <h1 className="gig__title">Shows</h1>
+                        <h2>From underground clubs to curated events, Diagnostic delivers immersive electronic experiences built around sound, atmosphere, and connection.</h2>
                         {/* optional CTA */}
                     </div>
                 </header>
