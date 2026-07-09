@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./About.css";
 import jFourteen from "../../assets/jFourteen.jpg";
 import JThirteen from "../../assets/jThirteen.jpg";
@@ -84,6 +84,26 @@ export default function About(props) {
     const el = document.getElementById("about-content");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const statsRef = useRef(null);
+  useEffect(() => {
+    const el = document.querySelector('.about__stats') || statsRef.current;
+    if (!el) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.classList.add('is-revealed');
+      return;
+    }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          el.classList.add('is-revealed');
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.18 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <>

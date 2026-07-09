@@ -616,3 +616,34 @@
     box-sizing: border-box;
   }
 }
+
+/* subtle reveal animation for stats (staggered) */
+.about__stats {
+  /* start hidden for animated reveal */
+}
+.about__stats .stat {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+
+/* stagger delays for a pleasing entrance */
+.about__stats .stat:nth-child(1) { transition-delay: 80ms; }
+.about__stats .stat:nth-child(2) { transition-delay: 160ms; }
+.about__stats .stat:nth-child(3) { transition-delay: 240ms; }
+
+/* revealed state */
+.about__stats.is-revealed .stat {
+  opacity: 1;
+  transform: none;
+}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about__stats .stat {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
