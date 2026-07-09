@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="footer__copy">
                 <div className="footer__date--description">
                     <p>© {new Date().getFullYear()} Fignewt Designed & Developed by {` `}</p>
-                    <a href="mailto=andrew@fignewt.com" className="footer__date--link">
+                    <a href="mailto=bookings@itsdiagnostic.com" className="footer__date--link">
                         Andrew Arias
                     </a>
                 </div>

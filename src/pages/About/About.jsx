@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./About.css";
 import jFourteen from "../../assets/jFourteen.jpg";
-import JThirteen from "../../assets/jThirteen.jpg";
-import jEleven from "../../assets/jEleven.jpeg";
 import DNP20 from "../../assets/DNP20.jpeg";
-import JSixteen from "../../assets/jSixteen.jpg";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import ScrollToTop from "react-scroll-to-top";
 
