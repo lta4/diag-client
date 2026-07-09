@@ -53,7 +53,7 @@ function CountUp({ to = 0, duration = 1200 }) {
   return <>{num}</>;
 }
 
-export default function About() {
+export default function About(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -128,23 +128,23 @@ export default function About() {
         <div id="about-content" className="about__content">
           {/* (moved) remaining page content — profile + testimonials follow */}
           {/* Profile + Testimonials block: stats will render above the image/description */}
+          {/* moved stats OUTSIDE the padded profile block so it can be full-bleed */}
+          <div className="about__stats" aria-labelledby="stats-title">
+            <h2 id="stats-title" className="sr-only">Key stats</h2>
+            <div className="stats__grid">
+              {STATS.map((s) => (
+                <div className="stat" key={s.label}>
+                  <div className="stat__value" aria-hidden="true">
+                    <CountUp to={s.value} />{s.suffix}
+                  </div>
+                  <div className="stat__label">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="about__profile-block">
             <section className="profile">
-              {/* Stats moved here: same layout as before */}
-              <div className="about__stats" aria-labelledby="stats-title">
-                <h2 id="stats-title" className="sr-only">Key stats</h2>
-                <div className="stats__grid">
-                  {STATS.map((s) => (
-                    <div className="stat" key={s.label}>
-                      <div className="stat__value" aria-hidden="true">
-                        <CountUp to={s.value} />{s.suffix}
-                      </div>
-                      <div className="stat__label">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <div className="profile__set">
                 <div className="profile__grid">
                   <img src={DNP20} alt="Jose Flores portrait" className="profile__grid--image2" />

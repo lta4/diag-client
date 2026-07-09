@@ -2,6 +2,8 @@
 
 .about {
     /* Add any specific styles for the About section here */
+    /* avoid accidental horizontal scroll from full-bleed children */
+    overflow-x: hidden;
 }
 
 .about__bg--over {
@@ -434,56 +436,141 @@
 
 /* Render stats as a horizontal row (like testimonials) */
 .about__stats {
-  margin: 0 0 3rem;
-  padding: 0 0.25rem;
+  position: relative;
+  z-index: 8;                     /* above main bg */
+  left: 50%;
+  transform: translateX(-50%);   /* center full-viewport width */
+  width: 100vw;
+  height: 50vw;                   /* full viewport width */
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: clamp(36px, 7vh, 96px) 1rem;
+  color: #fff;
+  overflow: hidden;
 }
+
+/* inner container centers the content */
+.about__stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* dark overlay that visually rolls on top of the page background.
+   Use background-attachment: fixed on desktop for subtle parallax; fall back on mobile. */
+.about__stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.50), rgba(3,3,3,0.62));
+  background-attachment: fixed;
+  transform: translateZ(0);
+}
+
+/* bigger, desktop-friendly stat numbers */
+.about__stat-num {
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  font-size: clamp(3rem, 6vw, 8rem); /* larger max for desktop */
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* labels */
+.about__stat-label {
+  margin-top: 0.5rem;
+  font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+  opacity: 0.9;
+}
+
+/* stats layout: desktop row, centered */
 .about__stats .stats__grid {
   display: flex;
-  gap: 7rem;
+  gap: clamp(20px, 4vw, 48px);
   align-items: center;
-  justify-content: flex-start;
-  flex-wrap: nowrap; /* single row on wide screens */
+  justify-content: center;
+  flex-wrap: nowrap;
 }
+
+/* each stat card */
 .about__stats .stat {
-  flex: 0 0 140px;        /* fixed-ish card width for consistent row */
-  min-width: 120px;
-  background: rgba(0,0,0,0.48);
-  padding: 0.6rem 0.85rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.03);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
-  text-align: left;
+  flex: 0 0 auto;
+  min-width: 160px;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-.about__stats .stat__value { font-size: 1.15rem; font-weight:800; color:#fff; }
-.about__stats .stat__label { font-size:0.82rem; color:rgba(255,255,255,0.85); margin-top:4px; }
 
-/* Responsive: allow wrapping and stack on narrow screens */
+/* mobile: disable fixed attachment and scale numbers down */
 @media (max-width: 900px) {
-  .about__stats .stats__grid {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.75rem;
-  }
-  .about__stats .stat {
-    flex: 1 1 45%;
-    min-width: 0;
-    text-align: center;
-  }
-}
-@media (max-width: 480px) {
-  .about__stats .stat { flex: 1 1 100%; }
+  .about__stats::before { background-attachment: scroll; }
+  .about__stats .stats__grid { flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .about__stats .stat { flex: 1 1 45%; min-width: 0; }
+  .about__stat-num { font-size: clamp(1.6rem, 8vw, 3.2rem); }
 }
 
-/* Ensure About landing hero fills the full mobile viewport so below content (stats) is not visible */
-@media (max-width: 720px) {
-  .about__hero {
-    /* prefer svh/dvh on modern browsers, fallback to vh */
-    height: 100svh;
-    height: 100dvh;
-    height: 100vh;
-    min-height: 0;
-    overflow: hidden; /* prevents the rest of the page from peeking into the viewport */
-    padding-top: 1.25rem; /* keep modest top spacing without shrinking the hero */
-    padding-bottom: 1.25rem;
-  }
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about__stats::before { background-attachment: scroll; transform: none; }
+}
+
+/* full-bleed stats band (no !important) */
+.about {
+  overflow-x: hidden; /* prevent horizontal scroll from full-bleed children */
+}
+
+.about__stats {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* center full-viewport width */
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: clamp(36px, 7vh, 96px) 1rem;
+  color: #fff;
+  z-index: 8;
+  overflow: hidden;
+}
+
+.about__stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.50), rgba(3,3,3,0.62));
+  background-attachment: fixed;
+}
+
+/* bigger desktop numbers */
+.stat__value {
+  font-weight: 900;
+  font-size: clamp(3rem, 6vw, 8rem);
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+/* keep grid centered */
+.stats__grid {
+  display: flex;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .about__stats::before { background-attachment: scroll; }
+  .stats__grid { flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .stat__value { font-size: clamp(1.6rem, 8vw, 3.2rem); }
 }
