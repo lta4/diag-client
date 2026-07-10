@@ -344,7 +344,7 @@
     flex: 0 0 220px;
 } */
 
-/********************MEDIA QUERYS*******************/
+/********************MEDIA QUERY'S*******************/
 
 @media (max-width: 900px) {
     .profile__grid {
@@ -646,4 +646,43 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/* extend the solid black band from stats through profile & testimonials */
+.about__profile-block,
+.about__testimonials {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* center full-viewport width */
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: #000;            /* solid black band */
+  color: #fff;                 /* ensure readable text */
+  padding: clamp(28px, 4.5vh, 64px) 1rem;
+  z-index: 7;
+}
+
+/* if inner elements had lighter text rules, ensure headings/paras remain visible */
+.about__profile-block .profile__description--text,
+.about__profile-block .profile__description--title,
+.about__testimonials .testimonial__text,
+.about__testimonials .testimonial__cite {
+  color: #eaeaea;
+}
+
+/* remove gap between stats band and profile block */
+.about__stats {
+  margin-bottom: 0; /* ensure the band touches the next block */
+}
+
+.profile__grid {
+  margin-bottom: 0; /* avoid extra bottom spacing inside the profile block */
+}
+
+/* ensure profile block doesn't add top margin that creates a gap */
+.about__profile-block {
+  margin-top: 0;
+  margin-bottom: 0; /* keep centered while removing vertical gap */
+  padding-top: clamp(12px, 2.2vh, 24px); /* small internal spacing so content isn't flush */
 }
