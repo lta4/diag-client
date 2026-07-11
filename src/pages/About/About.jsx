@@ -158,8 +158,18 @@ export default function About(props) {
                 </div>
               ))}
             </div>
-          </div>
+          </div> {/* end .about__stats */}
 
+          {/* Stacked / overlapping photos (decorative) */}
+          <section className="about__stacked" aria-hidden="true">
+            <div className="stacked__inner">
+              <img src={jFourteen} alt="" className="stacked__photo stacked__photo--a" />
+              <img src={DNP20}    alt="" className="stacked__photo stacked__photo--b" />
+              <img src={jFourteen} alt="" className="stacked__photo stacked__photo--c" />
+              <img src={DNP20}    alt="" className="stacked__photo stacked__photo--d" />
+            </div>
+          </section>
+          
           <div className="about__profile-block">
             <section className="profile">
               <div className="profile__set">

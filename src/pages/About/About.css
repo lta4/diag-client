@@ -686,3 +686,66 @@
   margin-bottom: 0; /* keep centered while removing vertical gap */
   padding-top: clamp(12px, 2.2vh, 24px); /* small internal spacing so content isn't flush */
 }
+
+/* Stacked / overlapping photos (desktop desk / polaroid feel) */
+.about__stacked {
+  /* make full-width but don't use 100vw shifting — keep it in-flow and centered */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+  overflow: visible;
+  background: transparent;
+  z-index: 9;
+  display: flex;
+  justify-content: center; /* center inner stack */
+}
+
+/* inner container centers and constrains the stack */
+.stacked__inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 480px; /* increase to ensure stacked photos fit without clipping */
+  position: relative;
+  pointer-events: none; /* decorative by default */
+  padding: 0 1rem;
+}
+
+/* base photo styling (smaller max widths to avoid off-screen) */
+.stacked__photo {
+  position: absolute;
+  width: clamp(140px, 22%, 300px); /* slightly smaller to guarantee fit */
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  border: 6px solid #fff;
+  box-shadow: 0 22px 48px rgba(0,0,0,0.6);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  will-change: transform;
+  pointer-events: auto; /* allow hover/focus */
+  cursor: pointer;
+}
+
+/* adjusted positions so all images are visible inside the container */
+/* use slightly tighter left values (percent of the inner container) */
+.stacked__photo--a { left: 4%;  top: 8%;  transform: rotate(-6deg)  translateZ(0); z-index: 30; }
+.stacked__photo--b { left: 28%; top: 18%;  transform: rotate(6deg)   translateZ(0); z-index: 40; }
+.stacked__photo--c { left: 48%; top: 12%;  transform: rotate(-8deg)  translateZ(0); z-index: 35; }
+.stacked__photo--d { left: 68%; top: 6%;   transform: rotate(6deg)   translateZ(0); z-index: 45; }
+
+/* small screens: stack vertically and remove rotations */
+@media (max-width: 900px) {
+  .stacked__inner { min-height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .stacked__photo { position: relative; width: 100%; aspect-ratio: 16/10; border-width: 4px; transform: none; left: auto; top: auto; }
+  .stacked__photo--a, .stacked__photo--b, .stacked__photo--c, .stacked__photo--d { z-index: auto; }
+  .about__stacked { padding: 1rem 0.75rem; }
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stacked__photo,
+  .stacked__photo:focus,
+  .stacked__photo:hover { transition: none; transform: none; }
+}
