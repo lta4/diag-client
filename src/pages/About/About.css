@@ -687,73 +687,97 @@
   padding-top: clamp(12px, 2.2vh, 24px); /* small internal spacing so content isn't flush */
 }
 
-/* Stacked / overlapping photos (desktop desk / polaroid feel) */
+/* Stacked / overlapping photos — 2-image vertical staircase */
 .about__stacked {
-  /* full-bleed band that is robust to ancestor transforms */
+  /* keep full-bleed band behavior */
   width: 100vw;
+  height: 90vw;
   max-width: 100vw;
   box-sizing: border-box;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-
-  /* visual */
   padding: clamp(20px, 4vh, 56px) 1rem;
-  background: #000;      /* solid black behind the photos */
+  background: #0d0d0e;
   color: #fff;
   z-index: 9;
-
-  /* layout */
   display: flex;
   justify-content: center;
   overflow: visible;
 }
 
-/* keep inner stack centered and unchanged */
 .stacked__inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  min-height: 480px;
+  min-height: 380px; /* tuned for two photos */
   position: relative;
   pointer-events: none;
   padding: 0 1rem;
 }
 
-/* base photo styling (smaller max widths to avoid off-screen) */
+/* base photo styling (polaroid-like) */
 .stacked__photo {
   position: absolute;
-  width: clamp(140px, 22%, 300px); /* slightly smaller to guarantee fit */
-  height: auto;
+  width: clamp(160px, 38%, 420px);
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
-  border-radius: 8px;
-  border: 6px solid #fff;
-  box-shadow: 0 22px 48px rgba(0,0,0,0.6);
-  transition: transform 300ms ease, box-shadow 300ms ease;
+  border-radius: 6px;
+  background: #111;
+  border: 8px solid #fff;
+  box-shadow: 0 24px 56px rgba(0,0,0,0.6);
+  transition: transform 300ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms;
   will-change: transform;
-  pointer-events: auto; /* allow hover/focus */
+  pointer-events: auto;
   cursor: pointer;
 }
 
-/* adjusted positions so all images are visible inside the container */
-/* use slightly tighter left values (percent of the inner container) */
-.stacked__photo--a { left: 4%;  top: 8%;  transform: rotate(-6deg)  translateZ(0); z-index: 30; }
-.stacked__photo--b { left: 28%; top: 18%;  transform: rotate(6deg)   translateZ(0); z-index: 40; }
-.stacked__photo--c { left: 48%; top: 12%;  transform: rotate(-8deg)  translateZ(0); z-index: 35; }
-.stacked__photo--d { left: 68%; top: 6%;   transform: rotate(6deg)   translateZ(0); z-index: 45; }
+/* staircase positions: first image higher-left, second lower-right, slight overlap */
+.stacked__photo--a {
+  left: 8%;
+  top: 6%;
+  transform: rotate(-6deg);
+  z-index: 30;
+}
+.stacked__photo--b {
+  left: 58%;
+  top: 34%;
+  transform: rotate(6deg);
+  z-index: 40; /* sits above a slightly */
+}
 
-/* small screens: stack vertically and remove rotations */
+/* hover / focus polish */
+.stacked__photo:hover,
+.stacked__photo:focus {
+  transform: translateY(-10px) scale(1.03) rotate(0deg);
+  box-shadow: 0 42px 90px rgba(0,0,0,0.72);
+  outline: none;
+}
+
+/* responsive: stack into two-column grid on small screens */
 @media (max-width: 900px) {
-  .stacked__inner { min-height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-  .stacked__photo { position: relative; width: 100%; aspect-ratio: 16/10; border-width: 4px; transform: none; left: auto; top: auto; }
-  .stacked__photo--a, .stacked__photo--b, .stacked__photo--c, .stacked__photo--d { z-index: auto; }
+  .stacked__inner {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    align-items: start;
+  }
+  .stacked__photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    transform: none;
+    left: auto;
+    top: auto;
+    border-width: 6px;
+  }
   .about__stacked { padding: 1rem 0.75rem; }
 }
 
-/* respect reduced motion */
+/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .stacked__photo,
-  .stacked__photo:focus,
-  .stacked__photo:hover { transition: none; transform: none; }
+  .stacked__photo:hover,
+  .stacked__photo:focus { transition: none; transform: none; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
 }

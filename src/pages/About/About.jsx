@@ -160,13 +160,11 @@ export default function About(props) {
             </div>
           </div> {/* end .about__stats */}
 
-          {/* Stacked / overlapping photos (decorative) */}
+          {/* Stacked / overlapping photos (2-image staircase) */}
           <section className="about__stacked" aria-hidden="true">
             <div className="stacked__inner">
               <img src={jFourteen} alt="" className="stacked__photo stacked__photo--a" />
-              <img src={DNP20}    alt="" className="stacked__photo stacked__photo--b" />
-              <img src={jFourteen} alt="" className="stacked__photo stacked__photo--c" />
-              <img src={DNP20}    alt="" className="stacked__photo stacked__photo--d" />
+              <img src={DNP20} alt="" className="stacked__photo stacked__photo--b" />
             </div>
           </section>
           
