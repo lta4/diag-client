@@ -740,6 +740,7 @@
   z-index: 30;
 }
 .stacked__photo--b {
+  width: clamp(220px, 46%, 520px);
   left: 5%;
   top: 34%;
   /* transform: rotate(6deg); */
