@@ -734,15 +734,15 @@
 
 /* staircase positions: first image higher-left, second lower-right, slight overlap */
 .stacked__photo--a {
-  left: 8%;
+  right: 8%;
   top: 6%;
-  transform: rotate(-6deg);
+  /* transform: rotate(-6deg); */
   z-index: 30;
 }
 .stacked__photo--b {
-  left: 58%;
+  left: 5%;
   top: 34%;
-  transform: rotate(6deg);
+  /* transform: rotate(6deg); */
   z-index: 40; /* sits above a slightly */
 }
 

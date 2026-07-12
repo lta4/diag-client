@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./About.css";
 import jFourteen from "../../assets/jFourteen.jpg";
+import jThree from "../../assets/jThree.jpg";
 import DNP20 from "../../assets/DNP20.jpeg";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import ScrollToTop from "react-scroll-to-top";
@@ -164,7 +165,7 @@ export default function About(props) {
           <section className="about__stacked" aria-hidden="true">
             <div className="stacked__inner">
               <img src={jFourteen} alt="" className="stacked__photo stacked__photo--a" />
-              <img src={DNP20} alt="" className="stacked__photo stacked__photo--b" />
+              <img src={jThree} alt="" className="stacked__photo stacked__photo--b" />
             </div>
           </section>
           
