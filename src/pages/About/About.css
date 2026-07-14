@@ -691,7 +691,7 @@
 .about__stacked {
   /* keep full-bleed band behavior */
   width: 100vw;
-  height: 90vw;
+  height: 100vw;
   max-width: 100vw;
   box-sizing: border-box;
   margin-left: calc(50% - 50vw);
@@ -702,14 +702,14 @@
   z-index: 9;
   display: flex;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .stacked__inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  min-height: 380px; /* tuned for two photos */
+  min-height: 520px; /* tuned for two photos */
   position: relative;
   pointer-events: none;
   padding: 0 1rem;
@@ -740,11 +740,12 @@
   z-index: 30;
 }
 .stacked__photo--b {
-  width: clamp(220px, 46%, 520px);
-  left: 5%;
+  width: clamp(420px, 58%, 900px);
+  left: 1%;
   top: 34%;
   /* transform: rotate(6deg); */
   z-index: 40; /* sits above a slightly */
+  object-position: 22% center;
 }
 
 /* hover / focus polish */
