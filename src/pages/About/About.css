@@ -1046,3 +1046,88 @@
   }
   .testimonial { padding: 1rem; }
 }
+
+/* ---- Minimal stat look (compact, high-contrast numbers) ----
+   - Use as default: lightweight, removes heavy card surfaces
+   - To toggle pill style, add .about__stats--pill on the .about__stats element
+*/
+.about__stats {
+  /* keep full-bleed, but reduce visual weight around stats */
+  padding: clamp(18px, 4vh, 48px) 1rem;
+}
+
+.about__stats .stats__grid {
+  display: flex;
+  gap: clamp(18px, 3.5vw, 36px);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* remove heavy card visuals */
+.about__stats .stat {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  min-width: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* large number, crisp */
+.stat__value,
+.about__stat-num {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  line-height: 1;
+  text-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* subtle label */
+.stat__label,
+.about__stat-label {
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+/* thin separators between items */
+.about__stats .stat + .stat {
+  position: relative;
+  margin-left: clamp(6px, 2vw, 16px);
+}
+.about__stats .stat + .stat::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 6%;
+  bottom: 6%;
+  width: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 1px;
+}
+
+/* Optional pill variant: add class .about__stats--pill on the container */
+.about__stats--pill .stat {
+  background: rgba(255,255,255,0.04);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-direction: row;
+}
+.about__stats--pill .stat__value { font-size: clamp(1.6rem, 4.2vw, 2.6rem); }
+.about__stats--pill .stat__label { font-size: 0.9rem; opacity: 0.9; }
+
+/* responsive: stack on small screens */
+@media (max-width: 900px) {
+  .about__stats .stats__grid { gap: 12px; justify-content: center; }
+  .stat__value { font-size: clamp(1.6rem, 8vw, 3rem); }
+  .about__stats .stat + .stat::before { display: none; margin-left: 0; }
+}

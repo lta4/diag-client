@@ -201,7 +201,7 @@ export default function About(props) {
 
                     <p className="profile__description--text">Drawing inspiration from artists like Solardo, Carl Cox, Ramon Bedoya, and Kofla, Diagnostic delivers a mix of underground house, Latin-influenced grooves, and high-energy selections that balance raw club energy with tight, rhythmic flow.</p>
 
-                    <p className="profile__description--text">Whether it’s a warehouse, nightclub, rooftop, or wedding, Diagnostic brings the same focus to every performance—creating a set that fits the room while keeping the energy consistent from start to finish. With live mixes on YouTube, SoundCloud, and Instagram (@diagnosticmusic), he’s continuing to grow his presence while representing San Diego’s underground dance music scene.</p>
+                    <p className="profile__description--text">Whether it’s a warehouse, nightclub, rooftop, or wedding, Diagnostic brings the same focus to every performance—creating a set that fits the room while keeping the energy consistent from start to finish. With live mixes on YouTube, SoundCloud, and Instagram (<a href>@diagnosticmusic</a>), he’s continuing to grow his presence while representing San Diego’s underground dance music scene.</p>
                   </div>
                 </div>
               </div>
