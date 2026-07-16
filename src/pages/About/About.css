@@ -897,3 +897,31 @@
     justify-content: center;
   }
 }
+
+/* Lower the stats content slightly inside the black band */
+html body .about .about__stats .stats__grid {
+  /* push content downward within the band without changing band height */
+  padding-top: clamp(12px, 4vh, 48px);
+  /* ensure items align from the top of the grid area */
+  align-items: start;
+}
+
+/* a bit more offset on large screens */
+@media (min-width: 1025px) {
+  html body .about .about__stats .stats__grid {
+    padding-top: clamp(54px, 8vh, 96px);
+  }
+}
+
+/* Nudge the profile area content downward so portrait + description sit lower
+   without changing overall layout. Non-destructive overrides appended at EOF. */
+
+/* Give the whole profile block a bit more top breathing room (moves everything lower) */
+.about__profile-block {
+  padding-top: clamp(36px, 27vh, 120px); /* increase top padding so the block starts lower */
+}
+
+/* Specifically lower the description text (adds extra offset within the profile grid) */
+.profile__description {
+  margin-top: clamp(4rem, 8vw, 10rem); /* was clamp(3rem, 6vw, 9rem) — increased to push it down */
+}
