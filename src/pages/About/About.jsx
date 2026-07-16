@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./About.css";
 import jFourteen from "../../assets/jFourteen.jpg";
 import jThree from "../../assets/jThree.jpg";
+import jSixteen from "../../assets/jSixteen.jpg";
 import DNP20 from "../../assets/DNP20.jpeg";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import ScrollToTop from "react-scroll-to-top";
@@ -164,8 +165,21 @@ export default function About(props) {
           {/* Stacked / overlapping photos (2-image staircase) */}
           <section className="about__stacked" aria-hidden="true">
             <div className="stacked__inner">
-              <img src={jFourteen} alt="" className="stacked__photo stacked__photo--a" />
-              <img src={jThree} alt="" className="stacked__photo stacked__photo--b" />
+              <img 
+                src={jSixteen} 
+                alt="A visiual representation of Jose Flores" 
+                className="stacked__photo stacked__photo--a"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low" 
+                />
+              <img src={jThree} 
+                alt="" 
+                className="stacked__photo stacked__photo--b"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low" 
+                />
             </div>
           </section>
           
@@ -173,7 +187,12 @@ export default function About(props) {
             <section className="profile">
               <div className="profile__set">
                 <div className="profile__grid">
-                  <img src={DNP20} alt="Jose Flores portrait" className="profile__grid--image2" />
+                  <img src={DNP20} 
+                    alt="Jose Flores portrait" className="profile__grid--image2"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    />
                   <div className="profile__description">
                     <h1 className="profile__description--title">Jose Flores</h1>
                     <p className="profile__description--text">Diagnostic is a San Diego–based DJ and producer known for high-energy sets that blend tech house, Latin grooves, and driving percussion. His sound is built around rolling basslines, infectious rhythms, and groove-first selections that keep dance floors moving from the first track to the last.</p>

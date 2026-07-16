@@ -783,3 +783,266 @@
   .stacked__photo:hover,
   .stacked__photo:focus { transition: none; transform: none; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
 }
+
+/* Consolidated, non‑conflicting .about / .about__stats rules
+   - Removes duplicate/contradictory definitions (left:50% vs margin-left calc)
+   - Uses margin-left calc(50% - 50vw) technique (robust to transformed ancestors)
+   - Uses min-height and responsive padding instead of fixed height:50vw
+   - Keeps solid black band and centers inner grid
+*/
+.about {
+  /* single authoritative rule to prevent duplicates */
+  overflow-x: hidden; /* prevent accidental horizontal scroll from full-bleed children */
+}
+
+.about__stats {
+  position: relative;
+  z-index: 8;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+
+  /* full-bleed centering robust to transforms on ancestors */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  /* responsive sizing */
+  min-height: clamp(220px, 30vh, 520px);
+  padding: clamp(28px, 6vh, 96px) 1rem;
+
+  /* visual */
+  background: #000; /* solid black band */
+  color: #fff;
+  overflow: hidden;
+}
+
+.about__stats .stats__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* stat card surface */
+.about__stats .stat {
+  flex: 0 0 auto;
+  min-width: 140px;
+  text-align: center;
+  background: linear-gradient(180deg, #1f2024, #151617);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+
+/* Reveal + responsive tweaks preserved */
+.about__stats .stat {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+.about__stats .stat:nth-child(1) { transition-delay: 80ms; }
+.about__stats .stat:nth-child(2) { transition-delay: 160ms; }
+.about__stats .stat:nth-child(3) { transition-delay: 240ms; }
+.about__stats.is-revealed .stat { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .about__stats .stats__grid { flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .about__stats .stat { flex: 1 1 45%; min-width: 0; }
+  .about__stats { padding: clamp(20px, 6vh, 56px) 1rem; min-height: auto; }
+}
+
+/* Desktop 2x2 layout maintained if present later in file */
+@media (min-width: 1025px) {
+  .about__stats .stats__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(auto, 1fr));
+    gap: clamp(20px, 4vw, 48px);
+    align-items: stretch;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* first stat spans two rows on the left */
+  .about__stats .stats__grid .stat:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* second and third occupy the right column, top and bottom */
+  .about__stats .stats__grid .stat:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .about__stats .stats__grid .stat:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  /* emphasize the large left stat number */
+  .about__stats .stats__grid .stat:nth-child(1) .stat__value,
+  .about__stats .stats__grid .stat:nth-child(1) .about__stat-num {
+    font-size: clamp(5rem, 8vw, 10rem);
+    line-height: 1;
+  }
+
+  /* make right column numbers slightly smaller but still prominent */
+  .about__stats .stats__grid .stat:nth-child(2) .stat__value,
+  .about__stats .stats__grid .stat:nth-child(3) .stat__value {
+    font-size: clamp(2.6rem, 5vw, 5rem);
+  }
+
+  /* card sizing for visual balance */
+  .about__stats .stats__grid .stat {
+    padding: 1.25rem 1.5rem;
+    border-radius: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* subtle reveal animation for stats (staggered) */
+.about__stats {
+  /* start hidden for animated reveal */
+}
+.about__stats .stat {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+
+/* stagger delays for a pleasing entrance */
+.about__stats .stat:nth-child(1) { transition-delay: 80ms; }
+.about__stats .stat:nth-child(2) { transition-delay: 160ms; }
+.about__stats .stat:nth-child(3) { transition-delay: 240ms; }
+
+/* revealed state */
+.about__stats.is-revealed .stat {
+  opacity: 1;
+  transform: none;
+}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about__stats .stat {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Brighten testimonial containers and remove any "glass" backdrop styles.
+   Non-destructive override: this block can be appended near the end of About.css.
+*/
+
+/* Ensure the testimonials band spans full-bleed like other bands (if desired) */
+.about__testimonials {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  box-sizing: border-box;
+  padding: clamp(28px, 6vh, 72px) 1rem;
+  background: transparent; /* keep the parent black; cards will be lighter */
+  color: #eaeaea;
+  z-index: 8;
+}
+
+/* Grid layout for testimonial cards */
+.testimonials__row {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(12px, 2.4vw, 28px);
+  align-items: start;
+  padding: 0 1rem;
+}
+
+/* Card surface: replace glass with a solid/dark-gray surface that pops on black bg */
+.testimonial {
+  background: linear-gradient(180deg, #1e2125, #131416); /* solid, readable surface */
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.6);
+  color: #f3f3f3;
+  line-height: 1.45;
+  /* explicitly cancel any glass effects that might exist earlier */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background-clip: padding-box;
+}
+
+/* compact variant adjustments */
+.testimonial--compact {
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+/* Text / cite contrast */
+.testimonial__text {
+  color: #f7f7f7;
+  margin: 0 0 0.85rem 0;
+  font-size: 0.98rem;
+}
+
+.testimonial__cite {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.testimonial__name {
+  font-weight: 700;
+  color: #fff;
+  display: block;
+}
+
+.testimonial__role {
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Hover / focus lift for cards (subtle) */
+.testimonial:hover,
+.testimonial:focus {
+  transform: translateY(-6px);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: 0 22px 56px rgba(0,0,0,0.68);
+}
+
+/* Accessible: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial,
+  .testimonial:hover,
+  .testimonial:focus {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 720px) {
+  .testimonials__row {
+    grid-template-columns: 1fr;
+  }
+  .testimonial { padding: 1rem; }
+}
