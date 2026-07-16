@@ -851,283 +851,49 @@
 .about__stats.is-revealed .stat { opacity: 1; transform: none; }
 
 @media (max-width: 900px) {
-  .about__stats .stats__grid { flex-wrap: wrap; gap: 12px; justify-content: space-between; }
-  .about__stats .stat { flex: 1 1 45%; min-width: 0; }
-  .about__stats { padding: clamp(20px, 6vh, 56px) 1rem; min-height: auto; }
-}
-
-/* Desktop 2x2 layout maintained if present later in file */
-@media (min-width: 1025px) {
-  .about__stats .stats__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, minmax(auto, 1fr));
-    gap: clamp(20px, 4vw, 48px);
-    align-items: stretch;
-    justify-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  /* first stat spans two rows on the left */
-  .about__stats .stats__grid .stat:nth-child(1) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  /* second and third occupy the right column, top and bottom */
-  .about__stats .stats__grid .stat:nth-child(2) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
-  .about__stats .stats__grid .stat:nth-child(3) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-  }
-
-  /* emphasize the large left stat number */
-  .about__stats .stats__grid .stat:nth-child(1) .stat__value,
-  .about__stats .stats__grid .stat:nth-child(1) .about__stat-num {
-    font-size: clamp(5rem, 8vw, 10rem);
-    line-height: 1;
-  }
-
-  /* make right column numbers slightly smaller but still prominent */
-  .about__stats .stats__grid .stat:nth-child(2) .stat__value,
-  .about__stats .stats__grid .stat:nth-child(3) .stat__value {
-    font-size: clamp(2.6rem, 5vw, 5rem);
-  }
-
-  /* card sizing for visual balance */
-  .about__stats .stats__grid .stat {
-    padding: 1.25rem 1.5rem;
-    border-radius: 14px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-
-/* subtle reveal animation for stats (staggered) */
-.about__stats {
-  /* start hidden for animated reveal */
-}
-.about__stats .stat {
-  opacity: 0;
-  transform: translateY(18px) scale(0.995);
-  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
-  will-change: opacity, transform;
-}
-
-/* stagger delays for a pleasing entrance */
-.about__stats .stat:nth-child(1) { transition-delay: 80ms; }
-.about__stats .stat:nth-child(2) { transition-delay: 160ms; }
-.about__stats .stat:nth-child(3) { transition-delay: 240ms; }
-
-/* revealed state */
-.about__stats.is-revealed .stat {
-  opacity: 1;
-  transform: none;
-}
-
-/* accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .about__stats .stat {
-    transition: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Brighten testimonial containers and remove any "glass" backdrop styles.
-   Non-destructive override: this block can be appended near the end of About.css.
-*/
-
-/* Ensure the testimonials band spans full-bleed like other bands (if desired) */
-.about__testimonials {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  width: 100vw;
-  box-sizing: border-box;
-  padding: clamp(28px, 6vh, 72px) 1rem;
-  background: transparent; /* keep the parent black; cards will be lighter */
-  color: #eaeaea;
-  z-index: 8;
-}
-
-/* Grid layout for testimonial cards */
-.testimonials__row {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(12px, 2.4vw, 28px);
-  align-items: start;
-  padding: 0 1rem;
-}
-
-/* Card surface: replace glass with a solid/dark-gray surface that pops on black bg */
-.testimonial {
-  background: linear-gradient(180deg, #1e2125, #131416); /* solid, readable surface */
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 1.25rem 1.25rem;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.6);
-  color: #f3f3f3;
-  line-height: 1.45;
-  /* explicitly cancel any glass effects that might exist earlier */
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  background-clip: padding-box;
-}
-
-/* compact variant adjustments */
-.testimonial--compact {
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-/* Text / cite contrast */
-.testimonial__text {
-  color: #f7f7f7;
-  margin: 0 0 0.85rem 0;
-  font-size: 0.98rem;
-}
-
-.testimonial__cite {
-  display: flex;
-  gap: 0.5rem;
-  align-items: baseline;
-  color: rgba(255,255,255,0.78);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-.testimonial__name {
-  font-weight: 700;
-  color: #fff;
-  display: block;
-}
-
-.testimonial__role {
-  color: rgba(255,255,255,0.75);
-  font-weight: 500;
-  font-size: 0.85rem;
-}
-
-/* Hover / focus lift for cards (subtle) */
-.testimonial:hover,
-.testimonial:focus {
-  transform: translateY(-6px);
-  transition: transform 220ms ease, box-shadow 220ms ease;
-  box-shadow: 0 22px 56px rgba(0,0,0,0.68);
-}
-
-/* Accessible: respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .testimonial,
-  .testimonial:hover,
-  .testimonial:focus {
-    transition: none;
-    transform: none;
-  }
-}
-
-/* Mobile tweaks */
-@media (max-width: 720px) {
-  .testimonials__row {
-    grid-template-columns: 1fr;
-  }
-  .testimonial { padding: 1rem; }
-}
-
-/* ---- Minimal stat look (compact, high-contrast numbers) ----
-   - Use as default: lightweight, removes heavy card surfaces
-   - To toggle pill style, add .about__stats--pill on the .about__stats element
-*/
-.about__stats {
-  /* keep full-bleed, but reduce visual weight around stats */
-  padding: clamp(18px, 4vh, 48px) 1rem;
-}
-
-.about__stats .stats__grid {
-  display: flex;
-  gap: clamp(18px, 3.5vw, 36px);
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* remove heavy card visuals */
-.about__stats .stat {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  min-width: 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* large number, crisp */
-.stat__value,
-.about__stat-num {
-  color: #fff;
-  font-weight: 800;
-  font-size: clamp(2.2rem, 6vw, 5rem);
-  line-height: 1;
-  text-shadow: 0 8px 20px rgba(0,0,0,0.45);
-}
-
-/* subtle label */
-.stat__label,
-.about__stat-label {
-  color: rgba(255,255,255,0.85);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-}
-
-/* thin separators between items */
-.about__stats .stat + .stat {
-  position: relative;
-  margin-left: clamp(6px, 2vw, 16px);
-}
-.about__stats .stat + .stat::before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 6%;
-  bottom: 6%;
-  width: 1px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 1px;
-}
-
-/* Optional pill variant: add class .about__stats--pill on the container */
-.about__stats--pill .stat {
-  background: rgba(255,255,255,0.04);
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  flex-direction: row;
-}
-.about__stats--pill .stat__value { font-size: clamp(1.6rem, 4.2vw, 2.6rem); }
-.about__stats--pill .stat__label { font-size: 0.9rem; opacity: 0.9; }
-
-/* responsive: stack on small screens */
-@media (max-width: 900px) {
-  .about__stats .stats__grid { gap: 12px; justify-content: center; }
+  .about__stats .stats__grid { flex-wrap: wrap; gap: 12px; justify-content: center; }
   .stat__value { font-size: clamp(1.6rem, 8vw, 3rem); }
   .about__stats .stat + .stat::before { display: none; margin-left: 0; }
+}
+
+/* Force a simple 2x2 stats grid on desktop (overrides earlier straight-line layout) */
+@media (min-width: 1025px) {
+  html body .about .about__stats .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    grid-auto-rows: minmax(110px, auto);
+    gap: clamp(12px, 3.2vw, 36px);
+    max-width: 920px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+    padding: 0; /* rely on band padding */
+  }
+
+  /* Keep items minimal and balanced inside grid cells */
+  html body .about .about__stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    min-width: 0;
+  }
+
+  /* Grid separators removed for clarity */
+  html body .about .about__stats .stat + .stat::before { display: none; }
+}
+
+/* Fallback/mobile: preserve stacked/inline behavior */
+@media (max-width: 1024px) {
+  html body .about .about__stats .stats__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
 }
