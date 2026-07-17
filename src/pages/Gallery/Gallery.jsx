@@ -338,7 +338,7 @@ function Gallery() {
                         >
                             {/* lazy load for perf; keep img height auto so column masonry can vary heights */}
                             <img src={img.src} alt={img.name.replace(/[-_]+/g, " ").replace(/\.[^/.]+$/, "")} loading="lazy" />
-                            <div className="gallery__meta">{img.name.replace(/[-_]/g, " ")}</div>
+                            {/* caption removed */}
                         </button>
                     ))}
                 </div>
