@@ -358,7 +358,7 @@ function Gallery() {
                             ›
                         </button>
 
-                        <div className="gallery__modal-caption">{IMAGES[selected].name.replace(/[-_]/g, " ")}</div>
+                        {/* caption removed per request */}
 
                         <div className="gallery__modal-actions" aria-label="Image actions">
                           <button className="gallery__modal-action" onClick={downloadCurrent} aria-label="Download image">Download</button>
