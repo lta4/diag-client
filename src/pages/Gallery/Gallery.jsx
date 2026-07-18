@@ -172,7 +172,7 @@ function Gallery() {
 
     useEffect(() => {
       const title = "Diagnostic & Friends";
-      const subtitle = "Live set with a curation of images — click to enlarge. Use ← → to navigate.";
+      const subtitle = "Live set with a curation of images";
       const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (prefersReduced) {
         setTitleTyped(title);
@@ -228,7 +228,7 @@ function Gallery() {
                      <p className="gallery__sub gallery__sub--typing">
                        <span aria-hidden="true">{subTyped}</span>
                        <span className="typing-cursor typing-cursor--small" aria-hidden="true">▌</span>
-                       <span className="sr-only">{subTyped || "Live set with a curation of images — click to enlarge. Use left right arrows to navigate."}</span>
+                       <span className="sr-only">{subTyped || "Live set with a curation of images."}</span>
                      </p>
                  </div>
              </header>
