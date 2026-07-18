@@ -56,6 +56,14 @@
 .gallery__title--typing,
 .gallery__sub--typing{ display:inline-block; white-space:pre-wrap; }
 
+/* Uppercase only the typing title/sub (keep everything else unaffected) */
+.gallery__title--typing,
+.gallery__sub--typing,
+.typing-cursor {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* ----------------------------
    Inner container
    ---------------------------- */
