@@ -448,7 +448,7 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
-  border: 2px solid #fff;           /* visible white border */
+  border: 2px solid #545454;           /* visible white border */
   border-radius: 10px;              /* rounded corners */
   box-shadow: 0 14px 40px rgba(0,0,0,0.55);
   overflow: hidden;
