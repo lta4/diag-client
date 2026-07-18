@@ -471,3 +471,23 @@
   height: auto;
   border: none; /* avoid double borders if the inner element had one */
 }
+
+/* Increase space between video info and gallery on desktop */
+@media (min-width: 1025px) {
+  .video__meta {
+    margin-bottom: clamp(50px, 24vh, 224px); /* pushes the gallery down on larger viewports */
+  }
+
+  /* ensure gallery body doesn't counteract spacing */
+  .gallery__body {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+/* Slightly larger gap for mid-size screens */
+@media (min-width: 720px) and (max-width: 1024px) {
+  .video__meta {
+    margin-bottom: clamp(24px, 6vh, 56px);
+  }
+}
