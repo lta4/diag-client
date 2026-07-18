@@ -1,6 +1,7 @@
 import React from "react";
 import "./Gig.css"
 import BGbackground from "../../assets/BGbackground.png";
+import jOneSlate from "../../assets/jOneSlate.jpg";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import videoLoop from "../../assets/DiagB1.MP4"; // add your file
 // import videoPoster from "../../assets/gig-poster.jpg" // optional poster
@@ -32,14 +33,14 @@ const Gig = () => {
                         <Show />
                     </div>
                 </section>
-                {/* <section>
+                <section>
                     <div className="gig__wall">
-                        <img src={jOneInk}
+                        <img src={jOneSlate}
                             alt="J One Ink"
                             className="gig__wall--image"
                         />
                     </div>
-                </section> */}
+                </section>
                 <section className="gig__news">
                     <div className="gig__news--container">
                         <Newsletter />
