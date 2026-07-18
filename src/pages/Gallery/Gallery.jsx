@@ -172,7 +172,7 @@ function Gallery() {
 
     useEffect(() => {
       const title = "Diagnostic & Friends";
-      const subtitle = "Live set with a curation of images";
+      const subtitle = "Live Set × Curated Visuals";
       const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (prefersReduced) {
         setTitleTyped(title);
@@ -228,7 +228,7 @@ function Gallery() {
                      <p className="gallery__sub gallery__sub--typing">
                        <span aria-hidden="true">{subTyped}</span>
                        <span className="typing-cursor typing-cursor--small" aria-hidden="true">▌</span>
-                       <span className="sr-only">{subTyped || "Live set with a curation of images."}</span>
+                       <span className="sr-only">{subTyped || "Live Set × Curated Visuals"}</span>
                      </p>
                  </div>
              </header>
@@ -369,7 +369,7 @@ function Gallery() {
                 </div>
             )}
             <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
-            
+
             <section className="gig__news">
               <div className="gig__news--container">
                 <Newsletter />
