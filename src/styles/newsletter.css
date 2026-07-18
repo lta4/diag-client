@@ -1,0 +1,26 @@
+/* Consistent newsletter spacing across pages
+   Targets any block that follows the project __news naming convention
+   (e.g. gig__news, gallery__news, biography__news, shows__news).
+*/
+[class$="__news"],
+.newsletter,
+.news {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(12px, 2.5vh, 24px) 1rem; /* inner padding for visual consistency */
+  margin-top: clamp(64px, 10vh, 140px);     /* gap above the newsletter */
+  margin-bottom: clamp(24px, 4vh, 48px); /* consistent distance to footer */
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Slightly smaller bottom gap on small screens */
+@media (max-width: 720px) {
+  [class$="__news"],
+  .newsletter,
+  .news {
+    margin-bottom: clamp(12px, 2vh, 44px);
+    padding: clamp(10px, 2vh, 16px) 0.75rem;
+  }
+}

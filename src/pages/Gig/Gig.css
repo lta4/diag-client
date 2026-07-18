@@ -209,16 +209,16 @@
 
 /*********** NEWS ***********/
 .gig__news {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem; */
 }
 
 .gig__news--container {
-    max-width: 100%;
+    /* max-width: 100%;
     width: 100%;
-    margin-top: 1.25rem;
+    margin-top: 1.25rem; */
 }
 
 /*********** Gig Wall ***********/

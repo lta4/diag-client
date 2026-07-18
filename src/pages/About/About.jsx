@@ -223,9 +223,11 @@ export default function About(props) {
             </section>
           </div>
         </div>{/* /#about-content */}
-        <div>
-          <Newsletter />
-        </div>
+        <section className="gig__news">
+          <div className="gig__news--container">
+            <Newsletter />
+          </div>
+        </section>
       </main>
 
       <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />

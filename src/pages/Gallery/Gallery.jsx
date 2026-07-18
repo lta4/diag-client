@@ -369,9 +369,12 @@ function Gallery() {
                 </div>
             )}
             <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
-            <div>
-              <Newsletter />
-            </div>
+            
+            <section className="gig__news">
+              <div className="gig__news--container">
+                <Newsletter />
+              </div>
+            </section>
             </div>
         {/* </div> */}
         </div>

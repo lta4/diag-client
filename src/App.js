@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import "./styles/newsletter.css";
 import Hero from "./components/Hero/Hero";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from './layouts/MainLayout';
