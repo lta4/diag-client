@@ -4,6 +4,9 @@ import BGbackground from "../../assets/BGbackground.png";
 import jOneSlate from "../../assets/jOneSlate.jpg";
 import jTwo from "../../assets/jTwo.jpg";
 import jFour from "../../assets/jFour.jpg";
+import DNP8 from "../../assets/DNP8.jpeg";
+import DNP50 from "../../assets/DNP50.jpeg";
+import jOne from "../../assets/jOne.jpg";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import videoLoop from "../../assets/DiagB1.MP4"; // add your file
 // import videoPoster from "../../assets/gig-poster.jpg" // optional poster
@@ -16,7 +19,7 @@ const Gig = () => {
     const [paused, setPaused] = useState(false);
 
     // Add more images here as needed
-    const images = [ jOneSlate, jTwo, jFour /*, otherImage1, otherImage2 */ ];
+    const images = [ DNP8, DNP50, jOne/*, otherImage1, otherImage2 */ ];
 
     useEffect(() => {
       if (paused || images.length <= 1) return;
