@@ -3,6 +3,7 @@ import "./Gig.css"
 import BGbackground from "../../assets/BGbackground.png";
 import jOneSlate from "../../assets/jOneSlate.jpg";
 import jTwo from "../../assets/jTwo.jpg";
+import jFour from "../../assets/jFour.jpg";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import videoLoop from "../../assets/DiagB1.MP4"; // add your file
 // import videoPoster from "../../assets/gig-poster.jpg" // optional poster
@@ -15,7 +16,7 @@ const Gig = () => {
     const [paused, setPaused] = useState(false);
 
     // Add more images here as needed
-    const images = [ jOneSlate, jTwo /*, otherImage1, otherImage2 */ ];
+    const images = [ jOneSlate, jTwo, jFour /*, otherImage1, otherImage2 */ ];
 
     useEffect(() => {
       if (paused || images.length <= 1) return;
@@ -45,9 +46,8 @@ const Gig = () => {
                 </section> */}
                 <header className="gig__hero">
                     <HeroVideo src={videoLoop} loopEnd={20} />
-                    <div className="gig__hero-overlay">
-                        <h1 className="gig__title">Shows</h1>
-                        <h2>From underground clubs to curated events, Diagnostic delivers immersive electronic experiences built around sound, atmosphere, and connection.</h2>
+                    <div className="gig__header">
+                        <h2 className="gig__header--description">From underground clubs to curated events, Diagnostic delivers immersive electronic experiences built around sound, atmosphere, and connection.</h2>
                         {/* optional CTA */}
                     </div>
                 </header>
