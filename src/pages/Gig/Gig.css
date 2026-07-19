@@ -264,3 +264,98 @@
 }
 
 /* if any child uses a full-screen overlay, reduce its z-index or raise the bg z-index negative further */
+
+/* Simple responsive carousel for the gig featured image */
+.gig__carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+  background: #000;
+  outline: none;
+}
+
+.gig__carousel-track {
+  display: flex;
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform;
+}
+
+.gig__carousel-slide {
+  flex: 0 0 100%;
+  display: block;
+}
+
+.gig__carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* nav buttons */
+.gig__carousel-prev,
+.gig__carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+.gig__carousel-prev { left: 12px; }
+.gig__carousel-next { right: 12px; }
+
+.gig__carousel-prev:focus,
+.gig__carousel-next:focus {
+  outline: 3px solid rgba(255,255,255,0.12);
+}
+
+/* indicators */
+.gig__carousel-indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 6;
+}
+
+.gig__carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+  border: none;
+  cursor: pointer;
+}
+.gig__carousel-dot.is-active {
+  background: #fff;
+  transform: scale(1.15);
+}
+
+/* hide controls if single image */
+.gig__carousel .gig__carousel-prev,
+.gig__carousel .gig__carousel-next,
+.gig__carousel .gig__carousel-indicators {
+  display: block;
+}
+
+/* mobile tweaks */
+@media (max-width: 900px) {
+  .gig__carousel { box-shadow: 0 12px 30px rgba(0,0,0,0.45); border-radius: 8px; }
+  .gig__carousel-prev, .gig__carousel-next { width: 40px; height: 40px; }
+}
