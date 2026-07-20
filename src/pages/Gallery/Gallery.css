@@ -547,3 +547,64 @@ html body .gallery__modal.gallery__modal .gallery__modal-img {
     margin-bottom: clamp(24px, 6vh, 56px);
   }
 }
+
+/* Make modal Close / Prev / Next fully circular and show pointer on hover.
+   Uses a slightly more specific selector (no !important) placed at EOF to override earlier rules. */
+html body .gallery__modal.gallery__modal .gallery__modal-close,
+html body .gallery__modal.gallery__modal .gallery__modal-prev,
+html body .gallery__modal.gallery__modal .gallery__modal-next {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  /* keep the existing visual style but tuned for circular buttons */
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+  z-index: 1350;
+}
+
+/* Hover / focus polish matching the gig carousel controls */
+html body .gallery__modal.gallery__modal .gallery__modal-close:hover,
+html body .gallery__modal.gallery__modal .gallery__modal-prev:hover,
+html body .gallery__modal.gallery__modal .gallery__modal-next:hover,
+html body .gallery__modal.gallery__modal .gallery__modal-close:focus,
+html body .gallery__modal.gallery__modal .gallery__modal-prev:focus,
+html body .gallery__modal.gallery__modal .gallery__modal-next:focus {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.12);
+  outline: 3px solid rgba(255,255,255,0.12);
+  outline-offset: 2px;
+}
+
+/* Preserve absolute placement */
+html body .gallery__modal.gallery__modal .gallery__modal-prev { left: 12px; }
+html body .gallery__modal.gallery__modal .gallery__modal-next { right: 12px; }
+
+/* Fix hover transform so Prev/Next keep their vertical centering.
+   The earlier hover rule replaced translateY(-50%) with translateY(-3px),
+   causing the buttons to shift downward. This override keeps the -50%
+   centering and applies the small lift relative to it. */
+
+/* Prev/Next: keep base centering, on hover/focus nudge upward slightly */
+html body .gallery__modal.gallery__modal .gallery__modal-prev:hover,
+html body .gallery__modal.gallery__modal .gallery__modal-prev:focus {
+  transform: translateY(calc(-50% - 3px));
+}
+
+html body .gallery__modal.gallery__modal .gallery__modal-next:hover,
+html body .gallery__modal.gallery__modal .gallery__modal-next:focus {
+  transform: translateY(calc(-50% - 3px));
+}
+
+/* Close button sits at top-right — keep its existing small lift behavior */
+html body .gallery__modal.gallery__modal .gallery__modal-close:hover,
+html body .gallery__modal.gallery__modal .gallery__modal-close:focus {
+  transform: translateY(-3px);
+}
