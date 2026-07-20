@@ -475,7 +475,7 @@
 /* Increase space between video info and gallery on desktop */
 @media (min-width: 1025px) {
   .video__meta {
-    margin-bottom: clamp(50px, 24vh, 224px); /* pushes the gallery down on larger viewports */
+    margin-bottom: clamp(46px, 24vh, 224px); /* pushes the gallery down on larger viewports */
   }
 
   /* ensure gallery body doesn't counteract spacing */
