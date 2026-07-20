@@ -361,7 +361,9 @@ function Gallery() {
                         {/* caption removed per request */}
 
                         <div className="gallery__modal-actions" aria-label="Image actions">
-                          <button className="gallery__modal-action" onClick={shareCurrent} aria-label="Share image">{copied ? "Copied" : "Share"}</button>
+                          <button className="gallery__modal-action" onClick={shareCurrent} aria-label="Share image">
+                            <FaShareAlt aria-hidden="true" />
+                          </button>
                         </div>
 
                         <div className="sr-only" aria-live="polite">{copied ? "Link copied to clipboard" : ""}</div>

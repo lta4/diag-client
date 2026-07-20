@@ -186,25 +186,58 @@
   overflow: visible; /* keep controls clickable */
 }
 
-/* Close button */
-.gallery__modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
+/* modal: show a circular share icon over the image in the top-left */
+.gallery__modal-inner {
+  position: relative; /* ensure absolute children position relative to image wrapper */
+  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.gallery__modal-actions {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1400;
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+/* circular icon button */
+.gallery__modal-action {
+  width: 44px;
+  height: 44px;
   padding: 0;
-  border-radius: 10px;
-  background: rgba(6,6,8,0.64);          /* dark glass */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(0,0,0,0.56);
+  color: #fff;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 8px 20px rgba(0,0,0,0.45);
-  z-index: 1400;
-  pointer-events: auto;
+  cursor: pointer;
+  font-size: 0; /* hide any text inside */
+}
+
+/* ensure SVG fits and is visible */
+.gallery__modal-action svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* hover / focus polish */
+.gallery__modal-action:hover,
+.gallery__modal-action:focus {
+  background: rgba(0,0,0,0.72);
+  transform: translateY(-3px);
+  outline: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* Prev / Next arrows */
@@ -357,6 +390,27 @@
 .gallery__modal.gallery__modal .gallery__modal-actions > * {
   flex: 0 0 auto;
   margin: 0 6px;
+}
+
+/* Force modal actions to sit on top of the image (override later relative/stack rules) */
+html body .gallery__modal.gallery__modal .gallery__modal-actions {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: auto;
+  bottom: auto;
+  width: auto;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1405;   /* sit above the image */
+  order: 0;        /* ensure it doesn't get pushed below by flex ordering */
+  pointer-events: auto;
+}
+
+/* Ensure the opened image sits behind the actions */
+html body .gallery__modal.gallery__modal .gallery__modal-img {
+  position: relative;
+  z-index: 1230;
 }
 
 /* ----------------------------
