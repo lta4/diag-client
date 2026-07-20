@@ -188,25 +188,23 @@
 
 /* modal: show a circular share icon over the image in the top-left */
 .gallery__modal-inner {
-  position: relative; /* ensure absolute children position relative to image wrapper */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  box-sizing: border-box;
+  position: relative; /* ensure absolute children position relative to modal-inner */
 }
 
+/* stacked column in top-left, sits above image & nav controls */
 .gallery__modal-actions {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 1400;
+  top: 12px;
+  left: 12px;
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  z-index: 1500; /* above image and prev/next */
   pointer-events: auto;
 }
 
-/* circular icon button */
+/* circular icon buttons */
 .gallery__modal-action {
   width: 44px;
   height: 44px;
@@ -214,30 +212,34 @@
   border-radius: 50%;
   display: inline-grid;
   place-items: center;
+  box-sizing: border-box;
   background: rgba(0,0,0,0.56);
   color: #fff;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 8px 20px rgba(0,0,0,0.45);
   cursor: pointer;
-  font-size: 0; /* hide any text inside */
+  transition: transform 160ms ease, background 160ms ease;
+  font-size: 0; /* hide text, keep SVG visible */
 }
 
-/* ensure SVG fits and is visible */
-.gallery__modal-action svg {
-  width: 18px;
-  height: 18px;
-  display: block;
-  stroke: currentColor;
-  fill: currentColor;
+/* icon sizing */
+.gallery__modal-action svg { width: 18px; height: 18px; display: block; fill: currentColor; stroke: currentColor; }
+
+/* pressed/liked visual */
+.gallery__modal-action--like[aria-pressed="true"] {
+  background: linear-gradient(180deg, #ff4b6e, #ff2d55);
+  color: #fff;
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
 }
 
-/* hover / focus polish */
+/* hover / focus */
 .gallery__modal-action:hover,
 .gallery__modal-action:focus {
-  background: rgba(0,0,0,0.72);
   transform: translateY(-3px);
+  background: rgba(0,0,0,0.72);
   outline: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.52);
 }
 
 /* Prev / Next arrows */
