@@ -34,23 +34,26 @@ function Gallery() {
     // Image Index
     const [selected, setSelected] = useState(null); 
     const [copied, setCopied] = useState(false);
+    // track likes per image (keeps state local and simple)
+    const [liked, setLiked] = useState({});
+    const toggleLike = (i) => setLiked((p) => ({ ...p, [i]: !p[i] }));
     const [titleTyped, setTitleTyped] = useState("");
     const [subTyped, setSubTyped] = useState("");
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
 
     const shareVideo = async () => {
-      if (navigator.share) {
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: "Diagnostic — Featured Video", text: "Watch this set", url: shareUrl });
+                return;
+            } catch (e) { /* user cancelled */ }
+        }
         try {
-          await navigator.share({ title: "Diagnostic — Featured Video", text: "Watch this set", url: shareUrl });
-          return;
-        } catch (e) { /* user cancelled */ }
-      }
-      try {
-        await navigator.clipboard.writeText(shareUrl);
-        setShareCopied(true);
-        setTimeout(() => setShareCopied(false), 1600);
-      } catch (e) { /* ignore */ }
+            await navigator.clipboard.writeText(shareUrl);
+            setShareCopied(true);
+            setTimeout(() => setShareCopied(false), 1600);
+        } catch (e) { /* ignore */ }
     };
 
     const embedCode = `<iframe src="${computedEmbed}" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
@@ -361,8 +364,32 @@ function Gallery() {
                         {/* caption removed per request */}
 
                         <div className="gallery__modal-actions" aria-label="Image actions">
-                          <button className="gallery__modal-action" onClick={shareCurrent} aria-label="Share image">
+                          <button
+                            className="gallery__modal-action gallery__modal-action--share"
+                            onClick={(e) => { e && e.stopPropagation(); shareCurrent(); }}
+                            aria-label="Share image"
+                            title="Share"
+                          >
                             <FaShareAlt aria-hidden="true" />
+                          </button>
+
+                          <button
+                            className="gallery__modal-action gallery__modal-action--like"
+                            onClick={(e) => { e && e.stopPropagation(); toggleLike(selected); }}
+                            aria-pressed={!!liked[selected]}
+                            aria-label={liked[selected] ? "Unlike image" : "Like image"}
+                            title={liked[selected] ? "Unlike" : "Like"}
+                          >
+                            {/* simple heart: filled when liked, outline when not */}
+                            {liked[selected] ? (
+                              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                                <path fill="currentColor" d="M12 21s-7-4.35-9-6.54C1.7 12.9 2 9.5 4.7 7.9 7.5 6.2 9.4 7 12 9.2c2.6-2.2 4.5-3 7.3-1.3 2.7 1.6 3 5 1.7 6.56-2 2.2-9 6.54-9 6.54z"/>
+                              </svg>
+                            ) : (
+                              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                                <path d="M20.8 8.6a5.5 5.5 0 0 0-8.6 0L12 9.8l-.2-.2a5.5 5.5 0 1 0-7.8 7.8L12 21l7.8-4.6a5.5 5.5 0 0 0 0-7.8z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                              </svg>
+                            )}
                           </button>
                         </div>
 
