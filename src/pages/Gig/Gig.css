@@ -414,3 +414,56 @@ html body .gig__header::before {
   background: #000;
   z-index: -1;
 }
+
+/* Full-bleed top image banner (spans viewport width) */
+.gig__top-image {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* full-bleed technique */
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: block;
+}
+
+.gig__top-image img {
+  width: 100%;
+  height: clamp(220px, 34vh, 520px); /* adjust banner height as desired */
+  object-fit: cover;
+  object-position: center top; /* tweak to show subject */
+  display: block;
+}
+
+/* give a little separation before the header content */
+.gig__header { margin-top: 0.5rem; }
+
+/* on very small screens reduce banner height */
+@media (max-width: 720px) {
+  .gig__top-image img { height: clamp(140px, 28vh, 320px); object-position: center; }
+}
+
+/* Ensure the top banner touches the top of the viewport and covers it fully.
+   Appended override — keeps the rest of your layout intact. */
+
+html body .gig__top-image {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* make the banner image fill the viewport on load */
+html body .gig__top-image img {
+  width: 100vw;
+  height: 100vh;          /* full viewport height */
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* remove any top padding that would push the image down (stronger selector, no !important) */
+html body .gig {
+  padding-top: 0;
+}

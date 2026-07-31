@@ -12,6 +12,8 @@ import videoLoop from "../../assets/DiagB1.MP4"; // add your file
 // import videoPoster from "../../assets/gig-poster.jpg" // optional poster
 import Show from "../../components/Show/Show";
 import Newsletter from "../../components/Newsletter/Newsletter";
+import heroImage from "../../assets/jOneSlate.jpg"; // change to the file you want
+import FAQ from "../../components/FAQ/FAQ";
 
 const Gig = () => {
     const carouselRef = useRef(null);
@@ -38,6 +40,10 @@ const Gig = () => {
 
     return (
       <main className="gig">
+        {/* full-bleed image banner above the header */}
+        <div className="gig__top-image" aria-hidden="false">
+          <img src={heroImage} alt="Featured banner" />
+        </div>
         {/* decorative full-viewport black band behind the header */}
         <div className="gig__bg" aria-hidden="true" />
         {/* existing header / content follows */}
@@ -103,6 +109,8 @@ const Gig = () => {
             )}
           </div>
         </section>
+        {/* FAQ section */}
+        <FAQ />
         <section className="gig__news">
           <div className="gig__news--container">
             <Newsletter />
