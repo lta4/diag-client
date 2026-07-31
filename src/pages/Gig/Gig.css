@@ -24,9 +24,27 @@
 }
 
 .gig__header {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* full-bleed */
+  margin-right: calc(50% - 50vw);
+  left: 0;
+  right: 0;
+  min-height: 100vh;            /* full viewport height */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center;          /* vertically center description */
+  justify-content: center;      /* horizontal center */
+  box-sizing: border-box;
+  padding: 2.5rem 1rem;         /* adjust as needed */
+  z-index: 1;
+}
+
+.gig__header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  z-index: -1;                  /* sit behind header content */
 }
 
 .gig__title {
@@ -368,4 +386,31 @@
 @media (max-width: 900px) {
   .gig__carousel { box-shadow: 0 12px 30px rgba(0,0,0,0.45); border-radius: 8px; }
   .gig__carousel-prev, .gig__carousel-next { width: 40px; height: 40px; }
+}
+
+/* Ensure gig header can full-bleed to viewport edges (override container clipping) */
+html body .gig {
+  /* allow children to overflow when they intentionally full-bleed */
+  overflow: visible;
+}
+
+/* Re-affirm full-bleed header rules (wins over earlier declarations) */
+html body .gig__header {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Make sure the decorative background covers the full area behind header */
+html body .gig__header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  z-index: -1;
 }
