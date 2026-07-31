@@ -467,3 +467,18 @@ html body .gig__top-image img {
 html body .gig {
   padding-top: 0;
 }
+
+/* add consistent spacing between the carousel and the FAQ */
+html body .gig__carousel {
+  margin-bottom: clamp(36px, 8vh, 120px); /* desktop: roomy gap */
+}
+
+html body .faq {
+  margin-top: clamp(36px, 8vh, 120px); /* ensure FAQ sits clear of carousel */
+}
+
+/* reduce gap on smaller viewports */
+@media (max-width: 900px) {
+  html body .gig__carousel { margin-bottom: clamp(18px, 6vh, 48px); }
+  html body .faq { margin-top: clamp(18px, 6vh, 48px); }
+}

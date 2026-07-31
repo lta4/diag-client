@@ -40,77 +40,95 @@ const Gig = () => {
 
     return (
       <main className="gig">
-        {/* full-bleed image banner above the header */}
-        <div className="gig__top-image" aria-hidden="false">
-          <img src={heroImage} alt="Featured banner" />
+        {/* fluid inner container so content aligns and flows */}
+        <div className="gig__inner">
+          {/* hero / top image already present */}
+          {/* content grid: main column + optional rail (automatically collapses on mobile) */}
+          <div className="gig__layout">
+            <section className="gig__main">
+              {/* keep your top image / video / gallery here */}
+              {/* ...existing hero / top image / carousel markup ... */}
+              <div className="gig__top-image" aria-hidden="false">
+                <img src={heroImage} alt="Featured banner" />
+              </div>
+              {/* decorative full-viewport black band behind the header */}
+              <div className="gig__bg" aria-hidden="true" />
+              {/* existing header / content follows */}
+              <header className="gig__header">
+                <HeroVideo src={videoLoop} loopEnd={20} />
+                <div className="gig__header">
+                  <h2 className="gig__header--description">From underground clubs to curated events, Diagnostic delivers immersive electronic experiences built around sound, atmosphere, and connection.</h2>
+                  {/* optional CTA */}
+                </div>
+              </header>
+              <section className="gig__show">
+                <div className="gig__show--container">
+                  <Show />
+                </div>
+              </section>
+              <section className="gig__wall">
+                <div
+                  className="gig__carousel"
+                  ref={carouselRef}
+                  tabIndex={0}
+                  onKeyDown={onKey}
+                  onMouseEnter={() => setPaused(true)}
+                  onMouseLeave={() => setPaused(false)}
+                  onFocus={() => setPaused(true)}
+                  onBlur={() => setPaused(false)}
+                  aria-roledescription="carousel"
+                  aria-label="Featured images"
+                >
+                  <div
+                    className="gig__carousel-track"
+                    style={{ transform: `translateX(-${index * 100}%)` }}
+                  >
+                    {images.map((src, i) => (
+                      <div className="gig__carousel-slide" key={i}>
+                        <img
+                          src={src}
+                          alt={`Featured ${i + 1}`}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {images.length > 1 && (
+                    <>
+                      <button className="gig__carousel-prev" onClick={prev} aria-label="Previous slide">‹</button>
+                      <button className="gig__carousel-next" onClick={next} aria-label="Next slide">›</button>
+
+                      <div className="gig__carousel-indicators" role="tablist" aria-label="Slide dots">
+                        {images.map((_, i) => (
+                          <button
+                            key={i}
+                            className={`gig__carousel-dot ${i === index ? "is-active" : ""}`}
+                            onClick={() => goTo(i)}
+                            aria-label={`Go to slide ${i + 1}`}
+                            aria-selected={i === index}
+                            role="tab"
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </section>
+            </section>
+
+            <aside className="gig__rail" aria-hidden="false">
+              {/* compact rail: upcoming shows / CTA / small widgets */}
+              {/* reuse existing components like UpcomingShows, Newsletter CTA, etc. */}
+            </aside>
+          </div>
+
+          {/* FAQ and other informational blocks flow full width under the grid */}
+          <FAQ />
         </div>
-        {/* decorative full-viewport black band behind the header */}
-        <div className="gig__bg" aria-hidden="true" />
-        {/* existing header / content follows */}
-        <header className="gig__header">
-          <HeroVideo src={videoLoop} loopEnd={20} />
-          <div className="gig__header">
-            <h2 className="gig__header--description">From underground clubs to curated events, Diagnostic delivers immersive electronic experiences built around sound, atmosphere, and connection.</h2>
-            {/* optional CTA */}
-          </div>
-        </header>
-        <section className="gig__show">
-          <div className="gig__show--container">
-            <Show />
-          </div>
-        </section>
-        <section className="gig__wall">
-          <div
-            className="gig__carousel"
-            ref={carouselRef}
-            tabIndex={0}
-            onKeyDown={onKey}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            onFocus={() => setPaused(true)}
-            onBlur={() => setPaused(false)}
-            aria-roledescription="carousel"
-            aria-label="Featured images"
-          >
-            <div
-              className="gig__carousel-track"
-              style={{ transform: `translateX(-${index * 100}%)` }}
-            >
-              {images.map((src, i) => (
-                <div className="gig__carousel-slide" key={i}>
-                  <img
-                    src={src}
-                    alt={`Featured ${i + 1}`}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              ))}
-            </div>
 
-            {images.length > 1 && (
-              <>
-                <button className="gig__carousel-prev" onClick={prev} aria-label="Previous slide">‹</button>
-                <button className="gig__carousel-next" onClick={next} aria-label="Next slide">›</button>
-
-                <div className="gig__carousel-indicators" role="tablist" aria-label="Slide dots">
-                  {images.map((_, i) => (
-                    <button
-                      key={i}
-                      className={`gig__carousel-dot ${i === index ? "is-active" : ""}`}
-                      onClick={() => goTo(i)}
-                      aria-label={`Go to slide ${i + 1}`}
-                      aria-selected={i === index}
-                      role="tab"
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        </section>
-        {/* FAQ section */}
-        <FAQ />
+        {/* existing footer / newsletter placement remains unchanged */}
         <section className="gig__news">
           <div className="gig__news--container">
             <Newsletter />
