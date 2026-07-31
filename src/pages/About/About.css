@@ -925,3 +925,69 @@ html body .about .about__stats .stats__grid {
 .profile__description {
   margin-top: clamp(4rem, 8vw, 10rem); /* was clamp(3rem, 6vw, 9rem) — increased to push it down */
 }
+
+/* Ensure cover (hero/wall) always fills the initial viewport and remains full‑bleed
+   while remaining responsive across desktop / tablet / mobile. */
+html body .about__hero,
+html body .about__wall {
+  /* full-viewport anchor (prefer svh/dvh where available) */
+  min-height: 100svh;
+  min-height: 100dvh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* anchor for overlays */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* If hero uses an <img> element, make it cover the viewport */
+html body .about__hero img,
+html body .about__wall img {
+  width: 100%;
+  height: 100svh;
+  height: 100dvh;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* If the hero uses the .about__bg pseudo / background image, ensure it covers */
+html body .about__bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Tablet: slightly reduce initial hero height so content is visible sooner */
+@media (max-width: 1024px) {
+  html body .about__hero,
+  html body .about__wall {
+    min-height: 80svh;
+    min-height: 80dvh;
+    min-height: 80vh;
+  }
+  html body .about__hero img,
+  html body .about__wall img { height: 80vh; }
+}
+
+/* Mobile: reduce height to avoid hiding important content below the fold */
+@media (max-width: 720px) {
+  html body .about__hero,
+  html body .about__wall {
+    min-height: 70svh;
+    min-height: 70dvh;
+    min-height: 70vh;
+    padding: 1.5rem 0.75rem;
+  }
+  html body .about__hero img,
+  html body .about__wall img { height: 70vh; object-position: center; }
+}
+
+/* Respect reduced motion and avoid visual jump on small devices */
+@media (prefers-reduced-motion: reduce) {
+  html body .about__hero img,
+  html body .about__wall img { transition: none; }
+}

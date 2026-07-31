@@ -608,3 +608,143 @@ html body .gallery__modal.gallery__modal .gallery__modal-close:hover,
 html body .gallery__modal.gallery__modal .gallery__modal-close:focus {
   transform: translateY(-3px);
 }
+
+/* Responsive gallery: mobile-first sizing and modal adjustments */
+
+/* MOBILE (default) — single column gallery, compact modal */
+.gallery__grid,
+.gallery__grid--masonry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.gallery__item {
+  padding: 0;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Modal: image fits inside viewport on mobile */
+.gallery__modal-inner { padding: 12px; }
+.gallery__modal-img {
+  max-width: 92vw;
+  max-height: 64vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Modal controls: smaller, stacked bottom on mobile */
+.gallery__modal-actions {
+  top: auto;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  flex-direction: row;
+  gap: 10px;
+}
+.gallery__modal-action,
+.gallery__modal-close,
+.gallery__modal-prev,
+.gallery__modal-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Tablet: 2-column grid, larger thumbnails, modal bigger */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .gallery__grid,
+  .gallery__grid--masonry {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .gallery__item img { height: 220px; object-position: center; }
+
+  .gallery__modal-img {
+    max-width: 88vw;
+    max-height: 78vh;
+  }
+
+  /* move modal actions to top-left stacked for tablet */
+  .gallery__modal-actions {
+    top: 18px;
+    left: 18px;
+    bottom: auto;
+    transform: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gallery__modal-action,
+  .gallery__modal-close,
+  .gallery__modal-prev,
+  .gallery__modal-next {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Desktop / large: 3-column gallery, roomy spacing, big modal image */
+@media (min-width: 1025px) {
+  .gallery__grid,
+  .gallery__grid--masonry {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .gallery__item img { height: 260px; }
+
+  .gallery__modal-inner { padding: 20px; }
+  .gallery__modal-img {
+    max-width: 80vw;
+    max-height: 85vh;
+    border-radius: 10px;
+  }
+
+  /* stacked actions top-left (share + like), prev/next remain centered vertically */
+  .gallery__modal-actions {
+    top: 18px;
+    left: 18px;
+    bottom: auto;
+    transform: none;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1500;
+  }
+
+  .gallery__modal-action,
+  .gallery__modal-close,
+  .gallery__modal-prev,
+  .gallery__modal-next {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* ensure prev/next stay vertically centered and don't jump on hover */
+  .gallery__modal-prev,
+  .gallery__modal-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Small accessibility polish */
+@media (prefers-reduced-motion: reduce) {
+  .gallery__carousel-track,
+  .gallery__modal-img,
+  .gallery__modal-action { transition: none !important; animation: none !important; }
+}

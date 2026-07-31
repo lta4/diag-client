@@ -156,21 +156,29 @@
 @media (min-width: 721px) and (max-width: 1024px) {
   .gig {
     padding: 2rem 1rem;
+    max-width: 100%;
   }
+
+  .gig__header { min-height: 80vh; padding: 1.75rem 1rem; }
+  .gig__top-image img { height: 70vh; }
 
   .gig__content {
     display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 1rem;
+    grid-template-columns: 1fr 280px; /* main + rail */
+    gap: clamp(16px, 4.5vh, 28px);
   }
 
   .gig__list {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.9rem;
   }
 
   .gig__item img { height: 160px; }
-  .gig__sidebar { min-width: 240px; padding: 0.85rem; }
+  .gig__sidebar { min-width: 240px; }
+
+  .gig__carousel { max-width: 920px; }
+  .gig__carousel-prev, .gig__carousel-next { width: 42px; height: 42px; }
 }
 
 /* MOBILE: single column, stacked flow; sidebar moves below list */
@@ -481,4 +489,92 @@ html body .faq {
 @media (max-width: 900px) {
   html body .gig__carousel { margin-bottom: clamp(18px, 6vh, 48px); }
   html body .faq { margin-top: clamp(18px, 6vh, 48px); }
+}
+
+/* Responsive breakpoints (mobile-first): ensure consistent layout across mobile / tablet / desktop */
+
+/* MOBILE (default) — keep compact, single-column flow */
+.gig {
+  padding: 1rem;
+  max-width: 100%;
+}
+.gig__inner { padding: 0; }
+.gig__content { display: block; gap: 1rem; }
+.gig__list { grid-template-columns: 1fr; gap: 0.75rem; }
+.gig__top-image img { height: 60vh; } /* banner fills most of viewport but not too tall on small phones */
+.gig__header { min-height: 60vh; padding: 1.25rem 1rem; }
+.gig__carousel { max-width: 100%; }
+.gig__carousel-prev, .gig__carousel-next { width: 40px; height: 40px; }
+
+/* TABLET */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .gig {
+    padding: 2rem 1rem;
+    max-width: 100%;
+  }
+
+  .gig__header { min-height: 80vh; padding: 1.75rem 1rem; }
+  .gig__top-image img { height: 70vh; }
+
+  .gig__content {
+    display: grid;
+    grid-template-columns: 1fr 280px; /* main + rail */
+    gap: clamp(16px, 4.5vh, 28px);
+  }
+
+  .gig__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+
+  .gig__item img { height: 160px; }
+  .gig__sidebar { min-width: 240px; }
+
+  .gig__carousel { max-width: 920px; }
+  .gig__carousel-prev, .gig__carousel-next { width: 42px; height: 42px; }
+}
+
+/* DESKTOP / LARGE */
+@media (min-width: 1025px) {
+  .gig {
+    padding: 2.5rem 1.25rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gig__header { min-height: 100vh; padding: 2.5rem 1rem; }
+  .gig__top-image img { height: 100vh; }
+
+  .gig__content {
+    display: grid;
+    grid-template-columns: 1fr 360px; /* main + wide rail */
+    gap: clamp(20px, 6vh, 48px);
+    align-items: start;
+  }
+
+  .gig__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .gig__item img { height: 180px; }
+
+  .gig__carousel { max-width: 1200px; }
+  .gig__carousel-prev, .gig__carousel-next {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+  }
+
+  /* more breathing room between sections on large screens */
+  .gig__carousel { margin-bottom: clamp(48px, 10vh, 160px); }
+  .faq { margin-top: clamp(48px, 10vh, 160px); }
+}
+
+/* Respect reduced motion for all transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
