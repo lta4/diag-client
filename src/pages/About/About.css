@@ -991,3 +991,75 @@ html body .about__bg {
   html body .about__hero img,
   html body .about__wall img { transition: none; }
 }
+
+/* Mobile adjustments: ensure hero/cover fills the viewport and layered images stop overlapping stats.
+   Stacks layered images in normal flow (one above the other) on small screens. */
+@media (max-width: 720px) {
+  /* Ensure the cover/hero fills the initial viewport on mobile */
+  html body .about__hero,
+  html body .about__wall {
+    min-height: 100svh;
+    min-height: 100dvh;
+    min-height: 100vh;
+    position: relative; /* anchor for any overlays */
+    overflow: hidden;
+  }
+
+  html body .about__hero img,
+  html body .about__wall img {
+    width: 100%;
+    height: 100svh;
+    height: 100dvh;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* Bring layered images into the document flow and stack them vertically.
+     Targets common patterns: .about__media / .about__wall children and any elements with "layer" in class name. */
+  html body .about__media img,
+  html body .about__media > *[class*="layer"],
+  html body .about__wall img,
+  html body .about__wall > *[class*="layer"],
+  html body [class*="about__layer"] {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: none;
+    left: auto;
+    top: auto;
+    z-index: auto;
+    margin: clamp(8px, 2vh, 18px) 0;
+  }
+
+  /* Ensure stats are not covered and sit above images */
+  html body .about__stats {
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(12px, 3vh, 24px);
+    padding-top: 0;
+  }
+
+  /* Remove negative margins or offsets that could cause overlap on mobile */
+  html body .about__hero .offset,
+  html body .about__wall .offset,
+  html body .about__media .offset {
+    margin: 0;
+    transform: none;
+  }
+
+  /* Slightly tighten spacing so stacked images and stats flow nicely */
+  html body .about__media,
+  html body .about__testimonials {
+    margin-top: clamp(12px, 3vh, 24px);
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html body .about__media img,
+    html body .about__hero img,
+    html body .about__wall img { transition: none; animation: none; }
+  }
+}
