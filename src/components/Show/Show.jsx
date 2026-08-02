@@ -12,7 +12,7 @@ function Show() {
     // Create a single wrapper and insert the anchor into it so cleanup is simple
     const wrapper = document.createElement("div");
     wrapper.className = "songkick-wrapper";
-    wrapper.innerHTML = `<a href="https://www.songkick.com/artists/${id}" class="songkick-widget" data-theme="dark" data-track-button="off" data-detect-style="off" data-background-color="rgb(0,0,0,1)" data-font-color="rgb(255,255,255,1)" data-button-bg-color="rgb(255,255,255,1)" data-button-text-color="rgb(0,0,0,1)" data-locale="en" data-other-artists="off" data-share-button="off" data-country-filter="off" data-rsvp="on" data-request-show="off" data-past-events="off" data-past-events-offtour="off" data-remind-me="off" style="display: none;"></a>`;
+    wrapper.innerHTML = `<a href="https://www.songkick.com/artists/${id}" class="songkick-widget" data-theme="dark" data-track-button="on" data-detect-style="off" data-background-color="rgb(0,0,0,1)" data-font-color="rgb(255,255,255,1)" data-button-bg-color="rgb(255,255,255,1)" data-button-text-color="rgb(0,0,0,1)" data-locale="en" data-other-artists="off" data-share-button="off" data-country-filter="off" data-rsvp="on" data-request-show="on" data-past-events="off" data-past-events-offtour="off" data-remind-me="on" style="display: none;"></a>`;
 
     // Append wrapper to host
     host.appendChild(wrapper);
