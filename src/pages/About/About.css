@@ -1142,3 +1142,33 @@ html body .about__bg {
   .stacked__photo { border-width: 5px; margin-bottom: 12px; }
   .about__stats { padding-top: clamp(20px, 8vh, 64px); margin-top: clamp(18px, 6vh, 56px); }
 }
+
+/* Hero bg visibility control:
+   - .about.hero-visible => show main background image (landing / scrolled back)
+   - default (no class) => hide it so section bands (stats black, stacked grey, profile black, newsletter black) show cleanly
+   Smooth fade avoids jarring flashes when scrolling. */
+.about__bg {
+  transition: opacity 360ms ease, visibility 360ms ease;
+}
+
+/* default: hide the main bg so underlying section bands are visible */
+html body .about:not(.hero-visible) .about__bg {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* when hero is visible (landing or scrolled up) show the bg */
+html body .about.hero-visible .about__bg {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+}
+
+/* ensure section bands remain visually stacked in order when hero is hidden */
+html body .about:not(.hero-visible) .about__stats { background: #000; z-index: 8; }
+html body .about:not(.hero-visible) .about__stacked { background: #0d0d0e; z-index: 7; }
+html body .about:not(.hero-visible) .about__profile-block { background: #000; z-index: 6; }
+
+/* small tweak: avoid hero bg capturing pointer events even when visible */
+html body .about .about__bg { pointer-events: none; }

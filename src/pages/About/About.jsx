@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./About.css";
 import jFourteen from "../../assets/jFourteen.jpg";
 import jThree from "../../assets/jThree.jpg";
@@ -36,8 +36,8 @@ const TESTIMONIALS = [
 
 // Simple CountUp component
 function CountUp({ to = 0, duration = 1200 }) {
-  const [num, setNum] = useState(0);
-  useEffect(() => {
+  const [num, setNum] = React.useState(0);
+  React.useEffect(() => {
     let raf;
     let start = null;
     function step(timestamp) {
@@ -53,6 +53,35 @@ function CountUp({ to = 0, duration = 1200 }) {
 }
 
 export default function About(props) {
+  const aboutRef = useRef(null);
+
+  // Show the hero bg only while the hero is visible (landing or scrolled-back-to).
+  // We toggle a class on the .about root so CSS can hide/show the background.
+  useEffect(() => {
+    const root = aboutRef.current || document.querySelector(".about");
+    if (!root) return;
+    const hero = root.querySelector(".about__hero");
+    if (!hero) {
+      root.classList.remove("hero-visible");
+      return;
+    }
+    // visible when ~25% of hero is in viewport
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+            root.classList.add("hero-visible");
+          } else {
+            root.classList.remove("hero-visible");
+          }
+        });
+      },
+      { threshold: [0.25] }
+    );
+    obs.observe(hero);
+    return () => obs.disconnect();
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -105,7 +134,7 @@ export default function About(props) {
   }, []);
 
   return (
-    <>
+    <div className="about" ref={aboutRef}>
       <div
         className="about__bg"
         aria-hidden="true"
@@ -231,6 +260,6 @@ export default function About(props) {
       </main>
 
       <ScrollToTop smooth color="#fff" style={{ backgroundColor: '#000', borderRadius: '50%' }} />
-    </>
+    </div>
   );
 }
