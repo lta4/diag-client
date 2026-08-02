@@ -1063,3 +1063,82 @@ html body .about__bg {
     html body .about__wall img { transition: none; animation: none; }
   }
 }
+
+/* Mobile stacking + spacing fix: move layered photos down, stack them vertically,
+   and give the stats plenty of breathing room. Appended override (mobile-first). */
+
+@media (max-width: 900px) {
+  /* Push the stacked section down and add bottom breathing room */
+  .about__stacked {
+    padding-top: clamp(40px, 12vh, 120px);   /* move whole stacked block further down */
+    padding-bottom: clamp(24px, 8vh, 64px);
+    margin-bottom: clamp(12px, 4vh, 28px);
+    overflow: visible;
+    z-index: 5; /* keep it behind the stats band */
+  }
+
+  /* Keep inner container simple and flow vertically */
+  .stacked__inner {
+    display: block;          /* one column flow */
+    min-height: auto;
+    padding: 0 0 0;
+    position: relative;
+    pointer-events: auto;
+  }
+
+  /* Make each photo full width, stacked one above the other */
+  .stacked__photo,
+  .stacked__photo--a,
+  .stacked__photo--b {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+    height: auto;
+    transform: none;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 0 0 clamp(12px, 4vh, 24px);
+    border-width: 6px;
+    border-radius: 8px;
+    box-shadow: 0 20px 48px rgba(0,0,0,0.55);
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    cursor: auto;
+  }
+
+  /* Ensure the larger photo doesn't dominate — keep consistent sizing */
+  .stacked__photo--b { width: 100%; }
+
+  /* Make stats sit above photos and add breathing room above stats */
+  .about__stats {
+    position: relative;
+    z-index: 60; /* higher than stacked photos so stats aren't visually covered */
+    margin-top: clamp(28px, 8vh, 88px);    /* space before stats */
+    padding-top: clamp(28px, 8vh, 96px);   /* extra inner top padding for breathing room */
+  }
+
+  /* Slightly push profile block down so it doesn't butt against stats */
+  .about__profile-block {
+    padding-top: clamp(18px, 6vh, 48px);
+  }
+
+  /* tighten any negative offsets from other rules on small screens */
+  .about__media [class*="offset"],
+  .about__stacked [class*="offset"],
+  .stacked__photo.offset {
+    margin: 0;
+    transform: none;
+    top: auto;
+    left: auto;
+  }
+}
+
+/* Extra small screens — ensure the same stacked behavior holds */
+@media (max-width: 420px) {
+  .about__stacked { padding-top: clamp(28px, 10vh, 80px); padding-bottom: 20px; }
+  .stacked__photo { border-width: 5px; margin-bottom: 12px; }
+  .about__stats { padding-top: clamp(20px, 8vh, 64px); margin-top: clamp(18px, 6vh, 56px); }
+}
