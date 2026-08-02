@@ -10,11 +10,14 @@ import jTen from "../assets/jTen.jpeg";
 import jEleven from "../assets/jEleven.jpeg";
 import jSixteen from "../assets/jSixteen.jpg";
 import DNP8 from "../assets/DNP8.jpeg";
+import DNP27 from "../assets/DNP27.jpeg";
 import DNP32 from "../assets/DNP32.jpeg";
 import DNP36 from "../assets/DNP36.jpeg";
+import DNP44 from "../assets/DNP44.jpeg";
 import DNP50 from "../assets/DNP50.jpeg";
 
 const IMAGES = [
+  { src: DNP44, name: "DNP44" },
   { src: jOne, name: "San Diego @ Maverick's" },
   { src: jTwo, name: "San Diego @ Sycamore Den" },
   { src: DNP32, name: "DNP32" },
@@ -27,7 +30,8 @@ const IMAGES = [
   { src: DNP36, name: "DNP36" },
   { src: jThree, name: "San Diego @ Sycamore Den" },
   { src: DNP50, name: "DNP50" },
-  { src: jEleven, name: "San Diego @ Sycamore Den" }
+  { src: jEleven, name: "San Diego @ Sycamore Den" },
+  { src: DNP27, name: "DNP27" }
 ];
 
 export default IMAGES;
