@@ -1238,3 +1238,80 @@ html body .about__profile-block,
 html body .about__stacked {
   overflow: visible;
 }
+
+/* Strong override: ensure stats band is opaque, extends far enough, and sits above hero;
+   stacked band sits directly below and does not overlap stats. */
+html body .about__stats {
+  /* full-bleed */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  /* visual - opaque black band that fully covers hero underneath */
+  background: #000 !important;
+  color: #fff;
+  box-sizing: border-box;
+
+  /* ensure it reaches down far enough to touch the stacked band */
+  padding-top: clamp(36px, 7vh, 96px) !important;
+  padding-bottom: clamp(80px, 16vh, 220px) !important;
+
+  /* remove any outer spacing that could create a document-level hole */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  /* stacking */
+  position: relative;
+  z-index: 120 !important;
+
+  /* safety */
+  overflow: visible !important;
+}
+
+/* Remove any decorative pseudo that might sit behind and reveal hero */
+html body .about__stats::after,
+html body .about__stats::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Stacked (grey) band should start directly after stats with no top margin and lower z-index */
+html body .about__stacked {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  /* remove document-level gap (use internal padding instead) */
+  margin-top: 0 !important;
+  padding-top: clamp(20px, 5vh, 64px) !important;
+  padding-bottom: clamp(24px, 6vh, 72px);
+  background: #0d0d0e !important;
+  z-index: 30 !important;
+  overflow: visible !important;
+}
+
+/* Hide the main hero bg whenever the hero is not visible (avoid any bleed) */
+html body .about:not(.hero-visible) .about__bg {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+/* Ensure no ancestor clips these sections */
+html body .about,
+html body .about__content,
+html body .about__profile-block,
+html body .about__stacked,
+html body .about__stats {
+  overflow: visible !important;
+}
+
+/* Mobile tweak: keep extra breathing room on small screens */
+@media (max-width: 900px) {
+  html body .about__stats {
+    padding-bottom: clamp(64px, 20vh, 180px) !important;
+    padding-top: clamp(24px, 8vh, 48px) !important;
+  }
+  html body .about__stacked { padding-top: clamp(24px, 8vh, 64px) !important; }
+}
