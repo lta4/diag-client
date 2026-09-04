@@ -56,7 +56,7 @@ const Gig = () => {
               {/* existing header / content follows */}
               <header className="gig__header">
                 <HeroVideo src={videoLoop} loopEnd={20} />
-                <div className="gig__header">
+                <div className="gig__header-content">
                   <h2 className="gig__header--description">From underground clubs to curated events, Diagnostic delivers immersive electronic experiences built around sound, atmosphere, and connection.</h2>
                   {/* optional CTA */}
                 </div>

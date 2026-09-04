@@ -24,19 +24,30 @@
 }
 
 .gig__header {
-  position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw); /* full-bleed */
-  margin-right: calc(50% - 50vw);
-  left: 0;
-  right: 0;
-  min-height: 100vh;            /* full viewport height */
   display: flex;
-  align-items: center;          /* vertically center description */
-  justify-content: center;      /* horizontal center */
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  align-items: stretch;
+}
+
+/* ensure HeroVideo / video element is full width on mobile */
+.gig__header video,
+.gig__header .hero-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* header content sits beneath the video */
+.gig__header-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(14px, 4vh, 28px) 1rem;
   box-sizing: border-box;
-  padding: 2.5rem 1rem;         /* adjust as needed */
-  z-index: 1;
+  text-align: center;
 }
 
 .gig__header::before {
