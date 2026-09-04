@@ -305,7 +305,7 @@
 
   /* Mobile: add more breathing room above/below the left-inner block */
   .contact__left-inner {
-    padding-top: clamp(28px, 8vh, 64px);
+    padding-top: clamp(78px, 14vh, 84px);
     padding-bottom: clamp(28px, 8vh, 64px);
     padding-left: 2rem;
     padding-right: 2rem;
