@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import "./Footer.css";
 import { NavLink } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -38,14 +37,18 @@ export default function Footer() {
         
         <div className="footer__copy">
                 <div className="footer__date--description">
-                    <p>For inquiries:</p>
-                    <a href="mailto=bookings@itsdiagnostic.com" className="footer__date--link">
+                  <div className="footer__contact-line">
+                    <p className="footer__contact-label">For inquiries:</p>
+                    <a href="mailto:bookings@itsdiagnostic.com" className="footer__date--link">
                       bookings@itsdiagnostic.com
                     </a>
-                    <p>© {new Date().getFullYear()} Fignewt Designed & Developed by {` `}</p>
-                    <a href="mailto=andrew@andrew@fignewt.com" className="footer__date--link">
-                        Andrew Arias
-                    </a>
+                  </div>
+                  <div className="footer__credits">
+                    <p>
+                      © {new Date().getFullYear()} Fignewt Designed &amp; Developed by&nbsp;
+                      <a href="mailto:andrew@fignewt.com" className="footer__date--link">Andrew Arias</a>
+                    </p>
+                  </div>
                 </div>
             </div>
       </div>

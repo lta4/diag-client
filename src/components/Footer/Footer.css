@@ -327,3 +327,135 @@ img.footer__link.footer__link--bit:hover {
 /* .logo-d > img {
     width: 10rem;
 } */
+
+/* MOBILE: stack date description and link vertically and left-align them */
+@media (max-width: 720px) {
+  .footer__date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0.6rem 1rem;
+    padding: 0;
+  }
+
+  .footer__date--description {
+    display: flex;
+    flex-direction: column; /* stack items */
+    align-items: flex-start; /* left align */
+    justify-content: flex-start;
+    text-align: left;
+    gap: 6px;
+    width: 100%;
+    margin: 0 0 6px 0;
+  }
+
+  .footer__date--description p {
+    margin: 0;
+  }
+
+  .footer__date--link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .footer__date--link:hover {
+    color: var(--theme-color);
+    transition: color 0.3s ease;
+  }
+}
+
+/* Mobile: keep "For inquiries:" and the email on one line, credits below */
+@media (max-width: 720px) {
+  .footer__contact-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .footer__contact-label,
+  .footer__date--link {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .footer__date--description .footer__credits {
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+    text-align: center;
+    opacity: 0.9;
+  }
+}
+
+/* Keep "For inquiries:" on a single line in mobile */
+@media (max-width: 720px) {
+  .footer__contact-line,
+  .footer__contact-label,
+  .footer__date--link {
+    white-space: nowrap; /* prevent breaking between words */
+  }
+
+  /* ensure the inline-flex container doesn't wrap */
+  .footer__contact-line {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Ensure contact + email and the credits sit on a single line on tablet/desktop */
+@media (min-width: 721px) {
+  .footer__date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0; /* keep it compact in the footer row */
+    gap: 12px;
+  }
+
+  .footer__date--description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; /* prevent wrapping of "For inquiries: bookings@..." */
+  }
+
+  .footer__contact-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .footer__credits {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; /* keep credits on one line */
+    margin-left: 12px; /* small separation from contact */
+  }
+}
+
+/* Force footer credits (year + "Fignewt Designed..." and Andrew Arias) to stay on one line */
+.footer__credits,
+.footer__credits p,
+.footer__credits a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+/* safety: prevent wrapping on very narrow screens by truncating gracefully */
+@media (max-width: 360px) {
+  .footer__credits { overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+}
