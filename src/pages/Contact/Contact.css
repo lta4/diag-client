@@ -302,6 +302,27 @@
     max-width: 720px;
     margin: 0;
   }
+
+  /* Mobile: add more breathing room above/below the left-inner block */
+  .contact__left-inner {
+    padding-top: clamp(28px, 8vh, 64px);
+    padding-bottom: clamp(28px, 8vh, 64px);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+  }
+
+  /* ensure the wall and layout allow the extra space without clipping */
+  .contact__wall,
+  .contact__left {
+    overflow: visible;
+  }
+
+  /* small tweak: keep intro text comfortable on very small screens */
+  .contact__left-title {
+    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem);
+  }
 }
 
 /* small screens: tighten spacing */
