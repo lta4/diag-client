@@ -1172,3 +1172,22 @@ html body .about:not(.hero-visible) .about__profile-block { background: #000; z-
 
 /* small tweak: avoid hero bg capturing pointer events even when visible */
 html body .about .about__bg { pointer-events: none; }
+
+/* Mobile: push the stacked photos farther down so they no longer overlap the stats */
+@media (max-width: 900px) {
+  html body .about .about__stacked {
+    /* larger top offset to create breathing room; adjusts fluidly across devices */
+    margin-top: clamp(120px, 20vh, 260px);
+    padding-top: clamp(20px, 6vh, 64px);
+    overflow: visible; /* allow photos to overflow visually if needed */
+    z-index: 5;        /* keep it below the stats section */
+  }
+
+  /* ensure stats remain clearly on top with extra bottom space */
+  html body .about .about__stats {
+    margin-bottom: clamp(56px, 12vh, 220px);
+    padding-bottom: clamp(32px, 8vh, 120px);
+    position: relative;
+    z-index: 80;
+  }
+}
