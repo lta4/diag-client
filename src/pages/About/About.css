@@ -1191,3 +1191,34 @@ html body .about .about__bg { pointer-events: none; }
     z-index: 80;
   }
 }
+
+/* Fix: remove gap between stats and stacked area (prevents "hole" showing main bg)
+   - Use padding inside the stacked band for visual offset instead of big top margins
+   - Ensure stats are not clipped and sit above following bands */
+html body .about__stats {
+  margin-bottom: 0; /* remove gap that can reveal the hero bg */
+  padding-bottom: clamp(36px, 8vh, 96px); /* keep breathing room below stats */
+  overflow: visible; /* allow children to render without being clipped */
+  z-index: 90; /* ensure stats sit above stacked photos */
+  min-height: auto; /* avoid fixed/relative heights that cut content */
+}
+
+/* Replace large margin-top with internal padding so there's no document-level gap */
+html body .about__stacked {
+  margin-top: 0; /* remove the margin causing the hole */
+  padding-top: clamp(48px, 12vh, 140px); /* internal space so photos start lower visually */
+  padding-bottom: clamp(28px, 8vh, 72px);
+  overflow: visible;
+  z-index: 20; /* below stats but above profile band if needed */
+}
+
+/* Small safety: make sure stacked photos flow in and don't get clipped */
+html body .stacked__inner { padding-top: 12px; }
+
+/* Ensure no ancestor is clipping the flow between bands */
+html body .about,
+html body .about__content,
+html body .about__profile-block,
+html body .about__stacked {
+  overflow: visible;
+}
