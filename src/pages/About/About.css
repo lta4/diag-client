@@ -898,19 +898,35 @@
   }
 }
 
-/* Lower the stats content slightly inside the black band */
-html body .about .about__stats .stats__grid {
-  /* push content downward within the band without changing band height */
-  padding-top: clamp(12px, 4vh, 48px);
-  /* ensure items align from the top of the grid area */
-  align-items: start;
+/* Lower / extend the stats black band so it completely covers the hero bg
+   and visually touches the stacked photos section below. */
+html body .about__stats {
+  /* increase bottom padding so the black band reaches farther down */
+  padding-bottom: clamp(120px, 18vh, 220px) !important;
+  /* ensure it's above photos */
+  z-index: 90;
+  overflow: visible;
 }
 
-/* a bit more offset on large screens */
-@media (min-width: 1025px) {
-  html body .about .about__stats .stats__grid {
-    padding-top: clamp(54px, 8vh, 96px);
-  }
+/* small decorative extension to close any hairline gaps */
+html body .about__stats::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px; /* extend just below the band */
+  height: clamp(32px, 6vh, 120px);
+  background: #000;
+  z-index: -1; /* sits behind the stats content but visually continues the band */
+  pointer-events: none;
+}
+
+/* make sure the stacked section sits visually on top of the extension edge */
+html body .about__stacked {
+  margin-top: 0;
+  padding-top: clamp(28px, 8vh, 72px);
+  z-index: 20;
+  overflow: visible;
 }
 
 /* Nudge the profile area content downward so portrait + description sit lower
