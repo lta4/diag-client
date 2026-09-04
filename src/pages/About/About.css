@@ -1215,7 +1215,7 @@ html body .about__stats {
   margin-bottom: 0; /* remove gap that can reveal the hero bg */
   padding-bottom: clamp(36px, 8vh, 96px); /* keep breathing room below stats */
   overflow: visible; /* allow children to render without being clipped */
-  z-index: 90; /* ensure stats sit above stacked photos */
+  z-index: 90 /* ensure stats sit above stacked photos */;
   min-height: auto; /* avoid fixed/relative heights that cut content */
 }
 
@@ -1239,79 +1239,123 @@ html body .about__stacked {
   overflow: visible;
 }
 
-/* Strong override: ensure stats band is opaque, extends far enough, and sits above hero;
-   stacked band sits directly below and does not overlap stats. */
-html body .about__stats {
-  /* full-bleed */
+/* REPLACE the previous !important-heavy overrides with these rules placed at EOF.
+   These use specific, later declarations (no !important) so they reliably win. */
+
+/* Make the stats a solid full-bleed band that fully contains the stats content */
+html body .about > .about__stats,
+html body .about .about__stats {
+  /* full-bleed layout */
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 
-  /* visual - opaque black band that fully covers hero underneath */
-  background: #000 !important;
+  /* visual */
+  background: #000;
   color: #fff;
   box-sizing: border-box;
 
-  /* ensure it reaches down far enough to touch the stacked band */
-  padding-top: clamp(36px, 7vh, 96px) !important;
-  padding-bottom: clamp(80px, 16vh, 220px) !important;
+  /* sizing/spacing */
+  min-height: clamp(220px, 30vh, 520px);
+  padding-top: clamp(36px, 7vh, 96px);
+  padding-bottom: clamp(80px, 16vh, 220px);
 
-  /* remove any outer spacing that could create a document-level hole */
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-
-  /* stacking */
+  /* stacking & clipping */
   position: relative;
-  z-index: 120 !important;
-
-  /* safety */
-  overflow: visible !important;
+  z-index: 120;
+  overflow: visible;
 }
 
-/* Remove any decorative pseudo that might sit behind and reveal hero */
-html body .about__stats::after,
-html body .about__stats::before {
-  display: none !important;
-  content: none !important;
+/* Remove decorative pseudo-elements that could reveal the hero underneath */
+html body .about .about__stats::before,
+html body .about .about__stats::after {
+  display: none;
+  content: none;
 }
 
-/* Stacked (grey) band should start directly after stats with no top margin and lower z-index */
-html body .about__stacked {
+/* Ensure the stacked/grey band starts directly after stats and does not overlap it */
+html body .about > .about__stacked,
+html body .about .about__stacked {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 
-  /* remove document-level gap (use internal padding instead) */
-  margin-top: 0 !important;
-  padding-top: clamp(20px, 5vh, 64px) !important;
+  /* use internal padding (no top margin) so there is no document-level gap */
+  margin-top: 0;
+  padding-top: clamp(20px, 5vh, 64px);
   padding-bottom: clamp(24px, 6vh, 72px);
-  background: #0d0d0e !important;
-  z-index: 30 !important;
-  overflow: visible !important;
+
+  background: #0d0d0e;
+  z-index: 30;
+  overflow: visible;
+  position: relative;
 }
 
-/* Hide the main hero bg whenever the hero is not visible (avoid any bleed) */
+/* Hide hero background visually whenever hero is out of view (no !important) */
 html body .about:not(.hero-visible) .about__bg {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transform: none !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: none;
+  transition: opacity 360ms ease, visibility 360ms ease;
 }
 
-/* Ensure no ancestor clips these sections */
+/* Ensure parent containers do not clip band transitions */
 html body .about,
 html body .about__content,
 html body .about__profile-block,
 html body .about__stacked,
 html body .about__stats {
-  overflow: visible !important;
+  overflow: visible;
 }
 
-/* Mobile tweak: keep extra breathing room on small screens */
-@media (max-width: 900px) {
-  html body .about__stats {
-    padding-bottom: clamp(64px, 20vh, 180px) !important;
-    padding-top: clamp(24px, 8vh, 48px) !important;
+/* Desktop/tablet/ mobile tuned spacing so stats live entirely inside about__stats */
+@media (min-width: 1025px) {
+  html body .about .about__stacked {
+    padding-top: clamp(180px, 26vh, 380px);
   }
-  html body .about__stacked { padding-top: clamp(24px, 8vh, 64px) !important; }
+}
+
+@media (min-width: 721px) and (max-width: 1024px) {
+  html body .about .about__stacked {
+    padding-top: clamp(120px, 20vh, 260px);
+  }
+}
+
+@media (max-width: 900px) {
+  /* On mobile keep stacked images in flow and reduce top padding */
+  html body .about .about__stacked {
+    padding-top: clamp(20px, 6vh, 96px);
+  }
+
+  /* Ensure stats have extra bottom spacing to avoid overlap */
+  html body .about .about__stats {
+    padding-bottom: clamp(64px, 20vh, 180px);
+    padding-top: clamp(24px, 8vh, 48px);
+  }
+
+  /* Force stacked photos into normal flow (one-per-row) */
+  html body .stacked__inner {
+    display: block;
+    min-height: auto;
+  }
+  html body .stacked__photo,
+  html body .stacked__photo--a,
+  html body .stacked__photo--b {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin-bottom: clamp(12px, 3vh, 24px);
+    transform: none;
+    left: auto;
+    top: auto;
+  }
+}
+
+/* small safety: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html body .about__bg,
+  html body .about__stats,
+  html body .about__stacked,
+  html body .stacked__photo { transition: none; }
 }
